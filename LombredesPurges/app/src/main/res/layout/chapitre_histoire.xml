@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1E2449">
+    android:background="#1E2449"
+    tools:context=".Chapitre">
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/buttonChoix1"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="195dp"
         android:layout_height="70dp"
@@ -19,12 +20,12 @@
         android:textColor="#000000"
         android:textSize="14sp"
         app:backgroundTint="#03A9F4"
-        app:layout_constraintBottom_toTopOf="@+id/button10"
+        app:layout_constraintBottom_toTopOf="@+id/buttonChoix2"
         app:layout_constraintEnd_toEndOf="parent"
         app:strokeColor="#000000" />
 
     <Button
-        android:id="@+id/button11"
+        android:id="@+id/buttonChoix3"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="195dp"
         android:layout_height="70dp"
@@ -36,12 +37,12 @@
         android:textColor="#000000"
         android:textSize="14sp"
         app:backgroundTint="#03A9F4"
-        app:layout_constraintBottom_toTopOf="@+id/button12"
+        app:layout_constraintBottom_toTopOf="@+id/buttonAtttributs"
         app:layout_constraintEnd_toEndOf="parent"
         app:strokeColor="#000000" />
 
     <Button
-        android:id="@+id/button10"
+        android:id="@+id/buttonChoix2"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="195dp"
         android:layout_height="70dp"
@@ -53,12 +54,12 @@
         android:textColor="#000000"
         android:textSize="14sp"
         app:backgroundTint="#03A9F4"
-        app:layout_constraintBottom_toTopOf="@+id/button11"
+        app:layout_constraintBottom_toTopOf="@+id/buttonChoix3"
         app:layout_constraintEnd_toEndOf="parent"
         app:strokeColor="#000000" />
 
     <Button
-        android:id="@+id/button12"
+        android:id="@+id/buttonAtttributs"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="195dp"
         android:layout_height="70dp"
@@ -114,4 +115,5 @@
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

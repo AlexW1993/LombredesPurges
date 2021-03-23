@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1E2449">
+    android:background="#1E2449"
+    tools:context=".ChoixPersonnage">
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/buttonPersonnage"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="135dp"
         android:layout_height="48dp"
@@ -142,7 +143,7 @@
         android:textColor="#EFBFBF"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button8"
+        app:layout_constraintBottom_toTopOf="@+id/buttonPersonnage"
         app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1E2449">
+    android:background="#1E2449"
+    tools:context=".Linvasion">
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/buttonInvasion"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="202dp"
         android:layout_height="53dp"
