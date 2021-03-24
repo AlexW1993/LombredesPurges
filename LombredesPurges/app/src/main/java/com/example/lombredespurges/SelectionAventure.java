@@ -1,5 +1,6 @@
 package com.example.lombredespurges;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,19 +13,18 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-public class ChoixPersonnage extends Fragment {
+public class SelectionAventure extends Fragment {
 
-    Button btnContinuer;
+    Button btnDino;
     NavController navController;
 
-    public ChoixPersonnage() {
+    public SelectionAventure() {
         // Required empty public constructor
     }
 
-    public static ChoixPersonnage newInstance(String param1, String param2) {
-        ChoixPersonnage fragment = new ChoixPersonnage();
+    public static SelectionAventure newInstance(String param1, String param2) {
+        SelectionAventure fragment = new SelectionAventure();
         Bundle args = new Bundle();
-        fragment.setArguments(args);
         return fragment;
     }
 
@@ -37,21 +37,21 @@ public class ChoixPersonnage extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.creation_personnage, container, false);
+        return inflater.inflate(R.layout.selection_aventure, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        btnContinuer = view.findViewById(R.id.buttonPersonnage);
+        btnDino = view.findViewById(R.id.buttonDino);
         navController = Navigation.findNavController(view);
 
-        btnContinuer.setOnClickListener(
+        btnDino.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        navController.navigate(R.id.chapitre);
+                        navController.navigate(R.id.creationPerosnnage);
                     }
                 }
         );

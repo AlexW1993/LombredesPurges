@@ -16,7 +16,7 @@
         android:layout_marginLeft="116dp"
         android:layout_marginBottom="28dp"
         android:fontFamily="@font/aldrich"
-        android:text="Choix personnage"
+        android:text="Choix aventure"
         android:textColor="#000000"
         android:textSize="15sp"
         app:backgroundTint="#03A9F4"
@@ -68,7 +68,7 @@
                 android:layout_height="match_parent"
                 android:fontFamily="@font/aldrich"
                 android:text="La dimension des Dinos Attaqué par le commandant Kalameth"
-                android:textColor="#1886F7"
+                android:textColor="#CDB1B1"
                 android:textSize="15sp" />
 
         </TableRow>

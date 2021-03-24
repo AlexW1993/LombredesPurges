@@ -59,7 +59,7 @@
         android:fontFamily="@font/aldrich"
         android:gravity="center"
         android:shadowColor="#FAF7F7"
-        android:text="Les purges sont des créatures, qui vont de dimension en dimension pour prendre le contrôle de ceux-ci et détruisant les dimensions si les habitants de cette dimension n’acceptent pas de se faire contrôler."
+        android:text="Les purges sont des créatures, qui vont de dimension en dimension pour prendre le contrôle de celles-ci. Ils les détruisent si les habitants de cette dimension n’acceptent pas de se faire contrôler."
         android:textColor="#EAD4D4"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView3"

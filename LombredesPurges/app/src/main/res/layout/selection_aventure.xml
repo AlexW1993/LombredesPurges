@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1E2449"
+    tools:context=".SelectionAventure"><![CDATA[>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    ]]>
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="345dp"
+        android:layout_height="170dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="56dp"
+        android:fontFamily="@font/aldrich"
+        android:gravity="center"
+        android:shadowColor="#040202"
+        android:text="Sélection aventure"
+        android:textColor="#AE5959"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonDino"
+        android:layout_width="271dp"
+        android:layout_height="99dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginRight="68dp"
+        android:layout_marginBottom="12dp"
+        android:fontFamily="@font/aldrich"
+        android:text="Dimension des Dinos"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:backgroundTint="#2994C5"
+        app:layout_constraintBottom_toTopOf="@+id/buttonVIA"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/buttonVIA"
+        android:layout_width="271dp"
+        android:layout_height="99dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginRight="68dp"
+        android:layout_marginBottom="12dp"
+        android:fontFamily="@font/aldrich"
+        android:text="Dimension des V.I.A."
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:backgroundTint="#2994C5"
+        app:layout_constraintBottom_toTopOf="@+id/buttonKaqchikam"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/buttonKaqchikam"
+        android:layout_width="271dp"
+        android:layout_height="99dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginRight="68dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/aldrich"
+        android:text="Dimension des Kaqchikam"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:backgroundTint="#2994C5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

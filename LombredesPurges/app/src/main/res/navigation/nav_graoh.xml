@@ -38,7 +38,10 @@
         tools:layout="@layout/dimension_cible" >
         <action
             android:id="@+id/action_dimensionCiblées_to_choixPersonnage"
-            app:destination="@id/choixPersonnage" />
+            app:destination="@id/creationPerosnnage" />
+        <action
+            android:id="@+id/action_dimensionCiblées_to_selectionAventure"
+            app:destination="@id/selectionAventure" />
     </fragment>
     <fragment
         android:id="@+id/chapitre"
@@ -46,12 +49,21 @@
         android:label="chapitre_histoire"
         tools:layout="@layout/chapitre_histoire" />
     <fragment
-        android:id="@+id/choixPersonnage"
+        android:id="@+id/creationPerosnnage"
         android:name="com.example.lombredespurges.ChoixPersonnage"
         android:label="choix_personnage"
-        tools:layout="@layout/choix_personnage" >
+        tools:layout="@layout/creation_personnage" >
         <action
             android:id="@+id/action_choixPersonnage_to_chapitre"
             app:destination="@id/chapitre" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectionAventure"
+        android:name="com.example.lombredespurges.SelectionAventure"
+        android:label="selection_aventure"
+        tools:layout="@layout/selection_aventure" >
+        <action
+            android:id="@+id/action_selectionAventure_to_choixPersonnage"
+            app:destination="@id/creationPerosnnage" />
     </fragment>
 </navigation>

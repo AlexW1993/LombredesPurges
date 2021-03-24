@@ -85,19 +85,19 @@
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="342dp"
-        android:layout_height="351dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
+        android:layout_width="350dp"
+        android:layout_height="367dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
         android:fontFamily="@font/aldrich"
         android:gravity="center"
         android:shadowColor="#FAF7F7"
-        android:text="Les purges sont des créatures, qui vont de dimension en dimension pour prendre le contrôle de ceux-ci et détruisant les dimensions si les habitants de cette dimension n’acceptent pas de se faire contrôler."
+        android:text="Pour mettre le plan à la vitesse supérieur, les purges ont réussie à ouvrir plusieurs dimensions en même temps. C'est alors que trois personnages venant de mondes différents devront faire des choix pour sauver leur vie et celle de leurs semblables. "
         android:textColor="#EAD4D4"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.886" />
+        app:layout_constraintVertical_bias="0.744" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

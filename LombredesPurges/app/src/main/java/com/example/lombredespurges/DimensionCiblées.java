@@ -52,7 +52,7 @@ public class DimensionCiblées extends Fragment {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        navController.navigate(R.id.choixPersonnage);
+                        navController.navigate(R.id.selectionAventure);
                     }
                 }
         );
