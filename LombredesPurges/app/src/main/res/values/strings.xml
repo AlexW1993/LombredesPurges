@@ -2,4 +2,11 @@
     <string name="app_name">L\'ombre des Purges</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="descriptionDino">Espèces de dinosaure avec la capacité de parler.  Ils sont très rapides et agiles. Ils s\'adaptent facilement à différents climats sans aucun problème.</string>
+    <string name="descriptionVia">Ce sont des androïdes avec une grande avancée technologique. Leur corps est très résistant, ils ont une grande force et ils ont beaucoup de connaissances technologiques.</string>
+    <string name="descriptionKaqchikam">C’est une race de chamans avec une grande foi en leurs dieux et leurs rituels. Capable de voir les prophéties et avec une magie puissante.</string>
+    <string name="force">5</string>
+    <string name="endurance">10</string>
+    <string name="agilite">10</string>
+    <string name="intelligente">20</string>
 </resources>

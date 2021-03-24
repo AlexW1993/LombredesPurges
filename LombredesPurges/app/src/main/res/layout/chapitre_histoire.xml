@@ -10,11 +10,11 @@
     <Button
         android:id="@+id/buttonChoix1"
         style="@style/Widget.AppCompat.Button"
-        android:layout_width="195dp"
-        android:layout_height="70dp"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
         android:layout_marginEnd="60dp"
         android:layout_marginRight="60dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="4dp"
         android:fontFamily="@font/aldrich"
         android:text="Aller vers la ville."
         android:textColor="#000000"
@@ -25,27 +25,10 @@
         app:strokeColor="#000000" />
 
     <Button
-        android:id="@+id/buttonChoix3"
-        style="@style/Widget.AppCompat.Button"
-        android:layout_width="195dp"
-        android:layout_height="70dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginRight="60dp"
-        android:layout_marginBottom="12dp"
-        android:fontFamily="@font/aldrich"
-        android:text="Aller vers la vielle maison au loin."
-        android:textColor="#000000"
-        android:textSize="14sp"
-        app:backgroundTint="#03A9F4"
-        app:layout_constraintBottom_toTopOf="@+id/buttonAtttributs"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:strokeColor="#000000" />
-
-    <Button
         android:id="@+id/buttonChoix2"
         style="@style/Widget.AppCompat.Button"
-        android:layout_width="195dp"
-        android:layout_height="70dp"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
         android:layout_marginEnd="60dp"
         android:layout_marginRight="60dp"
         android:layout_marginBottom="4dp"
@@ -59,42 +42,42 @@
         app:strokeColor="#000000" />
 
     <Button
-        android:id="@+id/buttonAtttributs"
+        android:id="@+id/buttonChoix3"
         style="@style/Widget.AppCompat.Button"
-        android:layout_width="195dp"
-        android:layout_height="70dp"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
         android:layout_marginEnd="60dp"
         android:layout_marginRight="60dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="4dp"
+        android:fontFamily="@font/aldrich"
+        android:text="Aller vers la vielle maison au loin."
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:backgroundTint="#03A9F4"
+        app:layout_constraintBottom_toTopOf="@+id/buttonAtttributs"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:strokeColor="#000000" />
+
+    <Button
+        android:id="@+id/buttonAtttributs"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginBottom="4dp"
         android:fontFamily="@font/aldrich"
         android:text="Attributs"
         android:textColor="#000000"
-        android:textSize="24sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:backgroundTint="#1093CD"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:strokeColor="#000000" />
 
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="313dp"
-        android:layout_height="78dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginLeft="44dp"
-        android:layout_marginTop="4dp"
-        android:fontFamily="@font/aldrich"
-        android:gravity="center"
-        android:shadowColor="#040202"
-        android:text="Chapitre 1"
-        android:textColor="#AE5959"
-        android:textSize="48sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ImageView
-        android:id="@+id/imageView11"
+        android:id="@+id/raceChap"
         android:layout_width="416dp"
         android:layout_height="385dp"
         android:layout_marginEnd="4dp"
@@ -104,15 +87,33 @@
         app:srcCompat="@drawable/dinoh" />
 
     <TextView
-        android:id="@+id/textView15"
-        android:layout_width="338dp"
-        android:layout_height="250dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginLeft="36dp"
+        android:id="@+id/textView13"
+        android:layout_width="316dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="48dp"
         android:fontFamily="@font/aldrich"
-        android:text="Suite au mélange des dimensions, vous voulez avoir des réponses. Vous décidez de prendre la route et trois chemins s’offre à vous."
+        android:gravity="center"
+        android:shadowColor="#040202"
+        android:text="Chapitre 1"
+        android:textColor="#AE5959"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="407dp"
+        android:layout_height="300dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/aldrich"
+        android:text="Vous arrivez dans la ville De Mayale. La seule place que vous pourriez trouver des informations est dans le bar de guerriers. Vous rentrez dans le bar et vous trouvez plusieurs Dinos venant d’autres régions. Avec désespoir vous leur demandez de l’aide mais hélas, ils ne savent rien de ces nouvelles créatures et puisque que cette région n’a pas été attaquée. Pendant que vous parlez, la ville se fait frapper par les envahisseurs. Certains Dinos dans le bar part au combat tandis qu'un dit connaitre un chemin secret pour s’échapper. Il n’inspire pas confiance mais vous n’êtes pas un combattant né non plus."
         android:textColor="#EFBFBF"
-        android:textSize="30sp"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
