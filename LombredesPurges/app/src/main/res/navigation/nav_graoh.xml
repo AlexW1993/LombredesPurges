@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graoh"
+    app:startDestination="@id/pageTitre">
+    <fragment
+        android:id="@+id/pageTitre"
+        android:name="com.example.lombredespurges.PageTitre"
+        android:label="page_titre"
+        tools:layout="@layout/page_titre" >
+        <action
+            android:id="@+id/action_pageTitre_to_lesPurges"
+            app:destination="@id/lesPurges" />
+    </fragment>
+    <fragment
+        android:id="@+id/linvasion"
+        android:name="com.example.lombredespurges.Linvasion"
+        android:label="l_invasion"
+        tools:layout="@layout/l_invasion" >
+        <action
+            android:id="@+id/action_linvasion_to_dimensionCiblées"
+            app:destination="@id/dimensionCiblées" />
+    </fragment>
+    <fragment
+        android:id="@+id/lesPurges"
+        android:name="com.example.lombredespurges.LesPurges"
+        android:label="les_purges"
+        tools:layout="@layout/les_purges" >
+        <action
+            android:id="@+id/action_lesPurges_to_linvasion"
+            app:destination="@id/linvasion" />
+    </fragment>
+    <fragment
+        android:id="@+id/dimensionCiblées"
+        android:name="com.example.lombredespurges.DimensionCiblées"
+        android:label="dimension_cible"
+        tools:layout="@layout/dimension_cible" >
+        <action
+            android:id="@+id/action_dimensionCiblées_to_choixPersonnage"
+            app:destination="@id/creationPerosnnage" />
+        <action
+            android:id="@+id/action_dimensionCiblées_to_selectionAventure"
+            app:destination="@id/selectionAventure" />
+    </fragment>
+    <fragment
+        android:id="@+id/chapitre"
+        android:name="com.example.lombredespurges.Chapitre"
+        android:label="chapitre_histoire"
+        tools:layout="@layout/chapitre_histoire" />
+    <fragment
+        android:id="@+id/creationPerosnnage"
+        android:name="com.example.lombredespurges.ChoixPersonnage"
+        android:label="choix_personnage"
+        tools:layout="@layout/creation_personnage" >
+        <action
+            android:id="@+id/action_choixPersonnage_to_chapitre"
+            app:destination="@id/chapitre" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectionAventure"
+        android:name="com.example.lombredespurges.SelectionAventure"
+        android:label="selection_aventure"
+        tools:layout="@layout/selection_aventure" >
+        <action
+            android:id="@+id/action_selectionAventure_to_choixPersonnage"
+            app:destination="@id/creationPerosnnage" />
+    </fragment>
+</navigation>
