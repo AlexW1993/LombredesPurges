@@ -16,6 +16,8 @@ import androidx.navigation.Navigation;
 public class SelectionAventure extends Fragment {
 
     Button btnDino;
+    Button btnVia;
+    Button btnKaqchikam;
     NavController navController;
 
     public SelectionAventure() {
@@ -45,13 +47,40 @@ public class SelectionAventure extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         btnDino = view.findViewById(R.id.buttonDino);
+        btnVia = view.findViewById(R.id.buttonVIA);
+        btnKaqchikam = view.findViewById(R.id.buttonKaqchikam);
         navController = Navigation.findNavController(view);
+
 
         btnDino.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        navController.navigate(R.id.creationPerosnnage);
+                        Bundle bundle = new Bundle();
+                        bundle.putString("race", "dino");
+                        navController.navigate(R.id.creationPersonnage, bundle);
+                    }
+                }
+        );
+
+        btnVia.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Bundle bundle = new Bundle();
+                        bundle.putString("race", "via");
+                        navController.navigate(R.id.creationPersonnage, bundle);
+                    }
+                }
+        );
+
+        btnKaqchikam.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Bundle bundle = new Bundle();
+                        bundle.putString("race", "kaqchikam");
+                        navController.navigate(R.id.creationPersonnage, bundle);
                     }
                 }
         );
