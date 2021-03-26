@@ -63,5 +63,9 @@
         android:id="@+id/chapitre"
         android:name="com.example.lombredespurges.Chapitre"
         android:label="chapitre_histoire"
-        tools:layout="@layout/chapitre_histoire" />
+        tools:layout="@layout/chapitre_histoire" >
+        <action
+            android:id="@+id/action_chapitre_to_pageTitre"
+            app:destination="@id/pageTitre" />
+    </fragment>
 </navigation>
