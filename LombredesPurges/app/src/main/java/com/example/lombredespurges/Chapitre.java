@@ -73,6 +73,27 @@ public class Chapitre extends Fragment {
         });
     }
 
+    public void gestionChapitre3_1(){
+        choixChemin("Chapitre 3",R.string.chapitre3_1Dino,R.string.choix1_3_1,R.string.choix2_3_1,R.string.choix3_3_1);
+        choix1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cheminFinal("Dommage ",R.string.chapitrefin1Dino);
+            }
+        });
+        choix2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gestionChapitre4_1();
+            }
+        });
+        choix3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gestionChapitre4_2();                                    }
+        });
+    }
+
     public void gestionChapitre4_1() {
         choixChemin("Chapitre 4",R.string.chapitre4_1Dino,R.string.choix1_4_1,R.string.choix2_4_1,R.string.choix3_4_1);
         choix1.setOnClickListener(new View.OnClickListener() {
@@ -82,7 +103,7 @@ public class Chapitre extends Fragment {
         });
         choix2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                cheminFinal("Dommage ", R.string.chapitrefin2Dino);
+                cheminFinal("Bravo ", R.string.chapitrefin2Dino);
             }
         });
         choix3.setOnClickListener(new View.OnClickListener() {
@@ -107,6 +128,7 @@ public class Chapitre extends Fragment {
         choix3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 cheminFinal("Dommage ",R.string.chapitrefin7Dino);
+                texteChapitre.setTextSize(16);
             }
         });
     }
@@ -146,6 +168,7 @@ public class Chapitre extends Fragment {
         choix3.setVisibility(View.VISIBLE);
         pageTitre.setVisibility(View.GONE);
 
+
         choix1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -153,24 +176,8 @@ public class Chapitre extends Fragment {
                         choix1.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                choixChemin("Chapitre 3",R.string.chapitre3_1Dino,R.string.choix1_3_1,R.string.choix2_3_1,R.string.choix3_3_1);
-                                choix1.setOnClickListener(new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View v) {
-                                        cheminFinal("Dommage ",R.string.chapitrefin1Dino);
-                                    }
-                                });
-                                choix2.setOnClickListener(new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View v) {
-                                        gestionChapitre4_1();
-                                    }
-                                });
-                                choix3.setOnClickListener(new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View v) {
-                                        gestionChapitre4_2();                                    }
-                                });
+                                navController.navigate(R.id.combat);
+                                gestionChapitre3_1();
                             }
                         });
                         choix2.setOnClickListener(new View.OnClickListener() {
@@ -197,25 +204,7 @@ public class Chapitre extends Fragment {
                         choix1.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                choixChemin("Chapitre 3",R.string.chapitre3_1Dino,R.string.choix1_3_1,R.string.choix2_3_1,R.string.choix3_3_1);
-                                choix1.setOnClickListener(new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View v) {
-                                        cheminFinal("Dommage ",R.string.chapitrefin1Dino);
-                                    }
-                                });
-                                choix2.setOnClickListener(new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View v) {
-                                        gestionChapitre4_1();
-                                    }
-                                });
-                                choix3.setOnClickListener(new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View v) {
-                                        gestionChapitre4_2();
-                                    }
-                                });
+                                gestionChapitre3_1();
                             }
                         });
                         choix2.setOnClickListener(new View.OnClickListener() {

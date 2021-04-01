@@ -67,5 +67,22 @@
         <action
             android:id="@+id/action_chapitre_to_pageTitre"
             app:destination="@id/pageTitre" />
+        <action
+            android:id="@+id/action_chapitre_to_combat"
+            app:destination="@id/combat" />
     </fragment>
+
+    <fragment
+        android:id="@+id/combat"
+        android:name="com.example.lombredespurges.Combat"
+        android:label="combat"
+        tools:layout="@layout/combat" >
+        <action
+            android:id="@+id/action_combat_to_chapitre2"
+            app:destination="@id/chapitre" />
+        <action
+            android:id="@+id/action_combat_to_pageTitre"
+            app:destination="@id/pageTitre" />
+    </fragment>
+
 </navigation>
