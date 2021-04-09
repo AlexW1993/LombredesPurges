@@ -1,6 +1,5 @@
 package com.example.lombredespurges;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -65,7 +64,7 @@ public class Combat extends Fragment {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        navController.navigate(R.id.chapitre);
+                        navController.navigate(R.id.chapitre_dino);
                     }
                 }
         );

@@ -46,8 +46,11 @@
         android:label="choix_personnage"
         tools:layout="@layout/creation_personnage" >
         <action
-            android:id="@+id/action_creationPersonnage_to_chapitre"
-            app:destination="@id/chapitre" />
+            android:id="@+id/action_creationPersonnage_to_chapitre_dino"
+            app:destination="@id/chapitre_dino" />
+        <action
+            android:id="@+id/action_creationPersonnage_to_chapitre_via"
+            app:destination="@id/chapitre_via" />
     </fragment>
     <fragment
         android:id="@+id/selectionAventure"
@@ -60,15 +63,15 @@
     </fragment>
 
     <fragment
-        android:id="@+id/chapitre"
-        android:name="com.example.lombredespurges.Chapitre"
+        android:id="@+id/chapitre_dino"
+        android:name="com.example.lombredespurges.ChapitreDino"
         android:label="chapitre_histoire"
-        tools:layout="@layout/chapitre_histoire" >
+        tools:layout="@layout/chapitre_histoire_dino" >
         <action
-            android:id="@+id/action_chapitre_to_pageTitre"
+            android:id="@+id/action_chapitre_dino_to_pageTitre"
             app:destination="@id/pageTitre" />
         <action
-            android:id="@+id/action_chapitre_to_combat"
+            android:id="@+id/action_chapitre_dino_to_combat"
             app:destination="@id/combat" />
     </fragment>
 
@@ -78,10 +81,26 @@
         android:label="combat"
         tools:layout="@layout/combat" >
         <action
-            android:id="@+id/action_combat_to_chapitre2"
-            app:destination="@id/chapitre" />
+            android:id="@+id/action_combat_to_chapitre_dino"
+            app:destination="@id/chapitre_dino" />
         <action
             android:id="@+id/action_combat_to_pageTitre"
+            app:destination="@id/pageTitre" />
+        <action
+            android:id="@+id/action_combat_to_chapitre_via"
+            app:destination="@id/chapitre_via" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/chapitre_via"
+        android:name="com.example.lombredespurges.ChapitreVia"
+        android:label="chapitre_histoire_via"
+        tools:layout="@layout/chapitre_histoire_via" >
+        <action
+            android:id="@+id/action_chapitre_via_to_combat"
+            app:destination="@id/combat" />
+        <action
+            android:id="@+id/action_chapitre_via_to_pageTitre"
             app:destination="@id/pageTitre" />
     </fragment>
 

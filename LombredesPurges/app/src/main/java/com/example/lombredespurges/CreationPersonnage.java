@@ -93,7 +93,15 @@ public class CreationPersonnage extends Fragment {
                         Bundle bundle = new Bundle();
                         bundle.putString("nomRace", nomRaceChaphitre);
                         bundle.putString("nom", editName.getText().toString());
-                        navController.navigate(R.id.chapitre, bundle);
+                        navController.navigate(R.id.chapitre_dino, bundle);
+                        String nomRace = getArguments().getString("race");
+                        if (nomRace.equals("dino")){
+                            navController.navigate(R.id.chapitre_dino, bundle);
+                        } else if (nomRace.equals("via")){
+                            navController.navigate(R.id.chapitre_via, bundle);
+                        }else if (nomRace.equals("kaqchikam")) {
+                            navController.navigate(R.id.chapitre_dino, bundle);
+                        }
                     }
                 }
         );

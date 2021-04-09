@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#1E2449"
-    tools:context=".Chapitre">
+    tools:context=".ChapitreDino">
 
     <Button
         android:id="@+id/buttonChoix1"
@@ -108,6 +108,8 @@
         android:layout_marginLeft="4dp"
         android:layout_marginTop="4dp"
         android:fontFamily="@font/aldrich"
+        android:shadowColor="#000000"
+        android:shadowRadius="60"
         android:text="Vous arrivez dans la ville De Mayale. La seule place que vous pourriez trouver des informations est dans le bar de guerriers. Vous rentrez dans le bar et vous trouvez plusieurs Dinos venant d’autres régions. Avec désespoir vous leur demandez de l’aide mais hélas, ils ne savent rien de ces nouvelles créatures et puisque que cette région n’a pas été attaquée. Pendant que vous parlez, la ville se fait frapper par les envahisseurs. Certains Dinos dans le bar part au combat tandis qu'un dit connaitre un chemin secret pour s’échapper. Il n’inspire pas confiance mais vous n’êtes pas un combattant né non plus."
         android:textColor="#EFBFBF"
         android:textSize="18sp"

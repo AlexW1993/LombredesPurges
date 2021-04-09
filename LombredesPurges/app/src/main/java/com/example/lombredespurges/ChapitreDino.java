@@ -14,7 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-public class Chapitre extends Fragment {
+public class ChapitreDino extends Fragment {
 
     ImageView raceChap;
     TextView texteChapitre;
@@ -25,12 +25,12 @@ public class Chapitre extends Fragment {
     Button pageTitre;
     NavController navController;
 
-    public Chapitre() {
+    public ChapitreDino() {
         // Required empty public constructor
     }
 
-    public static Chapitre newInstance(String param1, String param2) {
-        Chapitre fragment = new Chapitre();
+    public static ChapitreDino newInstance(String param1, String param2) {
+        ChapitreDino fragment = new ChapitreDino();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -117,6 +117,9 @@ public class Chapitre extends Fragment {
         choixChemin("Chapitre 4",R.string.chapitre4_2Dino,R.string.choix1_4_2,R.string.choix2_4_2,R.string.choix3_4_2);
         choix1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                //*******COMBAT*****//
+                navController.navigate(R.id.combat);
+                //***** COMBAT*****//
                 cheminFinal("Bravo ",R.string.chapitrefin5Dino);
             }
         });
@@ -142,7 +145,7 @@ public class Chapitre extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.chapitre_histoire, container, false);
+        return inflater.inflate(R.layout.chapitre_histoire_dino, container, false);
     }
 
     @Override
@@ -176,7 +179,9 @@ public class Chapitre extends Fragment {
                         choix1.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
+                                //*******COMBAT*****//
                                 navController.navigate(R.id.combat);
+                                //***** COMBAT*****//
                                 gestionChapitre3_1();
                             }
                         });
@@ -204,6 +209,9 @@ public class Chapitre extends Fragment {
                         choix1.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
+                                //*******COMBAT*****//
+                                navController.navigate(R.id.combat);
+                                //***** COMBAT*****//
                                 gestionChapitre3_1();
                             }
                         });
@@ -248,6 +256,9 @@ public class Chapitre extends Fragment {
                         choix1.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
+                                //*******COMBAT*****//
+                                navController.navigate(R.id.combat);
+                                //***** COMBAT*****//
                                 choixChemin("Chapitre 3",R.string.chapitre3_6Dino,R.string.choix1_3_6,R.string.choix2_3_6,R.string.choix3_3_6);
                                 choix1.setOnClickListener(new View.OnClickListener() {
                                     @Override
