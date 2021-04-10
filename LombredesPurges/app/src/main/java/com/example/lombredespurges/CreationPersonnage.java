@@ -23,7 +23,6 @@ public class CreationPersonnage extends Fragment {
     ImageView raceImage;
     TextView raceNom;
     TextView raceDescription;
-    String nomRaceChaphitre;
 
 
 
@@ -46,17 +45,14 @@ public class CreationPersonnage extends Fragment {
             raceImage.setImageDrawable(getResources().getDrawable(R.drawable.via));
             raceNom.setText("Race: V.I.A.");
             raceDescription.setText(R.string.descriptionVia);
-            nomRaceChaphitre = "via";
         } else if (nomRace.equals("kaqchikam")) {
             raceImage.setImageDrawable(getResources().getDrawable(R.drawable.kaqchikam));
             raceNom.setText("Race: Kaqchikam");
             raceDescription.setText(R.string.descriptionKaqchikam);
-            nomRaceChaphitre = "kaqchikam";
         } else if (nomRace.equals("dino")) {
             raceImage.setImageDrawable(getResources().getDrawable(R.drawable.dinoh));
             raceNom.setText("Race: Dino");
             raceDescription.setText(R.string.descriptionDino);
-            nomRaceChaphitre = "dino";
         }
     }
 
@@ -91,16 +87,15 @@ public class CreationPersonnage extends Fragment {
                     @Override
                     public void onClick(View v) {
                         Bundle bundle = new Bundle();
-                        bundle.putString("nomRace", nomRaceChaphitre);
                         bundle.putString("nom", editName.getText().toString());
-                        navController.navigate(R.id.chapitre_dino, bundle);
                         String nomRace = getArguments().getString("race");
+                        bundle.putString("nomRace", nomRace);
                         if (nomRace.equals("dino")){
                             navController.navigate(R.id.chapitre_dino, bundle);
                         } else if (nomRace.equals("via")){
                             navController.navigate(R.id.chapitre_via, bundle);
-                        }else if (nomRace.equals("kaqchikam")) {
-                            navController.navigate(R.id.chapitre_dino, bundle);
+                        } else if (nomRace.equals("kaqchikam")) {
+                            navController.navigate(R.id.chapitre_kachikam, bundle);
                         }
                     }
                 }

@@ -51,6 +51,9 @@
         <action
             android:id="@+id/action_creationPersonnage_to_chapitre_via"
             app:destination="@id/chapitre_via" />
+        <action
+            android:id="@+id/action_creationPersonnage_to_chapitre_kachikam"
+            app:destination="@id/chapitre_kachikam" />
     </fragment>
     <fragment
         android:id="@+id/selectionAventure"
@@ -101,6 +104,19 @@
             app:destination="@id/combat" />
         <action
             android:id="@+id/action_chapitre_via_to_pageTitre"
+            app:destination="@id/pageTitre" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/chapitre_kachikam"
+        android:name="com.example.lombredespurges.ChapitreKachikam"
+        android:label="chapitre_histoire_kachikam"
+        tools:layout="@layout/chapitre_histoire_kachikam" >
+        <action
+            android:id="@+id/action_chapitre_kachikam_to_combat"
+            app:destination="@id/combat" />
+        <action
+            android:id="@+id/action_chapitre_kachikam_to_pageTitre"
             app:destination="@id/pageTitre" />
     </fragment>
 

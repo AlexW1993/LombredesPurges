@@ -15,7 +15,6 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
 public class ChapitreVia extends Fragment {
-
     ImageView raceChap;
     TextView texteChapitre;
     TextView texteTitre;
