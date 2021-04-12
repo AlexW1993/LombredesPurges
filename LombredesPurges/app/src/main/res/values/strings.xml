@@ -5,10 +5,6 @@
     <string name="descriptionDino">Espèces de dinosaure avec la capacité de parler.  Ils sont très rapides et agiles. Ils s\'adaptent facilement à différents climats sans aucun problème.</string>
     <string name="descriptionVia">Ce sont des androïdes avec une grande avancée technologique. Leur corps est très résistant, ils ont une grande force et ils ont beaucoup de connaissances technologiques.</string>
     <string name="descriptionKaqchikam">C’est une race de chamans avec une grande foi en leurs dieux et leurs rituels. Capable de voir les prophéties et avec une magie puissante.</string>
-    <string name="force">5</string>
-    <string name="endurance">20</string>
-    <string name="agilite">10</string>
-    <string name="intelligente">5</string>
     <string name="agilitepurge">10</string>
     <string name="forcepurge">10</string>
     <string name="defencepurge">10</string>
