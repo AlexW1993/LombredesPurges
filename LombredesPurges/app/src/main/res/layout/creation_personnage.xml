@@ -22,6 +22,8 @@
         app:backgroundTint="#03A9F4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout"
+        app:layout_constraintVertical_bias="0.62"
         app:strokeColor="#000000" />
 
 
@@ -41,15 +43,6 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/race"
-        android:layout_width="437dp"
-        android:layout_height="334dp"
-        android:layout_marginBottom="4dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/dinoh" />
 
     <EditText
         android:id="@+id/editName"
@@ -86,149 +79,12 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:gravity="center"
+        android:shadowColor="#000000"
+        android:shadowRadius="60"
         android:text="@string/descriptionDino"
         android:textColor="#EFBFBF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/race_texte" />
-
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="143dp"
-        android:layout_height="100dp"
-        android:layout_marginBottom="40dp"
-        android:fontFamily="@font/aldrich"
-        android:text="Force
-                      Endurance
-                      Agilité
-                      Intelligence"
-        android:textColor="#EFBFBF"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/buttonPersonnage"
-        app:layout_constraintEnd_toStartOf="@+id/textView18" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="39dp"
-        android:layout_height="100dp"
-        android:layout_marginBottom="40dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/buttonPersonnage"
-        app:layout_constraintEnd_toStartOf="@+id/textView23">
-
-        <TextView
-            android:id="@+id/force"
-            android:layout_width="30dp"
-            android:layout_height="25dp"
-            android:layout_marginEnd="48dp"
-            android:layout_marginRight="48dp"
-            android:fontFamily="@font/aldrich"
-            android:text="@string/force"
-            android:textColor="#EFBFBF"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/endurance"
-            android:layout_width="30dp"
-            android:layout_height="25dp"
-            android:layout_marginEnd="48dp"
-            android:layout_marginRight="48dp"
-            android:fontFamily="@font/aldrich"
-            android:text="@string/endurance"
-            android:textColor="#EFBFBF"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/agilité"
-            android:layout_width="30dp"
-            android:layout_height="25dp"
-            android:layout_marginEnd="48dp"
-            android:layout_marginRight="48dp"
-            android:fontFamily="@font/aldrich"
-            android:text="@string/agilite"
-            android:textColor="#EFBFBF"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/intelligence"
-            android:layout_width="40dp"
-            android:layout_height="25dp"
-            android:fontFamily="@font/aldrich"
-            android:text="@string/intelligente"
-            android:textColor="#EFBFBF"
-            android:textSize="24sp" />
-
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="36dp"
-        android:layout_height="100dp"
-        android:layout_marginBottom="40dp"
-        android:fontFamily="@font/aldrich"
-        android:text="=
-                  =
-                  =
-                  ="
-        android:textColor="#EFBFBF"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonPersonnage"
-        app:layout_constraintEnd_toStartOf="@+id/linearLayout" />
-
-    <TextView
-        android:id="@+id/textView23"
-        android:layout_width="30dp"
-        android:layout_height="100dp"
-        android:layout_marginEnd="3dp"
-        android:layout_marginRight="3dp"
-        android:layout_marginBottom="40dp"
-        android:fontFamily="@font/aldrich"
-        android:text="+
-                  +
-                  +
-                  +"
-        android:textColor="#EFBFBF"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonPersonnage"
-        app:layout_constraintEnd_toStartOf="@+id/linearLayout2" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="40dp"
-        android:layout_height="100dp"
-        android:layout_marginBottom="40dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/buttonPersonnage"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <ImageButton
-            android:id="@+id/imageView14"
-            android:layout_width="30dp"
-            android:layout_height="25dp"
-            android:background="@drawable/boutondes"
-            android:padding="5dp" />
-
-        <ImageButton
-            android:id="@+id/imageView12"
-            android:layout_width="30dp"
-            android:layout_height="25dp"
-            android:background="@drawable/boutondes"
-            android:padding="5dp" />
-
-        <ImageButton
-            android:id="@+id/imageView13"
-            android:layout_width="30dp"
-            android:layout_height="25dp"
-            android:background="@drawable/boutondes"
-            android:padding="5dp" />
-
-        <ImageButton
-            android:id="@+id/imageView15"
-            android:layout_width="30dp"
-            android:layout_height="25dp"
-            android:background="@drawable/boutondes"
-            android:padding="5dp" />
-    </LinearLayout>
 
     <TextView
         android:id="@+id/textView16"
@@ -243,5 +99,132 @@
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="411dp"
+        android:layout_height="234dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descriptionRace">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Force"
+                android:textColor="#AE5959"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="= 10 + dé6"
+                android:textColor="#AE5959"
+                android:textSize="24sp" />
+
+            <ImageButton
+                android:id="@+id/imageView12"
+                android:layout_width="37dp"
+                android:layout_height="32dp"
+                android:background="@drawable/boutondes"
+                android:padding="5dp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Endurence"
+                android:textColor="#AE5959"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="= 20 + 3 * dé10"
+                android:textColor="#AE5959"
+                android:textSize="24sp" />
+
+            <ImageButton
+                android:id="@+id/imageView13"
+                android:layout_width="38dp"
+                android:layout_height="32dp"
+                android:background="@drawable/boutondes"
+                android:padding="5dp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Agilité"
+                android:textColor="#AE5959"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="= 10 + dé6"
+                android:textColor="#AE5959"
+                android:textSize="24sp" />
+
+            <ImageButton
+                android:id="@+id/imageView14"
+                android:layout_width="35dp"
+                android:layout_height="32dp"
+                android:background="@drawable/boutondes"
+                android:padding="5dp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Inteliigence"
+                android:textColor="#AE5959"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/textView26"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="= 5 + dé6"
+                android:textColor="#AE5959"
+                android:textSize="24sp" />
+
+            <ImageButton
+                android:id="@+id/imageView15"
+                android:layout_width="37dp"
+                android:layout_height="32dp"
+                android:background="@drawable/boutondes"
+                android:padding="5dp" />
+        </TableRow>
+    </TableLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

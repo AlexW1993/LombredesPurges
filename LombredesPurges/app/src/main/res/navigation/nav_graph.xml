@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graoh"
+    app:startDestination="@id/pageTitre">
+    <fragment
+        android:id="@+id/pageTitre"
+        android:name="com.example.lombredespurges.PageTitre"
+        android:label="page_titre"
+        tools:layout="@layout/page_titre" >
+        <action
+            android:id="@+id/action_pageTitre_to_lesPurges"
+            app:destination="@id/lesPurges" />
+    </fragment>
+    <fragment
+        android:id="@+id/linvasion"
+        android:name="com.example.lombredespurges.Linvasion"
+        android:label="l_invasion"
+        tools:layout="@layout/l_invasion" >
+        <action
+            android:id="@+id/action_linvasion_to_dimensionCiblées"
+            app:destination="@id/dimensionCiblées" />
+    </fragment>
+    <fragment
+        android:id="@+id/lesPurges"
+        android:name="com.example.lombredespurges.LesPurges"
+        android:label="les_purges"
+        tools:layout="@layout/les_purges" >
+        <action
+            android:id="@+id/action_lesPurges_to_linvasion"
+            app:destination="@id/linvasion" />
+    </fragment>
+    <fragment
+        android:id="@+id/dimensionCiblées"
+        android:name="com.example.lombredespurges.DimensionCiblées"
+        android:label="dimension_cible"
+        tools:layout="@layout/dimension_cible" >
+        <action
+            android:id="@+id/action_dimensionCiblées_to_selectionAventure"
+            app:destination="@id/selectionAventure" />
+    </fragment>
+    <fragment
+        android:id="@+id/creationPersonnage"
+        android:name="com.example.lombredespurges.CreationPersonnage"
+        android:label="choix_personnage"
+        tools:layout="@layout/creation_personnage" >
+        <action
+            android:id="@+id/action_creationPersonnage_to_chapitre_dino"
+            app:destination="@id/chapitre_dino" />
+        <action
+            android:id="@+id/action_creationPersonnage_to_chapitre_via"
+            app:destination="@id/chapitre_via" />
+        <action
+            android:id="@+id/action_creationPersonnage_to_chapitre_kachikam"
+            app:destination="@id/chapitre_kachikam" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectionAventure"
+        android:name="com.example.lombredespurges.SelectionAventure"
+        android:label="selection_aventure"
+        tools:layout="@layout/selection_aventure" >
+        <action
+            android:id="@+id/action_selectionAventure_to_creationPersonnage"
+            app:destination="@id/creationPersonnage" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/chapitre_dino"
+        android:name="com.example.lombredespurges.ChapitreDino"
+        android:label="chapitre_histoire"
+        tools:layout="@layout/chapitre_histoire_dino" >
+        <action
+            android:id="@+id/action_chapitre_dino_to_pageTitre"
+            app:destination="@id/pageTitre" />
+        <action
+            android:id="@+id/action_chapitre_dino_to_combat"
+            app:destination="@id/combat" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/combat"
+        android:name="com.example.lombredespurges.Combat"
+        android:label="combat"
+        tools:layout="@layout/combat" >
+        <action
+            android:id="@+id/action_combat_to_chapitre_dino"
+            app:destination="@id/chapitre_dino" />
+        <action
+            android:id="@+id/action_combat_to_pageTitre"
+            app:destination="@id/pageTitre" />
+        <action
+            android:id="@+id/action_combat_to_chapitre_via"
+            app:destination="@id/chapitre_via" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/chapitre_via"
+        android:name="com.example.lombredespurges.ChapitreVia"
+        android:label="chapitre_histoire_via"
+        tools:layout="@layout/chapitre_histoire_via" >
+        <action
+            android:id="@+id/action_chapitre_via_to_combat"
+            app:destination="@id/combat" />
+        <action
+            android:id="@+id/action_chapitre_via_to_pageTitre"
+            app:destination="@id/pageTitre" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/chapitre_kachikam"
+        android:name="com.example.lombredespurges.ChapitreKachikam"
+        android:label="chapitre_histoire_kachikam"
+        tools:layout="@layout/chapitre_histoire_kachikam" >
+        <action
+            android:id="@+id/action_chapitre_kachikam_to_combat"
+            app:destination="@id/combat" />
+        <action
+            android:id="@+id/action_chapitre_kachikam_to_pageTitre"
+            app:destination="@id/pageTitre" />
+    </fragment>
+
+</navigation>

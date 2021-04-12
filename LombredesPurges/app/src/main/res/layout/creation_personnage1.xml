@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1E2449"
+    tools:context=".CreationPersonnage">
+
+    <Button
+        android:id="@+id/buttonPersonnage"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="135dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginBottom="4dp"
+        android:fontFamily="@font/aldrich"
+        android:text="Commencer"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:backgroundTint="#03A9F4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:strokeColor="#000000" />
+
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="319dp"
+        android:layout_height="108dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/aldrich"
+        android:gravity="center"
+        android:shadowColor="#040202"
+        android:text="Création personnage"
+        android:textColor="#AE5959"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/race"
+        android:layout_width="437dp"
+        android:layout_height="334dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/dinoh"
+        android:contentDescription="TODO" />
+
+    <EditText
+        android:id="@+id/editName"
+        android:layout_width="306dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:fontFamily="@font/aldrich"
+        android:inputType="textPersonName"
+        android:textColor="#EFBFBF"
+        android:textSize="30sp"
+        app:layout_constraintStart_toEndOf="@+id/textView16"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <TextView
+        android:id="@+id/race_texte"
+        android:layout_width="302dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="4dp"
+        android:text="Race: Dinos"
+        android:textColor="#EFBFBF"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editName" />
+
+    <TextView
+        android:id="@+id/descriptionRace"
+        android:layout_width="377dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:gravity="center"
+        android:shadowColor="#000000"
+        android:shadowRadius="60"
+        android:text="@string/descriptionDino"
+        android:textColor="#EFBFBF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/race_texte" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="143dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="40dp"
+        android:fontFamily="@font/aldrich"
+        android:shadowColor="#000000"
+        android:shadowRadius="60"
+        android:text="Force
+                      Endurance
+                      Agilité
+                      Intelligence"
+        android:textColor="#EFBFBF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/buttonPersonnage"
+        app:layout_constraintEnd_toStartOf="@+id/textView18" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="39dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="40dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/buttonPersonnage"
+        app:layout_constraintEnd_toStartOf="@+id/textView23">
+
+        <TextView
+            android:id="@+id/force"
+            android:layout_width="30dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginRight="48dp"
+            android:fontFamily="@font/aldrich"
+            android:text="10"
+            android:textColor="#EFBFBF"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/endurance"
+            android:layout_width="30dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginRight="48dp"
+            android:fontFamily="@font/aldrich"
+            android:text="20"
+            android:textColor="#EFBFBF"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/agilité"
+            android:layout_width="30dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginRight="48dp"
+            android:fontFamily="@font/aldrich"
+            android:text="10"
+            android:textColor="#EFBFBF"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/intelligence"
+            android:layout_width="40dp"
+            android:layout_height="25dp"
+            android:fontFamily="@font/aldrich"
+            android:text="5"
+            android:textColor="#EFBFBF"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="36dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="40dp"
+        android:fontFamily="@font/aldrich"
+        android:text="=
+                  =
+                  =
+                  ="
+        android:textColor="#EFBFBF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonPersonnage"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="30dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginRight="3dp"
+        android:layout_marginBottom="40dp"
+        android:fontFamily="@font/aldrich"
+        android:text="+
+                  +
+                  +
+                  +"
+        android:textColor="#EFBFBF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonPersonnage"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout2" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="40dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="40dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/buttonPersonnage"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageButton
+            android:id="@+id/imageView12"
+            android:layout_width="30dp"
+            android:layout_height="25dp"
+            android:background="@drawable/boutondes"
+            android:padding="5dp" />
+
+        <ImageButton
+            android:id="@+id/imageView13"
+            android:layout_width="30dp"
+            android:layout_height="25dp"
+            android:background="@drawable/boutondes"
+            android:padding="5dp" />
+
+        <ImageButton
+            android:id="@+id/imageView14"
+            android:layout_width="30dp"
+            android:layout_height="25dp"
+            android:background="@drawable/boutondes"
+            android:padding="5dp" />
+
+        <ImageButton
+            android:id="@+id/imageView15"
+            android:layout_width="30dp"
+            android:layout_height="25dp"
+            android:background="@drawable/boutondes"
+            android:padding="5dp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="78dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/aldrich"
+        android:text="Nom:"
+        android:textColor="#EFBFBF"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

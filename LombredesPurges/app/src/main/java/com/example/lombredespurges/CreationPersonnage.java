@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,6 +16,10 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import com.example.lombredespurges.modèle.Personnage;
+
+import java.util.Random;
+
 public class CreationPersonnage extends Fragment {
 
     Button btnContinuer;
@@ -23,7 +28,25 @@ public class CreationPersonnage extends Fragment {
     ImageView raceImage;
     TextView raceNom;
     TextView raceDescription;
-    String nomRaceChaphitre;
+
+    ImageButton btnForce;
+    ImageButton btnEndurence;
+    ImageButton btnAgilité;
+    ImageButton btnIntelligence;
+
+    TextView txtForce;
+    TextView txtEndurence;
+    TextView txtAgilité;
+    TextView txtIntelligence;
+
+    int force;
+    int endurence;
+    int agilité;
+    int intelligence;
+    Personnage personnage;
+
+
+
 
 
 
@@ -43,20 +66,17 @@ public class CreationPersonnage extends Fragment {
         String nomRace = getArguments().getString("race");
 
         if (nomRace.equals("via")) {
-            raceImage.setImageDrawable(getResources().getDrawable(R.drawable.via));
+            //raceImage.setImageDrawable(getResources().getDrawable(R.drawable.via));
             raceNom.setText("Race: V.I.A.");
             raceDescription.setText(R.string.descriptionVia);
-            nomRaceChaphitre = "via";
         } else if (nomRace.equals("kaqchikam")) {
-            raceImage.setImageDrawable(getResources().getDrawable(R.drawable.kaqchikam));
+            //raceImage.setImageDrawable(getResources().getDrawable(R.drawable.kaqchikam));
             raceNom.setText("Race: Kaqchikam");
             raceDescription.setText(R.string.descriptionKaqchikam);
-            nomRaceChaphitre = "kaqchikam";
         } else if (nomRace.equals("dino")) {
-            raceImage.setImageDrawable(getResources().getDrawable(R.drawable.dinoh));
+            //raceImage.setImageDrawable(getResources().getDrawable(R.drawable.dinoh));
             raceNom.setText("Race: Dino");
             raceDescription.setText(R.string.descriptionDino);
-            nomRaceChaphitre = "dino";
         }
     }
 
@@ -84,16 +104,89 @@ public class CreationPersonnage extends Fragment {
         raceNom = view.findViewById(R.id.race_texte);
         raceDescription = view.findViewById(R.id.descriptionRace);
 
+        txtForce = view.findViewById(R.id.textView22);
+        txtEndurence= view.findViewById(R.id.textView24);
+        txtAgilité = view.findViewById(R.id.textView25);
+        txtIntelligence = view.findViewById(R.id.textView26);
+
+        btnForce = view.findViewById(R.id.imageView12);
+        btnForce.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        btnForce.setVisibility(View.GONE);
+                        int num = new Random().nextInt((6 - 1) + 1) + 1;
+                        force = 10 + num;
+                        txtForce.setText(" = " + force);
+                    }
+                }
+        );
+        btnEndurence = view.findViewById(R.id.imageView13);
+        btnEndurence.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        btnEndurence.setVisibility(View.GONE);
+                        int num = new Random().nextInt((10 - 1) + 1) + 1;
+                        endurence = 20 + (3 * num);
+                        txtEndurence.setText(" = " + endurence);
+                    }
+                }
+        );
+        btnAgilité = view.findViewById(R.id.imageView14);
+        btnAgilité.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        btnAgilité.setVisibility(View.GONE);
+                        int num = new Random().nextInt((6 - 1) + 1) + 1;
+                        agilité = 10 + num;
+                        txtAgilité.setText(" = " + agilité);
+                    }
+                }
+        );
+        btnIntelligence = view.findViewById(R.id.imageView15);
+        btnIntelligence.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        btnIntelligence.setVisibility(View.GONE);
+                        int num = new Random().nextInt((6 - 1) + 1) + 1;
+                        intelligence = 5 + num;
+                        txtIntelligence.setText(" = " + intelligence);
+                    }
+                }
+        );
+
         changerRace();
 
         btnContinuer.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Bundle bundle = new Bundle();
-                        bundle.putString("nomRace", nomRaceChaphitre);
-                        bundle.putString("nom", editName.getText().toString());
-                        navController.navigate(R.id.chapitre, bundle);
+                        if(editName.getText().toString().trim().equals("") ||
+                        btnForce.getVisibility() == View.VISIBLE || btnEndurence.getVisibility() == View.VISIBLE||
+                        btnAgilité.getVisibility() == View.VISIBLE || btnIntelligence.getVisibility() == View.VISIBLE){
+                            return;
+                        }else{
+                            Bundle bundle = new Bundle();
+                            bundle.putString("nom", editName.getText().toString());
+                            String nomRace = getArguments().getString("race");
+                            bundle.putString("nomRace", nomRace);
+
+                            personnage = new Personnage(editName.getText().toString(),force,endurence,agilité,intelligence);
+                            bundle.putSerializable("Personnage",personnage);
+
+                            if (nomRace.equals("dino")){
+                                navController.navigate(R.id.chapitre_dino, bundle);
+                            } else if (nomRace.equals("via")){
+                                navController.navigate(R.id.chapitre_via, bundle);
+                            } else if (nomRace.equals("kaqchikam")) {
+                                navController.navigate(R.id.chapitre_kachikam, bundle);
+                            }
+
+                        }
+
                     }
                 }
         );

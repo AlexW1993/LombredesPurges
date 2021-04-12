@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1E2449"
+    tools:context=".Combat">
+
+    <Button
+        android:id="@+id/btnPageTitre"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="202dp"
+        android:layout_height="53dp"
+        android:layout_marginBottom="4dp"
+        android:fontFamily="@font/aldrich"
+        android:text="PageTitre"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:visibility="gone"
+        app:backgroundTint="#03A9F4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="#000000" />
+
+    <Button
+        android:id="@+id/btnContinuer"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="202dp"
+        android:layout_height="53dp"
+        android:layout_marginBottom="4dp"
+        android:fontFamily="@font/aldrich"
+        android:text="Continuer"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:backgroundTint="#03A9F4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="#000000" />
+
+    <TextView
+        android:id="@+id/combattitre"
+        android:layout_width="411dp"
+        android:layout_height="49dp"
+        android:fontFamily="@font/aldrich"
+        android:gravity="center"
+        android:shadowColor="#040202"
+        android:shadowRadius="60"
+        android:text="Combat"
+        android:textColor="#DAC614"
+        android:textSize="44sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/deroulementcombattexte"
+        android:layout_width="409dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/aldrich"
+        android:gravity="center"
+        android:shadowColor="#000000"
+        android:shadowRadius="60"
+        android:text="Calculer le coefficient d'attaque de chaque belligérant : agilité du personnage + dés"
+        android:textColor="#DAC614"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/combattitre" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="259dp"
+        android:layout_height="252dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:rotationY="180"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/dinoh" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="190dp"
+        android:layout_height="253dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/purge1" />
+
+    <ImageButton
+        android:id="@+id/combatDé"
+        android:layout_width="77dp"
+        android:layout_height="77dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/boutondes"
+        android:padding="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout7" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout7"
+        android:layout_width="379dp"
+        android:layout_height="340dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/imageView11"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/deroulementcombattexte">
+
+        <LinearLayout
+            android:id="@+id/linearLayout6"
+            android:layout_width="94dp"
+            android:layout_height="308dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/nomPersonnage"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/aldrich"
+                android:gravity="center"
+                android:shadowColor="#000000"
+                android:shadowRadius="60"
+                android:text="Personnage"
+                android:textColor="#DAC614"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/coefAttaquePersonnage"
+                android:layout_width="67dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/aldrich"
+                android:gravity="center"
+                android:shadowColor="#000000"
+                android:shadowRadius="60"
+                android:text="0"
+                android:textColor="#DAC614"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/agiliteheros"
+                android:layout_width="67dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/aldrich"
+                android:gravity="center"
+                android:shadowColor="#000000"
+                android:shadowRadius="60"
+                android:text="10"
+                android:textColor="#DAC614"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/forceheros"
+                android:layout_width="67dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/aldrich"
+                android:gravity="center"
+                android:shadowColor="#000000"
+                android:shadowRadius="60"
+                android:text="10"
+                android:textColor="#DAC614"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/defenceheros"
+                android:layout_width="67dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/aldrich"
+                android:gravity="center"
+                android:shadowColor="#000000"
+                android:shadowRadius="60"
+                android:text="0"
+                android:textColor="#DAC614"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/enduranceheros"
+                android:layout_width="67dp"
+                android:layout_height="40dp"
+                android:fontFamily="@font/aldrich"
+                android:gravity="center"
+                android:shadowColor="#000000"
+                android:shadowRadius="60"
+                android:text="10"
+                android:textColor="#DAC614"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="150dp"
+            android:layout_height="228dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/texteCoefficientAttaque"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/aldrich"
+                android:gravity="center"
+                android:shadowColor="#000000"
+                android:shadowRadius="60"
+                android:text="Coef. Attaque"
+                android:textColor="#DAC614"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textecombat1"
+                android:layout_width="141dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/aldrich"
+                android:gravity="center"
+                android:shadowColor="#000000"
+                android:shadowRadius="60"
+                android:text="Agilité"
+                android:textColor="#DAC614"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textecombat3"
+                android:layout_width="114dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/aldrich"
+                android:gravity="center"
+                android:shadowColor="#000000"
+                android:shadowRadius="60"
+                android:text="Force"
+                android:textColor="#DAC614"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textecombat2"
+                android:layout_width="139dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/aldrich"
+                android:gravity="center"
+                android:shadowColor="#000000"
+                android:shadowRadius="60"
+                android:text="Défence"
+                android:textColor="#DAC614"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textecombat4"
+                android:layout_width="126dp"
+                android:layout_height="40dp"
+                android:fontFamily="@font/aldrich"
+                android:gravity="center"
+                android:shadowColor="#000000"
+                android:shadowRadius="60"
+                android:text="Endurance"
+                android:textColor="#DAC614"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout5"
+            android:layout_width="94dp"
+            android:layout_height="308dp"
+            android:layout_marginEnd="36dp"
+            android:layout_marginRight="36dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/nomEnnemi"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/aldrich"
+                android:gravity="center"
+                android:shadowColor="#000000"
+                android:shadowRadius="60"
+                android:text="Coef. Attaque"
+                android:textColor="#DAC614"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/coefAttaqueEnnemi"
+                android:layout_width="67dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/aldrich"
+                android:gravity="center"
+                android:shadowColor="#000000"
+                android:shadowRadius="60"
+                android:text="0"
+                android:textColor="#DAC614"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/agilitepurge"
+                android:layout_width="67dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/aldrich"
+                android:gravity="center"
+                android:shadowColor="#000000"
+                android:shadowRadius="60"
+                android:text="@string/agilitepurge"
+                android:textColor="#DAC614"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/forcepurge"
+                android:layout_width="67dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/aldrich"
+                android:gravity="center"
+                android:shadowColor="#000000"
+                android:shadowRadius="60"
+                android:text="@string/forcepurge"
+                android:textColor="#DAC614"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/defencepurge"
+                android:layout_width="67dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="12dp"
+                android:fontFamily="@font/aldrich"
+                android:gravity="center"
+                android:shadowColor="#000000"
+                android:shadowRadius="60"
+                android:text="0"
+                android:textColor="#DAC614"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/endurancepurge"
+                android:layout_width="67dp"
+                android:layout_height="40dp"
+                android:fontFamily="@font/aldrich"
+                android:gravity="center"
+                android:shadowColor="#000000"
+                android:shadowRadius="60"
+                android:text="@string/endurancepurge"
+                android:textColor="#DAC614"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
