@@ -43,7 +43,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/race"
+        android:id="@+id/race3"
         android:layout_width="437dp"
         android:layout_height="334dp"
         android:layout_marginBottom="4dp"
