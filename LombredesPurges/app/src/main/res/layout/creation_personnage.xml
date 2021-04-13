@@ -46,10 +46,10 @@
 
     <EditText
         android:id="@+id/editName"
-        android:layout_width="306dp"
+        android:layout_width="300dp"
         android:layout_height="58dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="16dp"
         android:ems="10"
         android:fontFamily="@font/aldrich"
@@ -61,16 +61,29 @@
 
     <TextView
         android:id="@+id/race_texte"
-        android:layout_width="302dp"
+        android:layout_width="200dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginLeft="29dp"
+        android:layout_marginTop="8dp"
+        android:text="Dinos"
+        android:textColor="#EFBFBF"
+        android:textSize="30sp"
+        app:layout_constraintStart_toEndOf="@+id/race_texte2"
+        app:layout_constraintTop_toBottomOf="@+id/editName" />
+
+    <TextView
+        android:id="@+id/race_texte2"
+        android:layout_width="150dp"
         android:layout_height="54dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="4dp"
-        android:text="Race: Dinos"
+        android:layout_marginTop="8dp"
+        android:text="@string/race"
         android:textColor="#EFBFBF"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editName" />
+        app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
     <TextView
         android:id="@+id/descriptionRace"
@@ -98,7 +111,7 @@
 
     <TextView
         android:id="@+id/textView16"
-        android:layout_width="78dp"
+        android:layout_width="80dp"
         android:layout_height="56dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
@@ -128,16 +141,18 @@
                 android:id="@+id/textView11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/aldrich"
                 android:text="@string/force"
-                android:textColor="#AE5959"
+                android:textColor="#EFBFBF"
                 android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/textView22"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/aldrich"
                 android:text="= 10 + dé6"
-                android:textColor="#AE5959"
+                android:textColor="#EFBFBF"
                 android:textSize="24sp" />
 
             <ImageButton
@@ -158,16 +173,18 @@
                 android:id="@+id/textView19"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/aldrich"
                 android:text="@string/endurence"
-                android:textColor="#AE5959"
+                android:textColor="#EFBFBF"
                 android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/textView24"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/aldrich"
                 android:text="= 20 + 3 * dé10"
-                android:textColor="#AE5959"
+                android:textColor="#EFBFBF"
                 android:textSize="24sp" />
 
             <ImageButton
@@ -187,16 +204,18 @@
                 android:id="@+id/textView20"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/aldrich"
                 android:text="@string/agilit"
-                android:textColor="#AE5959"
+                android:textColor="#EFBFBF"
                 android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/textView25"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/aldrich"
                 android:text="= 10 + dé6"
-                android:textColor="#AE5959"
+                android:textColor="#EFBFBF"
                 android:textSize="24sp" />
 
             <ImageButton
@@ -216,16 +235,18 @@
                 android:id="@+id/textView21"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/aldrich"
                 android:text="@string/inteliigence"
-                android:textColor="#AE5959"
+                android:textColor="#EFBFBF"
                 android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/textView26"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/aldrich"
                 android:text="= 5 + dé6"
-                android:textColor="#AE5959"
+                android:textColor="#EFBFBF"
                 android:textSize="24sp" />
 
             <ImageButton

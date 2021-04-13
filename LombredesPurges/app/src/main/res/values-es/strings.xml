@@ -193,4 +193,8 @@
     <string name="dimension_des_v_i_a">Dimensión de V.I.A.</string>
     <string name="dimension_des_kaqchikam">Dimensión del Kaqchikam</string>
     <string name="s_lection_aventure">Selección de aventuras</string>
+    <string name="race">Raza :</string>
+    <string name="chapitre">Capitulo</string>
+    <string name="dommage">Dommage </string>
+    <string name="bravo">Bravo </string>
 </resources>
