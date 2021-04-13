@@ -158,6 +158,7 @@ public class CreationPersonnage extends Fragment {
                             bundle.putString("nomRace", nomRace);
 
                             presentateurCreationPersonnage.creationPersonnage(editName.getText().toString(),force,endurence,agilité,intelligence);
+                            personnage = presentateurCreationPersonnage.get_personnage();
                             bundle.putSerializable("Personnage",personnage);
 
                             navController.navigate(presentateurCreationPersonnage.choixChapitre(nomRace), bundle);

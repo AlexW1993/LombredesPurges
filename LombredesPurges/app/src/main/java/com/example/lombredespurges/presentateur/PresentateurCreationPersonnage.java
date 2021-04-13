@@ -44,6 +44,10 @@ public class PresentateurCreationPersonnage {
         _personnage = new  Personnage(nom, force, endurance, agilité, intelligence);
     }
 
+    public Personnage get_personnage() {
+        return _personnage;
+    }
+
     public int calculerForce (){
         int num = new Random().nextInt((6 - 1) + 1) + 1;
         return 10 + num;
