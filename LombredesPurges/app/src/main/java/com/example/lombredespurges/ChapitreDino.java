@@ -14,6 +14,8 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import com.example.lombredespurges.modèle.Personnage;
+
 public class ChapitreDino extends Fragment {
 
     ImageView raceChap;
@@ -24,6 +26,8 @@ public class ChapitreDino extends Fragment {
     Button choix3;
     Button pageTitre;
     NavController navController;
+    Personnage personnage;
+    Bundle bundle;
 
     public ChapitreDino() {
         // Required empty public constructor
@@ -58,7 +62,8 @@ public class ChapitreDino extends Fragment {
     }
 
     public void cheminFinal(String _texteFin, int texte){
-        String nom = getArguments().getString("nom");
+        //String nom = getArguments().getString("nom");
+        String nom = personnage.get_nom();
         texteTitre.setText(_texteFin + nom);
         texteChapitre.setText(texte);
         choix1.setVisibility(View.GONE);
@@ -118,7 +123,8 @@ public class ChapitreDino extends Fragment {
         choix1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //*******COMBAT*****//
-                navController.navigate(R.id.combat);
+
+                navController.navigate(R.id.combat, bundle);
                 //***** COMBAT*****//
                 cheminFinal("Bravo ",R.string.chapitrefin5Dino);
             }
@@ -160,7 +166,7 @@ public class ChapitreDino extends Fragment {
         choix3 = view.findViewById(R.id.buttonChoix3);
         pageTitre = view.findViewById(R.id.buttonMenu);
         navController = Navigation.findNavController(view);
-        changerImage();
+        //changerImage();
         texteTitre.setText("Chapitre 1");
         texteChapitre.setText(R.string.chapitre1Dino);
         choix1.setText(R.string.choix1_1);
@@ -171,6 +177,9 @@ public class ChapitreDino extends Fragment {
         choix3.setVisibility(View.VISIBLE);
         pageTitre.setVisibility(View.GONE);
 
+        personnage = (Personnage) getArguments().getSerializable("Personnage");
+        bundle = new Bundle();
+        bundle.putSerializable("Personnage", personnage);
 
         choix1.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -180,7 +189,7 @@ public class ChapitreDino extends Fragment {
                             @Override
                             public void onClick(View v) {
                                 //*******COMBAT*****//
-                                navController.navigate(R.id.combat);
+                                navController.navigate(R.id.combat, bundle);
                                 //***** COMBAT*****//
                                 gestionChapitre3();
                             }
@@ -210,7 +219,7 @@ public class ChapitreDino extends Fragment {
                             @Override
                             public void onClick(View v) {
                                 //*******COMBAT*****//
-                                navController.navigate(R.id.combat);
+                                navController.navigate(R.id.combat, bundle);
                                 //***** COMBAT*****//
                                 gestionChapitre3();
                             }
@@ -239,7 +248,7 @@ public class ChapitreDino extends Fragment {
                             @Override
                             public void onClick(View v) {
                                 //*******COMBAT*****//
-                                //navController.navigate(R.id.combat);
+                                navController.navigate(R.id.combat, bundle);
                                 //***** COMBAT*****//
                                 choixChemin("Chapitre 3",R.string.chapitre3_6Dino,R.string.choix1_3_6,R.string.choix2_3_6,R.string.choix3_3_6);
                                 choix1.setOnClickListener(new View.OnClickListener() {
@@ -296,6 +305,4 @@ public class ChapitreDino extends Fragment {
                 }
         );
     }
-
-
 }
