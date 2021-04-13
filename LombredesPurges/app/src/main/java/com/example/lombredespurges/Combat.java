@@ -76,7 +76,8 @@ public class Combat extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
 
-        personnage = new Personnage("yev", 11,23,13,8);
+        //personnage = new Personnage("yev", 11,23,13,8);
+        personnage = (Personnage) getArguments().getSerializable("Personnage");
         ennemie = new Ennemie("Purge",5,14,7,5);
 
         btnContinuer = view.findViewById(R.id.btnContinuer);
@@ -109,7 +110,6 @@ public class Combat extends Fragment {
 
         deroulementCombat = view.findViewById(R.id.deroulementcombattexte);
         deroulementCombat.setText("Jouer le Dé pour déterminer l'attaquant");
-
 
         btnDé = view.findViewById(R.id.combatDé);
         btnDé.setOnClickListener(
