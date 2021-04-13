@@ -16,7 +16,7 @@
         android:layout_marginLeft="116dp"
         android:layout_marginBottom="28dp"
         android:fontFamily="@font/aldrich"
-        android:text="Choix aventure"
+        android:text="@string/choix_aventure"
         android:textColor="#000000"
         android:textSize="15sp"
         app:backgroundTint="#03A9F4"
@@ -34,7 +34,7 @@
         android:fontFamily="@font/aldrich"
         android:gravity="center"
         android:shadowColor="#040202"
-        android:text="Dimensions ciblées"
+        android:text="@string/dimensions_cibl_es"
         android:textColor="#AE5959"
         android:textSize="48sp"
         android:textStyle="bold"
@@ -62,7 +62,8 @@
                 android:id="@+id/imageView2"
                 android:layout_width="100dp"
                 android:layout_height="85dp"
-                app:srcCompat="@drawable/portail3" />
+                app:srcCompat="@drawable/portail3"
+                android:contentDescription="TODO" />
 
             <ImageView
                 android:id="@+id/imageView6"
@@ -93,7 +94,7 @@
                 android:layout_height="85dp"
                 android:fontFamily="@font/aldrich"
                 android:gravity="center"
-                android:text="La dimension des Dinos Attaqué par le commandant Kalameth"
+                android:text="@string/la_dimension_des_dinos_attaqu_par_le_commandant_kalameth"
                 android:textColor="#CDB1B1"
                 android:textSize="18sp" />
 
@@ -103,7 +104,7 @@
                 android:layout_height="85dp"
                 android:fontFamily="@font/aldrich"
                 android:gravity="center"
-                android:text="La dimension des V.I.A. Attaqué par le commandant Alpha"
+                android:text="@string/la_dimension_des_v_i_a_attaqu_par_le_commandant_alpha"
                 android:textColor="#CDB1B1"
                 android:textSize="18sp" />
 
@@ -113,7 +114,7 @@
                 android:layout_height="85dp"
                 android:fontFamily="@font/aldrich"
                 android:gravity="center"
-                android:text="La dimension des Kaqchikam Attaqué par le commandant Bastillee"
+                android:text="@string/la_dimension_des_kaqchikam_attaqu_par_le_commandant_bastillee"
                 android:textColor="#CDB1B1"
                 android:textSize="18sp" />
         </LinearLayout>

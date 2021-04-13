@@ -17,8 +17,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
 import com.example.lombredespurges.modèle.Personnage;
-
-import java.util.Random;
+import com.example.lombredespurges.presentateur.PresentateurCreationPersonnage;
 
 public class CreationPersonnage extends Fragment {
 
@@ -45,10 +44,7 @@ public class CreationPersonnage extends Fragment {
     int intelligence;
     Personnage personnage;
 
-
-
-
-
+    PresentateurCreationPersonnage presentateurCreationPersonnage;
 
     public CreationPersonnage() {
         // Required empty public constructor
@@ -65,25 +61,16 @@ public class CreationPersonnage extends Fragment {
 
         String nomRace = getArguments().getString("race");
 
-        if (nomRace.equals("via")) {
-            raceImage.setImageDrawable(getResources().getDrawable(R.drawable.via));
-            raceNom.setText("Race: V.I.A.");
-            raceDescription.setText(R.string.descriptionVia);
-        } else if (nomRace.equals("kaqchikam")) {
-            raceImage.setImageDrawable(getResources().getDrawable(R.drawable.kaqchikam));
-            raceNom.setText("Race: Kaqchikam");
-            raceDescription.setText(R.string.descriptionKaqchikam);
-        } else if (nomRace.equals("dino")) {
-            raceImage.setImageDrawable(getResources().getDrawable(R.drawable.dinoh));
-            raceNom.setText("Race: Dino");
-            raceDescription.setText(R.string.descriptionDino);
-        }
+        raceNom.setText(presentateurCreationPersonnage.choisirRace(nomRace));
+        raceDescription.setText(presentateurCreationPersonnage.descriptionRace(nomRace));
+
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+        presentateurCreationPersonnage = new PresentateurCreationPersonnage(this);
     }
 
     @Override
@@ -115,8 +102,7 @@ public class CreationPersonnage extends Fragment {
                     @Override
                     public void onClick(View v) {
                         btnForce.setVisibility(View.GONE);
-                        int num = new Random().nextInt((6 - 1) + 1) + 1;
-                        force = 10 + num;
+                        force = presentateurCreationPersonnage.calculerForce();
                         txtForce.setText(" = " + force);
                     }
                 }
@@ -127,8 +113,7 @@ public class CreationPersonnage extends Fragment {
                     @Override
                     public void onClick(View v) {
                         btnEndurence.setVisibility(View.GONE);
-                        int num = new Random().nextInt((10 - 1) + 1) + 1;
-                        endurence = 20 + (3 * num);
+                        endurence =  presentateurCreationPersonnage.calculerEndurence();
                         txtEndurence.setText(" = " + endurence);
                     }
                 }
@@ -139,8 +124,7 @@ public class CreationPersonnage extends Fragment {
                     @Override
                     public void onClick(View v) {
                         btnAgilité.setVisibility(View.GONE);
-                        int num = new Random().nextInt((6 - 1) + 1) + 1;
-                        agilité = 10 + num;
+                        agilité = presentateurCreationPersonnage.calculerAgilité();
                         txtAgilité.setText(" = " + agilité);
                     }
                 }
@@ -151,8 +135,7 @@ public class CreationPersonnage extends Fragment {
                     @Override
                     public void onClick(View v) {
                         btnIntelligence.setVisibility(View.GONE);
-                        int num = new Random().nextInt((6 - 1) + 1) + 1;
-                        intelligence = 5 + num;
+                        intelligence = presentateurCreationPersonnage.calculerIntelligence();
                         txtIntelligence.setText(" = " + intelligence);
                     }
                 }
@@ -174,23 +157,15 @@ public class CreationPersonnage extends Fragment {
                             String nomRace = getArguments().getString("race");
                             bundle.putString("nomRace", nomRace);
 
-                            personnage = new Personnage(editName.getText().toString(),force,endurence,agilité,intelligence);
+                            presentateurCreationPersonnage.creationPersonnage(editName.getText().toString(),force,endurence,agilité,intelligence);
+                            personnage = presentateurCreationPersonnage.get_personnage();
                             bundle.putSerializable("Personnage",personnage);
 
-                            if (nomRace.equals("dino")){
-                                navController.navigate(R.id.chapitre_dino, bundle);
-                            } else if (nomRace.equals("via")){
-                                navController.navigate(R.id.chapitre_via, bundle);
-                            } else if (nomRace.equals("kaqchikam")) {
-                                navController.navigate(R.id.chapitre_kachikam, bundle);
-                            }
-
+                            navController.navigate(presentateurCreationPersonnage.choixChapitre(nomRace), bundle);
                         }
-
                     }
                 }
         );
 
     }
-
 }

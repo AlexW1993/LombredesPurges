@@ -16,7 +16,7 @@
         android:layout_marginLeft="92dp"
         android:layout_marginBottom="16dp"
         android:fontFamily="@font/aldrich"
-        android:text="Continuer"
+        android:text="@string/continuer"
         android:textColor="#000000"
         android:textSize="24sp"
         app:backgroundTint="#03A9F4"
@@ -31,7 +31,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/purge1" />
+        app:srcCompat="@drawable/purge1"
+        android:contentDescription="TODO" />
 
     <TextView
         android:id="@+id/textView2"
@@ -42,7 +43,7 @@
         android:fontFamily="@font/aldrich"
         android:gravity="center"
         android:shadowColor="#040202"
-        android:text="Les Purges"
+        android:text="@string/les_purges"
         android:textColor="#AE5959"
         android:textSize="48sp"
         android:textStyle="bold"
@@ -59,7 +60,7 @@
         android:gravity="center"
         android:shadowColor="#000000"
         android:shadowRadius="60"
-        android:text="Les purges sont des créatures, qui vont de dimension en dimension pour prendre le contrôle de celles-ci. Ils les détruisent si les habitants de cette dimension n’acceptent pas de se faire contrôler."
+        android:text="@string/les_purges_sont_des_cr_atures_qui_vont_de_dimension_en_dimension_pour_prendre_le_contr_le_de_celles_ci_ils_les_d_truisent_si_les_habitants_de_cette_dimension_n_acceptent_pas_de_se_faire_contr_ler"
         android:textColor="#EAD4D4"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView3"
