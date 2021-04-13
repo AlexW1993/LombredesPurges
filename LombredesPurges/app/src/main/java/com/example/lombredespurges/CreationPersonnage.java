@@ -66,15 +66,15 @@ public class CreationPersonnage extends Fragment {
         String nomRace = getArguments().getString("race");
 
         if (nomRace.equals("via")) {
-            //raceImage.setImageDrawable(getResources().getDrawable(R.drawable.via));
+            raceImage.setImageDrawable(getResources().getDrawable(R.drawable.via));
             raceNom.setText("Race: V.I.A.");
             raceDescription.setText(R.string.descriptionVia);
         } else if (nomRace.equals("kaqchikam")) {
-            //raceImage.setImageDrawable(getResources().getDrawable(R.drawable.kaqchikam));
+            raceImage.setImageDrawable(getResources().getDrawable(R.drawable.kaqchikam));
             raceNom.setText("Race: Kaqchikam");
             raceDescription.setText(R.string.descriptionKaqchikam);
         } else if (nomRace.equals("dino")) {
-            //raceImage.setImageDrawable(getResources().getDrawable(R.drawable.dinoh));
+            raceImage.setImageDrawable(getResources().getDrawable(R.drawable.dinoh));
             raceNom.setText("Race: Dino");
             raceDescription.setText(R.string.descriptionDino);
         }
