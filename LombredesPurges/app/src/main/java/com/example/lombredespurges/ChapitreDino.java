@@ -62,7 +62,8 @@ public class ChapitreDino extends Fragment {
     }
 
     public void cheminFinal(String _texteFin, int texte){
-        String nom = getArguments().getString("nom");
+        //String nom = getArguments().getString("nom");
+        String nom = personnage.get_nom();
         texteTitre.setText(_texteFin + nom);
         texteChapitre.setText(texte);
         choix1.setVisibility(View.GONE);

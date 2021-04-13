@@ -47,6 +47,8 @@ public class Combat extends Fragment {
     TextView défenceEnnemie;
     TextView nomEnnemi;
 
+    Bundle bundle;
+
 
     public Combat() {
         // Required empty public constructor
@@ -179,7 +181,9 @@ public class Combat extends Fragment {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        navController.navigate(R.id.chapitre_dino);
+                        bundle = new Bundle();
+                        bundle.putSerializable("Personnage",personnage);
+                        navController.navigate(R.id.chapitre_dino, bundle);
                     }
                 }
         );
