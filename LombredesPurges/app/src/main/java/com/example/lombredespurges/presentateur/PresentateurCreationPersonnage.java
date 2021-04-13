@@ -19,11 +19,11 @@ public class PresentateurCreationPersonnage {
     public String choisirRace(String nomRace){
         String race = "";
         if (nomRace.equals("via")) {
-            race = "Race: V.I.A.";
+            race = "V.I.A.";
         } else if (nomRace.equals("kaqchikam")) {
-            race = "Race: Kaqchikam" ;
+            race = "Kaqchikam" ;
         } else if (nomRace.equals("dino")) {
-            race = "Race: Dino";
+            race = "Dino";
         }
         return race;
     }

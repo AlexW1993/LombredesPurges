@@ -18,6 +18,7 @@ public class ChapitreVia extends Fragment {
     ImageView raceChap;
     TextView texteChapitre;
     TextView texteTitre;
+    TextView texteTitre2;
     Button choix1;
     Button choix2;
     Button choix3;
@@ -56,9 +57,10 @@ public class ChapitreVia extends Fragment {
         choix3.setText(choixTrois);
     }
 
-    public void cheminFinal(String _texteFin, int texte){
+    public void cheminFinal(int _texteFin, int texte){
         String nom = getArguments().getString("nom");
-        texteTitre.setText(_texteFin + nom);
+        texteTitre.setText(nom);
+        texteTitre2.setText(_texteFin);
         texteChapitre.setText(texte);
         choix1.setVisibility(View.GONE);
         choix2.setVisibility(View.GONE);
@@ -79,7 +81,7 @@ public class ChapitreVia extends Fragment {
                 //*******COMBAT*****//
                 //navController.navigate(R.id.combat);
                 //***** COMBAT*****//
-                choixChemin("Chapitre 3",R.string.chapitre3_1Via,R.string.choix1_3_1Via,R.string.choix2_3_1Via,R.string.choix3_3_1Via);
+                choixChemin("3",R.string.chapitre3_1Via,R.string.choix1_3_1Via,R.string.choix2_3_1Via,R.string.choix3_3_1Via);
                 gestionChapitre4();
 
             }
@@ -87,7 +89,7 @@ public class ChapitreVia extends Fragment {
         choix2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                choixChemin("Chapitre 3",R.string.chapitre3_2Via,R.string.choix1_3_2Via,R.string.choix2_3_2Via,R.string.choix3_3_2Via);
+                choixChemin("3",R.string.chapitre3_2Via,R.string.choix1_3_2Via,R.string.choix2_3_2Via,R.string.choix3_3_2Via);
                 gestionChapitre4();
 
             }
@@ -95,7 +97,7 @@ public class ChapitreVia extends Fragment {
         choix3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                cheminFinal("Dommage ",R.string.chapitre3_3Via);
+                cheminFinal(R.string.dommage,R.string.chapitre3_3Via);
             }
         });
 
@@ -107,23 +109,23 @@ public class ChapitreVia extends Fragment {
         choix1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                choixChemin("Chapitre 4",R.string.chapitre4_1Via,R.string.choix1_4_1Via,R.string.choix2_4_1Via,R.string.choix3_4_1Via);
+                choixChemin("4",R.string.chapitre4_1Via,R.string.choix1_4_1Via,R.string.choix2_4_1Via,R.string.choix3_4_1Via);
                 choix1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        cheminFinal("Dommage ",R.string.chapitrefin4Via);
+                        cheminFinal(R.string.dommage,R.string.chapitrefin4Via);
                     }
                 });
                 choix2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        cheminFinal("Dommage ",R.string.chapitrefin2Via);
+                        cheminFinal(R.string.bravo,R.string.chapitrefin2Via);
                     }
                 });
                 choix3.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        cheminFinal("Dommage ",R.string.chapitrefin3Via);
+                        cheminFinal(R.string.bravo,R.string.chapitrefin3Via);
                     }
                 });
             }
@@ -134,23 +136,23 @@ public class ChapitreVia extends Fragment {
                 //*******COMBAT*****//
                 //navController.navigate(R.id.combat);
                 //***** COMBAT*****//
-                choixChemin("Chapitre 4",R.string.chapitre4_2Via,R.string.choix1_4_2Via,R.string.choix2_4_2Via,R.string.choix3_4_2Via);
+                choixChemin("4",R.string.chapitre4_2Via,R.string.choix1_4_2Via,R.string.choix2_4_2Via,R.string.choix3_4_2Via);
                 choix1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        cheminFinal("Dommage ",R.string.chapitrefin5Via);
+                        cheminFinal(R.string.dommage,R.string.chapitrefin5Via);
                     }
                 });
                 choix2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        cheminFinal("Dommage ",R.string.chapitrefin2Via);
+                        cheminFinal(R.string.bravo,R.string.chapitrefin2Via);
                     }
                 });
                 choix3.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        cheminFinal("Dommage ",R.string.chapitrefin6Via);
+                        cheminFinal(R.string.dommage,R.string.chapitrefin6Via);
                     }
                 });
             }
@@ -158,7 +160,7 @@ public class ChapitreVia extends Fragment {
         choix3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                cheminFinal("Dommage ",R.string.chapitrefin1Via);
+                cheminFinal(R.string.dommage,R.string.chapitrefin1Via);
             }
         });
     }
@@ -182,6 +184,7 @@ public class ChapitreVia extends Fragment {
 
         raceChap = view.findViewById(R.id.raceChap2);
         texteTitre = view.findViewById(R.id.texteTitre2);
+        texteTitre2 = view.findViewById(R.id.texteTitre6);
         texteChapitre = view.findViewById(R.id.texteChapitre2);
         choix1 = view.findViewById(R.id.buttonChoixVia1);
         choix2 = view.findViewById(R.id.buttonChoixVia2);
@@ -189,7 +192,7 @@ public class ChapitreVia extends Fragment {
         pageTitre = view.findViewById(R.id.buttonMenu2);
         navController = Navigation.findNavController(view);
         changerImage();
-        texteTitre.setText("Chapitre 1");
+        texteTitre.setText("1");
         texteChapitre.setText(R.string.chapitre1Via);
         choix1.setText(R.string.choix1_1Via);
         choix2.setText(R.string.choix2_1Via);
@@ -203,7 +206,7 @@ public class ChapitreVia extends Fragment {
         choix1.setOnClickListener(new View.OnClickListener() {
                                       @Override
                                       public void onClick(View v) {
-                                          choixChemin("Chapitre 2",R.string.chapitre2_1Via,R.string.choix1_2_1Via,R.string.choix2_2_1Via,R.string.choix3_2_1Via);
+                                          choixChemin("2",R.string.chapitre2_1Via,R.string.choix1_2_1Via,R.string.choix2_2_1Via,R.string.choix3_2_1Via);
                                           gestionChapitre2();
                                       }
                                   }
@@ -212,7 +215,7 @@ public class ChapitreVia extends Fragment {
         choix2.setOnClickListener(new View.OnClickListener() {
                                       @Override
                                       public void onClick(View v) {
-                                          choixChemin("Chapitre 2", R.string.chapitre2_2Via, R.string.choix1_2_2Via, R.string.choix2_2_2Via, R.string.choix3_2_2Via);
+                                          choixChemin("2", R.string.chapitre2_2Via, R.string.choix1_2_2Via, R.string.choix2_2_2Via, R.string.choix3_2_2Via);
                                           gestionChapitre2();
                                       }
                                   }
@@ -220,28 +223,28 @@ public class ChapitreVia extends Fragment {
         choix3.setOnClickListener(new View.OnClickListener() {
                                       @Override
                                       public void onClick(View v) {
-                                          choixChemin("Chapitre 2",R.string.chapitre2_3Via,R.string.choix1_2_3Via,R.string.choix2_2_3Via,R.string.choix3_2_3Via);
+                                          choixChemin("2",R.string.chapitre2_3Via,R.string.choix1_2_3Via,R.string.choix2_2_3Via,R.string.choix3_2_3Via);
                                           choix1.setOnClickListener(new View.OnClickListener() {
                                               @Override
                                               public void onClick(View v) {
                                                   //*******COMBAT*****//
                                                   //navController.navigate(R.id.combat);
                                                   //***** COMBAT*****//
-                                                  choixChemin("Chapitre 3",R.string.chapitre3_6Via,R.string.choix1_3_6Via,R.string.choix2_3_6Via,R.string.choix3_3_6Via);
+                                                  choixChemin("3",R.string.chapitre3_6Via,R.string.choix1_3_6Via,R.string.choix2_3_6Via,R.string.choix3_3_6Via);
                                                   gestionChapitre4();
                                               }
                                           });
                                           choix2.setOnClickListener(new View.OnClickListener() {
                                               @Override
                                               public void onClick(View v) {
-                                                  choixChemin("Chapitre 3",R.string.chapitre3_5Via,R.string.choix1_3_5Via,R.string.choix2_3_5Via,R.string.choix3_3_5Via);
+                                                  choixChemin("3",R.string.chapitre3_5Via,R.string.choix1_3_5Via,R.string.choix2_3_5Via,R.string.choix3_3_5Via);
                                                   gestionChapitre4();
                                               }
                                           });
                                           choix3.setOnClickListener(new View.OnClickListener() {
                                               @Override
                                               public void onClick(View v) {
-                                                  cheminFinal("Dommage ",R.string.chapitre3_4Via);
+                                                  cheminFinal(R.string.dommage,R.string.chapitre3_4Via);
                                               }
                                           });
                                       }

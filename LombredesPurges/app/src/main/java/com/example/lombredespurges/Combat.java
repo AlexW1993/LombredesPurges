@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.Navigator;
 
 import com.example.lombredespurges.modèle.Ennemie;
 import com.example.lombredespurges.modèle.Personnage;
