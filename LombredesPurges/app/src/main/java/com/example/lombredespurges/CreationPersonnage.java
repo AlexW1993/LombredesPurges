@@ -58,13 +58,21 @@ public class CreationPersonnage extends Fragment {
     }
 
     public void changerRace() {
-
         String nomRace = getArguments().getString("race");
 
         raceNom.setText(presentateurCreationPersonnage.choisirRace(nomRace));
         raceDescription.setText(presentateurCreationPersonnage.descriptionRace(nomRace));
-
+        if (nomRace.equals("via")) {
+            raceImage.setImageDrawable(getResources().getDrawable(R.drawable.via));
+        } else if (nomRace.equals("kaqchikam")) {
+            raceImage.setImageDrawable(getResources().getDrawable(R.drawable.kaqchikam));
+        } else if (nomRace.equals("dino")) {
+            raceImage.setImageDrawable(getResources().getDrawable(R.drawable.dinoh));
+        }
     }
+
+
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
