@@ -36,10 +36,6 @@ public class Ennemie {
         return _agilité;
     }
 
-    public int get_intelligence() {
-        return _intelligence;
-    }
-
     public int getCoefAttaque() {
         return coefAttaque;
     }
@@ -51,10 +47,6 @@ public class Ennemie {
     public void calculerCoefAttaqueEnnemi(){
         int dé = new Random().nextInt((6 - 1) + 1) + 1;
         coefAttaque = _agilité + dé;
-    }
-
-    public int getCoefDéfence() {
-        return coefDéfence;
     }
 
     public void calculerCoefDéfense(int coefAttaqueAttaquant){

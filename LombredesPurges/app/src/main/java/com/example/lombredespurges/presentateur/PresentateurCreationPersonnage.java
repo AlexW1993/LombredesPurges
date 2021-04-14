@@ -12,8 +12,8 @@ public class PresentateurCreationPersonnage {
     private CreationPersonnage _creationPersonnage;
     private Personnage _personnage;
 
-    public PresentateurCreationPersonnage(CreationPersonnage creationPersonnage){
-        this._creationPersonnage = creationPersonnage;
+    public PresentateurCreationPersonnage(CreationPersonnage vueCreationPersonnage){
+        this._creationPersonnage = vueCreationPersonnage;
     }
 
     public String choisirRace(String nomRace){
@@ -45,6 +45,7 @@ public class PresentateurCreationPersonnage {
     }
 
     public Personnage get_personnage() {
+
         return _personnage;
     }
 

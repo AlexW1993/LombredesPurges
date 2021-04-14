@@ -38,10 +38,6 @@ public class Personnage implements Serializable {
         return _agilité;
     }
 
-    public int get_intelligence() {
-        return _intelligence;
-    }
-
     public int getCoefAttaque() {
         return coefAttaque;
     }
@@ -67,6 +63,4 @@ public class Personnage implements Serializable {
         dommages = coefDéfence * forceAttaquant;
         _endurance -= dommages;
     }
-
-
 }

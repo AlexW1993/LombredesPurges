@@ -169,7 +169,7 @@
     <string name="continuer">Continuar</string>
     <string name="combat">Combate</string>
     <string name="calculer_le_coefficient_d_attaque_de_chaque_bellig_rant_agilit_du_personnage_d_s">Calcula el coeficiente de ataque de cada beligerante: agilidad del personaje + dados</string>
-    <string name="coef_attaque">Coef. Attaquer</string>
+    <string name="coef_attaque">Coef. Attaque</string>
     <string name="agilit">Agilidad</string>
     <string name="force">Fuerza</string>
     <string name="d_fence">Défensa</string>
@@ -195,6 +195,6 @@
     <string name="s_lection_aventure">Selección de aventuras</string>
     <string name="race">Raza :</string>
     <string name="chapitre">Capitulo</string>
-    <string name="dommage">Dommage </string>
-    <string name="bravo">Bravo </string>
+    <string name="dommage">Lastima</string>
+    <string name="bravo">Bravo</string>
 </resources>
