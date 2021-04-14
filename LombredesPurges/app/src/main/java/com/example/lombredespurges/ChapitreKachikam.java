@@ -14,6 +14,8 @@ import androidx.annotation.Nullable;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import com.example.lombredespurges.modèle.Personnage;
+
 public class ChapitreKachikam extends Fragment {
     ImageView raceChap;
     TextView texteChapitre;
@@ -24,6 +26,8 @@ public class ChapitreKachikam extends Fragment {
     Button choix3;
     Button pageTitre;
     NavController navController;
+    Personnage personnage;
+    Bundle bundle;
 
     public ChapitreKachikam() {
         // Required empty public constructor
@@ -86,7 +90,7 @@ public class ChapitreKachikam extends Fragment {
             @Override
             public void onClick(View v) {
                 //*******COMBAT*****//
-                //navController.navigate(R.id.combat);
+                navController.navigate(R.id.combat);
                 //***** COMBAT*****//
                 gestionChapitre4_1();
             }
@@ -95,7 +99,7 @@ public class ChapitreKachikam extends Fragment {
             @Override
             public void onClick(View v) {
                 //*******COMBAT*****//
-                //navController.navigate(R.id.combat);
+                navController.navigate(R.id.combat);
                 //***** COMBAT*****//
                 gestionChapitre4_2();                                    }
         });
@@ -103,7 +107,7 @@ public class ChapitreKachikam extends Fragment {
 
     public void gestionChapitre4_1() {
         //*******COMBAT*****//
-        //navController.navigate(R.id.combat);
+        navController.navigate(R.id.combat);
         //***** COMBAT*****//
         choixChemin("4",R.string.chapitre4_1Kachikam,R.string.choix1_4_1Kachikam,R.string.choix2_4_1Kachikam,R.string.choix3_4_1Kachikam);
         choix1.setOnClickListener(new View.OnClickListener() {
@@ -113,6 +117,9 @@ public class ChapitreKachikam extends Fragment {
         });
         choix2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                //*******COMBAT*****//
+                navController.navigate(R.id.combat, bundle);
+                //***** COMBAT*****//
                 cheminFinal(R.string.bravo, R.string.chapitrefin2Kachikam);
             }
         });
@@ -125,7 +132,7 @@ public class ChapitreKachikam extends Fragment {
 
     public void gestionChapitre4_2(){
         //*******COMBAT*****//
-        //navController.navigate(R.id.combat);
+        navController.navigate(R.id.combat);
         //***** COMBAT*****//
         choixChemin("4",R.string.chapitre4_2Kachikam,R.string.choix1_4_2Kachikam,R.string.choix2_4_2Kachikam,R.string.choix3_4_2Kachikam);
         choix1.setOnClickListener(new View.OnClickListener() {
@@ -182,6 +189,9 @@ public class ChapitreKachikam extends Fragment {
         choix3.setVisibility(View.VISIBLE);
         pageTitre.setVisibility(View.GONE);
 
+        personnage = (Personnage) getArguments().getSerializable("Personnage");
+        bundle = new Bundle();
+        bundle.putSerializable("Personnage", personnage);
 
         choix1.setOnClickListener(new View.OnClickListener() {
                                       @Override
@@ -214,7 +224,7 @@ public class ChapitreKachikam extends Fragment {
                                       @Override
                                       public void onClick(View v) {
                                           //*******COMBAT*****//
-                                          //navController.navigate(R.id.combat);
+                                          navController.navigate(R.id.combat, bundle);
                                           //***** COMBAT*****//
                                           choixChemin("2",R.string.chapitre2_2Kachikam,R.string.choix1_2_2Kachikam,R.string.choix2_2_2Kachikam,R.string.choix3_2_2Kachikam);
                                           choix1.setOnClickListener(new View.OnClickListener() {
@@ -256,9 +266,6 @@ public class ChapitreKachikam extends Fragment {
                                                   choix2.setOnClickListener(new View.OnClickListener() {
                                                       @Override
                                                       public void onClick(View v) {
-                                                          //*******COMBAT*****//
-                                                          //navController.navigate(R.id.combat);
-                                                          //***** COMBAT*****//
                                                           gestionChapitre4_1();
                                                       }
                                                   });

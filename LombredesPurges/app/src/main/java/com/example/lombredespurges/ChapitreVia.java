@@ -14,6 +14,8 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import com.example.lombredespurges.modèle.Personnage;
+
 public class ChapitreVia extends Fragment {
     ImageView raceChap;
     TextView texteChapitre;
@@ -24,6 +26,8 @@ public class ChapitreVia extends Fragment {
     Button choix3;
     Button pageTitre;
     NavController navController;
+    Personnage personnage;
+    Bundle bundle;
 
     public ChapitreVia() {
         // Required empty public constructor
@@ -79,7 +83,7 @@ public class ChapitreVia extends Fragment {
             @Override
             public void onClick(View v) {
                 //*******COMBAT*****//
-                //navController.navigate(R.id.combat);
+                navController.navigate(R.id.combat, bundle);
                 //***** COMBAT*****//
                 choixChemin("3",R.string.chapitre3_1Via,R.string.choix1_3_1Via,R.string.choix2_3_1Via,R.string.choix3_3_1Via);
                 gestionChapitre4();
@@ -134,7 +138,7 @@ public class ChapitreVia extends Fragment {
             @Override
             public void onClick(View v) {
                 //*******COMBAT*****//
-                //navController.navigate(R.id.combat);
+                navController.navigate(R.id.combat, bundle);
                 //***** COMBAT*****//
                 choixChemin("4",R.string.chapitre4_2Via,R.string.choix1_4_2Via,R.string.choix2_4_2Via,R.string.choix3_4_2Via);
                 choix1.setOnClickListener(new View.OnClickListener() {
@@ -202,6 +206,9 @@ public class ChapitreVia extends Fragment {
         choix3.setVisibility(View.VISIBLE);
         pageTitre.setVisibility(View.GONE);
 
+        personnage = (Personnage) getArguments().getSerializable("Personnage");
+        bundle = new Bundle();
+        bundle.putSerializable("Personnage", personnage);
 
         choix1.setOnClickListener(new View.OnClickListener() {
                                       @Override
@@ -228,7 +235,7 @@ public class ChapitreVia extends Fragment {
                                               @Override
                                               public void onClick(View v) {
                                                   //*******COMBAT*****//
-                                                  //navController.navigate(R.id.combat);
+                                                  navController.navigate(R.id.combat, bundle);
                                                   //***** COMBAT*****//
                                                   choixChemin("3",R.string.chapitre3_6Via,R.string.choix1_3_6Via,R.string.choix2_3_6Via,R.string.choix3_3_6Via);
                                                   gestionChapitre4();

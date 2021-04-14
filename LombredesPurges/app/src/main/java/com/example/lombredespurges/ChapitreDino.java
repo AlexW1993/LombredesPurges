@@ -41,19 +41,6 @@ public class ChapitreDino extends Fragment {
         return fragment;
     }
 
-    public void changerImage() {
-        String nomRace = getArguments().getString("nomRace");
-
-        if (nomRace.equals("via")) {
-            raceChap.setImageDrawable(getResources().getDrawable(R.drawable.via));
-        } else if (nomRace.equals("kaqchikam")) {
-            raceChap.setImageDrawable(getResources().getDrawable(R.drawable.kaqchikam));
-        } else if (nomRace.equals("dino")) {
-            raceChap.setImageDrawable(getResources().getDrawable(R.drawable.dinoh));
-        }
-    }
-
-
     public void choixChemin(String _numeroChapitre, int texte,int choixUn,int choixDeux,int choixTrois){
         texteTitre.setText(_numeroChapitre);
         texteChapitre.setText(texte);
@@ -63,7 +50,6 @@ public class ChapitreDino extends Fragment {
     }
 
     public void cheminFinal(int _texteFin, int texte){
-        //String nom = getArguments().getString("nom");
         String nom = personnage.get_nom();
         texteTitre.setText(nom);
         texteTitre2.setText(_texteFin);
@@ -169,7 +155,6 @@ public class ChapitreDino extends Fragment {
         choix3 = view.findViewById(R.id.buttonChoix3);
         pageTitre = view.findViewById(R.id.buttonMenu);
         navController = Navigation.findNavController(view);
-        //changerImage();
         texteTitre.setText("1");
         texteChapitre.setText(R.string.chapitre1Dino);
         choix1.setText(R.string.choix1_1);
