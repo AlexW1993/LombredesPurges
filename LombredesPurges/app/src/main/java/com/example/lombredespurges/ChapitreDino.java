@@ -18,6 +18,9 @@ import com.example.lombredespurges.modèle.Personnage;
 
 public class ChapitreDino extends Fragment {
 
+    /**
+     * Declaration des Attributs
+     */
     ImageView raceChap;
     TextView texteChapitre;
     TextView texteTitre;
