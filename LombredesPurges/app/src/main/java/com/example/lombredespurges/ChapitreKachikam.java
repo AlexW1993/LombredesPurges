@@ -17,6 +17,10 @@ import androidx.navigation.Navigation;
 import com.example.lombredespurges.modèle.Personnage;
 
 public class ChapitreKachikam extends Fragment {
+
+    /**
+     * Declaration des Attributs
+     */
     ImageView raceChap;
     TextView texteChapitre;
     TextView texteTitre;

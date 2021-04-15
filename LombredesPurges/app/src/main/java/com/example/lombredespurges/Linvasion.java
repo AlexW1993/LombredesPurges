@@ -15,7 +15,9 @@ import androidx.navigation.Navigation;
 
 public class Linvasion extends Fragment {
 
-
+    /**
+     * Declaration des Attributs
+     */
     Button btnContinuer;
     NavController navController;
 

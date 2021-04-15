@@ -15,6 +15,9 @@ import androidx.navigation.Navigation;
 
 public class LesPurges extends Fragment {
 
+    /**
+     * Declaration des Attributs
+     */
     Button btnContinuer;
     NavController navController;
 
