@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#1E2449"
-    tools:context=".ChapitreDino">
+    tools:context=".VueChapitreDino">
 
     <Button
         android:id="@+id/buttonChoix1"

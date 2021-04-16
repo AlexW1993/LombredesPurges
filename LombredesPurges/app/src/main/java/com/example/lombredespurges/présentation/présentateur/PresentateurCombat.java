@@ -1,8 +1,8 @@
-package com.example.lombredespurges.presentateur;
+package com.example.lombredespurges.présentation.présentateur;
 
-import com.example.lombredespurges.Combat;
-import com.example.lombredespurges.modèle.Ennemie;
-import com.example.lombredespurges.modèle.Personnage;
+import com.example.lombredespurges.VueCombat;
+import com.example.lombredespurges.domaine.entité.Ennemie;
+import com.example.lombredespurges.domaine.entité.Personnage;
 
 import java.util.Random;
 
@@ -11,7 +11,7 @@ public class PresentateurCombat {
     /**
      * Declaration des Attributs
      */
-    private Combat _combat;
+    private VueCombat _vueCombat;
     private Personnage _personnage;
     private Ennemie _ennemie;
 
@@ -20,9 +20,9 @@ public class PresentateurCombat {
      *
      * @param vueCombat, la vue Combat.
      */
-    public PresentateurCombat(Combat vueCombat) {
+    public PresentateurCombat(VueCombat vueCombat) {
 
-        this._combat = vueCombat;
+        this._vueCombat = vueCombat;
         creationEnnemie();
     }
 

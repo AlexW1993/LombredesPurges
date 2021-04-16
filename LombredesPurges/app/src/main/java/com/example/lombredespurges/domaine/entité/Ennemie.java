@@ -1,4 +1,4 @@
-package com.example.lombredespurges.modèle;
+package com.example.lombredespurges.domaine.entité;
 
 import java.util.Random;
 

@@ -14,9 +14,9 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-import com.example.lombredespurges.modèle.Personnage;
+import com.example.lombredespurges.domaine.entité.Personnage;
 
-public class ChapitreDino extends Fragment {
+public class VueChapitreDino extends Fragment {
 
     /**
      * Declaration des Attributs
@@ -33,12 +33,12 @@ public class ChapitreDino extends Fragment {
     Personnage personnage;
     Bundle bundle;
 
-    public ChapitreDino() {
+    public VueChapitreDino() {
         // Required empty public constructor
     }
 
-    public static ChapitreDino newInstance(String param1, String param2) {
-        ChapitreDino fragment = new ChapitreDino();
+    public static VueChapitreDino newInstance(String param1, String param2) {
+        VueChapitreDino fragment = new VueChapitreDino();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
