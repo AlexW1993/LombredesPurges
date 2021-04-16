@@ -16,10 +16,10 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-import com.example.lombredespurges.modèle.Personnage;
-import com.example.lombredespurges.presentateur.PresentateurCreationPersonnage;
+import com.example.lombredespurges.domaine.entité.Personnage;
+import com.example.lombredespurges.présentation.présentateur.PresentateurCreationPersonnage;
 
-public class CreationPersonnage extends Fragment {
+public class VueCreationPersonnage extends Fragment {
 
     /**
      * Declaration des Attributs
@@ -49,12 +49,12 @@ public class CreationPersonnage extends Fragment {
 
     PresentateurCreationPersonnage presentateurCreationPersonnage;
 
-    public CreationPersonnage() {
+    public VueCreationPersonnage() {
         // Required empty public constructor
     }
 
-    public static CreationPersonnage newInstance(String param1, String param2) {
-        CreationPersonnage fragment = new CreationPersonnage();
+    public static VueCreationPersonnage newInstance(String param1, String param2) {
+        VueCreationPersonnage fragment = new VueCreationPersonnage();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;

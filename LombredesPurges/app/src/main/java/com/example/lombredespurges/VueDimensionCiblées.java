@@ -1,6 +1,5 @@
 package com.example.lombredespurges;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-public class DimensionCiblées extends Fragment {
+public class VueDimensionCiblées extends Fragment {
 
     /**
      * Declaration des Attributs
@@ -21,12 +20,12 @@ public class DimensionCiblées extends Fragment {
     Button btnContinuer;
     NavController navController;
 
-    public DimensionCiblées() {
+    public VueDimensionCiblées() {
         // Required empty public constructor
     }
 
-    public static DimensionCiblées newInstance(String param1, String param2) {
-        DimensionCiblées fragment = new DimensionCiblées();
+    public static VueDimensionCiblées newInstance(String param1, String param2) {
+        VueDimensionCiblées fragment = new VueDimensionCiblées();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;

@@ -1,8 +1,8 @@
-package com.example.lombredespurges.presentateur;
+package com.example.lombredespurges.présentation.présentateur;
 
-import com.example.lombredespurges.CreationPersonnage;
+import com.example.lombredespurges.VueCreationPersonnage;
 import com.example.lombredespurges.R;
-import com.example.lombredespurges.modèle.Personnage;
+import com.example.lombredespurges.domaine.entité.Personnage;
 
 import java.util.Random;
 
@@ -12,7 +12,7 @@ public class PresentateurCreationPersonnage {
     /**
      * Declaration des Attributs
      */
-    private CreationPersonnage _creationPersonnage;
+    private VueCreationPersonnage _vueCreationPersonnage;
     private Personnage _personnage;
 
     /**
@@ -20,8 +20,8 @@ public class PresentateurCreationPersonnage {
      *
      * @param vueCreationPersonnage, la vue CreationPersonnage.
      */
-    public PresentateurCreationPersonnage(CreationPersonnage vueCreationPersonnage){
-        this._creationPersonnage = vueCreationPersonnage;
+    public PresentateurCreationPersonnage(VueCreationPersonnage vueCreationPersonnage){
+        this._vueCreationPersonnage = vueCreationPersonnage;
     }
 
     /**
