@@ -30,6 +30,8 @@ public class PresentateurCombat {
      * La méthode permet de creer une ennemie avec tous ses attibuts.
      */
     public void creationEnnemie(){
+        _ennemie = new Ennemie("Purge",5,5,5,5);
+        /*
         int num,force,endurence,agilité,intelligence;
         num = new Random().nextInt((6 - 1) + 1) + 1;
         force = 10 + num;
@@ -39,7 +41,7 @@ public class PresentateurCombat {
         agilité = 10 + num;
         num = new Random().nextInt((6 - 1) + 1) + 1;
         intelligence = 5 + num;
-        _ennemie = new Ennemie("Purge",force,endurence,agilité,intelligence);
+        _ennemie = new Ennemie("Purge",force,endurence,agilité,intelligence);*/
     }
 
     /**

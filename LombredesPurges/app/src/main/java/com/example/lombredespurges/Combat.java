@@ -178,6 +178,11 @@ public class Combat extends Fragment {
                     public void onClick(View v) {
                         bundle = new Bundle();
                         bundle.putSerializable("Personnage",personnage);
+                        bundle.putBoolean("CombatFinit",true);
+                        bundle.putInt("ChoixPasséeAction", getArguments().getInt("ChoixPassée"));
+                        bundle.putInt("Étape",getArguments().getInt("ÉtapeVue"));
+
+                        bundle.putString("ChapitreCouranteAction",getArguments().getString("ChapitreCourante"));
                         navController.navigate(R.id.chapitre_dino, bundle);
                     }
                 }
