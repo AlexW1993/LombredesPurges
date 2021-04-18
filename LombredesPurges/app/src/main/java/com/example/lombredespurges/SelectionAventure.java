@@ -1,5 +1,6 @@
 package com.example.lombredespurges;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-public class VueSelectionAventure extends Fragment {
+public class SelectionAventure extends Fragment {
 
     /**
      * Declaration des Attributs
@@ -22,12 +23,12 @@ public class VueSelectionAventure extends Fragment {
     Button btnKaqchikam;
     NavController navController;
 
-    public VueSelectionAventure() {
+    public SelectionAventure() {
         // Required empty public constructor
     }
 
-    public static VueSelectionAventure newInstance(String param1, String param2) {
-        VueSelectionAventure fragment = new VueSelectionAventure();
+    public static SelectionAventure newInstance(String param1, String param2) {
+        SelectionAventure fragment = new SelectionAventure();
         Bundle args = new Bundle();
         return fragment;
     }

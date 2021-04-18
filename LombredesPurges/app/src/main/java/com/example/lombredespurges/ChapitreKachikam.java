@@ -14,9 +14,9 @@ import androidx.annotation.Nullable;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-import com.example.lombredespurges.domaine.entité.Personnage;
+import com.example.lombredespurges.modèle.Personnage;
 
-public class VueChapitreKachikam extends Fragment {
+public class ChapitreKachikam extends Fragment {
 
     /**
      * Declaration des Attributs
@@ -33,12 +33,12 @@ public class VueChapitreKachikam extends Fragment {
     Personnage personnage;
     Bundle bundle;
 
-    public VueChapitreKachikam() {
+    public ChapitreKachikam() {
         // Required empty public constructor
     }
 
-    public static VueChapitreKachikam newInstance(String param1, String param2) {
-        VueChapitreKachikam fragment = new VueChapitreKachikam();
+    public static ChapitreKachikam newInstance(String param1, String param2) {
+        ChapitreKachikam fragment = new ChapitreKachikam();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;

@@ -14,9 +14,9 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-import com.example.lombredespurges.domaine.entité.Personnage;
+import com.example.lombredespurges.modèle.Personnage;
 
-public class VueChapitreVia extends Fragment {
+public class ChapitreVia extends Fragment {
 
     /**
      * Declaration des Attributs
@@ -33,12 +33,12 @@ public class VueChapitreVia extends Fragment {
     Personnage personnage;
     Bundle bundle;
 
-    public VueChapitreVia() {
+    public ChapitreVia() {
         // Required empty public constructor
     }
 
-    public static VueChapitreVia newInstance(String param1, String param2) {
-        VueChapitreVia fragment = new VueChapitreVia();
+    public static ChapitreVia newInstance(String param1, String param2) {
+        ChapitreVia fragment = new ChapitreVia();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;

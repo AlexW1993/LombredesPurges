@@ -1,5 +1,6 @@
 package com.example.lombredespurges;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-public class VueLinvasion extends Fragment {
+public class Linvasion extends Fragment {
 
     /**
      * Declaration des Attributs
@@ -20,12 +21,12 @@ public class VueLinvasion extends Fragment {
     Button btnContinuer;
     NavController navController;
 
-    public VueLinvasion() {
+    public Linvasion() {
         // Required empty public constructor
     }
 
-    public static VueLinvasion newInstance(String param1, String param2) {
-        VueLinvasion fragment = new VueLinvasion();
+    public static Linvasion newInstance(String param1, String param2) {
+        Linvasion fragment = new Linvasion();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
