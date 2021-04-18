@@ -20,6 +20,9 @@ import com.example.lombredespurges.presentateur.PresentateurCombat;
 
 public class Combat extends Fragment {
 
+    /**
+     * Declaration des Attributs
+     */
     Button btnContinuer;
     Button btnPageTitre;
     NavController navController;
@@ -82,7 +85,7 @@ public class Combat extends Fragment {
 
         presentateurCombat = new PresentateurCombat(this);
         personnage = (Personnage) getArguments().getSerializable("Personnage");
-        presentateurCombat.Personnage(personnage);
+        presentateurCombat.personnage(personnage);
 
         btnContinuer = view.findViewById(R.id.btnContinuer);
         btnPageTitre = view.findViewById(R.id.btnPageTitre);
@@ -91,24 +94,24 @@ public class Combat extends Fragment {
         btnPageTitre .setVisibility(View.GONE);
 
         nomPersonnage = view.findViewById(R.id.nomPersonnage);
-        nomPersonnage.setText(presentateurCombat.getNomPersonnage().toUpperCase());
+        nomPersonnage.setText(presentateurCombat.nomPersonnage().toUpperCase());
         forcePersonnage = view.findViewById(R.id.forceheros);
-        forcePersonnage.setText(String.valueOf(presentateurCombat.getForcePersonnage()));
+        forcePersonnage.setText(String.valueOf(presentateurCombat.forcePersonnage()));
         agilitéPersonnage = view.findViewById(R.id.agiliteheros);
-        agilitéPersonnage.setText(String.valueOf(presentateurCombat.getAgilitéPersonnage()));
+        agilitéPersonnage.setText(String.valueOf(presentateurCombat.agilitéPersonnage()));
         endurancePersonnage = view.findViewById(R.id.enduranceheros);
-        endurancePersonnage.setText(String.valueOf(presentateurCombat.getEndurencePersonnage()));
+        endurancePersonnage.setText(String.valueOf(presentateurCombat.endurencePersonnage()));
         défencePersonnage = view.findViewById(R.id.defenceheros);
         coefAttaquePersonnage = view.findViewById(R.id.coefAttaquePersonnage);
 
         nomEnnemi = view.findViewById(R.id.nomEnnemi);
-        nomEnnemi.setText(presentateurCombat.getNomEnnemie().toUpperCase());
+        nomEnnemi.setText(presentateurCombat.nomEnnemie().toUpperCase());
         forceEnnemie = view.findViewById(R.id.forcepurge);
-        forceEnnemie.setText(String.valueOf(presentateurCombat.getForceEnnemie()));
+        forceEnnemie.setText(String.valueOf(presentateurCombat.forceEnnemie()));
         agilitéEnnemie = view.findViewById(R.id.agilitepurge);
-        agilitéEnnemie.setText(String.valueOf(presentateurCombat.getAgilitéPersonnage()));
+        agilitéEnnemie.setText(String.valueOf(presentateurCombat.agilitéPersonnage()));
         enduranceEnnemie = view.findViewById(R.id.endurancepurge);
-        enduranceEnnemie.setText(String.valueOf(presentateurCombat.getEndurenceEnnemie()));
+        enduranceEnnemie.setText(String.valueOf(presentateurCombat.endurenceEnnemie()));
         défenceEnnemie = view.findViewById(R.id.defencepurge);
         coefAttaqueEnnemi = view.findViewById(R.id.coefAttaqueEnnemi);
 
@@ -121,29 +124,29 @@ public class Combat extends Fragment {
                     @Override
                     public void onClick(View v) {
                         presentateurCombat.calculerCoefAttaque();
-                        coefAttaquePersonnage.setText(String.valueOf(presentateurCombat.getCoefAttaquePersonnage()));
-                        coefAttaqueEnnemi.setText(String.valueOf(presentateurCombat.getCoefAttaqueEnnemie()));
+                        coefAttaquePersonnage.setText(String.valueOf(presentateurCombat.coefAttaquePersonnage()));
+                        coefAttaqueEnnemi.setText(String.valueOf(presentateurCombat.coefAttaqueEnnemie()));
                         tourJoueur = presentateurCombat.comparaisonCoefAttaque();
                         accionDuTour = presentateurCombat.tourDAttaquer(tourJoueur);
                         if (tourJoueur){
-                            défenceEnnemie.setText(String.valueOf(presentateurCombat.getCoefDefencéEnnemie()));
-                            enduranceEnnemie.setText(String.valueOf(presentateurCombat.getEndurenceEnnemie()));
+                            défenceEnnemie.setText(String.valueOf(presentateurCombat.coefDefencéEnnemie()));
+                            enduranceEnnemie.setText(String.valueOf(presentateurCombat.endurenceEnnemie()));
                             if(accionDuTour == 1){
                                 btnContinuer.setVisibility(View.VISIBLE);
                                 btnDé.setVisibility(View.GONE);
-                                deroulementCombat.setText("Vous avez attaqué : " + presentateurCombat.getDommagesEnnemie() + " de dommage a été fait. L'ennemi est battu");
+                                deroulementCombat.setText("Vous avez attaqué : " + presentateurCombat.dommagesEnnemie() + " de dommage a été fait. L'ennemi est battu");
                             }else if (accionDuTour == 2){
-                                deroulementCombat.setText("Vous avez attaqué : " + presentateurCombat.getDommagesEnnemie() + " de dommage a été fait. Jouer le dé pour prochain tour");
+                                deroulementCombat.setText("Vous avez attaqué : " + presentateurCombat.dommagesEnnemie() + " de dommage a été fait. Jouer le dé pour prochain tour");
                             }
                         }else{
-                            défencePersonnage.setText(String.valueOf(presentateurCombat.getCoefDefencéPersonnage()));
-                            endurancePersonnage.setText(String.valueOf(presentateurCombat.getEndurencePersonnage()));
+                            défencePersonnage.setText(String.valueOf(presentateurCombat.coefDefencéPersonnage()));
+                            endurancePersonnage.setText(String.valueOf(presentateurCombat.endurencePersonnage()));
                             if(accionDuTour == 3) {
                                 btnPageTitre.setVisibility(View.VISIBLE);
-                                deroulementCombat.setText("Vous êtes attaqué : " + presentateurCombat.getDommagesPersonnage() + " de dommage a été fait. Vous êtes battu");
+                                deroulementCombat.setText("Vous êtes attaqué : " + presentateurCombat.dommagesPersonnage() + " de dommage a été fait. Vous êtes battu");
                                 btnDé.setVisibility(View.GONE);
                             }else if (accionDuTour == 4){
-                                deroulementCombat.setText("Vous êtes attaqué : " + presentateurCombat.getDommagesPersonnage() + " de dommage a été fait. Jouer le dé pour prochain tour");
+                                deroulementCombat.setText("Vous êtes attaqué : " + presentateurCombat.dommagesPersonnage() + " de dommage a été fait. Jouer le dé pour prochain tour");
                             }
                         }
 

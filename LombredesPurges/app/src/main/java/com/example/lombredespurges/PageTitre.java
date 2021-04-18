@@ -15,6 +15,9 @@ import androidx.navigation.Navigation;
 
 public class PageTitre extends Fragment {
 
+    /**
+     * Declaration des Attributs
+     */
     Button btnContinuer;
     NavController navController;
 

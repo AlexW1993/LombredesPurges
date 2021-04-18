@@ -15,6 +15,9 @@ import androidx.navigation.Navigation;
 
 public class SelectionAventure extends Fragment {
 
+    /**
+     * Declaration des Attributs
+     */
     Button btnDino;
     Button btnVia;
     Button btnKaqchikam;

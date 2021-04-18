@@ -21,6 +21,9 @@ import com.example.lombredespurges.presentateur.PresentateurCreationPersonnage;
 
 public class CreationPersonnage extends Fragment {
 
+    /**
+     * Declaration des Attributs
+     */
     Button btnContinuer;
     NavController navController;
     EditText editName;
