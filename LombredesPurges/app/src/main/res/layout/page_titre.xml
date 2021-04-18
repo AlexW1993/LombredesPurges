@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#1E2449"
-    tools:context=".VuePageTitre">
+    tools:context=".PageTitre">
 
     <ImageView
         android:id="@+id/imageView"

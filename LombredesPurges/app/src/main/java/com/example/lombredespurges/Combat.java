@@ -14,11 +14,11 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-import com.example.lombredespurges.domaine.entité.Personnage;
-import com.example.lombredespurges.présentation.présentateur.PresentateurCombat;
+import com.example.lombredespurges.modèle.Personnage;
+import com.example.lombredespurges.presentateur.PresentateurCombat;
 
 
-public class VueCombat extends Fragment {
+public class Combat extends Fragment {
 
     /**
      * Declaration des Attributs
@@ -56,12 +56,12 @@ public class VueCombat extends Fragment {
     PresentateurCombat presentateurCombat;
 
 
-    public VueCombat() {
+    public Combat() {
         // Required empty public constructor
     }
 
-    public static VueCombat newInstance(String param1, String param2) {
-        VueCombat fragment = new VueCombat();
+    public static Combat newInstance(String param1, String param2) {
+        Combat fragment = new Combat();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
