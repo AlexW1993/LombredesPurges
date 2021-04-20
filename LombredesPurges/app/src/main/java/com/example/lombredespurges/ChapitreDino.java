@@ -62,10 +62,10 @@ public class ChapitreDino extends Fragment{
         super.onViewCreated(view, savedInstanceState);
         navController = Navigation.findNavController(view);
 
-        imgRaceChap = view.findViewById(R.id.imageRaceChapitre);
-        txtNumeroChapitre = view.findViewById(R.id.NumeroChapitre);
-        texteChapitre = view.findViewById(R.id.texteChapitreDino);
-        texteContenueChapitre = view.findViewById(R.id.contenueChapitreDino);
+        imgRaceChap = view.findViewById(R.id.raceChap);
+        txtNumeroChapitre = view.findViewById(R.id.texteTitre);
+        texteChapitre = view.findViewById(R.id.texteTitre4);
+        texteContenueChapitre = view.findViewById(R.id.texteChapitre);
 
         btnPageTitre = view.findViewById(R.id.buttonMenu);
         btnPageTitre.setVisibility(View.GONE);

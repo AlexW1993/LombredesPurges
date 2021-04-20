@@ -11,55 +11,6 @@
     android:background="#1E2449"
     tools:context=".Combat">
 
-
-    <Button
-        android:id="@+id/btnContinuer"
-        style="@style/Widget.AppCompat.Button"
-        android:layout_width="202dp"
-        android:layout_height="53dp"
-        android:layout_marginBottom="4dp"
-        android:fontFamily="@font/aldrich"
-        android:text="@string/continuer"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        app:backgroundTint="#03A9F4"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:strokeColor="#000000" />
-
-    <TextView
-        android:id="@+id/combattitre"
-        android:layout_width="411dp"
-        android:layout_height="49dp"
-        android:fontFamily="@font/aldrich"
-        android:gravity="center"
-        android:shadowColor="#040202"
-        android:shadowRadius="60"
-        android:text="@string/combat"
-        android:textColor="#DAC614"
-        android:textSize="44sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/deroulementcombattexte"
-        android:layout_width="409dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="24dp"
-        android:fontFamily="@font/aldrich"
-        android:gravity="center"
-        android:shadowColor="#000000"
-        android:shadowRadius="60"
-        android:text="@string/calculer_le_coefficient_d_attaque_de_chaque_bellig_rant_agilit_du_personnage_d_s"
-        android:textColor="#DAC614"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/combattitre" />
-
     <ImageView
         android:id="@+id/imageView11"
         android:layout_width="259dp"
@@ -79,29 +30,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/purge1" />
 
-    <ImageButton
-        android:id="@+id/combatDé"
-        android:layout_width="77dp"
-        android:layout_height="77dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/boutondes"
-        android:padding="5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout7" />
-
     <LinearLayout
         android:id="@+id/linearLayout7"
-        android:layout_width="379dp"
-        android:layout_height="340dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="348dp"
+        android:layout_height="345dp"
         android:gravity="center"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/imageView11"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/deroulementcombattexte">
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout12"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:id="@+id/linearLayout6"
@@ -382,6 +321,65 @@
                 android:textStyle="bold" />
 
         </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout12"
+        android:layout_width="370dp"
+        android:layout_height="307dp"
+        android:gravity="center|center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/combattitre"
+            android:layout_width="411dp"
+            android:layout_height="49dp"
+            android:fontFamily="@font/aldrich"
+            android:gravity="center"
+            android:shadowColor="#040202"
+            android:shadowRadius="60"
+            android:text="@string/combat"
+            android:textColor="#DAC614"
+            android:textSize="44sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/deroulementcombattexte"
+            android:layout_width="409dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/aldrich"
+            android:gravity="center"
+            android:shadowColor="#000000"
+            android:shadowRadius="60"
+            android:text="@string/calculer_le_coefficient_d_attaque_de_chaque_bellig_rant_agilit_du_personnage_d_s"
+            android:textColor="#DAC614"
+            android:textSize="18sp" />
+
+        <ImageButton
+            android:id="@+id/combatDé"
+            android:layout_width="77dp"
+            android:layout_height="77dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/boutondes"
+            android:padding="5dp" />
+
+        <Button
+            android:id="@+id/btnContinuer"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="202dp"
+            android:layout_height="53dp"
+            android:fontFamily="@font/aldrich"
+            android:text="@string/continuer"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            app:backgroundTint="#03A9F4"
+            app:strokeColor="#000000" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

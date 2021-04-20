@@ -24,7 +24,6 @@ public class Combat extends Fragment {
      * Declaration des Attributs
      */
     Button btnContinuer;
-    Button btnPageTitre;
     NavController navController;
     Personnage personnage;
 
@@ -88,10 +87,8 @@ public class Combat extends Fragment {
         presentateurCombat.personnage(personnage);
 
         btnContinuer = view.findViewById(R.id.btnContinuer);
-        btnPageTitre = view.findViewById(R.id.btnPageTitre);
         navController = Navigation.findNavController(view);
         btnContinuer.setVisibility(View.GONE);
-        btnPageTitre .setVisibility(View.GONE);
 
         nomPersonnage = view.findViewById(R.id.nomPersonnage);
         nomPersonnage.setText(presentateurCombat.nomPersonnage().toUpperCase());
@@ -133,6 +130,7 @@ public class Combat extends Fragment {
                             enduranceEnnemie.setText(String.valueOf(presentateurCombat.endurenceEnnemie()));
                             if(accionDuTour == 1){
                                 btnContinuer.setVisibility(View.VISIBLE);
+                                btnContinuer.setText("Continuer");
                                 btnDé.setVisibility(View.GONE);
                                 deroulementCombat.setText("Vous avez attaqué : " + presentateurCombat.dommagesEnnemie() + " de dommage a été fait. L'ennemi est battu");
                             }else if (accionDuTour == 2){
@@ -142,7 +140,8 @@ public class Combat extends Fragment {
                             défencePersonnage.setText(String.valueOf(presentateurCombat.coefDefencéPersonnage()));
                             endurancePersonnage.setText(String.valueOf(presentateurCombat.endurencePersonnage()));
                             if(accionDuTour == 3) {
-                                btnPageTitre.setVisibility(View.VISIBLE);
+                                btnContinuer.setVisibility(View.VISIBLE);
+                                btnContinuer.setText("Page titre");
                                 deroulementCombat.setText("Vous êtes attaqué : " + presentateurCombat.dommagesPersonnage() + " de dommage a été fait. Vous êtes battu");
                                 btnDé.setVisibility(View.GONE);
                             }else if (accionDuTour == 4){
@@ -152,22 +151,15 @@ public class Combat extends Fragment {
 
                         resultatEndurance = presentateurCombat.comparerEndurance();
                         if(resultatEndurance == 1){
-                            btnPageTitre.setVisibility(View.VISIBLE);
+                            btnContinuer.setVisibility(View.VISIBLE);
+                            btnContinuer.setText("Page titre");
                         }else if(resultatEndurance == 2){
                             btnContinuer.setVisibility(View.VISIBLE);
+                            btnContinuer.setText("Continuer");
                         }else {
-                            deroulementCombat.setText("Jouer le Dé pour déterminer l'attaquant");
+                            deroulementCombat.setText("Continuer");
                         }
 
-                    }
-                }
-        );
-
-        btnPageTitre.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        navController.navigate(R.id.pageTitre);
                     }
                 }
         );
@@ -176,14 +168,18 @@ public class Combat extends Fragment {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        bundle = new Bundle();
-                        bundle.putSerializable("Personnage",personnage);
-                        bundle.putBoolean("CombatFinit",true);
-                        bundle.putInt("ChoixPasséeAction", getArguments().getInt("ChoixPassée"));
-                        bundle.putInt("Étape",getArguments().getInt("ÉtapeVue"));
+                        if (btnContinuer.getText().equals("Continuer")){
+                            bundle = new Bundle();
+                            bundle.putSerializable("Personnage",personnage);
+                            bundle.putBoolean("CombatFinit",true);
+                            bundle.putInt("ChoixPasséeAction", getArguments().getInt("ChoixPassée"));
+                            bundle.putInt("Étape",getArguments().getInt("ÉtapeVue"));
 
-                        bundle.putString("ChapitreCouranteAction",getArguments().getString("ChapitreCourante"));
-                        navController.navigate(R.id.chapitre_dino, bundle);
+                            bundle.putString("ChapitreCouranteAction",getArguments().getString("ChapitreCourante"));
+                            navController.navigate(R.id.chapitre_dino, bundle);
+                        } else if (btnContinuer.getText().equals("Page titre")){
+                            navController.navigate(R.id.pageTitre);
+                        }
                     }
                 }
         );

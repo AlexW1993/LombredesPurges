@@ -16,7 +16,6 @@
         android:layout_marginRight="60dp"
         android:layout_marginBottom="4dp"
         android:fontFamily="@font/aldrich"
-        android:tag="1"
         android:text="Aller vers la ville."
         android:textColor="#000000"
         android:textSize="10sp"
@@ -78,7 +77,7 @@
         app:strokeColor="#000000" />
 
     <ImageView
-        android:id="@+id/imageRaceChapitre"
+        android:id="@+id/raceChap"
         android:layout_width="416dp"
         android:layout_height="385dp"
         android:layout_marginEnd="4dp"
@@ -88,7 +87,7 @@
         app:srcCompat="@drawable/dinoh" />
 
     <TextView
-        android:id="@+id/NumeroChapitre"
+        android:id="@+id/texteTitre"
         android:layout_width="200dp"
         android:layout_height="62dp"
         android:fontFamily="@font/aldrich"
@@ -102,7 +101,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/texteChapitreDino"
+        android:id="@+id/texteTitre4"
         android:layout_width="220dp"
         android:layout_height="62dp"
         android:fontFamily="@font/aldrich"
@@ -112,12 +111,11 @@
         android:textColor="#AE5959"
         android:textSize="44sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/NumeroChapitre"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/texteTitre"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/contenueChapitreDino"
+        android:id="@+id/texteChapitre"
         android:layout_width="406dp"
         android:layout_height="485dp"
         android:layout_marginStart="4dp"
@@ -130,6 +128,6 @@
         android:textColor="#EFBFBF"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/NumeroChapitre" />
+        app:layout_constraintTop_toBottomOf="@+id/texteTitre" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
