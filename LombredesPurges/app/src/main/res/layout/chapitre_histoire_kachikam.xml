@@ -8,7 +8,7 @@
     tools:context=".ChapitreKachikam">
 
     <Button
-        android:id="@+id/buttonChoixka1"
+        android:id="@+id/buttonChoix1Ka"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="170dp"
         android:layout_height="70dp"
@@ -20,12 +20,12 @@
         android:textColor="#000000"
         android:textSize="10sp"
         app:backgroundTint="#03A9F4"
-        app:layout_constraintBottom_toTopOf="@+id/buttonChoixka2"
+        app:layout_constraintBottom_toTopOf="@+id/buttonChoix2Ka"
         app:layout_constraintEnd_toEndOf="parent"
         app:strokeColor="#000000" />
 
     <Button
-        android:id="@+id/buttonChoixka2"
+        android:id="@+id/buttonChoix2Ka"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="170dp"
         android:layout_height="70dp"
@@ -37,12 +37,12 @@
         android:textColor="#000000"
         android:textSize="10sp"
         app:backgroundTint="#03A9F4"
-        app:layout_constraintBottom_toTopOf="@+id/buttonChoixka3"
+        app:layout_constraintBottom_toTopOf="@+id/buttonChoix3Ka"
         app:layout_constraintEnd_toEndOf="parent"
         app:strokeColor="#000000" />
 
     <Button
-        android:id="@+id/buttonChoixka3"
+        android:id="@+id/buttonChoix3Ka"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="170dp"
         android:layout_height="70dp"
@@ -54,12 +54,12 @@
         android:textColor="#000000"
         android:textSize="10sp"
         app:backgroundTint="#03A9F4"
-        app:layout_constraintBottom_toTopOf="@+id/buttonMenu3"
+        app:layout_constraintBottom_toTopOf="@+id/buttonMenuKa"
         app:layout_constraintEnd_toEndOf="parent"
         app:strokeColor="#000000" />
 
     <Button
-        android:id="@+id/buttonMenu3"
+        android:id="@+id/buttonMenuKa"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="150dp"
         android:layout_height="50dp"
@@ -77,7 +77,7 @@
         app:strokeColor="#000000" />
 
     <ImageView
-        android:id="@+id/raceChap3"
+        android:id="@+id/imageRaceChapitreKa"
         android:layout_width="404dp"
         android:layout_height="403dp"
         android:layout_marginBottom="4dp"
@@ -87,7 +87,7 @@
         app:srcCompat="@drawable/kaqchikam" />
 
     <TextView
-        android:id="@+id/texteChapitre3"
+        android:id="@+id/contenueChapitreKa"
         android:layout_width="406dp"
         android:layout_height="485dp"
         android:layout_marginStart="4dp"
@@ -100,10 +100,10 @@
         android:textColor="#EFBFBF"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/texteTitre3" />
+        app:layout_constraintTop_toBottomOf="@+id/numeroChapitreKa" />
 
     <TextView
-        android:id="@+id/texteTitre3"
+        android:id="@+id/numeroChapitreKa"
         android:layout_width="200dp"
         android:layout_height="62dp"
         android:fontFamily="@font/aldrich"
@@ -117,7 +117,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/texteTitre5"
+        android:id="@+id/texteChapitreKa"
         android:layout_width="230dp"
         android:layout_height="62dp"
         android:fontFamily="@font/aldrich"
@@ -127,7 +127,7 @@
         android:textColor="#AE5959"
         android:textSize="44sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/texteTitre3"
+        app:layout_constraintEnd_toStartOf="@+id/numeroChapitreKa"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

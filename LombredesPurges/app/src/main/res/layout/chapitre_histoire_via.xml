@@ -54,12 +54,12 @@
         android:textColor="#000000"
         android:textSize="10sp"
         app:backgroundTint="#03A9F4"
-        app:layout_constraintBottom_toTopOf="@+id/buttonMenu2"
+        app:layout_constraintBottom_toTopOf="@+id/buttonMenuVIA"
         app:layout_constraintEnd_toEndOf="parent"
         app:strokeColor="#000000" />
 
     <Button
-        android:id="@+id/buttonMenu2"
+        android:id="@+id/buttonMenuVIA"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="150dp"
         android:layout_height="50dp"
@@ -77,7 +77,7 @@
         app:strokeColor="#000000" />
 
     <ImageView
-        android:id="@+id/raceChap2"
+        android:id="@+id/imageRaceChapitreVIA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -85,7 +85,7 @@
         app:srcCompat="@drawable/via" />
 
     <TextView
-        android:id="@+id/texteChapitre2"
+        android:id="@+id/contenueChapitreVIA"
         android:layout_width="406dp"
         android:layout_height="485dp"
         android:layout_marginStart="4dp"
@@ -98,10 +98,10 @@
         android:textColor="#EFBFBF"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/texteTitre2" />
+        app:layout_constraintTop_toBottomOf="@+id/numeroChapitreVIA" />
 
     <TextView
-        android:id="@+id/texteTitre2"
+        android:id="@+id/numeroChapitreVIA"
         android:layout_width="200dp"
         android:layout_height="62dp"
         android:fontFamily="@font/aldrich"
@@ -115,7 +115,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/texteTitre6"
+        android:id="@+id/texteChapitreVIA"
         android:layout_width="230dp"
         android:layout_height="62dp"
         android:fontFamily="@font/aldrich"
@@ -125,6 +125,6 @@
         android:textColor="#AE5959"
         android:textSize="44sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/texteTitre2"
+        app:layout_constraintEnd_toStartOf="@+id/numeroChapitreVIA"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

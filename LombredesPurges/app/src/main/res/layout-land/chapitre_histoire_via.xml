@@ -8,7 +8,7 @@
     tools:context=".ChapitreVia">
 
     <Button
-        android:id="@+id/buttonMenu2"
+        android:id="@+id/buttonMenuVIA"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="150dp"
         android:layout_height="50dp"
@@ -26,7 +26,7 @@
         app:strokeColor="#000000" />
 
     <ImageView
-        android:id="@+id/raceChap2"
+        android:id="@+id/imageRaceChapitreVIA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -35,7 +35,7 @@
         app:srcCompat="@drawable/via" />
 
     <TextView
-        android:id="@+id/texteChapitre2"
+        android:id="@+id/contenueChapitreVIA"
         android:layout_width="483dp"
         android:layout_height="327dp"
         android:fontFamily="@font/aldrich"
@@ -112,14 +112,14 @@
         android:layout_width="437dp"
         android:layout_height="66dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/texteChapitre2"
+        app:layout_constraintBottom_toTopOf="@+id/contenueChapitreVIA"
         app:layout_constraintEnd_toStartOf="@+id/linearLayout16"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/texteTitre6"
+            android:id="@+id/texteChapitreVIA"
             android:layout_width="230dp"
             android:layout_height="62dp"
             android:fontFamily="@font/aldrich"
@@ -131,7 +131,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/texteTitre2"
+            android:id="@+id/numeroChapitreVIA"
             android:layout_width="200dp"
             android:layout_height="62dp"
             android:fontFamily="@font/aldrich"
