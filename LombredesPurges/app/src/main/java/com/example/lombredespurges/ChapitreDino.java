@@ -18,17 +18,16 @@ import com.example.lombredespurges.modèle.Personnage;
 
 public class ChapitreDino extends Fragment{
 
-    ImageView imgRaceChap;
-    TextView texteContenueChapitre;
-    TextView txtNumeroChapitre;
-    TextView texteChapitre;
-    Button btnChoix1;
-    Button btnChoix2;
-    Button btnChoix3;
-    Button btnPageTitre;
-    NavController navController;
-    Personnage personnage;
-    Bundle bundle;
+    private TextView texteContenueChapitre;
+    private TextView txtNumeroChapitre;
+    private TextView texteChapitre;
+    private Button btnChoix1;
+    private Button btnChoix2;
+    private Button btnChoix3;
+    private Button btnPageTitre;
+    private NavController navController;
+    private Personnage personnage;
+    private Bundle bundle;
 
     private int étapeCourant;
     private String chapitreCourante;
@@ -62,10 +61,9 @@ public class ChapitreDino extends Fragment{
         super.onViewCreated(view, savedInstanceState);
         navController = Navigation.findNavController(view);
 
-        imgRaceChap = view.findViewById(R.id.raceChap);
-        txtNumeroChapitre = view.findViewById(R.id.texteTitre);
-        texteChapitre = view.findViewById(R.id.texteTitre4);
-        texteContenueChapitre = view.findViewById(R.id.texteChapitre);
+        txtNumeroChapitre = view.findViewById(R.id.NumeroChapitre);
+        texteChapitre = view.findViewById(R.id.texteChapitreDino);
+        texteContenueChapitre = view.findViewById(R.id.contenueChapitreDino);
 
         btnPageTitre = view.findViewById(R.id.buttonMenu);
         btnPageTitre.setVisibility(View.GONE);
@@ -75,9 +73,9 @@ public class ChapitreDino extends Fragment{
         bundle.putSerializable("Personnage", personnage);
 
 
-        btnChoix1 = view.findViewById(R.id.buttonChoix1);
-        btnChoix2 = view.findViewById(R.id.buttonChoix2);
-        btnChoix3 = view.findViewById(R.id.buttonChoix3);
+        btnChoix1 = view.findViewById(R.id.buttonChoix1Dino);
+        btnChoix2 = view.findViewById(R.id.buttonChoix2Dino);
+        btnChoix3 = view.findViewById(R.id.buttonChoix3Dino);
 
         chapitreCourante = getArguments().getString("ChapitreCouranteAction");
         étapeCourant = detectionÉtape(getArguments());

@@ -21,17 +21,19 @@ public class ChapitreVia extends Fragment {
     /**
      * Declaration des Attributs
      */
-    ImageView raceChap;
-    TextView texteChapitre;
-    TextView texteTitre;
-    TextView texteTitre2;
-    Button choix1;
-    Button choix2;
-    Button choix3;
-    Button pageTitre;
-    NavController navController;
-    Personnage personnage;
-    Bundle bundle;
+    private TextView texteContenueChapitre;
+    private TextView txtNumeroChapitre;
+    private TextView texteChapitre;
+    private Button btnChoix1;
+    private Button btnChoix2;
+    private Button btnChoix3;
+    private Button btnPageTitre;
+    private NavController navController;
+    private Personnage personnage;
+    private Bundle bundle;
+
+    private int étapeCourant;
+    private String chapitreCourante;
 
     public ChapitreVia() {
         // Required empty public constructor
@@ -44,134 +46,10 @@ public class ChapitreVia extends Fragment {
         return fragment;
     }
 
-    public void changerImage() {
-        String nomRace = getArguments().getString("nomRace");
-
-        if (nomRace.equals("via")) {
-            raceChap.setImageDrawable(getResources().getDrawable(R.drawable.via));
-        } else if (nomRace.equals("kaqchikam")) {
-            raceChap.setImageDrawable(getResources().getDrawable(R.drawable.kaqchikam));
-        } else if (nomRace.equals("dino")) {
-            raceChap.setImageDrawable(getResources().getDrawable(R.drawable.dinoh));
-        }
-    }
-
-
-    public void choixChemin(String _numeroChapitre, int texte,int choixUn,int choixDeux,int choixTrois){
-        texteTitre.setText(_numeroChapitre);
-        texteChapitre.setText(texte);
-        choix1.setText(choixUn);
-        choix2.setText(choixDeux);
-        choix3.setText(choixTrois);
-    }
-
-    public void cheminFinal(int _texteFin, int texte){
-        String nom = getArguments().getString("nom");
-        texteTitre.setText(nom);
-        texteTitre2.setText(_texteFin);
-        texteChapitre.setText(texte);
-        choix1.setVisibility(View.GONE);
-        choix2.setVisibility(View.GONE);
-        choix3.setVisibility(View.GONE);
-        pageTitre.setVisibility(View.VISIBLE);
-        pageTitre.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                navController.navigate(R.id.pageTitre);
-            }
-        });
-    }
-
-    public void gestionChapitre2() {
-        choix1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //*******COMBAT*****//
-                navController.navigate(R.id.combat, bundle);
-                //***** COMBAT*****//
-                choixChemin("3",R.string.chapitre3_1Via,R.string.choix1_3_1Via,R.string.choix2_3_1Via,R.string.choix3_3_1Via);
-                gestionChapitre4();
-
-            }
-        });
-        choix2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                choixChemin("3",R.string.chapitre3_2Via,R.string.choix1_3_2Via,R.string.choix2_3_2Via,R.string.choix3_3_2Via);
-                gestionChapitre4();
-
-            }
-        });
-        choix3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                cheminFinal(R.string.dommage,R.string.chapitre3_3Via);
-            }
-        });
-
-    }
 
 
 
-    public void gestionChapitre4(){
-        choix1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                choixChemin("4",R.string.chapitre4_1Via,R.string.choix1_4_1Via,R.string.choix2_4_1Via,R.string.choix3_4_1Via);
-                choix1.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        cheminFinal(R.string.dommage,R.string.chapitrefin4Via);
-                    }
-                });
-                choix2.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        cheminFinal(R.string.bravo,R.string.chapitrefin2Via);
-                    }
-                });
-                choix3.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        cheminFinal(R.string.bravo,R.string.chapitrefin3Via);
-                    }
-                });
-            }
-        });
-        choix2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //*******COMBAT*****//
-                navController.navigate(R.id.combat, bundle);
-                //***** COMBAT*****//
-                choixChemin("4",R.string.chapitre4_2Via,R.string.choix1_4_2Via,R.string.choix2_4_2Via,R.string.choix3_4_2Via);
-                choix1.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        cheminFinal(R.string.dommage,R.string.chapitrefin5Via);
-                    }
-                });
-                choix2.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        cheminFinal(R.string.bravo,R.string.chapitrefin2Via);
-                    }
-                });
-                choix3.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        cheminFinal(R.string.dommage,R.string.chapitrefin6Via);
-                    }
-                });
-            }
-        });
-        choix3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                cheminFinal(R.string.dommage,R.string.chapitrefin1Via);
-            }
-        });
-    }
+
 
 
     @Override
@@ -189,78 +67,242 @@ public class ChapitreVia extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        raceChap = view.findViewById(R.id.raceChap2);
-        texteTitre = view.findViewById(R.id.texteTitre2);
-        texteTitre2 = view.findViewById(R.id.texteTitre6);
-        texteChapitre = view.findViewById(R.id.texteChapitre2);
-        choix1 = view.findViewById(R.id.buttonChoixVia1);
-        choix2 = view.findViewById(R.id.buttonChoixVia2);
-        choix3 = view.findViewById(R.id.buttonChoixVia3);
-        pageTitre = view.findViewById(R.id.buttonMenu2);
         navController = Navigation.findNavController(view);
-        changerImage();
-        texteTitre.setText("1");
-        texteChapitre.setText(R.string.chapitre1Via);
-        choix1.setText(R.string.choix1_1Via);
-        choix2.setText(R.string.choix2_1Via);
-        choix3.setText(R.string.choix3_1Via);
-        choix1.setVisibility(View.VISIBLE);
-        choix2.setVisibility(View.VISIBLE);
-        choix3.setVisibility(View.VISIBLE);
-        pageTitre.setVisibility(View.GONE);
+
+        txtNumeroChapitre = view.findViewById(R.id.numeroChapitreVIA);
+        texteChapitre = view.findViewById(R.id.texteChapitreVIA);
+        texteContenueChapitre = view.findViewById(R.id.contenueChapitreVIA);
+
+        btnPageTitre = view.findViewById(R.id.buttonMenuVIA);
+        btnPageTitre.setVisibility(View.GONE);
 
         personnage = (Personnage) getArguments().getSerializable("Personnage");
         bundle = new Bundle();
         bundle.putSerializable("Personnage", personnage);
 
-        choix1.setOnClickListener(new View.OnClickListener() {
-                                      @Override
-                                      public void onClick(View v) {
-                                          choixChemin("2",R.string.chapitre2_1Via,R.string.choix1_2_1Via,R.string.choix2_2_1Via,R.string.choix3_2_1Via);
-                                          gestionChapitre2();
-                                      }
-                                  }
-        );
 
-        choix2.setOnClickListener(new View.OnClickListener() {
-                                      @Override
-                                      public void onClick(View v) {
-                                          choixChemin("2", R.string.chapitre2_2Via, R.string.choix1_2_2Via, R.string.choix2_2_2Via, R.string.choix3_2_2Via);
-                                          gestionChapitre2();
-                                      }
-                                  }
-        );
-        choix3.setOnClickListener(new View.OnClickListener() {
-                                      @Override
-                                      public void onClick(View v) {
-                                          choixChemin("2",R.string.chapitre2_3Via,R.string.choix1_2_3Via,R.string.choix2_2_3Via,R.string.choix3_2_3Via);
-                                          choix1.setOnClickListener(new View.OnClickListener() {
-                                              @Override
-                                              public void onClick(View v) {
-                                                  //*******COMBAT*****//
-                                                  navController.navigate(R.id.combat, bundle);
-                                                  //***** COMBAT*****//
-                                                  choixChemin("3",R.string.chapitre3_6Via,R.string.choix1_3_6Via,R.string.choix2_3_6Via,R.string.choix3_3_6Via);
-                                                  gestionChapitre4();
-                                              }
-                                          });
-                                          choix2.setOnClickListener(new View.OnClickListener() {
-                                              @Override
-                                              public void onClick(View v) {
-                                                  choixChemin("3",R.string.chapitre3_5Via,R.string.choix1_3_5Via,R.string.choix2_3_5Via,R.string.choix3_3_5Via);
-                                                  gestionChapitre4();
-                                              }
-                                          });
-                                          choix3.setOnClickListener(new View.OnClickListener() {
-                                              @Override
-                                              public void onClick(View v) {
-                                                  cheminFinal(R.string.dommage,R.string.chapitre3_4Via);
-                                              }
-                                          });
-                                      }
-                                  }
-        );
+        btnChoix1 = view.findViewById(R.id.buttonChoixVia1);
+        btnChoix2 = view.findViewById(R.id.buttonChoixVia2);
+        btnChoix3 = view.findViewById(R.id.buttonChoixVia3);
+
+        chapitreCourante = getArguments().getString("ChapitreCouranteAction");
+        étapeCourant = detectionÉtape(getArguments());
+
+        gestionAffichageDesChapitres(getArguments().getInt("ChoixPasséeAction"));
+
+        btnChoix1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                étapeCourant++;
+                gestionAffichageDesChapitres(1);
+            }
+        });
+
+
+        btnChoix2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                étapeCourant++;
+                gestionAffichageDesChapitres(2);
+            }
+        });
+
+        btnChoix3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                étapeCourant++;
+                gestionAffichageDesChapitres(3);
+            }
+        });
+
+        btnPageTitre.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.pageTitre);
+            }
+        });
+
+
+
+    }
+
+    private int detectionÉtape(Bundle unBundle){
+        int etape = unBundle.getInt("Étape");
+
+        if (etape == 0 ){
+            return 1;
+        }else{
+            return etape;
+        }
+    }
+
+    private void gestionAffichageDesChapitres(int choix){
+
+
+        if(étapeCourant == 1){
+            gestionÉtape1();
+        }else if(étapeCourant == 2){
+            gestionÉtape2(choix);
+        }else if(étapeCourant == 3){
+            gestionÉtape3(choix);
+        }else if(étapeCourant == 4){
+            gestionÉtape4(choix);
+        }else if(étapeCourant == 5){
+            gestionÉtape5(choix);
+        }
+    }
+
+
+    private void gestionÉtape1(){
+        txtNumeroChapitre.setText("1");
+        texteContenueChapitre.setText(R.string.chapitre1Via);
+        btnChoix1.setText(R.string.choix1_1Via);
+        btnChoix2.setText(R.string.choix1_2Via);
+        btnChoix3.setText(R.string.choix1_3Via);
+        chapitreCourante = "1";
+    }
+
+    private void gestionÉtape2(int choix){
+
+        if(choix == 1){
+            txtNumeroChapitre.setText("2");
+            texteContenueChapitre.setText(R.string.chapitre2_1Via);
+            btnChoix1.setText(R.string.choix2_1_1Via);
+            btnChoix2.setText(R.string.choix2_1_2Via);
+            btnChoix3.setText(R.string.choix2_1_3Via);
+            chapitreCourante = "2_1";
+        }else if(choix == 2){
+            txtNumeroChapitre.setText("2");
+            texteContenueChapitre.setText(R.string.chapitre2_2Via);
+            btnChoix1.setText(R.string.choix2_2_1Via);
+            btnChoix2.setText(R.string.choix2_2_2Via);
+            btnChoix3.setText(R.string.choix2_2_3Via);
+            chapitreCourante = "2_2";
+        }else if (choix == 3){
+            txtNumeroChapitre.setText("2");
+            texteContenueChapitre.setText(R.string.chapitre2_3Via);
+            btnChoix1.setText(R.string.choix2_3_1Via);
+            btnChoix2.setText(R.string.choix2_3_2Via);
+            btnChoix3.setText(R.string.choix2_3_3Via);
+            chapitreCourante = "2_3";
+        }
+    }
+
+    private void gestionÉtape3(int choix){
+
+        if(choix == 1)  {
+
+            if (chapitreCourante.equals("2_1") || chapitreCourante.equals("2_2")){
+                boolean combatFinit = getArguments().getBoolean("CombatFinit");
+                if (!combatFinit) {
+                    bundle.putInt("ÉtapeVue", étapeCourant);
+                    bundle.putInt("ChoixPassée", 1);
+                    bundle.putString("ChapitreCourante",chapitreCourante);
+                    navController.navigate(R.id.combat, bundle);
+                } else {
+                    txtNumeroChapitre.setText("3");
+                    texteContenueChapitre.setText(R.string.chapitre3_1Via);
+                    btnChoix1.setText(R.string.choix3_1_1Via);
+                    btnChoix2.setText(R.string.choix3_1_2Via);
+                    btnChoix3.setText(R.string.choix3_1_3Via);
+                    chapitreCourante = "3_1";
+                }
+            }else if(chapitreCourante.equals("2_3")){
+                boolean combatFinit = getArguments().getBoolean("CombatFinit");
+                if (!combatFinit) {
+                    bundle.putInt("ÉtapeVue", étapeCourant);
+                    bundle.putInt("ChoixPassée", 1);
+                    bundle.putString("ChapitreCourante", chapitreCourante);
+                    navController.navigate(R.id.combat, bundle);
+                } else {
+                    txtNumeroChapitre.setText("3");
+                    texteContenueChapitre.setText(R.string.chapitre3_6Via);
+                    btnChoix1.setText(R.string.choix3_6_1Via);
+                    btnChoix2.setText(R.string.choix3_6_2Via);
+                    btnChoix3.setText(R.string.choix3_6_3Via);
+                    chapitreCourante = "3_6";
+                }
+            }
+
+        }else if(choix == 2){
+            if(chapitreCourante.equals("2_1") || chapitreCourante.equals("2_2")){
+                txtNumeroChapitre.setText("3");
+                texteContenueChapitre.setText(R.string.chapitre3_2Via);
+                btnChoix1.setText(R.string.choix3_2_1Via);
+                btnChoix2.setText(R.string.choix3_2_2Via);
+                btnChoix3.setText(R.string.choix3_2_3Via);
+                chapitreCourante = "3_2";
+            }else if(chapitreCourante.equals("2_3")){
+                txtNumeroChapitre.setText("3");
+                texteContenueChapitre.setText(R.string.chapitre3_5Via);
+                btnChoix1.setText(R.string.choix3_5_1Via);
+                btnChoix2.setText(R.string.choix3_5_2Via);
+                btnChoix3.setText(R.string.choix3_5_3Via);
+                chapitreCourante = "3_5";
+            }
+
+        }else if(choix == 3){
+            if(chapitreCourante.equals("2_1") || chapitreCourante.equals("2_2")){
+                cheminFinal(R.string.dommage,R.string.chapitre3_3Via);
+            }else if(chapitreCourante.equals("2_3")){
+                cheminFinal(R.string.dommage,R.string.chapitre3_4Via);
+            }
+        }
+    }
+
+    private void gestionÉtape4(int choix){
+        if(choix == 1){
+            cheminFinal(R.string.dommage,R.string.chapitrefin1Via);
+        }else if(choix == 2) {
+            txtNumeroChapitre.setText("4");
+            texteContenueChapitre.setText(R.string.chapitre4_1Via);
+            btnChoix1.setText(R.string.choix4_1_1Via);
+            btnChoix2.setText(R.string.choix4_1_2Via);
+            btnChoix3.setText(R.string.choix4_1_3Via);
+            chapitreCourante = "4_1";
+        }else if(choix == 3){
+            txtNumeroChapitre.setText("4");
+            texteContenueChapitre.setText(R.string.chapitre4_2Via);
+            btnChoix1.setText(R.string.choix4_2_1Via);
+            btnChoix2.setText(R.string.choix4_2_2Via);
+            btnChoix3.setText(R.string.choix4_2_3Via);
+            chapitreCourante = "4_2";
+        }
+    }
+
+    private void gestionÉtape5(int choix){
+        if(choix == 1){
+            if(chapitreCourante.equals("4_1")){
+                cheminFinal(R.string.dommage,R.string.chapitrefin4Via);
+            }else if(chapitreCourante.equals("4_2")){
+                cheminFinal(R.string.bravo,R.string.chapitrefin5Via);
+            }
+        }else if(choix == 2){
+            if(chapitreCourante.equals("4_1")){
+                cheminFinal(R.string.bravo,R.string.chapitrefin2Via);
+            }else if(chapitreCourante.equals("4_2")){
+                cheminFinal(R.string.dommage,R.string.chapitrefin2Via);
+            }
+        }else if(choix == 3){
+            if(chapitreCourante.equals("4_1")) {
+                cheminFinal(R.string.dommage, R.string.chapitrefin3Via);
+            }else if(chapitreCourante.equals("4_2")){
+                cheminFinal(R.string.dommage,R.string.chapitrefin6Via);
+            }
+        }
+
+    }
+
+    public void cheminFinal(int _texteFin, int texte){
+        String nom = personnage.get_nom();
+        txtNumeroChapitre.setText(nom);
+        texteChapitre.setText(_texteFin);
+        texteContenueChapitre.setText(texte);
+        btnChoix1.setVisibility(View.GONE);
+        btnChoix2.setVisibility(View.GONE);
+        btnChoix3.setVisibility(View.GONE);
+        btnPageTitre.setVisibility(View.VISIBLE);
+
     }
 
 

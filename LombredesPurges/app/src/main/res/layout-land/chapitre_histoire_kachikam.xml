@@ -8,7 +8,7 @@
     tools:context=".ChapitreKachikam">
 
     <Button
-        android:id="@+id/buttonMenu3"
+        android:id="@+id/buttonMenuKa"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="150dp"
         android:layout_height="50dp"
@@ -26,7 +26,7 @@
         app:strokeColor="#000000" />
 
     <ImageView
-        android:id="@+id/raceChap3"
+        android:id="@+id/imageRaceChapitreKa"
         android:layout_width="404dp"
         android:layout_height="403dp"
         android:layout_marginBottom="4dp"
@@ -36,7 +36,7 @@
         app:srcCompat="@drawable/kaqchikam" />
 
     <TextView
-        android:id="@+id/texteChapitre3"
+        android:id="@+id/contenueChapitreKa"
         android:layout_width="499dp"
         android:layout_height="302dp"
         android:fontFamily="@font/aldrich"
@@ -63,7 +63,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:id="@+id/buttonChoixka1"
+            android:id="@+id/buttonChoix1Ka"
             style="@style/Widget.AppCompat.Button"
             android:layout_width="170dp"
             android:layout_height="70dp"
@@ -78,7 +78,7 @@
             app:strokeColor="#000000" />
 
         <Button
-            android:id="@+id/buttonChoixka2"
+            android:id="@+id/buttonChoix2Ka"
             style="@style/Widget.AppCompat.Button"
             android:layout_width="170dp"
             android:layout_height="70dp"
@@ -93,7 +93,7 @@
             app:strokeColor="#000000" />
 
         <Button
-            android:id="@+id/buttonChoixka3"
+            android:id="@+id/buttonChoix3Ka"
             style="@style/Widget.AppCompat.Button"
             android:layout_width="170dp"
             android:layout_height="70dp"
@@ -119,7 +119,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/texteTitre5"
+            android:id="@+id/texteChapitreKa"
             android:layout_width="230dp"
             android:layout_height="62dp"
             android:fontFamily="@font/aldrich"
@@ -131,7 +131,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/texteTitre3"
+            android:id="@+id/numeroChapitreKa"
             android:layout_width="200dp"
             android:layout_height="62dp"
             android:fontFamily="@font/aldrich"
