@@ -12,31 +12,31 @@
         style="@style/Widget.AppCompat.Button"
         android:layout_width="202dp"
         android:layout_height="53dp"
+        android:layout_marginBottom="28dp"
         android:fontFamily="@font/aldrich"
         android:text="@string/continuer"
         android:textColor="#000000"
         android:textSize="24sp"
         app:backgroundTint="#03A9F4"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
         app:strokeColor="#000000" />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="TODO"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/purge1"
-        android:contentDescription="TODO" />
+        app:srcCompat="@drawable/purge1" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="322dp"
-        android:layout_height="74dp"
+        android:layout_width="288dp"
+        android:layout_height="76dp"
         android:fontFamily="@font/aldrich"
         android:gravity="center"
         android:shadowColor="#040202"
@@ -44,15 +44,16 @@
         android:textColor="#AE5959"
         android:textSize="48sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/imageView3"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/buttonPurges"
+        app:layout_constraintEnd_toStartOf="@+id/textView3"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="342dp"
-        android:layout_height="351dp"
+        android:layout_width="312dp"
+        android:layout_height="339dp"
         android:fontFamily="@font/aldrich"
         android:gravity="center"
         android:shadowColor="#000000"
@@ -62,7 +63,7 @@
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.36" />
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
