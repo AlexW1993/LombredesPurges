@@ -16,10 +16,11 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-import com.example.lombredespurges.modèle.Personnage;
-import com.example.lombredespurges.presentateur.PresentateurCreationPersonnage;
+import com.example.lombredespurges.domaine.entité.Personnage;
+import com.example.lombredespurges.présentation.IContratPrésentateurVueCreationPersonnage;
+import com.example.lombredespurges.présentation.PrésentateurCreationPersonnage;
 
-public class CreationPersonnage extends Fragment {
+public class VueCreationPersonnage extends Fragment implements IContratPrésentateurVueCreationPersonnage.IVueCreationPersonnage {
 
     /**
      * Declaration des Attributs
@@ -45,43 +46,26 @@ public class CreationPersonnage extends Fragment {
     int endurence;
     int agilité;
     int intelligence;
-    Personnage personnage;
+    //Personnage personnage;
 
-    PresentateurCreationPersonnage presentateurCreationPersonnage;
+    PrésentateurCreationPersonnage présentateurCreationPersonnage;
 
-    public CreationPersonnage() {
+    public VueCreationPersonnage() {
         // Required empty public constructor
     }
 
-    public static CreationPersonnage newInstance(String param1, String param2) {
-        CreationPersonnage fragment = new CreationPersonnage();
+    public static VueCreationPersonnage newInstance(String param1, String param2) {
+        VueCreationPersonnage fragment = new VueCreationPersonnage();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
     }
 
-    public void changerRace() {
-        String nomRace = getArguments().getString("race");
-
-        raceNom.setText(presentateurCreationPersonnage.choisirRace(nomRace));
-        raceDescription.setText(presentateurCreationPersonnage.descriptionRace(nomRace));
-        if (nomRace.equals("via")) {
-            raceImage.setImageDrawable(getResources().getDrawable(R.drawable.via));
-        } else if (nomRace.equals("kaqchikam")) {
-            raceImage.setImageDrawable(getResources().getDrawable(R.drawable.kaqchikam));
-        } else if (nomRace.equals("dino")) {
-            raceImage.setImageDrawable(getResources().getDrawable(R.drawable.dinoh));
-        }
-    }
-
-
-
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        presentateurCreationPersonnage = new PresentateurCreationPersonnage(this);
+        présentateurCreationPersonnage = new PrésentateurCreationPersonnage(this);
     }
 
     @Override
@@ -113,8 +97,7 @@ public class CreationPersonnage extends Fragment {
                     @Override
                     public void onClick(View v) {
                         btnForce.setVisibility(View.GONE);
-                        force = presentateurCreationPersonnage.calculerForce();
-                        txtForce.setText(" = " + force);
+                        présentateurCreationPersonnage.calculerAttribut("force");
                     }
                 }
         );
@@ -124,8 +107,7 @@ public class CreationPersonnage extends Fragment {
                     @Override
                     public void onClick(View v) {
                         btnEndurence.setVisibility(View.GONE);
-                        endurence =  presentateurCreationPersonnage.calculerEndurence();
-                        txtEndurence.setText(" = " + endurence);
+                        présentateurCreationPersonnage.calculerAttribut("endurance");
                     }
                 }
         );
@@ -135,8 +117,7 @@ public class CreationPersonnage extends Fragment {
                     @Override
                     public void onClick(View v) {
                         btnAgilité.setVisibility(View.GONE);
-                        agilité = presentateurCreationPersonnage.calculerAgilité();
-                        txtAgilité.setText(" = " + agilité);
+                        présentateurCreationPersonnage.calculerAttribut("agilité");
                     }
                 }
         );
@@ -146,14 +127,11 @@ public class CreationPersonnage extends Fragment {
                     @Override
                     public void onClick(View v) {
                         btnIntelligence.setVisibility(View.GONE);
-                        intelligence = presentateurCreationPersonnage.calculerIntelligence();
-                        txtIntelligence.setText(" = " + intelligence);
+                        présentateurCreationPersonnage.calculerAttribut("intelligence");
                     }
                 }
         );
-
         changerRace();
-
         btnContinuer.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -168,15 +146,59 @@ public class CreationPersonnage extends Fragment {
                             String nomRace = getArguments().getString("race");
                             bundle.putString("nomRace", nomRace);
 
-                            presentateurCreationPersonnage.creationPersonnage(editName.getText().toString(),force,endurence,agilité,intelligence);
-                            personnage = presentateurCreationPersonnage.get_personnage();
-                            bundle.putSerializable("Personnage",personnage);
-
-                            navController.navigate(presentateurCreationPersonnage.choixChapitre(nomRace), bundle);
+                            présentateurCreationPersonnage.informationPersonnage(editName.getText().toString(),force,endurence,agilité,intelligence);
+                            présentateurCreationPersonnage.chercherpersonnage(bundle);
+                            //bundle.putSerializable("Personnage",personnage);
+                            présentateurCreationPersonnage.choixChapitre(nomRace,bundle);
                         }
                     }
                 }
         );
+    }
 
+    public void changerRace() {
+        String nomRace = getArguments().getString("race");
+        présentateurCreationPersonnage.choisirRace(nomRace);
+    }
+
+    @Override
+    public void setRace(String race,int description, int codeImage) {
+        raceNom.setText(race);
+        raceDescription.setText(description);
+        raceImage.setImageDrawable(getResources().getDrawable(codeImage));
+    }
+
+    @Override
+    public void afficherChapitre(int choix, Bundle bundle) {
+        navController.navigate(choix, bundle);
+    }
+
+    @Override
+    public void ajouterPersonnage(Personnage unPersonnage, Bundle bundle) {
+        bundle.putSerializable("Personnage",unPersonnage);
+    }
+
+    @Override
+    public void ajouterForcePersonnage(int pointsTotal) {
+        force = pointsTotal;
+        txtForce.setText(" = " + force);
+    }
+
+    @Override
+    public void ajouterEndurancePersonnage(int pointsTotal) {
+        endurence = pointsTotal;
+        txtEndurence.setText(" = " + endurence);
+    }
+
+    @Override
+    public void ajouterAgilitéPersonnage(int pointsTotal) {
+        agilité = pointsTotal;
+        txtAgilité.setText(" = " + agilité);
+    }
+
+    @Override
+    public void ajouterIntelligencePersonnage(int pointsTotal) {
+        intelligence = pointsTotal;
+        txtIntelligence.setText(" = " + intelligence);
     }
 }

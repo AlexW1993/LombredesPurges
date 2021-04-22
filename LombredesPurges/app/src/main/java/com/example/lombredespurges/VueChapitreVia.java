@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -14,9 +13,9 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-import com.example.lombredespurges.modèle.Personnage;
+import com.example.lombredespurges.domaine.entité.Personnage;
 
-public class ChapitreVia extends Fragment {
+public class VueChapitreVia extends Fragment {
 
     /**
      * Declaration des Attributs
@@ -35,12 +34,12 @@ public class ChapitreVia extends Fragment {
     private int étapeCourant;
     private String chapitreCourante;
 
-    public ChapitreVia() {
+    public VueChapitreVia() {
         // Required empty public constructor
     }
 
-    public static ChapitreVia newInstance(String param1, String param2) {
-        ChapitreVia fragment = new ChapitreVia();
+    public static VueChapitreVia newInstance(String param1, String param2) {
+        VueChapitreVia fragment = new VueChapitreVia();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
