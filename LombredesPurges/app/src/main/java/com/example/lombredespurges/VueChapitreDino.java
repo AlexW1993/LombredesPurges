@@ -72,7 +72,7 @@ public class VueChapitreDino extends Fragment{
         personnage = (Personnage) getArguments().getSerializable("Personnage");
         bundle = new Bundle();
         bundle.putSerializable("Personnage", personnage);
-        bundle.putString("nomRace", "dino");
+        bundle.putString("race", "dino");
 
 
         btnChoix1 = view.findViewById(R.id.buttonChoix1Dino);

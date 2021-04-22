@@ -237,7 +237,16 @@ public class VueCombat extends Fragment implements IContratPrésentateurVueComba
         bundle.putInt("Étape",getArguments().getInt("ÉtapeVue"));
 
         bundle.putString("ChapitreCouranteAction",getArguments().getString("ChapitreCourante"));
-        navController.navigate(R.id.chapitre_dino, bundle);
+
+        String race = getArguments().getString("race");
+
+        if(race.equals("dino")){
+            navController.navigate(R.id.chapitre_dino, bundle);
+        }else if(race.equals("kaqchikam")){
+            navController.navigate(R.id.chapitre_kachikam, bundle);
+        }else if(race.equals("via")){
+            navController.navigate(R.id.chapitre_via, bundle);
+        }
     }
 
     public void changerRace() {
