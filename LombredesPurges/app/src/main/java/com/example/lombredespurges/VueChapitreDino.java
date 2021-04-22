@@ -26,6 +26,7 @@ public class VueChapitreDino extends Fragment{
     private Button btnPageTitre;
     private NavController navController;
     private Personnage personnage;
+    private String nomRace;
     private Bundle bundle;
 
     private int étapeCourant;
@@ -67,9 +68,11 @@ public class VueChapitreDino extends Fragment{
         btnPageTitre = view.findViewById(R.id.buttonMenu);
         btnPageTitre.setVisibility(View.GONE);
 
+        nomRace = getArguments().getString("race");
         personnage = (Personnage) getArguments().getSerializable("Personnage");
         bundle = new Bundle();
         bundle.putSerializable("Personnage", personnage);
+        bundle.putString("nomRace", "dino");
 
 
         btnChoix1 = view.findViewById(R.id.buttonChoix1Dino);
