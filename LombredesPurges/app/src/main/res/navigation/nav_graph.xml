@@ -6,7 +6,7 @@
     app:startDestination="@id/pageTitre">
     <fragment
         android:id="@+id/pageTitre"
-        android:name="com.example.lombredespurges.PageTitre"
+        android:name="com.example.lombredespurges.VuePageTitre"
         android:label="page_titre"
         tools:layout="@layout/page_titre" >
         <action
@@ -15,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/linvasion"
-        android:name="com.example.lombredespurges.Linvasion"
+        android:name="com.example.lombredespurges.VueLinvasion"
         android:label="l_invasion"
         tools:layout="@layout/l_invasion" >
         <action
@@ -24,7 +24,7 @@
     </fragment>
     <fragment
         android:id="@+id/lesPurges"
-        android:name="com.example.lombredespurges.LesPurges"
+        android:name="com.example.lombredespurges.VueLesPurges"
         android:label="les_purges"
         tools:layout="@layout/les_purges" >
         <action
@@ -33,7 +33,7 @@
     </fragment>
     <fragment
         android:id="@+id/dimensionCiblées"
-        android:name="com.example.lombredespurges.DimensionCiblées"
+        android:name="com.example.lombredespurges.VueDimensionCiblées"
         android:label="dimension_cible"
         tools:layout="@layout/dimension_cible" >
         <action
@@ -42,7 +42,7 @@
     </fragment>
     <fragment
         android:id="@+id/creationPersonnage"
-        android:name="com.example.lombredespurges.CreationPersonnage"
+        android:name="com.example.lombredespurges.VueCreationPersonnage"
         android:label="choix_personnage"
         tools:layout="@layout/creation_personnage" >
         <action
@@ -57,7 +57,7 @@
     </fragment>
     <fragment
         android:id="@+id/selectionAventure"
-        android:name="com.example.lombredespurges.SelectionAventure"
+        android:name="com.example.lombredespurges.VueSelectionAventure"
         android:label="selection_aventure"
         tools:layout="@layout/selection_aventure" >
         <action
@@ -67,7 +67,7 @@
 
     <fragment
         android:id="@+id/chapitre_dino"
-        android:name="com.example.lombredespurges.ChapitreDino"
+        android:name="com.example.lombredespurges.VueChapitreDino"
         android:label="chapitre_histoire"
         tools:layout="@layout/chapitre_histoire_dino" >
         <action
@@ -80,7 +80,7 @@
 
     <fragment
         android:id="@+id/combat"
-        android:name="com.example.lombredespurges.Combat"
+        android:name="com.example.lombredespurges.VueCombat"
         android:label="combat"
         tools:layout="@layout/combat" >
         <action
@@ -96,7 +96,7 @@
 
     <fragment
         android:id="@+id/chapitre_via"
-        android:name="com.example.lombredespurges.ChapitreVia"
+        android:name="com.example.lombredespurges.VueChapitreVia"
         android:label="chapitre_histoire_via"
         tools:layout="@layout/chapitre_histoire_via" >
         <action
@@ -109,7 +109,7 @@
 
     <fragment
         android:id="@+id/chapitre_kachikam"
-        android:name="com.example.lombredespurges.ChapitreKachikam"
+        android:name="com.example.lombredespurges.VueChapitreKachikam"
         android:label="chapitre_histoire_kachikam"
         tools:layout="@layout/chapitre_histoire_kachikam" >
         <action

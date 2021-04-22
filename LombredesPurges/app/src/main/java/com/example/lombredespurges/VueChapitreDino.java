@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -14,9 +13,9 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-import com.example.lombredespurges.modèle.Personnage;
+import com.example.lombredespurges.domaine.entité.Personnage;
 
-public class ChapitreDino extends Fragment{
+public class VueChapitreDino extends Fragment{
 
     private TextView texteContenueChapitre;
     private TextView txtNumeroChapitre;
@@ -32,12 +31,12 @@ public class ChapitreDino extends Fragment{
     private int étapeCourant;
     private String chapitreCourante;
 
-    public ChapitreDino() {
+    public VueChapitreDino() {
         // Required empty public constructor
     }
 
-    public static ChapitreDino newInstance(String param1, String param2) {
-        ChapitreDino fragment = new ChapitreDino();
+    public static VueChapitreDino newInstance(String param1, String param2) {
+        VueChapitreDino fragment = new VueChapitreDino();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;

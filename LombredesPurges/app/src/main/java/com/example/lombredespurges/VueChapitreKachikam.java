@@ -13,9 +13,9 @@ import androidx.annotation.Nullable;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-import com.example.lombredespurges.modèle.Personnage;
+import com.example.lombredespurges.domaine.entité.Personnage;
 
-public class ChapitreKachikam extends Fragment {
+public class VueChapitreKachikam extends Fragment {
 
     /**
      * Declaration des Attributs
@@ -34,12 +34,12 @@ public class ChapitreKachikam extends Fragment {
     private int étapeCourant;
     private String chapitreCourante;
 
-    public ChapitreKachikam() {
+    public VueChapitreKachikam() {
         // Required empty public constructor
     }
 
-    public static ChapitreKachikam newInstance(String param1, String param2) {
-        ChapitreKachikam fragment = new ChapitreKachikam();
+    public static VueChapitreKachikam newInstance(String param1, String param2) {
+        VueChapitreKachikam fragment = new VueChapitreKachikam();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -60,14 +60,13 @@ public class ChapitreKachikam extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         navController = Navigation.findNavController(view);
 
         txtNumeroChapitre = view.findViewById(R.id.numeroChapitreKa);
         texteChapitre = view.findViewById(R.id.texteChapitreKa);
         texteContenueChapitre = view.findViewById(R.id.contenueChapitreKa);
 
-        btnPageTitre = view.findViewById(R.id.buttonMenu);
+        btnPageTitre = view.findViewById(R.id.buttonMenuKa);
         btnPageTitre.setVisibility(View.GONE);
 
         personnage = (Personnage) getArguments().getSerializable("Personnage");
