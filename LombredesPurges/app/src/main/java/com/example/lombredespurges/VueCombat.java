@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -50,6 +51,9 @@ public class VueCombat extends Fragment implements IContratPrésentateurVueComba
     TextView enduranceEnnemie;
     TextView défenceEnnemie;
     TextView nomEnnemi;
+
+    ImageView raceImage;
+    String nomRace;
 
     Bundle bundle;
 
@@ -109,6 +113,9 @@ public class VueCombat extends Fragment implements IContratPrésentateurVueComba
 
         deroulementCombat = view.findViewById(R.id.deroulementcombattexte);
         deroulementCombat.setText("Jouer le Dé pour déterminer l'attaquant");
+
+        raceImage  = view.findViewById(R.id.imageView11);
+        changerRace();
 
         btnDé = view.findViewById(R.id.combatDé);
         btnDé.setOnClickListener(
@@ -231,5 +238,16 @@ public class VueCombat extends Fragment implements IContratPrésentateurVueComba
 
         bundle.putString("ChapitreCouranteAction",getArguments().getString("ChapitreCourante"));
         navController.navigate(R.id.chapitre_dino, bundle);
+    }
+
+    public void changerRace() {
+        nomRace = getArguments().getString("race");
+        if (nomRace.equals("via")) {
+            raceImage.setImageDrawable(getResources().getDrawable(R.drawable.via));
+        } else if (nomRace.equals("kaqchikam")) {
+            raceImage.setImageDrawable(getResources().getDrawable(R.drawable.kaqchikam));
+        } else if (nomRace.equals("dino")) {
+            raceImage.setImageDrawable(getResources().getDrawable(R.drawable.dinoh));
+        }
     }
 }

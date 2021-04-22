@@ -29,6 +29,7 @@ public class VueChapitreKachikam extends Fragment {
     Button btnPageTitre;
     NavController navController;
     Personnage personnage;
+    private String nomRace;
     Bundle bundle;
 
     private int étapeCourant;
@@ -69,9 +70,11 @@ public class VueChapitreKachikam extends Fragment {
         btnPageTitre = view.findViewById(R.id.buttonMenuKa);
         btnPageTitre.setVisibility(View.GONE);
 
+        nomRace = getArguments().getString("race");
         personnage = (Personnage) getArguments().getSerializable("Personnage");
         bundle = new Bundle();
         bundle.putSerializable("Personnage", personnage);
+        bundle.putString("race", "kaqchikam");
 
 
         btnChoix1 = view.findViewById(R.id.buttonChoix1Ka);
