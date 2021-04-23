@@ -53,7 +53,6 @@ public class VueCombat extends Fragment implements IContratPrésentateurVueComba
     TextView nomEnnemi;
 
     ImageView raceImage;
-    String nomRace;
 
     Bundle bundle;
 
