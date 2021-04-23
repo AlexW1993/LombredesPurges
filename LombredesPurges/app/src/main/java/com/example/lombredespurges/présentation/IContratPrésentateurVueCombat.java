@@ -19,6 +19,7 @@ public interface IContratPrésentateurVueCombat {
         public void calculerCoefAttaque();
         public void faireAccionAttaquer(int accion, boolean tourJoueur);
         public void chercherPersonage();
+        public void changerRace(String race);
     }
 
     public interface IVueCombat{
@@ -30,11 +31,12 @@ public interface IContratPrésentateurVueCombat {
         public void gestionAccion(int accion);
         public void setTextDefencéEndurenceEnnemie(int defenceEnnemie, int endurenceEnnemie);
         public void setTextDefencéEndurencePersonnage(int defencePersonnage, int endurencePersonnage);
-        public void faireAccion1(int dommage);
-        public void faireAccion2(int dommage);
-        public void faireAccion3(int dommage);
-        public void faireAccion4(int dommage);
+        public void faireAction1(int dommage);
+        public void faireAction2(int dommage);
+        public void faireAction3(int dommage);
+        public void faireAction4(int dommage);
         public void resultatEndurance(int resultat);
-        public void acquérirPersonnage(Personnage personnage);
+        public void envoiePersonnageDansProchaineVue(Personnage personnage);
+        public void actionChangerRace(int race);
     }
 }
