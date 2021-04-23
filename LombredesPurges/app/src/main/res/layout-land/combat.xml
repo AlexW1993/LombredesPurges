@@ -325,8 +325,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout12"
-        android:layout_width="370dp"
-        android:layout_height="307dp"
+        android:layout_width="430dp"
+        android:layout_height="311dp"
         android:gravity="center|center_horizontal"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"

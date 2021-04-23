@@ -29,7 +29,6 @@ public class VueChapitreVia extends Fragment {
     private Button btnPageTitre;
     private NavController navController;
     private Personnage personnage;
-    private String nomRace;
     private Bundle bundle;
 
     private int étapeCourant;
@@ -76,7 +75,6 @@ public class VueChapitreVia extends Fragment {
         btnPageTitre = view.findViewById(R.id.buttonMenuVIA);
         btnPageTitre.setVisibility(View.GONE);
 
-        nomRace = getArguments().getString("race");
         personnage = (Personnage) getArguments().getSerializable("Personnage");
         bundle = new Bundle();
         bundle.putSerializable("Personnage", personnage);

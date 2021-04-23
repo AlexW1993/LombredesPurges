@@ -29,7 +29,6 @@ public class VueChapitreKachikam extends Fragment {
     Button btnPageTitre;
     NavController navController;
     Personnage personnage;
-    private String nomRace;
     Bundle bundle;
 
     private int étapeCourant;
@@ -70,7 +69,6 @@ public class VueChapitreKachikam extends Fragment {
         btnPageTitre = view.findViewById(R.id.buttonMenuKa);
         btnPageTitre.setVisibility(View.GONE);
 
-        nomRace = getArguments().getString("race");
         personnage = (Personnage) getArguments().getSerializable("Personnage");
         bundle = new Bundle();
         bundle.putSerializable("Personnage", personnage);
@@ -343,7 +341,7 @@ public class VueChapitreKachikam extends Fragment {
                     bundle.putString("ChapitreCourante",chapitreCourante);
                     navController.navigate(R.id.combat, bundle);
                 } else {
-                    cheminFinal(R.string.bravo,R.string.chapitrefin6Kachikam);
+                    cheminFinal(R.string.dommage,R.string.chapitrefin6Kachikam);
                 }
             }
         }else if(choix == 3){
