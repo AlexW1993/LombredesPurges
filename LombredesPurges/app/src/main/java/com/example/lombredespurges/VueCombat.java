@@ -115,7 +115,7 @@ public class VueCombat extends Fragment implements IContratPrésentateurVueComba
         deroulementCombat.setText("Jouer le Dé pour déterminer l'attaquant");
 
         raceImage  = view.findViewById(R.id.imageView11);
-        changerRace();
+        présentateurCombat.changerRace(getArguments().getString("race"));
 
         btnDé = view.findViewById(R.id.combatDé);
         btnDé.setOnClickListener(
@@ -192,7 +192,7 @@ public class VueCombat extends Fragment implements IContratPrésentateurVueComba
     }
 
     @Override
-    public void faireAccion1(int dommage) {
+    public void faireAction1(int dommage) {
         btnContinuer.setVisibility(View.VISIBLE);
         btnContinuer.setText("Continuer");
         btnDé.setVisibility(View.GONE);
@@ -200,12 +200,12 @@ public class VueCombat extends Fragment implements IContratPrésentateurVueComba
     }
 
     @Override
-    public void faireAccion2(int dommage) {
+    public void faireAction2(int dommage) {
         deroulementCombat.setText("Vous avez attaqué : " + dommage + " de dommage a été fait. Jouer le dé pour prochain tour");
     }
 
     @Override
-    public void faireAccion3(int dommage) {
+    public void faireAction3(int dommage) {
         btnContinuer.setVisibility(View.VISIBLE);
         btnContinuer.setText("Page titre");
         deroulementCombat.setText("Vous êtes attaqué : " + dommage + " de dommage a été fait. Vous êtes battu");
@@ -213,7 +213,7 @@ public class VueCombat extends Fragment implements IContratPrésentateurVueComba
     }
 
     @Override
-    public void faireAccion4(int dommage) {
+    public void faireAction4(int dommage) {
         deroulementCombat.setText("Vous êtes attaqué : " + dommage + " de dommage a été fait. Jouer le dé pour prochain tour");
     }
 
@@ -229,7 +229,7 @@ public class VueCombat extends Fragment implements IContratPrésentateurVueComba
     }
 
     @Override
-    public void acquérirPersonnage(Personnage personnage) {
+    public void envoiePersonnageDansProchaineVue(Personnage personnage) {
         bundle = new Bundle();
         bundle.putSerializable("Personnage",personnage);
         bundle.putBoolean("CombatFinit",true);
@@ -249,14 +249,8 @@ public class VueCombat extends Fragment implements IContratPrésentateurVueComba
         }
     }
 
-    public void changerRace() {
-        nomRace = getArguments().getString("race");
-        if (nomRace.equals("via")) {
-            raceImage.setImageDrawable(getResources().getDrawable(R.drawable.via));
-        } else if (nomRace.equals("kaqchikam")) {
-            raceImage.setImageDrawable(getResources().getDrawable(R.drawable.kaqchikam));
-        } else if (nomRace.equals("dino")) {
-            raceImage.setImageDrawable(getResources().getDrawable(R.drawable.dinoh));
-        }
+    @Override
+    public void actionChangerRace(int race) {
+        raceImage.setImageDrawable(getResources().getDrawable(race));
     }
 }

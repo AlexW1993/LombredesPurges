@@ -1,5 +1,7 @@
 package com.example.lombredespurges.présentation;
 
+import com.example.lombredespurges.R;
+
 import java.util.ArrayList;
 
 
@@ -120,25 +122,36 @@ public class PrésentateurCombat implements IContratPrésentateurVueCombat.IPré
             _vue.setTextDefencéEndurenceEnnemie(_modèle.getEnnemie().getCoefDéfence(),_modèle.getEnnemie().get_endurance());
             if(accion == 1){
                 dommage = _modèle.getEnnemie().getDommages();
-                _vue.faireAccion1(dommage);
+                _vue.faireAction1(dommage);
             }else if (accion == 2){
                 dommage = _modèle.getEnnemie().getDommages();
-                _vue.faireAccion2(dommage);
+                _vue.faireAction2(dommage);
             }
         }else{
             _vue.setTextDefencéEndurencePersonnage(_modèle.getPersonnage().getCoefDéfence(),_modèle.getPersonnage().get_endurance());
             if(accion == 3) {
                 dommage = _modèle.getPersonnage().getDommages();
-                _vue.faireAccion3(dommage);
+                _vue.faireAction3(dommage);
             }else if (accion == 4){
                 dommage = _modèle.getPersonnage().getDommages();
-                _vue.faireAccion4(dommage);
+                _vue.faireAction4(dommage);
             }
         }
     }
 
     @Override
     public void chercherPersonage(){
-        _vue.acquérirPersonnage(_modèle.getPersonnage());
+        _vue.envoiePersonnageDansProchaineVue(_modèle.getPersonnage());
+    }
+
+    @Override
+    public void changerRace(String race) {
+        if (race.equals("via")) {
+            _vue.actionChangerRace(R.drawable.via);
+        } else if (race.equals("kaqchikam")) {
+            _vue.actionChangerRace(R.drawable.kaqchikam);
+        } else if (race.equals("dino")) {
+            _vue.actionChangerRace(R.drawable.dinoh);
+        }
     }
 }

@@ -16,13 +16,13 @@ public class Creation {
     public Ennemie CreationEnnemie (){
         Ennemie ennemie;
         int num,force,endurence,agilité,intelligence;
-        num = new Random().nextInt((6 - 1) + 1) + 1;
+        num = new Random().nextInt((3 - 1) + 1) + 1;
         force = 10 + num;
-        num = new Random().nextInt((10 - 1) + 1) + 1;
+        num = new Random().nextInt((7 - 1) + 1) + 1;
         endurence = 20 + (2 * num);
-        num = new Random().nextInt((6 - 1) + 1) + 1;
+        num = new Random().nextInt((3 - 1) + 1) + 1;
         agilité = 10 + num;
-        num = new Random().nextInt((6 - 1) + 1) + 1;
+        num = new Random().nextInt((3 - 1) + 1) + 1;
         intelligence = 5 + num;
         ennemie = new Ennemie("Purge",force,endurence,agilité,intelligence);
         return  ennemie;
