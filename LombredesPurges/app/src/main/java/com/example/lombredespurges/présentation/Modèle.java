@@ -1,6 +1,7 @@
 package com.example.lombredespurges.présentation;
 
 import com.example.lombredespurges.domaine.entité.Ennemie;
+import com.example.lombredespurges.domaine.entité.Jeu;
 import com.example.lombredespurges.domaine.entité.Personnage;
 import com.example.lombredespurges.domaine.interacteur.Creation;
 
@@ -11,13 +12,18 @@ public class Modèle {
     private static Modèle modèle;
     private Personnage _personnage;
     private Ennemie _ennemie;
-    private ArrayList<Histoire> _listeHistoire = new Creation().CréationListeHistoireDino();
+    private Jeu _jeu;
+    //private ArrayList<Histoire> _listeHistoire = new Creation().CréationListeHistoireDino();
 
     public static Modèle getInstance(){
         if (modèle == null){
             modèle = new Modèle();
         }
         return modèle;
+    }
+
+    public void creationJeu(){
+        _jeu = new Creation().CréationJeu();
     }
 
     public void creationPersonnage(String nom, int force, int endurance, int agilité, int intelligence){
@@ -65,8 +71,8 @@ public class Modèle {
         }
     }
 
-    public ArrayList<Histoire> getListeHistoireDino(){
+    /*public ArrayList<Histoire> getListeHistoireDino(){
         return _listeHistoire;
-    }
+    }*/
 
 }

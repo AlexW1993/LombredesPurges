@@ -252,7 +252,7 @@ public class VueChapitreDino extends Fragment implements IContratPrésentateurVu
 
     private void gestionÉtape4(int choix){
         if(choix == 1){
-            cheminFinal(R.string.dommage,R.string.chapitrefin12Dino);
+            cheminFinal(R.string.dommage,R.string.chapitre12Dino);
         }else if(choix == 2) {
             txtNumeroChapitre.setText("4");
             texteContenueChapitre.setText(R.string.chapitre4_1Dino);
@@ -273,21 +273,21 @@ public class VueChapitreDino extends Fragment implements IContratPrésentateurVu
     private void gestionÉtape5(int choix){
         if(choix == 1){
             if(chapitreCourante.equals("4_1")){
-                cheminFinal(R.string.dommage,R.string.chapitrefin15Dino);
+                cheminFinal(R.string.dommage,R.string.chapitre15Dino);
             }else if(chapitreCourante.equals("4_2")){
-                cheminFinal(R.string.bravo,R.string.chapitrefin16Dino);
+                cheminFinal(R.string.bravo,R.string.chapitre16Dino);
             }
         }else if(choix == 2){
             if(chapitreCourante.equals("4_1")){
-                cheminFinal(R.string.bravo,R.string.chapitrefin13Dino);
+                cheminFinal(R.string.bravo,R.string.chapitre13Dino);
             }else if(chapitreCourante.equals("4_2")){
-                cheminFinal(R.string.dommage,R.string.chapitrefin17Dino);
+                cheminFinal(R.string.dommage,R.string.chapitre17Dino);
             }
         }else if(choix == 3){
             if(chapitreCourante.equals("4_1")) {
-                cheminFinal(R.string.dommage, R.string.chapitrefin14Dino);
+                cheminFinal(R.string.dommage, R.string.chapitre14Dino);
             }else if(chapitreCourante.equals("4_2")){
-                cheminFinal(R.string.dommage,R.string.chapitrefin18Dino);
+                cheminFinal(R.string.dommage,R.string.chapitre18Dino);
             }
         }
 
