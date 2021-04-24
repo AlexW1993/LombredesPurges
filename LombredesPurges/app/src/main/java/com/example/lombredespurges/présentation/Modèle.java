@@ -4,11 +4,14 @@ import com.example.lombredespurges.domaine.entité.Ennemie;
 import com.example.lombredespurges.domaine.entité.Personnage;
 import com.example.lombredespurges.domaine.interacteur.Creation;
 
+import java.util.ArrayList;
+
 public class Modèle {
 
     private static Modèle modèle;
     private Personnage _personnage;
     private Ennemie _ennemie;
+    private ArrayList<Histoire> _listeHistoire = new Creation().CréationListeHistoireDino();
 
     public static Modèle getInstance(){
         if (modèle == null){
@@ -36,6 +39,7 @@ public class Modèle {
     public Ennemie getEnnemie(){
         return _ennemie;
     }
+
     /*
     public int getCoefAttaqueEnnemie(){
         return _ennemie.getCoefAttaque();
@@ -59,6 +63,10 @@ public class Modèle {
         }else{
             return false;
         }
+    }
+
+    public ArrayList<Histoire> getListeHistoireDino(){
+        return _listeHistoire;
     }
 
 }

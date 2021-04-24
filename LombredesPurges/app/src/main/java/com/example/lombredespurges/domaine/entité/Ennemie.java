@@ -19,12 +19,12 @@ public class Ennemie {
     /**
      * Constructeur d'un Ennemie.
      */
-    public Ennemie(String _nom, int _force, int _endurance, int _agilité, int _intelligence) {
-        this._nom = _nom;
-        this._force = _force;
-        this._endurance = _endurance;
-        this._agilité = _agilité;
-        this._intelligence = _intelligence;
+    public Ennemie(String nom, int force, int endurance, int agilité, int intelligence) {
+        this._nom = nom;
+        this._force = force;
+        this._endurance = endurance;
+        this._agilité = agilité;
+        this._intelligence = intelligence;
     }
 
     /**

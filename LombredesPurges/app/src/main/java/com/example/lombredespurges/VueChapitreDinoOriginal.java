@@ -14,14 +14,8 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
 import com.example.lombredespurges.domaine.entité.Personnage;
-import com.example.lombredespurges.présentation.IContratPrésentateurVueHistoires;
-import com.example.lombredespurges.présentation.PrésentateurHistoires;
 
-public class VueChapitreDino extends Fragment implements IContratPrésentateurVueHistoires.IVueHistoireDino {
-
-
-    private String numeroChapitreTexte;
-
+public class VueChapitreDinoOriginal extends Fragment{
 
     private TextView texteContenueChapitre;
     private TextView txtNumeroChapitre;
@@ -37,14 +31,12 @@ public class VueChapitreDino extends Fragment implements IContratPrésentateurVu
     private int étapeCourant;
     private String chapitreCourante;
 
-    PrésentateurHistoires présentateurHistoires;
-
-    public VueChapitreDino() {
+    public VueChapitreDinoOriginal() {
         // Required empty public constructor
     }
 
-    public static VueChapitreDino newInstance(String param1, String param2) {
-        VueChapitreDino fragment = new VueChapitreDino();
+    public static VueChapitreDinoOriginal newInstance(String param1, String param2) {
+        VueChapitreDinoOriginal fragment = new VueChapitreDinoOriginal();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -88,7 +80,6 @@ public class VueChapitreDino extends Fragment implements IContratPrésentateurVu
         chapitreCourante = getArguments().getString("ChapitreCouranteAction");
         étapeCourant = detectionÉtape(getArguments());
 
-        présentateurHistoires = new PrésentateurHistoires(this);
         gestionAffichageDesChapitres(getArguments().getInt("ChoixPasséeAction"));
 
         btnChoix1.setOnClickListener(new View.OnClickListener() {
@@ -154,7 +145,7 @@ public class VueChapitreDino extends Fragment implements IContratPrésentateurVu
 
 
     private void gestionÉtape1(){
-        présentateurHistoires.getNumeroChapitre(0);
+        txtNumeroChapitre.setText("1");
         texteContenueChapitre.setText(R.string.chapitre0Dino);
         btnChoix1.setText(R.string.choix0_1);
         btnChoix2.setText(R.string.choix0_2);
@@ -165,21 +156,21 @@ public class VueChapitreDino extends Fragment implements IContratPrésentateurVu
     private void gestionÉtape2(int choix){
 
         if(choix == 1){
-            présentateurHistoires.getNumeroChapitre(1);
+            txtNumeroChapitre.setText("2");
             texteContenueChapitre.setText(R.string.chapitre1Dino);
             btnChoix1.setText(R.string.choix1_1);
             btnChoix2.setText(R.string.choix1_2);
             btnChoix3.setText(R.string.choix1_3);
             chapitreCourante = "2_1";
         }else if(choix == 2){
-            présentateurHistoires.getNumeroChapitre(2);
+            txtNumeroChapitre.setText("2");
             texteContenueChapitre.setText(R.string.chapitre2Dino);
             btnChoix1.setText(R.string.choix2_1);
             btnChoix2.setText(R.string.choix2_2);
             btnChoix3.setText(R.string.choix2_3);
             chapitreCourante = "2_2";
         }else if (choix == 3){
-            présentateurHistoires.getNumeroChapitre(3);
+            txtNumeroChapitre.setText("2");
             texteContenueChapitre.setText(R.string.chapitre3Dino);
             btnChoix1.setText(R.string.choix3_1);
             btnChoix2.setText(R.string.choix3_2);
@@ -302,37 +293,6 @@ public class VueChapitreDino extends Fragment implements IContratPrésentateurVu
         btnChoix2.setVisibility(View.GONE);
         btnChoix3.setVisibility(View.GONE);
         btnPageTitre.setVisibility(View.VISIBLE);
-
-    }
-
-
-    @Override
-    public void afficherNumeroChapitre(int _numeroChapitre) {
-        txtNumeroChapitre.setText(String.valueOf(_numeroChapitre));
-    }
-
-    @Override
-    public void afficherTexteChapitre(int _texteChapitre) {
-
-    }
-
-    @Override
-    public void afficherChoix_1_Chapitre(int _choix1) {
-
-    }
-
-    @Override
-    public void afficherChoix_2_Chapitre(int _choix2) {
-
-    }
-
-    @Override
-    public void afficherChoix_3_Chapitre(int _choix3) {
-
-    }
-
-    @Override
-    public void déterminerCombat(boolean _combat) {
 
     }
 }
