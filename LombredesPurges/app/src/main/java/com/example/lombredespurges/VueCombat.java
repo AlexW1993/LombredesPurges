@@ -230,10 +230,7 @@ public class VueCombat extends Fragment implements IContratPrésentateurVueComba
     @Override
     public void envoiePersonnageDansProchaineVue(Personnage personnage) {
         bundle = new Bundle();
-        bundle.putSerializable("Personnage",personnage);
         bundle.putBoolean("CombatFinit",true);
-        bundle.putInt("ChoixPasséeAction", getArguments().getInt("ChoixPassée"));
-        bundle.putInt("Étape",getArguments().getInt("ÉtapeVue"));
 
         bundle.putString("ChapitreCouranteAction",getArguments().getString("ChapitreCourante"));
 

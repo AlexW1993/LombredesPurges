@@ -17,11 +17,7 @@ import com.example.lombredespurges.domaine.entité.Personnage;
 import com.example.lombredespurges.présentation.IContratPrésentateurVueHistoires;
 import com.example.lombredespurges.présentation.PrésentateurHistoires;
 
-public class VueChapitre extends Fragment implements IContratPrésentateurVueHistoires.IVueHistoireDino {
-
-
-    private String numeroChapitreTexte;
-
+public class VueChapitreOriginal extends Fragment implements IContratPrésentateurVueHistoires.IVueHistoire {
 
     private TextView texteContenueChapitre;
     private TextView txtNumeroChapitre;
@@ -39,12 +35,12 @@ public class VueChapitre extends Fragment implements IContratPrésentateurVueHis
 
     PrésentateurHistoires présentateurHistoires;
 
-    public VueChapitre() {
+    public VueChapitreOriginal() {
         // Required empty public constructor
     }
 
-    public static VueChapitre newInstance(String param1, String param2) {
-        VueChapitre fragment = new VueChapitre();
+    public static VueChapitreOriginal newInstance(String param1, String param2) {
+        VueChapitreOriginal fragment = new VueChapitreOriginal();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -309,6 +305,16 @@ public class VueChapitre extends Fragment implements IContratPrésentateurVueHis
 
 
     @Override
+    public void afficherAventure(String nomAventure) {
+        
+    }
+
+    @Override
+    public void déterminerCombat(boolean _combat) {
+
+    }
+
+    @Override
     public void afficherNumeroChapitre(int _numeroChapitre) {
         txtNumeroChapitre.setText(String.valueOf(_numeroChapitre));
     }
@@ -319,22 +325,12 @@ public class VueChapitre extends Fragment implements IContratPrésentateurVueHis
     }
 
     @Override
-    public void afficherChoix_1_Chapitre(int _choix1) {
+    public void afficherChoixChapitre(int _choix) {
 
     }
 
     @Override
-    public void afficherChoix_2_Chapitre(int _choix2) {
-
-    }
-
-    @Override
-    public void afficherChoix_3_Chapitre(int _choix3) {
-
-    }
-
-    @Override
-    public void déterminerCombat(boolean _combat) {
+    public void afficherProchainChapitre(int _prochainChapitre) {
 
     }
 }

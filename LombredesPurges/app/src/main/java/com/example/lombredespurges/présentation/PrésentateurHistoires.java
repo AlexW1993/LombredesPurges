@@ -1,61 +1,83 @@
 package com.example.lombredespurges.présentation;
 
+import com.example.lombredespurges.domaine.entité.Aventure;
+import com.example.lombredespurges.domaine.entité.Jeu;
 import com.example.lombredespurges.modele.Modèle;
-
-import java.util.ArrayList;
 
 public class PrésentateurHistoires implements IContratPrésentateurVueHistoires.IPrésentateurHistoires {
 
-    private IContratPrésentateurVueHistoires.IVueHistoireDino _vue;
+    private IContratPrésentateurVueHistoires.IVueHistoire _vue;
     private Modèle _modèle;
-    private ArrayList<Histoire> listeHistoireDino;
+    private  Jeu _jeu;
+    private Aventure _aventure;
 
-    public PrésentateurHistoires(IContratPrésentateurVueHistoires.IVueHistoireDino vue) {
 
+    public PrésentateurHistoires(IContratPrésentateurVueHistoires.IVueHistoire vue) {
         this._vue = vue;
         _modèle = Modèle.getInstance();
-        listeHistoireDino = new ArrayList<Histoire>(_modèle.getListeHistoireDino());
     }
 
     @Override
-    public void getDéterminerCombat(int positionListe) {
+    public void getAventure(String nomAventure) {
+        _jeu = _modèle.get_jeu();
+        _jeu.determinerAventureChoisie(nomAventure);
+        _aventure = _jeu.get_aventureChoisie();
+        _vue.afficherAventure(nomAventure);
+    }
+/*
+    @Override
+    public void getCombat(int positionListe) {
         boolean combat;
-        combat = listeHistoireDino.get(positionListe).get_combat();
+        combat = _aventure.get_listeChapitre().get(positionListe).get_combat();
         _vue.déterminerCombat(combat);
     }
-
+*/
     @Override
     public void getNumeroChapitre(int positionListe) {
-        int chapitre;
-        chapitre = listeHistoireDino.get(positionListe).get_chapitre();
-        _vue.afficherNumeroChapitre(chapitre);
+        int numéroChapitre;
+        numéroChapitre = _aventure.get_listeChapitre().get(positionListe).get_numéroChapitre();
+        _vue.afficherNumeroChapitre(numéroChapitre);
     }
 
     @Override
     public void getTexteChapitre(int positionListe) {
         int texteChapitre;
-        texteChapitre = _modèle.getListeHistoireDino().get(positionListe).get_sousChapitre();
+        texteChapitre = _aventure.get_listeChapitre().get(positionListe).get_IdTexteChapitre();
         _vue.afficherTexteChapitre(texteChapitre);
     }
 
     @Override
-    public void getChoix_1_Chapitre(int positionListe) {
-        int choix1;
-        choix1 = _modèle.getListeHistoireDino().get(positionListe).get_choix1();
-        _vue.afficherChoix_1_Chapitre(choix1);
+    public int getChoixChapitre(int positionListe) {
+        int choix;
+        choix = _aventure.get_listeChapitre().get(positionListe).get_listeIdTexteChoix().get(positionListe);
+        return choix;
     }
 
     @Override
-    public void getChoix_2_Chapitre(int positionListe) {
-        int choix2;
-        choix2 = _modèle.getListeHistoireDino().get(positionListe).get_choix2();
-        _vue.afficherChoix_2_Chapitre(choix2);
+    public void getProchainChapitre(int positionListe) {
+        int prochainChapitre;
+        prochainChapitre = _aventure.get_listeChapitre().get(positionListe).get_prochainChapitre(positionListe);
+        _vue.afficherProchainChapitre(prochainChapitre);
     }
 
     @Override
-    public void getChoix_3_Chapitre(int positionListe) {
-        int choix3;
-        choix3 = _modèle.getListeHistoireDino().get(positionListe).get_choix3();
-        _vue.afficherChoix_3_Chapitre(choix3);
+    public void déterminerCombat(int positionListe, boolean finalitéCombat){
+        boolean _combat;
+        _combat = _aventure.get_listeChapitre().get(positionListe).get_combat();
+        if( _combat && finalitéCombat == false){
+            _vue.faireCombat();
+        }
+    }
+
+    @Override
+    public void gestionChapitres(int numéroChapitreCourant){
+        for (int i = 0; i < 18; i++) {
+            if(numéroChapitreCourant == i){
+                _vue.afficherNumeroChapitre(i);
+                _vue.afficherTexteChapitre(i);
+                _vue.afficherChoixChapitre(i);
+            }
+        }
+    }
     }
 }

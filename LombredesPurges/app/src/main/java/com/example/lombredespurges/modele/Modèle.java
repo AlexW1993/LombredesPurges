@@ -11,6 +11,9 @@ public class Modèle {
 
     private static Modèle modèle;
     private Jeu _jeu;
+    private Ennemie _ennemie;
+    //private Personnage _personnage;
+
 
     private Modèle(){
         this._jeu = new Creation().CréationJeu();
@@ -32,23 +35,17 @@ public class Modèle {
         _jeu.determinerAventureChoisie(nomAventure);
     }
 
-
-
-
-
-
-
-
-
-
-
-
+    public Jeu get_jeu(){
+        return _jeu;
+    }
 
 
 /*
     public void creationJeu(){
         _jeu = new Creation().CréationJeu();
     }
+
+
 
     public void creationPersonnage(String nom, int force, int endurance, int agilité, int intelligence){
         _personnage = new Creation().CreationPersonnage(nom, force, endurance,agilité, intelligence);
@@ -58,9 +55,9 @@ public class Modèle {
         _ennemie = new Creation().CreationEnnemie();
     }
 
-    public Personnage getPersonnage(){
+   /*public Personnage getPersonnage(){
         return _personnage;
-    }
+    }*/
 /*
     public int getCoefAttaquePersonnage(){
         return _personnage.getCoefAttaque();
@@ -77,7 +74,7 @@ public class Modèle {
 
     public void calculerCoefAttaque(){
         _ennemie.calculerCoefAttaqueEnnemi();
-        _personnage.calculerCoefAttaquePersonnage();
+        _jeu.get_personnage().calculerCoefAttaquePersonnage();
     }
 
 /**
@@ -88,7 +85,7 @@ public class Modèle {
  * ou égale, (false) si le coeficience d'attaque de l'ennemie est plus grand.
  */
     public boolean comparaisonCoefAttaque(){
-        if(_personnage.getCoefAttaque() >= _ennemie.getCoefAttaque()){
+        if(_jeu.get_personnage().getCoefAttaque() >= _ennemie.getCoefAttaque()){
             return true;
         }else{
             return false;
