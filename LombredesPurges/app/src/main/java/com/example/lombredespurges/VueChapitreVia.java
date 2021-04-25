@@ -155,10 +155,10 @@ public class VueChapitreVia extends Fragment {
 
     private void gestionÉtape1(){
         txtNumeroChapitre.setText("1");
-        texteContenueChapitre.setText(R.string.chapitre1Via);
-        btnChoix1.setText(R.string.choix1_1Via);
-        btnChoix2.setText(R.string.choix1_2Via);
-        btnChoix3.setText(R.string.choix1_3Via);
+        texteContenueChapitre.setText(R.string.chapitre0Via);
+        btnChoix1.setText(R.string.choix0_1Via);
+        btnChoix2.setText(R.string.choix0_2Via);
+        btnChoix3.setText(R.string.choix0_3Via);
         chapitreCourante = "1";
     }
 
@@ -166,24 +166,24 @@ public class VueChapitreVia extends Fragment {
 
         if(choix == 1){
             txtNumeroChapitre.setText("2");
-            texteContenueChapitre.setText(R.string.chapitre2_1Via);
-            btnChoix1.setText(R.string.choix2_1_1Via);
-            btnChoix2.setText(R.string.choix2_1_2Via);
-            btnChoix3.setText(R.string.choix2_1_3Via);
+            texteContenueChapitre.setText(R.string.chapitre1Via);
+            btnChoix1.setText(R.string.choix1_1Via);
+            btnChoix2.setText(R.string.choix1_2Via);
+            btnChoix3.setText(R.string.choix1_3Via);
             chapitreCourante = "2_1";
         }else if(choix == 2){
             txtNumeroChapitre.setText("2");
-            texteContenueChapitre.setText(R.string.chapitre2_2Via);
-            btnChoix1.setText(R.string.choix2_2_1Via);
-            btnChoix2.setText(R.string.choix2_2_2Via);
-            btnChoix3.setText(R.string.choix2_2_3Via);
+            texteContenueChapitre.setText(R.string.chapitre2Via);
+            btnChoix1.setText(R.string.choix2_1Via);
+            btnChoix2.setText(R.string.choix2_2Via);
+            btnChoix3.setText(R.string.choix2_3Via);
             chapitreCourante = "2_2";
         }else if (choix == 3){
             txtNumeroChapitre.setText("2");
-            texteContenueChapitre.setText(R.string.chapitre2_3Via);
-            btnChoix1.setText(R.string.choix2_3_1Via);
-            btnChoix2.setText(R.string.choix2_3_2Via);
-            btnChoix3.setText(R.string.choix2_3_3Via);
+            texteContenueChapitre.setText(R.string.chapitre3Via);
+            btnChoix1.setText(R.string.choix3_1Via);
+            btnChoix2.setText(R.string.choix3_2Via);
+            btnChoix3.setText(R.string.choix3_3Via);
             chapitreCourante = "2_3";
         }
     }
@@ -201,10 +201,10 @@ public class VueChapitreVia extends Fragment {
                     navController.navigate(R.id.combat, bundle);
                 } else {
                     txtNumeroChapitre.setText("3");
-                    texteContenueChapitre.setText(R.string.chapitre3_1Via);
-                    btnChoix1.setText(R.string.choix3_1_1Via);
-                    btnChoix2.setText(R.string.choix3_1_2Via);
-                    btnChoix3.setText(R.string.choix3_1_3Via);
+                    texteContenueChapitre.setText(R.string.chapitre4Via);
+                    btnChoix1.setText(R.string.choix4_1Via);
+                    btnChoix2.setText(R.string.choix4_2Via);
+                    btnChoix3.setText(R.string.choix4_3Via);
                     chapitreCourante = "3_1";
                 }
             }else if(chapitreCourante.equals("2_3")){
@@ -216,10 +216,10 @@ public class VueChapitreVia extends Fragment {
                     navController.navigate(R.id.combat, bundle);
                 } else {
                     txtNumeroChapitre.setText("3");
-                    texteContenueChapitre.setText(R.string.chapitre3_6Via);
-                    btnChoix1.setText(R.string.choix3_6_1Via);
-                    btnChoix2.setText(R.string.choix3_6_2Via);
-                    btnChoix3.setText(R.string.choix3_6_3Via);
+                    texteContenueChapitre.setText(R.string.chapitre9Via);
+                    btnChoix1.setText(R.string.choix9_1Via);
+                    btnChoix2.setText(R.string.choix9_2Via);
+                    btnChoix3.setText(R.string.choix9_3Via);
                     chapitreCourante = "3_6";
                 }
             }
@@ -227,45 +227,45 @@ public class VueChapitreVia extends Fragment {
         }else if(choix == 2){
             if(chapitreCourante.equals("2_1") || chapitreCourante.equals("2_2")){
                 txtNumeroChapitre.setText("3");
-                texteContenueChapitre.setText(R.string.chapitre3_2Via);
-                btnChoix1.setText(R.string.choix3_2_1Via);
-                btnChoix2.setText(R.string.choix3_2_2Via);
-                btnChoix3.setText(R.string.choix3_2_3Via);
+                texteContenueChapitre.setText(R.string.chapitre5Via);
+                btnChoix1.setText(R.string.choix5_1Via);
+                btnChoix2.setText(R.string.choix5_2Via);
+                btnChoix3.setText(R.string.choix5_3Via);
                 chapitreCourante = "3_2";
             }else if(chapitreCourante.equals("2_3")){
                 txtNumeroChapitre.setText("3");
-                texteContenueChapitre.setText(R.string.chapitre3_5Via);
-                btnChoix1.setText(R.string.choix3_5_1Via);
-                btnChoix2.setText(R.string.choix3_5_2Via);
-                btnChoix3.setText(R.string.choix3_5_3Via);
+                texteContenueChapitre.setText(R.string.chapitre8Via);
+                btnChoix1.setText(R.string.choix8_1Via);
+                btnChoix2.setText(R.string.choix8_2Via);
+                btnChoix3.setText(R.string.choix8_3Via);
                 chapitreCourante = "3_5";
             }
 
         }else if(choix == 3){
             if(chapitreCourante.equals("2_1") || chapitreCourante.equals("2_2")){
-                cheminFinal(R.string.dommage,R.string.chapitre3_3Via);
+                cheminFinal(R.string.dommage,R.string.chapitre6Via);
             }else if(chapitreCourante.equals("2_3")){
-                cheminFinal(R.string.dommage,R.string.chapitre3_4Via);
+                cheminFinal(R.string.dommage,R.string.chapitre7Via);
             }
         }
     }
 
     private void gestionÉtape4(int choix){
         if(choix == 1){
-            cheminFinal(R.string.dommage,R.string.chapitrefin1Via);
+            cheminFinal(R.string.dommage,R.string.chapitre12Via);
         }else if(choix == 2) {
             txtNumeroChapitre.setText("4");
-            texteContenueChapitre.setText(R.string.chapitre4_1Via);
-            btnChoix1.setText(R.string.choix4_1_1Via);
-            btnChoix2.setText(R.string.choix4_1_2Via);
-            btnChoix3.setText(R.string.choix4_1_3Via);
+            texteContenueChapitre.setText(R.string.chapitre10Via);
+            btnChoix1.setText(R.string.choix10_1Via);
+            btnChoix2.setText(R.string.choix10_2Via);
+            btnChoix3.setText(R.string.choix10_3Via);
             chapitreCourante = "4_1";
         }else if(choix == 3){
             txtNumeroChapitre.setText("4");
-            texteContenueChapitre.setText(R.string.chapitre4_2Via);
-            btnChoix1.setText(R.string.choix4_2_1Via);
-            btnChoix2.setText(R.string.choix4_2_2Via);
-            btnChoix3.setText(R.string.choix4_2_3Via);
+            texteContenueChapitre.setText(R.string.chapitre11Via);
+            btnChoix1.setText(R.string.choix11_1Via);
+            btnChoix2.setText(R.string.choix11_2Via);
+            btnChoix3.setText(R.string.choix11_3Via);
             chapitreCourante = "4_2";
         }
     }
@@ -273,21 +273,21 @@ public class VueChapitreVia extends Fragment {
     private void gestionÉtape5(int choix){
         if(choix == 1){
             if(chapitreCourante.equals("4_1")){
-                cheminFinal(R.string.dommage,R.string.chapitrefin4Via);
+                cheminFinal(R.string.dommage,R.string.chapitre15Via);
             }else if(chapitreCourante.equals("4_2")){
-                cheminFinal(R.string.bravo,R.string.chapitrefin5Via);
+                cheminFinal(R.string.bravo,R.string.chapitre16Via);
             }
         }else if(choix == 2){
             if(chapitreCourante.equals("4_1")){
-                cheminFinal(R.string.bravo,R.string.chapitrefin2Via);
+                cheminFinal(R.string.bravo,R.string.chapitre13Via);
             }else if(chapitreCourante.equals("4_2")){
-                cheminFinal(R.string.dommage,R.string.chapitrefin2Via);
+                cheminFinal(R.string.dommage,R.string.chapitre13Via);
             }
         }else if(choix == 3){
             if(chapitreCourante.equals("4_1")) {
-                cheminFinal(R.string.dommage, R.string.chapitrefin3Via);
+                cheminFinal(R.string.dommage, R.string.chapitre14Via);
             }else if(chapitreCourante.equals("4_2")){
-                cheminFinal(R.string.dommage,R.string.chapitrefin6Via);
+                cheminFinal(R.string.dommage,R.string.chapitre17Via);
             }
         }
 

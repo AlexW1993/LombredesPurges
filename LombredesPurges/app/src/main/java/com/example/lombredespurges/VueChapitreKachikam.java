@@ -147,10 +147,10 @@ public class VueChapitreKachikam extends Fragment {
 
     private void gestionÉtape1(){
         txtNumeroChapitre.setText("1");
-        texteContenueChapitre.setText(R.string.chapitre1Kachikam);
-        btnChoix1.setText(R.string.choix1_1Kachikam);
-        btnChoix2.setText(R.string.choix1_2Kachikam);
-        btnChoix3.setText(R.string.choix1_3Kachikam);
+        texteContenueChapitre.setText(R.string.chapitre0Kachikam);
+        btnChoix1.setText(R.string.choix0_1Kachikam);
+        btnChoix2.setText(R.string.choix0_2Kachikam);
+        btnChoix3.setText(R.string.choix0_3Kachikam);
         chapitreCourante = "1";
     }
 
@@ -158,10 +158,10 @@ public class VueChapitreKachikam extends Fragment {
 
         if(choix == 1){
             txtNumeroChapitre.setText("2");
-            texteContenueChapitre.setText(R.string.chapitre2_1Kachikam);
-            btnChoix1.setText(R.string.choix2_1_1Kachikam);
-            btnChoix2.setText(R.string.choix2_1_2Kachikam);
-            btnChoix3.setText(R.string.choix2_1_3Kachikam);
+            texteContenueChapitre.setText(R.string.chapitre1Kachikam);
+            btnChoix1.setText(R.string.choix1_1Kachikam);
+            btnChoix2.setText(R.string.choix1_2Kachikam);
+            btnChoix3.setText(R.string.choix1_3Kachikam);
             chapitreCourante = "2_1";
         }else if(choix == 2){
             boolean combatFinit = getArguments().getBoolean("CombatFinit");
@@ -172,18 +172,18 @@ public class VueChapitreKachikam extends Fragment {
                 navController.navigate(R.id.combat, bundle);
             } else {
                 txtNumeroChapitre.setText("2");
-                texteContenueChapitre.setText(R.string.chapitre2_2Kachikam);
-                btnChoix1.setText(R.string.choix2_2_1Kachikam);
-                btnChoix2.setText(R.string.choix2_2_2Kachikam);
-                btnChoix3.setText(R.string.choix2_2_3Kachikam);
+                texteContenueChapitre.setText(R.string.chapitre2Kachikam);
+                btnChoix1.setText(R.string.choix2_1Kachikam);
+                btnChoix2.setText(R.string.choix2_2Kachikam);
+                btnChoix3.setText(R.string.choix2_3Kachikam);
                 chapitreCourante = "2_2";
             }
         }else if (choix == 3){
             txtNumeroChapitre.setText("2");
-            texteContenueChapitre.setText(R.string.chapitre2_3Kachikam);
-            btnChoix1.setText(R.string.choix2_3_1Kachikam);
-            btnChoix2.setText(R.string.choix2_3_2Kachikam);
-            btnChoix3.setText(R.string.choix2_3_3Kachikam);
+            texteContenueChapitre.setText(R.string.chapitre3Kachikam);
+            btnChoix1.setText(R.string.choix3_1Kachikam);
+            btnChoix2.setText(R.string.choix3_2Kachikam);
+            btnChoix3.setText(R.string.choix3_3Kachikam);
             chapitreCourante = "2_3";
         }
     }
@@ -208,44 +208,44 @@ public class VueChapitreKachikam extends Fragment {
 
             if (chapitreCourante.equals("2_1") || chapitreCourante.equals("2_2")){
                 txtNumeroChapitre.setText("3");
-                texteContenueChapitre.setText(R.string.chapitre3_1Kachikam);
-                btnChoix1.setText(R.string.choix3_1_1Kachikam);
-                btnChoix2.setText(R.string.choix3_1_2Kachikam);
-                btnChoix3.setText(R.string.choix3_1_3Kachikam);
+                texteContenueChapitre.setText(R.string.chapitre4Kachikam);
+                btnChoix1.setText(R.string.choix4_1Kachikam);
+                btnChoix2.setText(R.string.choix4_2Kachikam);
+                btnChoix3.setText(R.string.choix4_3Kachikam);
                 chapitreCourante = "3_1";
 
 
             }else if(chapitreCourante.equals("2_3")){
                 txtNumeroChapitre.setText("3");
-                texteContenueChapitre.setText(R.string.chapitre3_6Kachikam);
-                btnChoix1.setText(R.string.choix3_6_1Kachikam);
-                btnChoix2.setText(R.string.choix3_6_2Kachikam);
-                btnChoix3.setText(R.string.choix3_6_3Kachikam);
+                texteContenueChapitre.setText(R.string.chapitre9Kachikam);
+                btnChoix1.setText(R.string.choix9_1Kachikam);
+                btnChoix2.setText(R.string.choix9_2Kachikam);
+                btnChoix3.setText(R.string.choix9_3Kachikam);
                 chapitreCourante = "3_6";
             }
 
         }else if(choix == 2){
             if(chapitreCourante.equals("2_1") || chapitreCourante.equals("2_2")){
                 txtNumeroChapitre.setText("3");
-                texteContenueChapitre.setText(R.string.chapitre3_2Kachikam);
-                btnChoix1.setText(R.string.choix3_2_1Kachikam);
-                btnChoix2.setText(R.string.choix3_2_2Kachikam);
-                btnChoix3.setText(R.string.choix3_2_3Kachikam);
+                texteContenueChapitre.setText(R.string.chapitre5Kachikam);
+                btnChoix1.setText(R.string.choix5_1Kachikam);
+                btnChoix2.setText(R.string.choix5_2Kachikam);
+                btnChoix3.setText(R.string.choix5_3Kachikam);
                 chapitreCourante = "3_2";
             }else if(chapitreCourante.equals("2_3")){
                 txtNumeroChapitre.setText("3");
-                texteContenueChapitre.setText(R.string.chapitre3_5Kachikam);
-                btnChoix1.setText(R.string.choix3_5_1Kachikam);
-                btnChoix2.setText(R.string.choix3_5_2Kachikam);
-                btnChoix3.setText(R.string.choix3_5_3Kachikam);
+                texteContenueChapitre.setText(R.string.chapitre8Kachikam);
+                btnChoix1.setText(R.string.choix8_1Kachikam);
+                btnChoix2.setText(R.string.choix8_2Kachikam);
+                btnChoix3.setText(R.string.choix8_3Kachikam);
                 chapitreCourante = "3_5";
             }
 
         }else if(choix == 3){
             if(chapitreCourante.equals("2_1") || chapitreCourante.equals("2_2")){
-                cheminFinal(R.string.dommage,R.string.chapitre3_3Kachikam);
+                cheminFinal(R.string.dommage,R.string.chapitre6Kachikam);
             }else if(chapitreCourante.equals("2_3")){
-                cheminFinal(R.string.dommage,R.string.chapitre3_4Kachikam);
+                cheminFinal(R.string.dommage,R.string.chapitre7Kachikam);
             }
         }
     }
@@ -269,7 +269,7 @@ public class VueChapitreKachikam extends Fragment {
 
     private void gestionÉtape4(int choix){
         if(choix == 1){
-            cheminFinal(R.string.dommage,R.string.chapitrefin1Kachikam);
+            cheminFinal(R.string.dommage,R.string.chapitre12Kachikam);
         }else if(choix == 2) {
             boolean combatFinit = getArguments().getBoolean("CombatFinit");
             if (!combatFinit) {
@@ -279,10 +279,10 @@ public class VueChapitreKachikam extends Fragment {
                 navController.navigate(R.id.combat, bundle);
             } else {
                 txtNumeroChapitre.setText("4");
-                texteContenueChapitre.setText(R.string.chapitre4_1Kachikam);
-                btnChoix1.setText(R.string.choix4_1_1Kachikam);
-                btnChoix2.setText(R.string.choix4_1_2Kachikam);
-                btnChoix3.setText(R.string.choix4_1_3Kachikam);
+                texteContenueChapitre.setText(R.string.chapitre10Kachikam);
+                btnChoix1.setText(R.string.choix10_1Kachikam);
+                btnChoix2.setText(R.string.choix10_2Kachikam);
+                btnChoix3.setText(R.string.choix10_3Kachikam);
                 chapitreCourante = "4_1";
             }
         }else if(choix == 3){
@@ -294,10 +294,10 @@ public class VueChapitreKachikam extends Fragment {
                 navController.navigate(R.id.combat, bundle);
             } else {
                 txtNumeroChapitre.setText("4");
-                texteContenueChapitre.setText(R.string.chapitre4_2Kachikam);
-                btnChoix1.setText(R.string.choix4_2_1Kachikam);
-                btnChoix2.setText(R.string.choix4_2_2Kachikam);
-                btnChoix3.setText(R.string.choix4_2_3Kachikam);
+                texteContenueChapitre.setText(R.string.chapitre11Kachikam);
+                btnChoix1.setText(R.string.choix11_1Kachikam);
+                btnChoix2.setText(R.string.choix11_2Kachikam);
+                btnChoix3.setText(R.string.choix11_3Kachikam);
                 chapitreCourante = "4_2";
             }
         }
@@ -317,9 +317,9 @@ public class VueChapitreKachikam extends Fragment {
     private void gestionÉtape5(int choix){
         if(choix == 1){
             if(chapitreCourante.equals("4_1")){
-                cheminFinal(R.string.dommage,R.string.chapitrefin1Kachikam);
+                cheminFinal(R.string.dommage,R.string.chapitre12Kachikam);
             }else if(chapitreCourante.equals("4_2")){
-                cheminFinal(R.string.bravo,R.string.chapitrefin5Kachikam);
+                cheminFinal(R.string.bravo,R.string.chapitre15Kachikam);
             }
         }else if(choix == 2){
             if(chapitreCourante.equals("4_1")){
@@ -330,7 +330,7 @@ public class VueChapitreKachikam extends Fragment {
                     bundle.putString("ChapitreCourante",chapitreCourante);
                     navController.navigate(R.id.combat, bundle);
                 } else {
-                    cheminFinal(R.string.bravo,R.string.chapitrefin2Kachikam);
+                    cheminFinal(R.string.bravo,R.string.chapitre13Kachikam);
                 }
 
             }else if(chapitreCourante.equals("4_2")){
@@ -341,14 +341,14 @@ public class VueChapitreKachikam extends Fragment {
                     bundle.putString("ChapitreCourante",chapitreCourante);
                     navController.navigate(R.id.combat, bundle);
                 } else {
-                    cheminFinal(R.string.dommage,R.string.chapitrefin6Kachikam);
+                    cheminFinal(R.string.dommage,R.string.chapitre16Kachikam);
                 }
             }
         }else if(choix == 3){
             if(chapitreCourante.equals("4_1")) {
-                cheminFinal(R.string.dommage, R.string.chapitrefin3Kachikam);
+                cheminFinal(R.string.dommage, R.string.chapitre14Kachikam);
             }else if(chapitreCourante.equals("4_2")){
-                cheminFinal(R.string.dommage,R.string.chapitrefin7Kachikam);
+                cheminFinal(R.string.dommage,R.string.chapitre17Kachikam);
             }
         }
 
