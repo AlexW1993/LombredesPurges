@@ -104,7 +104,7 @@ public class Personnage implements Serializable {
      * La méthode permet de calculer la coeficience de Défence
      * total du personnage.
      *
-     * @param coefAttaqueAttaquant, la coeficience d'attaque du personnage.
+     * @param coefAttaqueAttaquant, la coeficience d'attaque de l'ennemi.
      */
     public void calculerCoefDéfense(int coefAttaqueAttaquant){
         coefDéfence = coefAttaqueAttaquant - coefAttaque;
@@ -113,7 +113,7 @@ public class Personnage implements Serializable {
     /**
      * La méthode permet de calculer le dommage que le personnage a reçu.
      *
-     * @param forceAttaquant, la force d'attaque du personnage.
+     * @param forceAttaquant, la force d'attaque de l'ennemi.
      */
     public void calculerEtRecevoirDommage(int forceAttaquant){
         dommages = coefDéfence * forceAttaquant;
