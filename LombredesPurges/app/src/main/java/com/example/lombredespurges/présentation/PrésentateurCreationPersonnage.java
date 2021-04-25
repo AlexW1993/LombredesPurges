@@ -3,6 +3,7 @@ package com.example.lombredespurges.présentation;
 import android.os.Bundle;
 import com.example.lombredespurges.R;
 import com.example.lombredespurges.domaine.entité.Personnage;
+import com.example.lombredespurges.domaine.entité.Jeu;
 import com.example.lombredespurges.modele.Modèle;
 
 import java.util.Random;
@@ -24,32 +25,30 @@ public class PrésentateurCreationPersonnage implements IContratPrésentateurVue
     public PrésentateurCreationPersonnage(IContratPrésentateurVueCreationPersonnage.IVueCreationPersonnage vue){
         this._vue = vue;
         _modèle = Modèle.getInstance();
+
     }
 
     /**
      * La méthode permet de analiser le choix du race.
      *
-     * @return (String) la race choisi.
      */
     @Override
     public void choisirRace(String nomRace){
-        String race = "";
         int description = 0;
         int codeImage = 0;
-        if (nomRace.equals("via")) {
-            race = "V.I.A.";
+        if (nomRace.equals("Via")) {
             description = R.string.descriptionVia;
             codeImage = R.drawable.via;
-        } else if (nomRace.equals("kaqchikam")) {
-            race = "Kaqchikam" ;
+        } else if (nomRace.equals("Kachikam")) {
             description = R.string.descriptionKaqchikam ;
             codeImage = R.drawable.kaqchikam;
-        } else if (nomRace.equals("dino")) {
-            race = "Dino";
+        } else if (nomRace.equals("Dino")) {
             description = R.string.descriptionDino;
             codeImage = R.drawable.dinoh;
         }
-        _vue.setRace(race,description,codeImage);
+        _vue.setRace(nomRace,description,codeImage);
+        _modèle.determinerAventureChoisie(nomRace);
+
     }
 
     @Override

@@ -178,7 +178,7 @@
     <string name="cr_ation_personnage">Creacion de personaje</string>
     <string name="nom">Nombre:</string>
     <string name="endurence">Resistencia</string>
-    <string name="inteliigence">Inteligencia</string>
+    <string name="intelligence">Inteligencia</string>
     <string name="dimensions_cibl_es">Objetivo de cada dimension</string>
     <string name="choix_aventure">Opcion de aventura</string>
     <string name="la_dimension_des_dinos_attaqu_par_le_commandant_kalameth">La dimensión de los dinosaurios atacados por el comandante Kalameth</string>

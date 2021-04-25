@@ -12,7 +12,7 @@
     tools:context=".VueCombat">
 
     <ImageView
-        android:id="@+id/imageView11"
+        android:id="@+id/imageRaceCombat"
         android:layout_width="259dp"
         android:layout_height="252dp"
         android:layout_marginStart="16dp"

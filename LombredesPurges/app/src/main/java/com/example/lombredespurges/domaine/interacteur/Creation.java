@@ -4,6 +4,7 @@ import com.example.lombredespurges.R;
 import com.example.lombredespurges.domaine.entité.Aventure;
 import com.example.lombredespurges.domaine.entité.Chapitre;
 import com.example.lombredespurges.domaine.entité.Ennemie;
+import com.example.lombredespurges.domaine.entité.Jeu;
 import com.example.lombredespurges.domaine.entité.Personnage;
 
 import java.util.ArrayList;
@@ -33,13 +34,15 @@ public class Creation {
     }
 
 
-    public ArrayList<Aventure> CréationListeAventures(){
+    public Jeu CréationJeu(){
         ArrayList<Aventure> listeAventures = new ArrayList<Aventure>();
         listeAventures.add(CréationAventureDino());
         listeAventures.add(CréationAventureVia());
         listeAventures.add(CréationAventureKachikam());
 
-        return listeAventures;
+        Jeu unJeu = new Jeu(listeAventures);
+
+        return unJeu;
     }
 
     private Aventure CréationAventureDino(){
@@ -113,11 +116,12 @@ public class Creation {
         listeChapitres.add(CréationHistoireKachikamChapitre13());
         listeChapitres.add(CréationHistoireKachikamChapitre14());
         listeChapitres.add(CréationHistoireKachikamChapitre15());
+        listeChapitres.add(CréationHistoireKachikamChapitre16());
         listeChapitres.add(CréationHistoireKachikamChapitre17());
 
-        Aventure via = new Aventure("Via",listeChapitres);
+        Aventure Kachikam = new Aventure("Kachikam",listeChapitres);
 
-        return via;
+        return Kachikam;
     }
 
     private Chapitre CréationHistoireDinoChapitre0(){

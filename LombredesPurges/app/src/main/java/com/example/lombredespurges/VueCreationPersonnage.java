@@ -82,14 +82,14 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
         btnContinuer = view.findViewById(R.id.buttonPersonnage);
         navController = Navigation.findNavController(view);
         editName = view.findViewById(R.id.editName);
-        raceImage = view.findViewById(R.id.race);
-        raceNom = view.findViewById(R.id.race_texte);
+        raceImage = view.findViewById(R.id.imageRaceCreationPersonnage);
+        raceNom = view.findViewById(R.id.nomRace);
         raceDescription = view.findViewById(R.id.descriptionRace);
 
-        txtForce = view.findViewById(R.id.textView22);
-        txtEndurence= view.findViewById(R.id.textView24);
-        txtAgilité = view.findViewById(R.id.textView25);
-        txtIntelligence = view.findViewById(R.id.textView26);
+        txtForce = view.findViewById(R.id.forceCreationPersonnage);
+        txtEndurence= view.findViewById(R.id.endurenceCreationPersonnage);
+        txtAgilité = view.findViewById(R.id.agilitéCreationPersonnage);
+        txtIntelligence = view.findViewById(R.id.intelligenceCreationPersonnage);
 
         btnForce = view.findViewById(R.id.imageView12);
         btnForce.setOnClickListener(
@@ -156,10 +156,13 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
         );
     }
 
+    
     public void changerRace() {
         String nomRace = getArguments().getString("race");
         présentateurCreationPersonnage.choisirRace(nomRace);
     }
+
+
 
     @Override
     public void setRace(String race,int description, int codeImage) {

@@ -8,7 +8,7 @@
     tools:context=".VueChapitre">
 
     <ImageView
-        android:id="@+id/imageRaceChapitreDino"
+        android:id="@+id/imageRaceChapitre"
         android:layout_width="416dp"
         android:layout_height="385dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -17,7 +17,7 @@
         app:srcCompat="@drawable/dinoh" />
 
     <TextView
-        android:id="@+id/contenueChapitreDino"
+        android:id="@+id/contenueChapitre"
         android:layout_width="500dp"
         android:layout_height="325dp"
         android:fontFamily="@font/aldrich"
@@ -43,7 +43,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:id="@+id/buttonChoix1Dino"
+            android:id="@+id/buttonChoix1Chapitre"
             style="@style/Widget.AppCompat.Button"
             android:layout_width="170dp"
             android:layout_height="70dp"
@@ -58,7 +58,7 @@
             app:strokeColor="#000000" />
 
         <Button
-            android:id="@+id/buttonChoix2Dino"
+            android:id="@+id/buttonChoix2Chapitre"
             style="@style/Widget.AppCompat.Button"
             android:layout_width="170dp"
             android:layout_height="70dp"
@@ -73,7 +73,7 @@
             app:strokeColor="#000000" />
 
         <Button
-            android:id="@+id/buttonChoix3Dino"
+            android:id="@+id/buttonChoix3Chapitre"
             style="@style/Widget.AppCompat.Button"
             android:layout_width="170dp"
             android:layout_height="70dp"
@@ -94,14 +94,14 @@
         android:layout_width="447dp"
         android:layout_height="67dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/contenueChapitreDino"
+        app:layout_constraintBottom_toTopOf="@+id/contenueChapitre"
         app:layout_constraintEnd_toStartOf="@+id/linearLayout11"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/texteChapitreDino"
+            android:id="@+id/texteChapitre"
             android:layout_width="220dp"
             android:layout_height="62dp"
             android:fontFamily="@font/aldrich"

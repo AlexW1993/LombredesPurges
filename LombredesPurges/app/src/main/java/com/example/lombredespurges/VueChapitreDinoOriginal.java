@@ -61,8 +61,8 @@ public class VueChapitreDinoOriginal extends Fragment{
         navController = Navigation.findNavController(view);
 
         txtNumeroChapitre = view.findViewById(R.id.NumeroChapitre);
-        texteChapitre = view.findViewById(R.id.texteChapitreDino);
-        texteContenueChapitre = view.findViewById(R.id.contenueChapitreDino);
+        texteChapitre = view.findViewById(R.id.texteChapitre);
+        texteContenueChapitre = view.findViewById(R.id.contenueChapitre);
 
         btnPageTitre = view.findViewById(R.id.buttonMenu);
         btnPageTitre.setVisibility(View.GONE);
@@ -73,9 +73,9 @@ public class VueChapitreDinoOriginal extends Fragment{
         bundle.putString("race", "dino");
 
 
-        btnChoix1 = view.findViewById(R.id.buttonChoix1Dino);
-        btnChoix2 = view.findViewById(R.id.buttonChoix2Dino);
-        btnChoix3 = view.findViewById(R.id.buttonChoix3Dino);
+        btnChoix1 = view.findViewById(R.id.buttonChoix1Chapitre);
+        btnChoix2 = view.findViewById(R.id.buttonChoix2Chapitre);
+        btnChoix3 = view.findViewById(R.id.buttonChoix3Chapitre);
 
         chapitreCourante = getArguments().getString("ChapitreCouranteAction");
         étapeCourant = detectionÉtape(getArguments());

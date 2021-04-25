@@ -113,7 +113,7 @@ public class VueCombat extends Fragment implements IContratPrésentateurVueComba
         deroulementCombat = view.findViewById(R.id.deroulementcombattexte);
         deroulementCombat.setText("Jouer le Dé pour déterminer l'attaquant");
 
-        raceImage  = view.findViewById(R.id.imageView11);
+        raceImage  = view.findViewById(R.id.imageRaceCombat);
         présentateurCombat.changerRace(getArguments().getString("race"));
 
         btnDé = view.findViewById(R.id.combatDé);

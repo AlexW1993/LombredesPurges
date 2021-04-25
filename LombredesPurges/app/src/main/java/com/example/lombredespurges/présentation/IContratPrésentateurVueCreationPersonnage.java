@@ -14,8 +14,12 @@ public interface IContratPrésentateurVueCreationPersonnage {
         public void choixChapitre(String nomRace, Bundle bundle);
     }
 
+
     public interface IVueCreationPersonnage{
         public void setRace(String race, int description, int codeImage);
+
+
+
         public void afficherChapitre (int choix, Bundle bundle);
         public void ajouterPersonnage(Personnage unPersonnage, Bundle bundle);
         public void ajouterForcePersonnage(int pointsTotal);

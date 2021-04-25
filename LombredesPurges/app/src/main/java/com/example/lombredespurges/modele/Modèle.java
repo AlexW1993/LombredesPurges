@@ -3,16 +3,18 @@
 package com.example.lombredespurges.modele;
 
 import com.example.lombredespurges.domaine.entité.Ennemie;
+import com.example.lombredespurges.domaine.entité.Jeu;
 import com.example.lombredespurges.domaine.entité.Personnage;
 import com.example.lombredespurges.domaine.interacteur.Creation;
 
 public class Modèle {
 
     private static Modèle modèle;
-    private Personnage _personnage;
-    private Ennemie _ennemie;
-    private JeuModèle _jeu;
-    //private ArrayList<Histoire> _listeHistoire = new Creation().CréationListeHistoireDino();
+    private Jeu _jeu;
+
+    private Modèle(){
+        this._jeu = new Creation().CréationJeu();
+    }
 
     public static Modèle getInstance(){
         if (modèle == null){
@@ -21,13 +23,36 @@ public class Modèle {
         return modèle;
     }
 
+    public void creationPersonnage(String nom, int force, int endurance, int agilité, int intelligence){
+        _jeu.set_personnage(new Personnage(nom, force, endurance, agilité, intelligence));
+    }
+
+
+    public void determinerAventureChoisie(String nomAventure){
+        _jeu.determinerAventureChoisie(nomAventure);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
     public void creationJeu(){
-        _jeu = new Creation().CréationListeAventures();
+        _jeu = new Creation().CréationJeu();
     }
 
     public void creationPersonnage(String nom, int force, int endurance, int agilité, int intelligence){
         _personnage = new Creation().CreationPersonnage(nom, force, endurance,agilité, intelligence);
-    }
+    }*/
 
     public void creationEnnemie( ){
         _ennemie = new Creation().CreationEnnemie();
