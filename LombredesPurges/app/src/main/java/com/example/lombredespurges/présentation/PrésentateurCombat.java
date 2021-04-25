@@ -1,6 +1,7 @@
 package com.example.lombredespurges.présentation;
 
 import com.example.lombredespurges.R;
+import com.example.lombredespurges.modele.Modèle;
 
 import java.util.ArrayList;
 

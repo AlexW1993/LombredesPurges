@@ -1,5 +1,7 @@
 package com.example.lombredespurges.présentation;
 
+import com.example.lombredespurges.modele.Modèle;
+
 import java.util.ArrayList;
 
 public class PrésentateurHistoires implements IContratPrésentateurVueHistoires.IPrésentateurHistoires {

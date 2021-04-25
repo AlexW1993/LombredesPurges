@@ -17,7 +17,7 @@ import com.example.lombredespurges.domaine.entité.Personnage;
 import com.example.lombredespurges.présentation.IContratPrésentateurVueHistoires;
 import com.example.lombredespurges.présentation.PrésentateurHistoires;
 
-public class VueChapitreDino extends Fragment implements IContratPrésentateurVueHistoires.IVueHistoireDino {
+public class VueChapitre extends Fragment implements IContratPrésentateurVueHistoires.IVueHistoireDino {
 
 
     private String numeroChapitreTexte;
@@ -39,12 +39,12 @@ public class VueChapitreDino extends Fragment implements IContratPrésentateurVu
 
     PrésentateurHistoires présentateurHistoires;
 
-    public VueChapitreDino() {
+    public VueChapitre() {
         // Required empty public constructor
     }
 
-    public static VueChapitreDino newInstance(String param1, String param2) {
-        VueChapitreDino fragment = new VueChapitreDino();
+    public static VueChapitre newInstance(String param1, String param2) {
+        VueChapitre fragment = new VueChapitre();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;

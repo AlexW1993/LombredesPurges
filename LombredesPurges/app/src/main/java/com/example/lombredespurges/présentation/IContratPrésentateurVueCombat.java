@@ -1,7 +1,5 @@
 package com.example.lombredespurges.présentation;
 
-import androidx.core.app.Person;
-
 import com.example.lombredespurges.domaine.entité.Personnage;
 
 import java.util.ArrayList;

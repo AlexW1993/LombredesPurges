@@ -4,10 +4,8 @@ import com.example.lombredespurges.R;
 import com.example.lombredespurges.domaine.entité.Aventure;
 import com.example.lombredespurges.domaine.entité.Chapitre;
 import com.example.lombredespurges.domaine.entité.Ennemie;
-import com.example.lombredespurges.domaine.entité.Jeu;
 import com.example.lombredespurges.domaine.entité.Personnage;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -35,13 +33,11 @@ public class Creation {
     }
 
 
-    public Jeu CréationJeu(){
+    public ArrayList<Aventure> CréationListeAventures(){
         ArrayList<Aventure> listeAventures = new ArrayList<Aventure>();
         listeAventures.add(CréationAventureDino());
 
-        Jeu jeu = new Jeu(listeAventures);
-
-        return jeu;
+        return listeAventures;
     }
 
     private Aventure CréationAventureDino(){

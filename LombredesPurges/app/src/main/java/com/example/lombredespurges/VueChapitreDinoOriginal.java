@@ -192,7 +192,7 @@ public class VueChapitreDinoOriginal extends Fragment{
                     navController.navigate(R.id.combat, bundle);
                 } else {
                     txtNumeroChapitre.setText("3");
-                    texteContenueChapitre.setText(R.string.chapitre3_1Dino);
+                    //texteContenueChapitre.setText(R.string.chapitre3_1Dino);
                     btnChoix1.setText(R.string.choix4_1);
                     btnChoix2.setText(R.string.choix4_2);
                     btnChoix3.setText(R.string.choix4_3);
@@ -207,7 +207,7 @@ public class VueChapitreDinoOriginal extends Fragment{
                     navController.navigate(R.id.combat, bundle);
                 } else {
                     txtNumeroChapitre.setText("3");
-                    texteContenueChapitre.setText(R.string.chapitre3_6Dino);
+                    //texteContenueChapitre.setText(R.string.chapitre3_6Dino);
                     btnChoix1.setText(R.string.choix9_1);
                     btnChoix2.setText(R.string.choix9_2);
                     btnChoix3.setText(R.string.choix9_3);
@@ -218,14 +218,14 @@ public class VueChapitreDinoOriginal extends Fragment{
         }else if(choix == 2){
             if(chapitreCourante.equals("2_1") || chapitreCourante.equals("2_2")){
                 txtNumeroChapitre.setText("3");
-                texteContenueChapitre.setText(R.string.chapitre3_2Dino);
+                //texteContenueChapitre.setText(R.string.chapitre3_2Dino);
                 btnChoix1.setText(R.string.choix5_1);
                 btnChoix2.setText(R.string.choix5_2);
                 btnChoix3.setText(R.string.choix5_3);
                 chapitreCourante = "3_2";
             }else if(chapitreCourante.equals("2_3")){
                 txtNumeroChapitre.setText("3");
-                texteContenueChapitre.setText(R.string.chapitre3_5Dino);
+                //texteContenueChapitre.setText(R.string.chapitre3_5Dino);
                 btnChoix1.setText(R.string.choix8_1);
                 btnChoix2.setText(R.string.choix8_2);
                 btnChoix3.setText(R.string.choix8_3);
@@ -234,9 +234,9 @@ public class VueChapitreDinoOriginal extends Fragment{
 
         }else if(choix == 3){
             if(chapitreCourante.equals("2_1") || chapitreCourante.equals("2_2")){
-                cheminFinal(R.string.dommage,R.string.chapitre3_3Dino);
+                //cheminFinal(R.string.dommage,R.string.chapitre3_3Dino);
             }else if(chapitreCourante.equals("2_3")){
-                cheminFinal(R.string.dommage,R.string.chapitre3_4Dino);
+                //cheminFinal(R.string.dommage,R.string.chapitre3_4Dino);
             }
         }
     }
@@ -246,14 +246,14 @@ public class VueChapitreDinoOriginal extends Fragment{
             cheminFinal(R.string.dommage,R.string.chapitre12Dino);
         }else if(choix == 2) {
             txtNumeroChapitre.setText("4");
-            texteContenueChapitre.setText(R.string.chapitre4_1Dino);
+            //texteContenueChapitre.setText(R.string.chapitre4_1Dino);
             btnChoix1.setText(R.string.choix10_1);
             btnChoix2.setText(R.string.choix10_2);
             btnChoix3.setText(R.string.choix10_3);
             chapitreCourante = "4_1";
         }else if(choix == 3){
             txtNumeroChapitre.setText("4");
-            texteContenueChapitre.setText(R.string.chapitre4_2Dino);
+            //texteContenueChapitre.setText(R.string.chapitre4_2Dino);
             btnChoix1.setText(R.string.choix11_1);
             btnChoix2.setText(R.string.choix11_2);
             btnChoix3.setText(R.string.choix11_3);

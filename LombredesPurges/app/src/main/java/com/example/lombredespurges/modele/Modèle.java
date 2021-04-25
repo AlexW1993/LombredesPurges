@@ -1,18 +1,17 @@
-package com.example.lombredespurges.présentation;
+
+
+package com.example.lombredespurges.modele;
 
 import com.example.lombredespurges.domaine.entité.Ennemie;
-import com.example.lombredespurges.domaine.entité.Jeu;
 import com.example.lombredespurges.domaine.entité.Personnage;
 import com.example.lombredespurges.domaine.interacteur.Creation;
-
-import java.util.ArrayList;
 
 public class Modèle {
 
     private static Modèle modèle;
     private Personnage _personnage;
     private Ennemie _ennemie;
-    private Jeu _jeu;
+    private JeuModèle _jeu;
     //private ArrayList<Histoire> _listeHistoire = new Creation().CréationListeHistoireDino();
 
     public static Modèle getInstance(){
@@ -23,7 +22,7 @@ public class Modèle {
     }
 
     public void creationJeu(){
-        _jeu = new Creation().CréationJeu();
+        _jeu = new Creation().CréationListeAventures();
     }
 
     public void creationPersonnage(String nom, int force, int endurance, int agilité, int intelligence){

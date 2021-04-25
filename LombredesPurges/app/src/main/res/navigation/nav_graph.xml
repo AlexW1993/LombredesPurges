@@ -67,7 +67,7 @@
 
     <fragment
         android:id="@+id/chapitre_dino"
-        android:name="com.example.lombredespurges.VueChapitreDino"
+        android:name="com.example.lombredespurges.VueChapitre"
         android:label="chapitre_histoire"
         tools:layout="@layout/chapitre_histoire_dino" >
         <action
