@@ -4,21 +4,22 @@ package com.example.lombredespurges.présentation;
 public interface IContratPrésentateurVueHistoires {
 
     public interface IPrésentateurHistoires{
-        public void getDéterminerCombat(int positionListe);
+        public void getAventure(String nomAventure);
         public void getNumeroChapitre(int positionListe);
         public void getTexteChapitre(int positionListe);
-        public void getChoix_1_Chapitre(int positionListe);
-        public void getChoix_2_Chapitre(int positionListe);
-        public void getChoix_3_Chapitre(int positionListe);
+        public int getChoixChapitre(int positionListe);
+        public void getProchainChapitre(int positionListe);
+        public void déterminerCombat(int positionListe,  boolean finalitéCombat);
+        public void gestionChapitres(int numéroChapitre);
     }
 
-    public interface IVueHistoireDino{
+    public interface IVueHistoire {
+        public void afficherAventure(String nomAventure);
         public void afficherNumeroChapitre (int _numeroChapitre);
         public void afficherTexteChapitre (int _texteChapitre);
-        public void afficherChoix_1_Chapitre (int _choix1);
-        public void afficherChoix_2_Chapitre (int _choix2);
-        public void afficherChoix_3_Chapitre (int _choix3);
-        public void déterminerCombat (boolean _combat);
-
+        public void afficherChoixChapitre (int _choix);
+        public void afficherProchainChapitre (int _prochainChapitre);
+        public void faireCombat();
+        public boolean finalitéCombat();
     }
 }

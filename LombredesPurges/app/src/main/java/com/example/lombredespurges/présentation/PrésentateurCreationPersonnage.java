@@ -3,7 +3,6 @@ package com.example.lombredespurges.présentation;
 import android.os.Bundle;
 import com.example.lombredespurges.R;
 import com.example.lombredespurges.domaine.entité.Personnage;
-import com.example.lombredespurges.domaine.entité.Jeu;
 import com.example.lombredespurges.modele.Modèle;
 
 import java.util.Random;
@@ -96,7 +95,7 @@ public class PrésentateurCreationPersonnage implements IContratPrésentateurVue
      * @return (int) le choix de chapitre.
      */
     @Override
-    public void choixChapitre(String nomRace, Bundle bundle){
+    public void choixAventure(String nomRace, Bundle bundle){
         int choix = 0;
         if (nomRace.equals("dino")){
             choix = R.id.chapitre_dino;
@@ -105,6 +104,6 @@ public class PrésentateurCreationPersonnage implements IContratPrésentateurVue
         } else if (nomRace.equals("kaqchikam")) {
             choix = R.id.chapitre_kachikam;
         }
-        _vue.afficherChapitre(choix,bundle);
+        _vue.afficherAventure(choix,bundle);
     }
 }

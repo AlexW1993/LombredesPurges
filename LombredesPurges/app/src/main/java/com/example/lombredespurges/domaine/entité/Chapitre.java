@@ -60,4 +60,5 @@ public class Chapitre {
     public int get_prochainChapitre(int positionListe) {
         return _listeProchainChapitre.get(positionListe);
     }
+
 }

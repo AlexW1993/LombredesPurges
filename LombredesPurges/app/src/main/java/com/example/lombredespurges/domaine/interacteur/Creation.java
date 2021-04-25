@@ -12,11 +12,12 @@ import java.util.Random;
 
 public class Creation {
 
-    public Personnage CreationPersonnage (String nom, int force, int endurance, int agilité, int intelligence){
+
+/*    public Personnage CreationPersonnage (String nom, int force, int endurance, int agilité, int intelligence){
         Personnage personnage;
         personnage = new Personnage(nom,force,endurance,agilité,intelligence);
         return  personnage;
-    }
+    }*/
 
     public Ennemie CreationEnnemie (){
         Ennemie ennemie;

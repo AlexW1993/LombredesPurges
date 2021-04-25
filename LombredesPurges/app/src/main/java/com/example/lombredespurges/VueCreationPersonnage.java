@@ -149,7 +149,7 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
                             présentateurCreationPersonnage.informationPersonnage(editName.getText().toString(),force,endurence,agilité,intelligence);
                             présentateurCreationPersonnage.chercherpersonnage(bundle);
                             //bundle.putSerializable("Personnage",personnage);
-                            présentateurCreationPersonnage.choixChapitre(nomRace,bundle);
+                            présentateurCreationPersonnage.choixAventure(nomRace,bundle);
                         }
                     }
                 }
@@ -172,7 +172,7 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
     }
 
     @Override
-    public void afficherChapitre(int choix, Bundle bundle) {
+    public void afficherAventure(int choix, Bundle bundle) {
         navController.navigate(choix, bundle);
     }
 

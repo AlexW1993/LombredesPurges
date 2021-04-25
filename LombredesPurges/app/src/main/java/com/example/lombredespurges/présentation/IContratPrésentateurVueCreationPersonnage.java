@@ -11,7 +11,7 @@ public interface IContratPrésentateurVueCreationPersonnage {
         public void informationPersonnage(String nom, int force, int endurance, int agilité, int intelligence);
         public void chercherpersonnage(Bundle bundle);
         public void calculerAttribut(String attribut);
-        public void choixChapitre(String nomRace, Bundle bundle);
+        public void choixAventure(String nomRace, Bundle bundle);
     }
 
 
@@ -20,7 +20,7 @@ public interface IContratPrésentateurVueCreationPersonnage {
 
 
 
-        public void afficherChapitre (int choix, Bundle bundle);
+        public void afficherAventure(int choix, Bundle bundle);
         public void ajouterPersonnage(Personnage unPersonnage, Bundle bundle);
         public void ajouterForcePersonnage(int pointsTotal);
         public void ajouterEndurancePersonnage(int pointsTotal);

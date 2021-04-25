@@ -35,9 +35,9 @@ public class Jeu {
         this._aventureChoisie = _aventureChoisie;
     }
 
-    public void determinerAventureChoisie(String nomChapitre){
+    public void determinerAventureChoisie(String nomAventure){
         for( Aventure uneAventure : _listeAventure){
-            if(uneAventure.get_nomAventure().trim().equals(nomChapitre)){
+            if(uneAventure.get_nomAventure().trim().equals(nomAventure)){
                 _aventureChoisie = uneAventure;
             }
         }
