@@ -96,6 +96,8 @@ public class VueChapitre extends Fragment implements IContratPrésentateurVueHis
             public void onClick(View v) {
                 étapeCourant++;
                 gestionAffichageDesChapitres(1);
+
+                modele.getJeu.getCHapitre(0);
             }
         });
 
