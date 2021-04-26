@@ -27,36 +27,32 @@ public class VueCombat extends Fragment implements IContratPrésentateurVueComba
     /**
      * Declaration des Attributs
      */
-    Button btnContinuer;
-    NavController navController;
+    private Button btnContinuer;
+    private NavController navController;
 
-    ImageButton btnDé;
+    private ImageButton btnDé;
 
-    boolean tourJoueur = false;
+    private boolean tourJoueur = false;
+    private int resultatEndurance;
 
-    int resultatEndurance;
+    private TextView deroulementCombat;
 
-    TextView deroulementCombat;
+    private TextView coefAttaquePersonnage;
+    private TextView forcePersonnage;
+    private TextView agilitéPersonnage;
+    private TextView endurancePersonnage;
+    private TextView défencePersonnage;
+    private TextView nomPersonnage;
 
-    TextView coefAttaquePersonnage;
-    TextView forcePersonnage;
-    TextView agilitéPersonnage;
-    TextView endurancePersonnage;
-    TextView défencePersonnage;
-    TextView nomPersonnage;
-
-    TextView coefAttaqueEnnemi;
-    TextView forceEnnemie;
-    TextView agilitéEnnemie;
-    TextView enduranceEnnemie;
-    TextView défenceEnnemie;
-    TextView nomEnnemi;
-
-    ImageView raceImage;
-
-    Bundle bundle;
-
-    PrésentateurCombat présentateurCombat;
+    private TextView coefAttaqueEnnemi;
+    private TextView forceEnnemie;
+    private TextView agilitéEnnemie;
+    private TextView enduranceEnnemie;
+    private TextView défenceEnnemie;
+    private TextView nomEnnemi;
+    private ImageView raceImage;
+    private Bundle bundle;
+    private PrésentateurCombat présentateurCombat;
 
 
     public VueCombat() {
@@ -123,7 +119,6 @@ public class VueCombat extends Fragment implements IContratPrésentateurVueComba
                     public void onClick(View v) {
                         présentateurCombat.calculerCoefAttaque();
                         présentateurCombat.tourDAttaquer(tourJoueur);
-                        présentateurCombat.comparerEndurance();
                     }
                 }
         );
@@ -135,25 +130,12 @@ public class VueCombat extends Fragment implements IContratPrésentateurVueComba
                         if (btnContinuer.getText().equals("Continuer")){
                             présentateurCombat.passerAuChapitreApresCombat();
                         } else if (btnContinuer.getText().equals("Page titre")){
-                            //présentateurCombat.passerPageTitre();
-                            navController.navigate(R.id.pageTitre);
+                            présentateurCombat.passerPageTitre();
                         }
                     }
                 }
         );
     }
-
-
-    /**
-     * La méthode permet que le nom reçu en parametre est affiché.
-     *
-     * @param unNom, (String) le nom du personnage.
-     */
-    @Override
-    public void afficherNomPersonnage(String unNom) {
-        nomPersonnage.setText(unNom.toUpperCase());
-    }
-
     /**
      * La méthode permet que les attributs reçus en parametre sont affichés.
      *
@@ -205,7 +187,7 @@ public class VueCombat extends Fragment implements IContratPrésentateurVueComba
     /**
      * La méthode permet realiser une action dans le tour d'attauque.
      *
-     * @param accion, l'action à faire.
+     * @param action, l'action à faire.
      */
     @Override
     public void gestionAction(int action) {
@@ -279,41 +261,6 @@ public class VueCombat extends Fragment implements IContratPrésentateurVueComba
     public void faireAction4(int dommage) {
         deroulementCombat.setText("Vous êtes attaqué : " + dommage + " de dommage a été fait. Jouer le dé pour prochain tour");
     }
-
-    /**
-     * La méthode permet activer le bouton de Continuer ou de Page Titre en utilisant le resultat
-     * d'endurance entre le personnage et l'ennemi.
-     *
-     * @param resultat, le resultat de l'endurance.
-     */
-    @Override
-    public void resultatEndurance(int resultat) {
-        if(resultatEndurance == 1){
-            btnContinuer.setVisibility(View.VISIBLE);
-            btnContinuer.setText("Page titre");
-        }else if(resultatEndurance == 2){
-            btnContinuer.setVisibility(View.VISIBLE);
-            btnContinuer.setText("Continuer");
-        }
-    }
-
-    /**
-     * La méthode permet envoyer le personnage dans la prochaine vue de l'histoire.
-     *
-     * @param personnage, le personnage.
-     */
-    @Override
-    public void envoiePersonnageDansProchaineVue(Personnage personnage) {
-        bundle = new Bundle();
-        bundle.putBoolean("CombatFinit",true);
-
-        bundle.putString("ChapitreCouranteAction",getArguments().getString("ChapitreCourante"));
-
-        String race = getArguments().getString("race");
-
-
-    }
-
     /**
      * La méthode permet changer el type de race.
      *

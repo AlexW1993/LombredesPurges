@@ -25,29 +25,29 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
     /**
      * Declaration des Attributs
      */
-    Button btnContinuer;
-    NavController navController;
-    EditText editName;
-    ImageView raceImage;
-    TextView raceNom;
-    TextView raceDescription;
+    private Button btnContinuer;
+    private NavController navController;
+    private EditText editName;
+    private ImageView raceImage;
+    private TextView raceNom;
+    private TextView raceDescription;
 
-    ImageButton btnForce;
-    ImageButton btnEndurence;
-    ImageButton btnAgilité;
-    ImageButton btnIntelligence;
+    private ImageButton btnForce;
+    private ImageButton btnEndurence;
+    private ImageButton btnAgilité;
+    private ImageButton btnIntelligence;
 
-    TextView txtForce;
-    TextView txtEndurence;
-    TextView txtAgilité;
-    TextView txtIntelligence;
+    private TextView txtForce;
+    private TextView txtEndurence;
+    private TextView txtAgilité;
+    private TextView txtIntelligence;
 
-    PrésentateurCreationPersonnage présentateurCreationPersonnage;
+    private PrésentateurCreationPersonnage présentateurCreationPersonnage;
 
-    int force;
-    int endurence;
-    int agilité;
-    int intelligence;
+    private int force;
+    private int endurence;
+    private int agilité;
+    private int intelligence;
 
 
 
@@ -81,7 +81,6 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
         navController = Navigation.findNavController(view);
         présentateurCreationPersonnage = new PrésentateurCreationPersonnage(this);
 
-        //editName, Race, DescriptionRace, 4Forces, AfficherButtonContinuer
         btnContinuer = view.findViewById(R.id.buttonPersonnage);
 
         editName = view.findViewById(R.id.editName);
@@ -137,7 +136,6 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
                     }
                 }
         );
-        //changerRace();
         btnContinuer.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -151,11 +149,6 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
                             bundle.putString("nom", editName.getText().toString());
                             String nomRace = getArguments().getString("race");
                             bundle.putString("nomRace", nomRace);
-
-                            //présentateurCreationPersonnage.informationPersonnage(editName.getText().toString(),force,endurence,agilité,intelligence);
-                            //présentateurCreationPersonnage.chercherpersonnage(bundle);
-                            //bundle.putSerializable("Personnage",personnage);
-                            //présentateurCreationPersonnage.choixAventure(nomRace,bundle);
                             présentateurCreationPersonnage.créationPersonnage(editName.getText().toString(),force,endurence,agilité,intelligence);
                             navController.navigate(R.id.chapitre_dino);
                         }
@@ -176,19 +169,6 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
         raceDescription.setText(description);
         raceImage.setImageDrawable(getResources().getDrawable(codeImage));
     }
-
-    /**
-     * La méthode permet afficher un chapitre en utilisant le choix du personnage.
-     *
-     * @param (choix,bundle), le choix choisit.
-     */
-    @Override
-    public void afficherAventure(int choix, Bundle bundle) {
-        //navController.navigate(R.id.Histoire);
-    }
-
-
-
     /**
      * La méthode permet afficher le points de force dans le texte.
      *

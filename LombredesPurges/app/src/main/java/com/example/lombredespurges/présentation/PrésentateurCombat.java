@@ -39,8 +39,6 @@ public class PrésentateurCombat implements IContratPrésentateurVueCombat.IPré
     @Override
     public void getNomPersonnage(){
         String nom;
-        //nom = _modèle.getPersonnage().get_nom();
-        //_vue.afficherNomPersonnage(nom);
     }
 
     /**
@@ -106,20 +104,6 @@ public class PrésentateurCombat implements IContratPrésentateurVueCombat.IPré
     }
 
     /**
-     * La méthode permet de comparer de l'endurance du personnage ou de l'ennemi à 0.
-     */
-    @Override
-    public void comparerEndurance(){
-        /*if(_modèle.getPersonnage().get_endurance() <= 0){
-            _vue.resultatEndurance(1);
-        }else if(_modèle.getEnnemie().get_endurance() <= 0){
-            _vue.resultatEndurance(2);
-        }else {
-            _vue.resultatEndurance(0);
-        }*/
-    }
-
-    /**
      * La méthode permet de calculer la coeficience d'attaque du personnage
      * et de l'ennemie.
      */
@@ -161,17 +145,8 @@ public class PrésentateurCombat implements IContratPrésentateurVueCombat.IPré
     }
 
     /**
-     * La méthode permet de chercher le personnage du jeu pour l'enoyer dans la prochaine vue.
-     */
-    @Override
-    public void chercherPersonage(){
-       /* _vue.envoiePersonnageDansProchaineVue(_modèle.getPersonnage());*/
-    }
-
-    /**
      * La méthode permet changer la race.
      *
-     * @param (race) .(String) la race a choisisr
      */
     @Override
     public void changerRace() {

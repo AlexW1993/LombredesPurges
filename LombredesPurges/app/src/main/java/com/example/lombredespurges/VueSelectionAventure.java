@@ -17,10 +17,10 @@ public class VueSelectionAventure extends Fragment {
     /**
      * Declaration des Attributs
      */
-    Button btnDino;
-    Button btnVia;
-    Button btnKaqchikam;
-    NavController navController;
+    private Button btnDino;
+    private Button btnVia;
+    private Button btnKaqchikam;
+    private NavController navController;
 
     public VueSelectionAventure() {
         // Required empty public constructor

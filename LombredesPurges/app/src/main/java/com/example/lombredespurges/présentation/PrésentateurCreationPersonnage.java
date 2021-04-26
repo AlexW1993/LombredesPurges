@@ -60,8 +60,6 @@ public class PrésentateurCreationPersonnage implements IContratPrésentateurVue
         _modèle.creationPersonnage(nom, force, endurance, agilité, intelligence);
     }
 
-
-
     /**
      * La méthode permet de calculer la valuer de l'attribut que est en parametre.
      *
@@ -90,21 +88,5 @@ public class PrésentateurCreationPersonnage implements IContratPrésentateurVue
             total =  5 + num;
             _vue.ajouterIntelligencePersonnage(total);
         }
-    }
-
-    /**
-     * La méthode permet de retourner le chapitre en utilisant le choix de race.
-     */
-    @Override
-    public void choixAventure(String nomRace, Bundle bundle){
-        int choix = 0;
-        if (nomRace.equals("dino")){
-            choix = R.id.chapitre_dino;
-        } else if (nomRace.equals("via")){
-            //choix = R.id.chapitre_via;
-        } else if (nomRace.equals("kaqchikam")) {
-            //choix = R.id.chapitre_kachikam;
-        }
-        _vue.afficherAventure(choix,bundle);
     }
 }

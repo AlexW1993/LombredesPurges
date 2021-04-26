@@ -17,8 +17,8 @@ public class VueDimensionCiblées extends Fragment {
     /**
      * Declaration des Attributs
      */
-    Button btnContinuer;
-    NavController navController;
+    private Button btnContinuer;
+    private NavController navController;
 
     public VueDimensionCiblées() {
         // Required empty public constructor

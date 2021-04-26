@@ -17,8 +17,8 @@ public class VueLinvasion extends Fragment {
     /**
      * Declaration des Attributs
      */
-    Button btnContinuer;
-    NavController navController;
+    private Button btnContinuer;
+    private NavController navController;
 
     public VueLinvasion() {
         // Required empty public constructor

@@ -66,18 +66,6 @@ public class Modèle {
         return _jeu;
     }
 
-
-/*
-    public void creationJeu(){
-        _jeu = new Creation().CréationJeu();
-    }
-
-
-
-    public void creationPersonnage(String nom, int force, int endurance, int agilité, int intelligence){
-        _personnage = new Creation().CreationPersonnage(nom, force, endurance,agilité, intelligence);
-    }*/
-
     /**
      * La méthode permet d'appeler la methode pour la creation d'un ennemie.
      */
