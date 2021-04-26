@@ -37,6 +37,10 @@ public class PrésentateurHistoires implements IContratPrésentateurVueHistoires
 
         Chapitre uneChapitre = _modèle.déterminerChapitreCourant();
 
+        if(uneChapitre.get_combat()){
+            _vue.passerAuCombat();
+        }
+
         int numChapitre = uneChapitre.get_numéroChapitre();
         int idContenueChapitre = uneChapitre.get_IdTexteChapitre();
         ArrayList<Integer> listeIdChoix = uneChapitre.get_listeIdTexteChoix();
