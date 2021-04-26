@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -28,6 +29,7 @@ public class VueHistoire extends Fragment implements IContratPrésentateurVueHis
     private Button btnPageTitre;
     private NavController navController;
     private Bundle bundle;
+    private ImageView imgRace;
 
     private PrésentateurHistoires présentateurHistoires;
 
@@ -61,6 +63,8 @@ public class VueHistoire extends Fragment implements IContratPrésentateurVueHis
         navController = Navigation.findNavController(view);
 
         présentateurHistoires = new PrésentateurHistoires(this);
+        imgRace = view.findViewById(R.id.imageRaceChapitre);
+        présentateurHistoires.changerRace();
 
         txtNumeroChapitre = view.findViewById(R.id.NumeroChapitre);
         texteChapitre = view.findViewById(R.id.texteChapitre);
@@ -136,5 +140,10 @@ public class VueHistoire extends Fragment implements IContratPrésentateurVueHis
     @Override
     public void passerPageTitre() {
         navController.navigate(R.id.pageTitre);
+    }
+
+    @Override
+    public void actionChangerRace(int race) {
+        imgRace.setImageDrawable(getResources().getDrawable(race));
     }
 }

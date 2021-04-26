@@ -6,6 +6,8 @@ public interface IContratPrésentateurVueHistoires {
     public interface IPrésentateurHistoires{
         public void gestionChapitre(int choix);
         public void réinitialierJeu();
+        public void changerRace();
+
     }
 
     public interface IVueHistoire {
@@ -13,5 +15,6 @@ public interface IContratPrésentateurVueHistoires {
         public void afficherFinJeu(int numeroChapitre, int idContenueChapitre);
         public void passerAuCombat();
         public void passerPageTitre();
+        public void actionChangerRace(int race);
     }
 }

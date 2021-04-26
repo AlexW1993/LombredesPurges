@@ -1,5 +1,6 @@
 package com.example.lombredespurges.présentation;
 
+import com.example.lombredespurges.R;
 import com.example.lombredespurges.domaine.entité.Aventure;
 import com.example.lombredespurges.domaine.entité.Chapitre;
 import com.example.lombredespurges.domaine.entité.Jeu;
@@ -50,5 +51,16 @@ public class PrésentateurHistoires implements IContratPrésentateurVueHistoires
         _vue.passerPageTitre();
     }
 
+    @Override
+    public void changerRace() {
 
+        String race = _modèle.get_jeu().get_aventureChoisie().get_nomAventure();
+        if (race.equals("Via")) {
+            _vue.actionChangerRace(R.drawable.via);
+        } else if (race.equals("Kachikam")) {
+            _vue.actionChangerRace(R.drawable.kaqchikam);
+        } else if (race.equals("Dino")) {
+            _vue.actionChangerRace(R.drawable.dinoh);
+        }
+    }
 }

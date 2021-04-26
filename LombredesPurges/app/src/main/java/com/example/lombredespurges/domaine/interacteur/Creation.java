@@ -422,7 +422,7 @@ public class Creation {
         listeProchain.add(10);
         listeProchain.add(11);
         listeProchain.add(12);
-        chapitre = new Chapitre(4, R.string.chapitre4Via,listeChoix,listeProchain,false);
+        chapitre = new Chapitre(4, R.string.chapitre4Via,listeChoix,listeProchain,true);
 
         return chapitre;
     }
@@ -484,7 +484,7 @@ public class Creation {
         listeProchain.add(12);
         listeProchain.add(10);
         listeProchain.add(11);
-        chapitre = new Chapitre(9, R.string.chapitre9Via,listeChoix,listeProchain,false);
+        chapitre = new Chapitre(9, R.string.chapitre9Via,listeChoix,listeProchain,true);
 
         return chapitre;
     }
@@ -554,7 +554,7 @@ public class Creation {
     private Chapitre CréationHistoireViaChapitre16(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
-        Chapitre chapitre = new Chapitre(16, R.string.chapitre16Via,listeChoix,listeProchain,false);
+        Chapitre chapitre = new Chapitre(16, R.string.chapitre16Via,listeChoix,listeProchain,true);
 
         return chapitre;
     }
@@ -571,9 +571,9 @@ public class Creation {
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
         Chapitre chapitre;
-        listeChoix.add(R.string.choix0_1);
-        listeChoix.add(R.string.choix0_2);
-        listeChoix.add(R.string.choix0_3);
+        listeChoix.add(R.string.choix0_1Kachikam);
+        listeChoix.add(R.string.choix0_2Kachikam);
+        listeChoix.add(R.string.choix0_3Kachikam);
         listeProchain.add(1);
         listeProchain.add(2);
         listeProchain.add(3);
@@ -587,9 +587,9 @@ public class Creation {
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
         Chapitre chapitre;
-        listeChoix.add(R.string.choix1_1);
-        listeChoix.add(R.string.choix1_2);
-        listeChoix.add(R.string.choix1_3);
+        listeChoix.add(R.string.choix1_1Kachikam);
+        listeChoix.add(R.string.choix1_2Kachikam);
+        listeChoix.add(R.string.choix1_3Kachikam);
         listeProchain.add(4);
         listeProchain.add(5);
         listeProchain.add(7);
@@ -603,9 +603,9 @@ public class Creation {
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
         Chapitre chapitre;
-        listeChoix.add(R.string.choix2_1);
-        listeChoix.add(R.string.choix2_2);
-        listeChoix.add(R.string.choix2_3);
+        listeChoix.add(R.string.choix2_1Kachikam);
+        listeChoix.add(R.string.choix2_2Kachikam);
+        listeChoix.add(R.string.choix2_3Kachikam);
         listeProchain.add(4);
         listeProchain.add(5);
         listeProchain.add(6);
@@ -618,9 +618,9 @@ public class Creation {
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
         Chapitre chapitre;
-        listeChoix.add(R.string.choix3_1);
-        listeChoix.add(R.string.choix3_2);
-        listeChoix.add(R.string.choix3_3);
+        listeChoix.add(R.string.choix3_1Kachikam);
+        listeChoix.add(R.string.choix3_2Kachikam);
+        listeChoix.add(R.string.choix3_3Kachikam);
         listeProchain.add(9);
         listeProchain.add(8);
         listeProchain.add(7);
@@ -633,9 +633,9 @@ public class Creation {
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
         Chapitre chapitre;
-        listeChoix.add(R.string.choix4_1);
-        listeChoix.add(R.string.choix4_2);
-        listeChoix.add(R.string.choix4_3);
+        listeChoix.add(R.string.choix4_1Kachikam);
+        listeChoix.add(R.string.choix4_2Kachikam);
+        listeChoix.add(R.string.choix4_3Kachikam);
         listeProchain.add(9);
         listeProchain.add(8);
         listeProchain.add(7);
@@ -648,9 +648,9 @@ public class Creation {
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
         Chapitre chapitre;
-        listeChoix.add(R.string.choix5_1);
-        listeChoix.add(R.string.choix5_2);
-        listeChoix.add(R.string.choix5_3);
+        listeChoix.add(R.string.choix5_1Kachikam);
+        listeChoix.add(R.string.choix5_2Kachikam);
+        listeChoix.add(R.string.choix5_3Kachikam);
         listeProchain.add(9);
         listeProchain.add(10);
         listeProchain.add(11);
@@ -680,9 +680,9 @@ public class Creation {
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
         Chapitre chapitre;
-        listeChoix.add(R.string.choix8_1);
-        listeChoix.add(R.string.choix8_2);
-        listeChoix.add(R.string.choix8_3);
+        listeChoix.add(R.string.choix8_1Kachikam);
+        listeChoix.add(R.string.choix8_2Kachikam);
+        listeChoix.add(R.string.choix8_3Kachikam);
         listeProchain.add(12);
         listeProchain.add(10);
         listeProchain.add(11);
@@ -695,9 +695,9 @@ public class Creation {
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
         Chapitre chapitre;
-        listeChoix.add(R.string.choix9_1);
-        listeChoix.add(R.string.choix9_2);
-        listeChoix.add(R.string.choix9_3);
+        listeChoix.add(R.string.choix9_1Kachikam);
+        listeChoix.add(R.string.choix9_2Kachikam);
+        listeChoix.add(R.string.choix9_3Kachikam);
         listeProchain.add(12);
         listeProchain.add(10);
         listeProchain.add(11);
@@ -710,9 +710,9 @@ public class Creation {
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
         Chapitre chapitre;
-        listeChoix.add(R.string.choix10_1);
-        listeChoix.add(R.string.choix10_2);
-        listeChoix.add(R.string.choix10_3);
+        listeChoix.add(R.string.choix10_1Kachikam);
+        listeChoix.add(R.string.choix10_2Kachikam);
+        listeChoix.add(R.string.choix10_3Kachikam);
         listeProchain.add(15);
         listeProchain.add(13);
         listeProchain.add(17);
@@ -725,9 +725,9 @@ public class Creation {
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
         Chapitre chapitre;
-        listeChoix.add(R.string.choix11_1);
-        listeChoix.add(R.string.choix11_2);
-        listeChoix.add(R.string.choix11_3);
+        listeChoix.add(R.string.choix11_1Kachikam);
+        listeChoix.add(R.string.choix11_2Kachikam);
+        listeChoix.add(R.string.choix11_3Kachikam);
         listeProchain.add(15);
         listeProchain.add(16);
         listeProchain.add(17);
