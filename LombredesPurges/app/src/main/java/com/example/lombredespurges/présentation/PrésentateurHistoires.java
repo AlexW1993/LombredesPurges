@@ -35,7 +35,6 @@ public class PrésentateurHistoires implements IContratPrésentateurVueHistoires
 
         if(listeIdChoix.isEmpty()){
             _vue.afficherFinJeu(numChapitre, idContenueChapitre);
-            _modèle.réanitialierJeu();
         }else{
             int choix1 = listeIdChoix.get(0);
             int choix2 = listeIdChoix.get(1);
@@ -44,4 +43,12 @@ public class PrésentateurHistoires implements IContratPrésentateurVueHistoires
             _vue.afficherAventure(numChapitre, idContenueChapitre, choix1, choix2, choix3);
         }
     }
+
+    @Override
+    public void réinitialierJeu() {
+        _modèle.réanitialierJeu();
+        _vue.passerPageTitre();
+    }
+
+
 }

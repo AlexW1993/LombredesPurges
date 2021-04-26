@@ -102,7 +102,8 @@ public class VueHistoire extends Fragment implements IContratPrésentateurVueHis
         btnPageTitre.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navController.navigate(R.id.pageTitre);
+
+                présentateurHistoires.réinitialierJeu();
             }
         });
 
@@ -130,5 +131,10 @@ public class VueHistoire extends Fragment implements IContratPrésentateurVueHis
     @Override
     public void passerAuCombat(){
         navController.navigate(R.id.combat);
+    }
+
+    @Override
+    public void passerPageTitre() {
+        navController.navigate(R.id.pageTitre);
     }
 }
