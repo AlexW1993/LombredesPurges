@@ -357,9 +357,9 @@ public class Creation {
         listeChoix.add(R.string.choix0_1);
         listeChoix.add(R.string.choix0_2);
         listeChoix.add(R.string.choix0_3);
-        listeProchain.add(R.string.chapitre1Via);
-        listeProchain.add(R.string.chapitre2Via);
-        listeProchain.add(R.string.chapitre3Via);
+        listeProchain.add(1);
+        listeProchain.add(2);
+        listeProchain.add(3);
 
         chapitre = new Chapitre(0,R.string.chapitre0Via,listeChoix,listeProchain,false);
 
@@ -373,9 +373,9 @@ public class Creation {
         listeChoix.add(R.string.choix1_1);
         listeChoix.add(R.string.choix1_2);
         listeChoix.add(R.string.choix1_3);
-        listeProchain.add(R.string.chapitre4Via);
-        listeProchain.add(R.string.chapitre5Via);
-        listeProchain.add(R.string.chapitre6Via);
+        listeProchain.add(4);
+        listeProchain.add(5);
+        listeProchain.add(6);
 
         chapitre = new Chapitre(1, R.string.chapitre1Via,listeChoix,listeProchain,false);
 
@@ -389,9 +389,9 @@ public class Creation {
         listeChoix.add(R.string.choix2_1);
         listeChoix.add(R.string.choix2_2);
         listeChoix.add(R.string.choix2_3);
-        listeProchain.add(R.string.chapitre4Via);
-        listeProchain.add(R.string.chapitre5Via);
-        listeProchain.add(R.string.chapitre6Via);
+        listeProchain.add(4);
+        listeProchain.add(5);
+        listeProchain.add(6);
         chapitre = new Chapitre(2, R.string.chapitre2Via,listeChoix,listeProchain,false);
 
         return chapitre;
@@ -404,9 +404,9 @@ public class Creation {
         listeChoix.add(R.string.choix3_1);
         listeChoix.add(R.string.choix3_2);
         listeChoix.add(R.string.choix3_3);
-        listeProchain.add(R.string.chapitre9Via);
-        listeProchain.add(R.string.chapitre8Via);
-        listeProchain.add(R.string.chapitre7Via);
+        listeProchain.add(9);
+        listeProchain.add(8);
+        listeProchain.add(7);
         chapitre = new Chapitre(3, R.string.chapitre3Via,listeChoix,listeProchain,false);
 
         return chapitre;
@@ -419,9 +419,9 @@ public class Creation {
         listeChoix.add(R.string.choix4_1);
         listeChoix.add(R.string.choix4_2);
         listeChoix.add(R.string.choix4_3);
-        listeProchain.add(R.string.chapitre10Via);
-        listeProchain.add(R.string.chapitre11Via);
-        listeProchain.add(R.string.chapitre12Via);
+        listeProchain.add(10);
+        listeProchain.add(11);
+        listeProchain.add(12);
         chapitre = new Chapitre(4, R.string.chapitre4Via,listeChoix,listeProchain,false);
 
         return chapitre;
@@ -434,9 +434,9 @@ public class Creation {
         listeChoix.add(R.string.choix5_1);
         listeChoix.add(R.string.choix5_2);
         listeChoix.add(R.string.choix5_3);
-        listeProchain.add(R.string.chapitre12Via);
-        listeProchain.add(R.string.chapitre10Via);
-        listeProchain.add(R.string.chapitre11Via);
+        listeProchain.add(12);
+        listeProchain.add(10);
+        listeProchain.add(11);
         chapitre = new Chapitre(5, R.string.chapitre5Via,listeChoix,listeProchain,false);
 
         return chapitre;
@@ -466,9 +466,9 @@ public class Creation {
         listeChoix.add(R.string.choix8_1);
         listeChoix.add(R.string.choix8_2);
         listeChoix.add(R.string.choix8_3);
-        listeProchain.add(R.string.chapitre10Dino);
-        listeProchain.add(R.string.chapitre11Dino);
-        listeProchain.add(R.string.chapitre12Dino);
+        listeProchain.add(10);
+        listeProchain.add(11);
+        listeProchain.add(12);
         chapitre = new Chapitre(8, R.string.chapitre8Via,listeChoix,listeProchain,false);
 
         return chapitre;
@@ -481,9 +481,9 @@ public class Creation {
         listeChoix.add(R.string.choix9_1);
         listeChoix.add(R.string.choix9_2);
         listeChoix.add(R.string.choix9_3);
-        listeProchain.add(R.string.chapitre12Dino);
-        listeProchain.add(R.string.chapitre10Dino);
-        listeProchain.add(R.string.chapitre11Dino);
+        listeProchain.add(12);
+        listeProchain.add(10);
+        listeProchain.add(11);
         chapitre = new Chapitre(9, R.string.chapitre9Via,listeChoix,listeProchain,false);
 
         return chapitre;
@@ -496,9 +496,9 @@ public class Creation {
         listeChoix.add(R.string.choix10_1);
         listeChoix.add(R.string.choix10_2);
         listeChoix.add(R.string.choix10_3);
-        listeProchain.add(R.string.chapitre15Dino);
-        listeProchain.add(R.string.chapitre13Dino);
-        listeProchain.add(R.string.chapitre14Dino);
+        listeProchain.add(15);
+        listeProchain.add(13);
+        listeProchain.add(14);
         chapitre = new Chapitre(10, R.string.chapitre10Via,listeChoix,listeProchain,false);
 
         return chapitre;
@@ -511,9 +511,9 @@ public class Creation {
         listeChoix.add(R.string.choix11_1);
         listeChoix.add(R.string.choix11_2);
         listeChoix.add(R.string.choix11_3);
-        listeProchain.add(R.string.chapitre16Dino);
-        listeProchain.add(R.string.chapitre13Dino);
-        listeProchain.add(R.string.chapitre17Dino);
+        listeProchain.add(16);
+        listeProchain.add(13);
+        listeProchain.add(17);
         chapitre = new Chapitre(11, R.string.chapitre11Via,listeChoix,listeProchain,false);
 
         return chapitre;
