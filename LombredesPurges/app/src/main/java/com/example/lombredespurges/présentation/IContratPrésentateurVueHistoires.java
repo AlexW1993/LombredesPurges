@@ -4,7 +4,7 @@ package com.example.lombredespurges.présentation;
 public interface IContratPrésentateurVueHistoires {
 
     public interface IPrésentateurHistoires{
-        public void gestionChapitre(String nomAventure);
+        public void gestionChapitre(int choix);
         public void getNumeroChapitre(int positionListe);
         public void getTexteChapitre(int positionListe);
         public int getChoixChapitre(int positionListe);

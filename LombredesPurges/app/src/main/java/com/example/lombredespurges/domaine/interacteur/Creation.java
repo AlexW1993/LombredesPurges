@@ -132,9 +132,9 @@ public class Creation {
         listeChoix.add(R.string.choix0_1);
         listeChoix.add(R.string.choix0_2);
         listeChoix.add(R.string.choix0_3);
-        listeProchain.add(R.string.chapitre1Dino);
-        listeProchain.add(R.string.chapitre2Dino);
-        listeProchain.add(R.string.chapitre3Dino);
+        listeProchain.add(1);
+        listeProchain.add(2);
+        listeProchain.add(3);
 
         chapitre = new Chapitre(0,R.string.chapitre0Dino,listeChoix,listeProchain,false);
 

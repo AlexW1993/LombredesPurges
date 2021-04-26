@@ -84,13 +84,16 @@ public class VueHistoire extends Fragment implements IContratPrésentateurVueHis
         btnChoix2 = view.findViewById(R.id.buttonChoix2);
         btnChoix3 = view.findViewById(R.id.buttonChoix3);
 
-        personnage = (Personnage) getArguments().getSerializable("Personnage");
+
+        présentateurHistoires.gestionChapitre(-1);
+
+        //personnage = (Personnage) getArguments().getSerializable("Personnage");
         bundle = new Bundle();
 
         //afficherAventure(nomRace);
 
-        chapitreCourante = getArguments().getString("ChapitreCouranteAction");
-        étapeCourant = detectionÉtape(getArguments());
+        //chapitreCourante = getArguments().getString("ChapitreCouranteAction");
+        //étapeCourant = detectionÉtape(getArguments());
 
 
         //gestionAffichageDesChapitres(getArguments().getInt("ChoixPasséeAction"));
@@ -98,6 +101,7 @@ public class VueHistoire extends Fragment implements IContratPrésentateurVueHis
         btnChoix1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                présentateurHistoires.gestionChapitre(0);
                 //
                 /*présentateurHistoires.déterminerCombat(numéroChapitreCourant, finalitéCombat);
                 présentateurHistoires.gestionChapitres(numéroChapitreCourant);*/
@@ -108,6 +112,7 @@ public class VueHistoire extends Fragment implements IContratPrésentateurVueHis
         btnChoix2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                présentateurHistoires.gestionChapitre(1);
                 /*présentateurHistoires.déterminerCombat(numéroChapitreCourant, finalitéCombat);
                 présentateurHistoires.gestionChapitres(numéroChapitreCourant);*/
             }
@@ -116,6 +121,7 @@ public class VueHistoire extends Fragment implements IContratPrésentateurVueHis
         btnChoix3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                présentateurHistoires.gestionChapitre(2);
                 /*présentateurHistoires.déterminerCombat(numéroChapitreCourant, finalitéCombat);
                 présentateurHistoires.gestionChapitres(numéroChapitreCourant);*/
             }
@@ -281,7 +287,7 @@ public class VueHistoire extends Fragment implements IContratPrésentateurVueHis
 
     @Override
     public void afficherAventure(int numeroChapitre, int idContenueChapitre,int idChoix1,int idChoix2,int idChoix3) {
-        txtNumeroChapitre.setText(numeroChapitre);
+        txtNumeroChapitre.setText(String.valueOf(numeroChapitre));
         texteContenueChapitre.setText(idContenueChapitre);
         btnChoix1.setText(idChoix1);
         btnChoix2.setText(idChoix2);

@@ -51,7 +51,7 @@ public class PrésentateurCreationPersonnage implements IContratPrésentateurVue
     }
 
     @Override
-    public void informationPersonnage(String nom, int force, int endurance, int agilité, int intelligence){
+    public void créationPersonnage(String nom, int force, int endurance, int agilité, int intelligence){
         _modèle.creationPersonnage(nom, force, endurance, agilité, intelligence);
     }
 
@@ -70,10 +70,12 @@ public class PrésentateurCreationPersonnage implements IContratPrésentateurVue
     public void calculerAttribut(String attribut){
         int num = 0;
         int total = 0;
-        if (attribut.equals("force") == true){
+
+        if (attribut.equals("force")){
             num = new Random().nextInt((6 - 1) + 1) + 1;
             total =  10 + num;
             _vue.ajouterForcePersonnage(total);
+
         } else if (attribut.equals("endurance") == true){
             num =  new Random().nextInt((10 - 1) + 1) + 1;
             total = 20 + (3 * num);

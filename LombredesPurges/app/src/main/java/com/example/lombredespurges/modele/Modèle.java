@@ -2,6 +2,7 @@
 
 package com.example.lombredespurges.modele;
 
+import com.example.lombredespurges.domaine.entité.Chapitre;
 import com.example.lombredespurges.domaine.entité.Ennemie;
 import com.example.lombredespurges.domaine.entité.Jeu;
 import com.example.lombredespurges.domaine.entité.Personnage;
@@ -29,6 +30,15 @@ public class Modèle {
     public void creationPersonnage(String nom, int force, int endurance, int agilité, int intelligence){
         _jeu.set_personnage(new Personnage(nom, force, endurance, agilité, intelligence));
     }
+
+    public Chapitre déterminerChapitreCourant(){
+        return _jeu.get_aventureChoisie().getChapitreCourante();
+    }
+
+    public void passerAuProchainChapitre(int choix){
+        _jeu.get_aventureChoisie().passerAuProchainChapitre(choix);
+    }
+
 
 
     public void determinerAventureChoisie(String nomAventure){

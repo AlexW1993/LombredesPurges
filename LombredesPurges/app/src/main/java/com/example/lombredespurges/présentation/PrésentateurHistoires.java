@@ -11,6 +11,8 @@ public class PrésentateurHistoires implements IContratPrésentateurVueHistoires
 
     private IContratPrésentateurVueHistoires.IVueHistoire _vue;
     private Modèle _modèle;
+    Jeu _jeu;
+    Aventure _aventure;
 
 
 
@@ -20,15 +22,20 @@ public class PrésentateurHistoires implements IContratPrésentateurVueHistoires
     }
 
     @Override
-    public void gestionChapitre(String nomAventure) {
-        Jeu _jeu;
-        Aventure _aventure;
-        _jeu = _modèle.get_jeu();
-        _jeu.determinerAventureChoisie(nomAventure); // on a l<aventure a jouer
+    public void gestionChapitre(int choix) {
+        if(choix != -1){
+            _modèle.passerAuProchainChapitre(choix);
+        }
 
 
-        _aventure = _jeu.get_aventureChoisie();
-        Chapitre uneChapitre = _aventure.getChapitreCourante();
+        /*_jeu = _modèle.get_jeu();
+        //_jeu.determinerAventureChoisie(nomAventure); // on a l<aventure a jouer
+
+
+        _aventure = _jeu.get_aventureChoisie();*/
+
+
+        Chapitre uneChapitre = _modèle.déterminerChapitreCourant();
 
         int numChapitre = uneChapitre.get_numéroChapitre();
         int idContenueChapitre = uneChapitre.get_IdTexteChapitre();
@@ -39,16 +46,17 @@ public class PrésentateurHistoires implements IContratPrésentateurVueHistoires
         }else{
             int choix1 = listeIdChoix.get(0);
             int choix2 = listeIdChoix.get(1);
-            int choix3 = listeIdChoix.get(3);
+            int choix3 = listeIdChoix.get(2);
 
             _vue.afficherAventure(numChapitre, idContenueChapitre, choix1, choix2, choix3);
         }
 
+
+
+
+
     }
 
-    public void determinerProchChap(){
-        _modèle.chercherPrchChapitre();
-    }
 
 
 

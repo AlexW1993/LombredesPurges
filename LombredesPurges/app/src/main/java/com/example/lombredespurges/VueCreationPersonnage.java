@@ -89,18 +89,21 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
         raceNom = view.findViewById(R.id.nomRace);
         raceDescription = view.findViewById(R.id.descriptionRace);
 
+        présentateurCreationPersonnage.choisirRace(getArguments().getString("race"));
+
         txtForce = view.findViewById(R.id.forceCreationPersonnage);
         txtEndurence= view.findViewById(R.id.endurenceCreationPersonnage);
         txtAgilité = view.findViewById(R.id.agilitéCreationPersonnage);
         txtIntelligence = view.findViewById(R.id.intelligenceCreationPersonnage);
 
         btnForce = view.findViewById(R.id.imageView12);
+
         btnForce.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         btnForce.setVisibility(View.GONE);
-                        //présentateurCreationPersonnage.calculerAttribut("force");
+                        présentateurCreationPersonnage.calculerAttribut("force");
                     }
                 }
         );
@@ -110,7 +113,7 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
                     @Override
                     public void onClick(View v) {
                         btnEndurence.setVisibility(View.GONE);
-                        //présentateurCreationPersonnage.calculerAttribut("endurance");
+                        présentateurCreationPersonnage.calculerAttribut("endurance");
                     }
                 }
         );
@@ -120,7 +123,7 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
                     @Override
                     public void onClick(View v) {
                         btnAgilité.setVisibility(View.GONE);
-                        //présentateurCreationPersonnage.calculerAttribut("agilité");
+                        présentateurCreationPersonnage.calculerAttribut("agilité");
                     }
                 }
         );
@@ -130,7 +133,7 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
                     @Override
                     public void onClick(View v) {
                         btnIntelligence.setVisibility(View.GONE);
-                        //présentateurCreationPersonnage.calculerAttribut("intelligence");
+                        présentateurCreationPersonnage.calculerAttribut("intelligence");
                     }
                 }
         );
@@ -180,10 +183,10 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
         //navController.navigate(R.id.Histoire);
     }
 
-    @Override
+   /* @Override
     public void ajouterPersonnage(Personnage unPersonnage, Bundle bundle) {
         bundle.putSerializable("Personnage",unPersonnage);
-    }
+    }*/
 
     @Override
     public void ajouterForcePersonnage(int pointsTotal) {
