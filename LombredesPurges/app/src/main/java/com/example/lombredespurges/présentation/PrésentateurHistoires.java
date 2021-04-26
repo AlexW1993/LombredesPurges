@@ -33,9 +33,10 @@ public class PrésentateurHistoires implements IContratPrésentateurVueHistoires
         int numChapitre = uneChapitre.get_numéroChapitre();
         int idContenueChapitre = uneChapitre.get_IdTexteChapitre();
         ArrayList<Integer> listeIdChoix = uneChapitre.get_listeIdTexteChoix();
+        String nomPersonnage = _modèle.get_jeu().get_personnage().get_nom();
 
         if(listeIdChoix.isEmpty()){
-            _vue.afficherFinJeu(numChapitre, idContenueChapitre);
+            _vue.afficherFinJeu(nomPersonnage, idContenueChapitre);
         }else{
             int choix1 = listeIdChoix.get(0);
             int choix2 = listeIdChoix.get(1);

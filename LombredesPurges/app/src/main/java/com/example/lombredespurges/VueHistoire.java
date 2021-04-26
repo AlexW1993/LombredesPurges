@@ -14,7 +14,6 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-import com.example.lombredespurges.domaine.entité.Personnage;
 import com.example.lombredespurges.présentation.IContratPrésentateurVueHistoires;
 import com.example.lombredespurges.présentation.PrésentateurHistoires;
 
@@ -53,7 +52,7 @@ public class VueHistoire extends Fragment implements IContratPrésentateurVueHis
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.chapitre_histoire_dino, container, false);
+        return inflater.inflate(R.layout.chapitre_histoire, container, false);
     }
 
 
@@ -123,8 +122,9 @@ public class VueHistoire extends Fragment implements IContratPrésentateurVueHis
         btnChoix3.setText(idChoix3);
     }
 
-    public void afficherFinJeu(int numeroChapitre, int idContenueChapitre){
-        txtNumeroChapitre.setText(String.valueOf(numeroChapitre));
+    public void afficherFinJeu(String nomPersonnage, int idContenueChapitre){
+        texteChapitre.setText(nomPersonnage);
+        txtNumeroChapitre.setVisibility(View.GONE);
         texteContenueChapitre.setText(idContenueChapitre);
         btnChoix1.setVisibility(View.GONE);
         btnChoix2.setVisibility(View.GONE);

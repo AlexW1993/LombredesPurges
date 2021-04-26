@@ -63,7 +63,7 @@
         android:id="@+id/chapitre_dino"
         android:name="com.example.lombredespurges.VueHistoire"
         android:label="chapitre_histoire"
-        tools:layout="@layout/chapitre_histoire_dino" >
+        tools:layout="@layout/chapitre_histoire" >
         <action
             android:id="@+id/action_chapitre_dino_to_pageTitre"
             app:destination="@id/pageTitre" />
