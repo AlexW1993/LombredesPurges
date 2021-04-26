@@ -42,13 +42,14 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
     TextView txtAgilité;
     TextView txtIntelligence;
 
+    PrésentateurCreationPersonnage présentateurCreationPersonnage;
+
     int force;
     int endurence;
     int agilité;
     int intelligence;
-    //Personnage personnage;
 
-    PrésentateurCreationPersonnage présentateurCreationPersonnage;
+
 
     public VueCreationPersonnage() {
         // Required empty public constructor
@@ -63,9 +64,7 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-        présentateurCreationPersonnage = new PrésentateurCreationPersonnage(this);
     }
 
     @Override
@@ -79,8 +78,12 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        btnContinuer = view.findViewById(R.id.buttonPersonnage);
         navController = Navigation.findNavController(view);
+        présentateurCreationPersonnage = new PrésentateurCreationPersonnage(this);
+
+        //editName, Race, DescriptionRace, 4Forces, AfficherButtonContinuer
+        btnContinuer = view.findViewById(R.id.buttonPersonnage);
+
         editName = view.findViewById(R.id.editName);
         raceImage = view.findViewById(R.id.imageRaceCreationPersonnage);
         raceNom = view.findViewById(R.id.nomRace);
@@ -131,7 +134,7 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
                     }
                 }
         );
-        changerRace();
+        //changerRace();
         btnContinuer.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -146,10 +149,11 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
                             String nomRace = getArguments().getString("race");
                             bundle.putString("nomRace", nomRace);
 
-                            présentateurCreationPersonnage.informationPersonnage(editName.getText().toString(),force,endurence,agilité,intelligence);
+                            //présentateurCreationPersonnage.informationPersonnage(editName.getText().toString(),force,endurence,agilité,intelligence);
                             //présentateurCreationPersonnage.chercherpersonnage(bundle);
                             //bundle.putSerializable("Personnage",personnage);
-                            présentateurCreationPersonnage.choixAventure(nomRace,bundle);
+                            //présentateurCreationPersonnage.choixAventure(nomRace,bundle);
+                            navController.navigate(R.id.chapitre_dino);
                         }
                     }
                 }
@@ -159,7 +163,7 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
     
     public void changerRace() {
         String nomRace = getArguments().getString("race");
-        présentateurCreationPersonnage.choisirRace(nomRace);
+        //présentateurCreationPersonnage.choisirRace(nomRace);
     }
 
 
@@ -173,7 +177,7 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
 
     @Override
     public void afficherAventure(int choix, Bundle bundle) {
-        navController.navigate(R.id.Histoire);
+        //navController.navigate(R.id.Histoire);
     }
 
     @Override

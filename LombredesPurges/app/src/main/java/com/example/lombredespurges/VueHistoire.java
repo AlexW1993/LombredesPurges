@@ -70,7 +70,7 @@ public class VueHistoire extends Fragment implements IContratPrésentateurVueHis
         super.onViewCreated(view, savedInstanceState);
         navController = Navigation.findNavController(view);
 
-        String nomRace = getArguments().getString("race");
+        //String nomRace = getArguments().getString("race");
         présentateurHistoires = new PrésentateurHistoires(this);
 
         txtNumeroChapitre = view.findViewById(R.id.NumeroChapitre);
@@ -98,6 +98,7 @@ public class VueHistoire extends Fragment implements IContratPrésentateurVueHis
         btnChoix1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //
                 /*présentateurHistoires.déterminerCombat(numéroChapitreCourant, finalitéCombat);
                 présentateurHistoires.gestionChapitres(numéroChapitreCourant);*/
             }
