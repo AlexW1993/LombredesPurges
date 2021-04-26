@@ -97,7 +97,7 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
                     @Override
                     public void onClick(View v) {
                         btnForce.setVisibility(View.GONE);
-                        présentateurCreationPersonnage.calculerAttribut("force");
+                        //présentateurCreationPersonnage.calculerAttribut("force");
                     }
                 }
         );
@@ -107,7 +107,7 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
                     @Override
                     public void onClick(View v) {
                         btnEndurence.setVisibility(View.GONE);
-                        présentateurCreationPersonnage.calculerAttribut("endurance");
+                        //présentateurCreationPersonnage.calculerAttribut("endurance");
                     }
                 }
         );
@@ -117,7 +117,7 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
                     @Override
                     public void onClick(View v) {
                         btnAgilité.setVisibility(View.GONE);
-                        présentateurCreationPersonnage.calculerAttribut("agilité");
+                        //présentateurCreationPersonnage.calculerAttribut("agilité");
                     }
                 }
         );
@@ -127,7 +127,7 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
                     @Override
                     public void onClick(View v) {
                         btnIntelligence.setVisibility(View.GONE);
-                        présentateurCreationPersonnage.calculerAttribut("intelligence");
+                        //présentateurCreationPersonnage.calculerAttribut("intelligence");
                     }
                 }
         );
@@ -173,7 +173,7 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
 
     @Override
     public void afficherAventure(int choix, Bundle bundle) {
-        navController.navigate(choix, bundle);
+        navController.navigate(R.id.Histoire);
     }
 
     @Override
