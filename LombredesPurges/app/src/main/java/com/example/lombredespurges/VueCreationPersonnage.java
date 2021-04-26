@@ -42,13 +42,14 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
     TextView txtAgilité;
     TextView txtIntelligence;
 
+    PrésentateurCreationPersonnage présentateurCreationPersonnage;
+
     int force;
     int endurence;
     int agilité;
     int intelligence;
-    //Personnage personnage;
 
-    PrésentateurCreationPersonnage présentateurCreationPersonnage;
+
 
     public VueCreationPersonnage() {
         // Required empty public constructor
@@ -63,9 +64,7 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-        présentateurCreationPersonnage = new PrésentateurCreationPersonnage(this);
     }
 
     @Override
@@ -79,19 +78,26 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        btnContinuer = view.findViewById(R.id.buttonPersonnage);
         navController = Navigation.findNavController(view);
+        présentateurCreationPersonnage = new PrésentateurCreationPersonnage(this);
+
+        //editName, Race, DescriptionRace, 4Forces, AfficherButtonContinuer
+        btnContinuer = view.findViewById(R.id.buttonPersonnage);
+
         editName = view.findViewById(R.id.editName);
-        raceImage = view.findViewById(R.id.race);
-        raceNom = view.findViewById(R.id.race_texte);
+        raceImage = view.findViewById(R.id.imageRaceCreationPersonnage);
+        raceNom = view.findViewById(R.id.nomRace);
         raceDescription = view.findViewById(R.id.descriptionRace);
 
-        txtForce = view.findViewById(R.id.textView22);
-        txtEndurence= view.findViewById(R.id.textView24);
-        txtAgilité = view.findViewById(R.id.textView25);
-        txtIntelligence = view.findViewById(R.id.textView26);
+        présentateurCreationPersonnage.choisirRace(getArguments().getString("race"));
+
+        txtForce = view.findViewById(R.id.forceCreationPersonnage);
+        txtEndurence= view.findViewById(R.id.endurenceCreationPersonnage);
+        txtAgilité = view.findViewById(R.id.agilitéCreationPersonnage);
+        txtIntelligence = view.findViewById(R.id.intelligenceCreationPersonnage);
 
         btnForce = view.findViewById(R.id.imageView12);
+
         btnForce.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -131,7 +137,7 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
                     }
                 }
         );
-        changerRace();
+        //changerRace();
         btnContinuer.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -146,20 +152,25 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
                             String nomRace = getArguments().getString("race");
                             bundle.putString("nomRace", nomRace);
 
-                            présentateurCreationPersonnage.informationPersonnage(editName.getText().toString(),force,endurence,agilité,intelligence);
-                            présentateurCreationPersonnage.chercherpersonnage(bundle);
+                            //présentateurCreationPersonnage.informationPersonnage(editName.getText().toString(),force,endurence,agilité,intelligence);
+                            //présentateurCreationPersonnage.chercherpersonnage(bundle);
                             //bundle.putSerializable("Personnage",personnage);
-                            présentateurCreationPersonnage.choixChapitre(nomRace,bundle);
+                            //présentateurCreationPersonnage.choixAventure(nomRace,bundle);
+                            présentateurCreationPersonnage.créationPersonnage(editName.getText().toString(),force,endurence,agilité,intelligence);
+                            navController.navigate(R.id.chapitre_dino);
                         }
                     }
                 }
         );
     }
 
+    
     public void changerRace() {
         String nomRace = getArguments().getString("race");
-        présentateurCreationPersonnage.choisirRace(nomRace);
+        //présentateurCreationPersonnage.choisirRace(nomRace);
     }
+
+
 
     @Override
     public void setRace(String race,int description, int codeImage) {
@@ -169,14 +180,14 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
     }
 
     @Override
-    public void afficherChapitre(int choix, Bundle bundle) {
-        navController.navigate(choix, bundle);
+    public void afficherAventure(int choix, Bundle bundle) {
+        //navController.navigate(R.id.Histoire);
     }
 
-    @Override
+   /* @Override
     public void ajouterPersonnage(Personnage unPersonnage, Bundle bundle) {
         bundle.putSerializable("Personnage",unPersonnage);
-    }
+    }*/
 
     @Override
     public void ajouterForcePersonnage(int pointsTotal) {

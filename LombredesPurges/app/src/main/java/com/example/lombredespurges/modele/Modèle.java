@@ -1,6 +1,10 @@
-package com.example.lombredespurges.présentation;
 
+
+package com.example.lombredespurges.modele;
+
+import com.example.lombredespurges.domaine.entité.Chapitre;
 import com.example.lombredespurges.domaine.entité.Ennemie;
+import com.example.lombredespurges.domaine.entité.Jeu;
 import com.example.lombredespurges.domaine.entité.Personnage;
 import com.example.lombredespurges.domaine.interacteur.Creation;
 
@@ -10,7 +14,7 @@ public class Modèle {
      * Declaration des Attributs
      */
     private static Modèle modèle;
-    private Personnage _personnage;
+    private Jeu _jeu;
     private Ennemie _ennemie;
 
     /**
@@ -18,6 +22,11 @@ public class Modèle {
      *
      * @return  (Modèle) le modèle de l'application.
      */
+
+    private Modèle(){
+        this._jeu = new Creation().CréationJeu();
+    }
+
     public static Modèle getInstance(){
         if (modèle == null){
             modèle = new Modèle();
@@ -25,14 +34,49 @@ public class Modèle {
         return modèle;
     }
 
+
+    public void réanitialierJeu(){
+        this._jeu = new Creation().CréationJeu();
+    }
     /**
      * La méthode permet d'appeler la methode pour la creation d'un personnage.
      *
      * @param (nom,force,endurance,agilité,intelligence), le nom et les attributs du personnage.
      */
     public void creationPersonnage(String nom, int force, int endurance, int agilité, int intelligence){
-        _personnage = new Creation().CreationPersonnage(nom, force, endurance,agilité, intelligence);
+        _jeu.set_personnage(new Personnage(nom, force, endurance, agilité, intelligence));
     }
+
+
+    public Chapitre déterminerChapitreCourant(){
+        return _jeu.get_aventureChoisie().getChapitreCourante();
+    }
+
+    public void passerAuProchainChapitre(int choix){
+        _jeu.get_aventureChoisie().passerAuProchainChapitre(choix);
+    }
+
+
+
+    public void determinerAventureChoisie(String nomAventure){
+        _jeu.determinerAventureChoisie(nomAventure);
+    }
+
+    public Jeu get_jeu(){
+        return _jeu;
+    }
+
+
+/*
+    public void creationJeu(){
+        _jeu = new Creation().CréationJeu();
+    }
+
+
+
+    public void creationPersonnage(String nom, int force, int endurance, int agilité, int intelligence){
+        _personnage = new Creation().CreationPersonnage(nom, force, endurance,agilité, intelligence);
+    }*/
 
     /**
      * La méthode permet d'appeler la methode pour la creation d'un ennemie.
@@ -41,14 +85,6 @@ public class Modèle {
         _ennemie = new Creation().CreationEnnemie();
     }
 
-    /**
-     * Accesseurs du personnage.
-     *
-     * @return le personnage.
-     */
-    public Personnage getPersonnage(){
-        return _personnage;
-    }
 
     /**
      * Accesseurs de l'ennemie.
@@ -64,7 +100,7 @@ public class Modèle {
      */
     public void calculerCoefAttaque(){
         _ennemie.calculerCoefAttaqueEnnemi();
-        _personnage.calculerCoefAttaquePersonnage();
+        _jeu.get_personnage().calculerCoefAttaquePersonnage();
     }
 
     /**
@@ -75,11 +111,12 @@ public class Modèle {
     * ou égale, (false) si le coeficience d'attaque de l'ennemie est plus grand.
     */
     public boolean comparaisonCoefAttaque(){
-        if(_personnage.getCoefAttaque() >= _ennemie.getCoefAttaque()){
+        if(_jeu.get_personnage().getCoefAttaque() >= _ennemie.getCoefAttaque()){
             return true;
         }else{
             return false;
         }
     }
+
 
 }

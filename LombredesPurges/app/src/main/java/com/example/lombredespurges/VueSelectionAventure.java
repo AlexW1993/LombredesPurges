@@ -59,7 +59,7 @@ public class VueSelectionAventure extends Fragment {
                     @Override
                     public void onClick(View v) {
                         Bundle bundle = new Bundle();
-                        bundle.putString("race", "dino");
+                        bundle.putString("race", "Dino");
                         navController.navigate(R.id.creationPersonnage, bundle);
                     }
                 }
@@ -70,7 +70,7 @@ public class VueSelectionAventure extends Fragment {
                     @Override
                     public void onClick(View v) {
                         Bundle bundle = new Bundle();
-                        bundle.putString("race", "via");
+                        bundle.putString("race", "Via");
                         navController.navigate(R.id.creationPersonnage, bundle);
                     }
                 }
@@ -81,7 +81,7 @@ public class VueSelectionAventure extends Fragment {
                     @Override
                     public void onClick(View v) {
                         Bundle bundle = new Bundle();
-                        bundle.putString("race", "kaqchikam");
+                        bundle.putString("race", "Kachikam");
                         navController.navigate(R.id.creationPersonnage, bundle);
                     }
                 }

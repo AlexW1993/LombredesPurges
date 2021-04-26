@@ -1,6 +1,7 @@
 package com.example.lombredespurges.présentation;
 
 import com.example.lombredespurges.R;
+import com.example.lombredespurges.modele.Modèle;
 
 import java.util.ArrayList;
 
@@ -35,16 +36,16 @@ public class PrésentateurCombat implements IContratPrésentateurVueCombat.IPré
     @Override
     public void getNomPersonnage(){
         String nom;
-        nom = _modèle.getPersonnage().get_nom();
-        _vue.afficherNomPersonnage(nom);
+        //nom = _modèle.getPersonnage().get_nom();
+        //_vue.afficherNomPersonnage(nom);
     }
 
     @Override
     public void getAttributsPersonnage(){
         ArrayList<Integer> attributs = new ArrayList();
-        attributs.add(_modèle.getPersonnage().get_force());
-        attributs.add(_modèle.getPersonnage().get_agilité());
-        attributs.add(_modèle.getPersonnage().get_endurance());
+        attributs.add(_modèle.get_jeu().get_personnage().get_force());
+        attributs.add(_modèle.get_jeu().get_personnage().get_agilité());
+        attributs.add(_modèle.get_jeu().get_personnage().get_endurance());
         _vue.afficherAttributsPersonnage(attributs);
     }
 
@@ -68,20 +69,21 @@ public class PrésentateurCombat implements IContratPrésentateurVueCombat.IPré
     public void tourDAttaquer(boolean tourJoueur){
 
         if (tourJoueur){
-            _modèle.getEnnemie().calculerCoefDéfense(_modèle.getPersonnage().getCoefAttaque());
-            _modèle.getEnnemie().calculerEtRecevoirDommage(_modèle.getPersonnage().get_force());
+            _modèle.getEnnemie().calculerCoefDéfense(_modèle.get_jeu().get_personnage().getCoefAttaque());
+            _modèle.getEnnemie().calculerEtRecevoirDommage(_modèle.get_jeu().get_personnage().get_force());
             if(_modèle.getEnnemie().get_endurance() <= 0){
-                _vue.gestionAccion(1);
+                _vue.gestionAction(1);
             }else{
-                _vue.gestionAccion(2);
+                _vue.gestionAction(2);
             }
         }else{
-            _modèle.getPersonnage().calculerCoefDéfense(_modèle.getEnnemie().getCoefAttaque());
-            _modèle.getPersonnage().calculerEtRecevoirDommage(_modèle.getEnnemie().get_force());
-            if(_modèle.getPersonnage().get_endurance() <= 0) {
-                _vue.gestionAccion(3);
+            _modèle.get_jeu().get_personnage().calculerCoefDéfense(_modèle.getEnnemie().getCoefAttaque());
+            _modèle.get_jeu().get_personnage().calculerEtRecevoirDommage(_modèle.getEnnemie().get_force());
+            if(_modèle.get_jeu().get_personnage().get_endurance() <= 0) {
+                _vue.gestionAction(3);
+
             }else{
-                _vue.gestionAccion(4);
+                _vue.gestionAction(4);
             }
         }
     }
@@ -95,13 +97,13 @@ public class PrésentateurCombat implements IContratPrésentateurVueCombat.IPré
      */
     @Override
     public void comparerEndurance(){
-        if(_modèle.getPersonnage().get_endurance() <= 0){
+        /*if(_modèle.getPersonnage().get_endurance() <= 0){
             _vue.resultatEndurance(1);
         }else if(_modèle.getEnnemie().get_endurance() <= 0){
             _vue.resultatEndurance(2);
         }else {
             _vue.resultatEndurance(0);
-        }
+        }*/
     }
 
     /**
@@ -112,7 +114,8 @@ public class PrésentateurCombat implements IContratPrésentateurVueCombat.IPré
     public void calculerCoefAttaque(){
         _modèle.calculerCoefAttaque();
         _modèle.comparaisonCoefAttaque();
-        _vue.afficherCoefAttaque(_modèle.getPersonnage().getCoefAttaque(),_modèle.getEnnemie().getCoefAttaque(),_modèle.comparaisonCoefAttaque());
+
+        _vue.afficherCoefAttaque(_modèle.get_jeu().get_personnage().getCoefAttaque(),_modèle.getEnnemie().getCoefAttaque(),_modèle.comparaisonCoefAttaque());
     }
 
     @Override
@@ -128,12 +131,12 @@ public class PrésentateurCombat implements IContratPrésentateurVueCombat.IPré
                 _vue.faireAction2(dommage);
             }
         }else{
-            _vue.setTextDefencéEndurencePersonnage(_modèle.getPersonnage().getCoefDéfence(),_modèle.getPersonnage().get_endurance());
+            _vue.setTextDefencéEndurencePersonnage(_modèle.get_jeu().get_personnage().getCoefDéfence(),_modèle.get_jeu().get_personnage().get_endurance());
             if(accion == 3) {
-                dommage = _modèle.getPersonnage().getDommages();
+                dommage = _modèle.get_jeu().get_personnage().getDommages();
                 _vue.faireAction3(dommage);
             }else if (accion == 4){
-                dommage = _modèle.getPersonnage().getDommages();
+                dommage = _modèle.get_jeu().get_personnage().getDommages();
                 _vue.faireAction4(dommage);
             }
         }
@@ -141,17 +144,32 @@ public class PrésentateurCombat implements IContratPrésentateurVueCombat.IPré
 
     @Override
     public void chercherPersonage(){
-        _vue.envoiePersonnageDansProchaineVue(_modèle.getPersonnage());
+       /* _vue.envoiePersonnageDansProchaineVue(_modèle.getPersonnage());*/
     }
 
     @Override
-    public void changerRace(String race) {
-        if (race.equals("via")) {
+    public void changerRace() {
+
+        String race = _modèle.get_jeu().get_aventureChoisie().get_nomAventure();
+        if (race.equals("Via")) {
             _vue.actionChangerRace(R.drawable.via);
-        } else if (race.equals("kaqchikam")) {
+        } else if (race.equals("Kachikam")) {
             _vue.actionChangerRace(R.drawable.kaqchikam);
-        } else if (race.equals("dino")) {
+        } else if (race.equals("Dino")) {
             _vue.actionChangerRace(R.drawable.dinoh);
         }
     }
+
+    @Override
+    public void passerAuChapitreApresCombat() {
+        _modèle.get_jeu().get_aventureChoisie().getChapitreCourante().set_combat(false);
+        _vue.passerAuChapitre();
+    }
+
+    @Override
+    public void passerPageTitre() {
+        _modèle.réanitialierJeu();
+        _vue.passerPageTitre();
+    }
+
 }
