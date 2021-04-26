@@ -27,8 +27,6 @@ public class PrésentateurCreationPersonnage implements IContratPrésentateurVue
 
     /**
      * La méthode permet de analiser le choix du race.
-     *
-     * @return (String) la race choisi.
      */
     @Override
     public void choisirRace(String nomRace){
@@ -51,15 +49,18 @@ public class PrésentateurCreationPersonnage implements IContratPrésentateurVue
         _vue.setRace(race,description,codeImage);
     }
 
+    /**
+     * La méthode permet d'avoir les information du personnage (nom,attributs) pour sa creation.
+     *
+     * @param (nom,force,endurance,agilité,intelligence), les information du personnage.
+     */
     @Override
     public void informationPersonnage(String nom, int force, int endurance, int agilité, int intelligence){
         _modèle.creationPersonnage(nom, force, endurance, agilité, intelligence);
     }
 
     /**
-     * Accesseurs du personnage.
-     *
-     * @return (Personnage) le personnage.
+     * La méthode permet de chercher le personnage du jeu pour l'enoyer dans la prochaine vue.
      */
     @Override
     public void chercherpersonnage(Bundle bundle) {
@@ -67,6 +68,11 @@ public class PrésentateurCreationPersonnage implements IContratPrésentateurVue
         _vue.ajouterPersonnage(personnage, bundle);
     }
 
+    /**
+     * La méthode permet de calculer la valuer de l'attribut que est en parametre.
+     *
+     * @param attribut, (String) l'attribut a être calculer.
+     */
     @Override
     public void calculerAttribut(String attribut){
         int num = 0;
@@ -92,8 +98,6 @@ public class PrésentateurCreationPersonnage implements IContratPrésentateurVue
 
     /**
      * La méthode permet de retourner le chapitre en utilisant le choix de race.
-     *
-     * @return (int) le choix de chapitre.
      */
     @Override
     public void choixChapitre(String nomRace, Bundle bundle){

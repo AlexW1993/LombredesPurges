@@ -46,7 +46,6 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
     int endurence;
     int agilité;
     int intelligence;
-    //Personnage personnage;
 
     PrésentateurCreationPersonnage présentateurCreationPersonnage;
 
@@ -156,11 +155,19 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
         );
     }
 
+    /**
+     * La méthode permet changer el type de race.
+     */
     public void changerRace() {
         String nomRace = getArguments().getString("race");
         présentateurCreationPersonnage.choisirRace(nomRace);
     }
 
+    /**
+     * La méthode permet changer la vue avec les information de la race choisit.
+     *
+     * @param race, le race choisit.
+     */
     @Override
     public void setRace(String race,int description, int codeImage) {
         raceNom.setText(race);
@@ -168,34 +175,64 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
         raceImage.setImageDrawable(getResources().getDrawable(codeImage));
     }
 
+    /**
+     * La méthode permet afficher un chapitre en utilisant le choix du personnage.
+     *
+     * @param (choix,bundle), le choix choisit.
+     */
     @Override
     public void afficherChapitre(int choix, Bundle bundle) {
         navController.navigate(choix, bundle);
     }
 
+    /**
+     * La méthode permet ajouter le personnage dans la vue.
+     *
+     * @param (unPersonnage,bundle), le personnage.
+     */
     @Override
     public void ajouterPersonnage(Personnage unPersonnage, Bundle bundle) {
         bundle.putSerializable("Personnage",unPersonnage);
     }
 
+    /**
+     * La méthode permet afficher le points de force dans le texte.
+     *
+     * @param pointsTotal, les points de force du personnage.
+     */
     @Override
     public void ajouterForcePersonnage(int pointsTotal) {
         force = pointsTotal;
         txtForce.setText(" = " + force);
     }
 
+    /**
+     * La méthode permet afficher le points d'endurance dans le texte.
+     *
+     * @param pointsTotal, les points d'endurance du personnage.
+     */
     @Override
     public void ajouterEndurancePersonnage(int pointsTotal) {
         endurence = pointsTotal;
         txtEndurence.setText(" = " + endurence);
     }
 
+    /**
+     * La méthode permet afficher le points d'agilité dans le texte.
+     *
+     * @param pointsTotal, les points d'agilité du personnage.
+     */
     @Override
     public void ajouterAgilitéPersonnage(int pointsTotal) {
         agilité = pointsTotal;
         txtAgilité.setText(" = " + agilité);
     }
 
+    /**
+     * La méthode permet afficher le points d'intelligence dans le texte.
+     *
+     * @param pointsTotal, les points d'intelligence du personnage.
+     */
     @Override
     public void ajouterIntelligencePersonnage(int pointsTotal) {
         intelligence = pointsTotal;

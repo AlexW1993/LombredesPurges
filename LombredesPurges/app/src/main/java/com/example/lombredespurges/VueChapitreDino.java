@@ -17,6 +17,9 @@ import com.example.lombredespurges.domaine.entité.Personnage;
 
 public class VueChapitreDino extends Fragment{
 
+    /**
+     * Declaration des Attributs
+     */
     private TextView texteContenueChapitre;
     private TextView txtNumeroChapitre;
     private TextView texteChapitre;
