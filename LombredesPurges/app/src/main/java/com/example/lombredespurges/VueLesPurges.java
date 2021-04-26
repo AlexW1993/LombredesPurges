@@ -17,8 +17,8 @@ public class VueLesPurges extends Fragment {
     /**
      * Declaration des Attributs
      */
-    Button btnContinuer;
-    NavController navController;
+    private Button btnContinuer;
+    private NavController navController;
 
     public VueLesPurges() {
         // Required empty public constructor

@@ -17,8 +17,8 @@ public class VuePageTitre extends Fragment {
     /**
      * Declaration des Attributs
      */
-    Button btnContinuer;
-    NavController navController;
+    private Button btnContinuer;
+    private NavController navController;
 
     public VuePageTitre() {
         // Required empty public constructor

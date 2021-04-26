@@ -5,10 +5,128 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#1E2449"
-    tools:context=".VueChapitreVia">
+    tools:context=".VueHistoire">
+
+    <ImageView
+        android:id="@+id/imageRaceChapitre"
+        android:layout_width="416dp"
+        android:layout_height="385dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/dinoh" />
+
+    <TextView
+        android:id="@+id/contenueChapitre"
+        android:layout_width="500dp"
+        android:layout_height="325dp"
+        android:fontFamily="@font/aldrich"
+        android:shadowColor="#000000"
+        android:shadowRadius="60"
+        android:text="Vous arrivez dans la ville De Mayale. La seule place que vous pourriez trouver des informations est dans le bar de guerriers. Vous rentrez dans le bar et vous trouvez plusieurs Dinos venant d’autres régions. Avec désespoir vous leur demandez de l’aide mais hélas, ils ne savent rien de ces nouvelles créatures et puisque que cette région n’a pas été attaquée. Pendant que vous parlez, la ville se fait frapper par les envahisseurs. Certains Dinos dans le bar part au combat tandis qu'un dit connaitre un chemin secret pour s’échapper. Il n’inspire pas confiance mais vous n’êtes pas un combattant né non plus."
+        android:textColor="#EFBFBF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout11"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout11"
+        android:layout_width="169dp"
+        android:layout_height="222dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/buttonChoix1"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="170dp"
+            android:layout_height="70dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginRight="60dp"
+            android:layout_marginBottom="4dp"
+            android:fontFamily="@font/aldrich"
+            android:text="Aller vers la ville."
+            android:textColor="#000000"
+            android:textSize="10sp"
+            app:backgroundTint="#03A9F4"
+            app:strokeColor="#000000" />
+
+        <Button
+            android:id="@+id/buttonChoix2"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="170dp"
+            android:layout_height="70dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginRight="60dp"
+            android:layout_marginBottom="4dp"
+            android:fontFamily="@font/aldrich"
+            android:text="Prendre chemin forestier"
+            android:textColor="#000000"
+            android:textSize="10sp"
+            app:backgroundTint="#03A9F4"
+            app:strokeColor="#000000" />
+
+        <Button
+            android:id="@+id/buttonChoix3"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="170dp"
+            android:layout_height="70dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginRight="60dp"
+            android:layout_marginBottom="4dp"
+            android:fontFamily="@font/aldrich"
+            android:text="Aller vers la vielle maison au loin."
+            android:textColor="#000000"
+            android:textSize="10sp"
+            app:backgroundTint="#03A9F4"
+            app:strokeColor="#000000" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="447dp"
+        android:layout_height="67dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/contenueChapitre"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout11"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/texteChapitre"
+            android:layout_width="220dp"
+            android:layout_height="62dp"
+            android:fontFamily="@font/aldrich"
+            android:gravity="right|center_vertical"
+            android:shadowColor="#040202"
+            android:text="@string/chapitre"
+            android:textColor="#AE5959"
+            android:textSize="44sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/NumeroChapitre"
+            android:layout_width="200dp"
+            android:layout_height="62dp"
+            android:fontFamily="@font/aldrich"
+            android:gravity="center"
+            android:shadowColor="#040202"
+            android:text="1"
+            android:textColor="#AE5959"
+            android:textSize="44sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
     <Button
-        android:id="@+id/buttonMenuVIA"
+        android:id="@+id/buttonMenu"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="150dp"
         android:layout_height="50dp"
@@ -25,121 +143,4 @@
         app:layout_constraintTop_toTopOf="parent"
         app:strokeColor="#000000" />
 
-    <ImageView
-        android:id="@+id/imageRaceChapitreVIA"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/via" />
-
-    <TextView
-        android:id="@+id/contenueChapitreVIA"
-        android:layout_width="483dp"
-        android:layout_height="327dp"
-        android:fontFamily="@font/aldrich"
-        android:shadowColor="#000000"
-        android:shadowRadius="60"
-        android:text="Vous êtes un habitant de la planète Bionis, Vous et votre assistante Minerva êtes d’excellents robots scientifiques. Un jour, tout a changé. Dans la tour CX-201, un petit portail de la taille d’une balle de tennis apparait dans l’étage 52. Votre chef, Amalthus trouve que ce portail est une opportunité pour acquérir plus de connaissance en décelant ses secrets. Vous par contre, vous ne trouvez pas ce portail normal et n’êtes pas d’accord avec ses recherches. Sans que personne ne le sache, vous fabriquez un canon qui pourra le refermer. Malheureusement les expériences d’Amalthus ouvre complètement le portail et plusieurs créatures en sortent et commence à attaquer à tout le monde. Vous avez le canon de plasma en main. Vous devez monter jusqu’à l’étage 52. Quel chemin prendre?"
-        android:textColor="#EFBFBF"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/linearLayout16"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout15" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout16"
-        android:layout_width="176dp"
-        android:layout_height="226dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout15">
-
-        <Button
-            android:id="@+id/buttonChoixVia1"
-            style="@style/Widget.AppCompat.Button"
-            android:layout_width="170dp"
-            android:layout_height="70dp"
-            android:layout_marginEnd="60dp"
-            android:layout_marginRight="60dp"
-            android:layout_marginBottom="4dp"
-            android:fontFamily="@font/aldrich"
-            android:text="Prendre l’escaliers qui est à côté de la porte d’entrée."
-            android:textColor="#000000"
-            android:textSize="10sp"
-            app:backgroundTint="#03A9F4"
-            app:strokeColor="#000000" />
-
-        <Button
-            android:id="@+id/buttonChoixVia2"
-            style="@style/Widget.AppCompat.Button"
-            android:layout_width="170dp"
-            android:layout_height="70dp"
-            android:layout_marginEnd="60dp"
-            android:layout_marginRight="60dp"
-            android:layout_marginBottom="4dp"
-            android:fontFamily="@font/aldrich"
-            android:text="Prendre l’ascenseur."
-            android:textColor="#000000"
-            android:textSize="10sp"
-            app:backgroundTint="#03A9F4"
-            app:strokeColor="#000000" />
-
-        <Button
-            android:id="@+id/buttonChoixVia3"
-            style="@style/Widget.AppCompat.Button"
-            android:layout_width="170dp"
-            android:layout_height="70dp"
-            android:layout_marginEnd="60dp"
-            android:layout_marginRight="60dp"
-            android:layout_marginBottom="4dp"
-            android:fontFamily="@font/aldrich"
-            android:text="Prendre l’escaliers arrière."
-            android:textColor="#000000"
-            android:textSize="10sp"
-            app:backgroundTint="#03A9F4"
-            app:strokeColor="#000000" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout15"
-        android:layout_width="437dp"
-        android:layout_height="66dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/contenueChapitreVIA"
-        app:layout_constraintEnd_toStartOf="@+id/linearLayout16"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/texteChapitreVIA"
-            android:layout_width="230dp"
-            android:layout_height="62dp"
-            android:fontFamily="@font/aldrich"
-            android:gravity="right|center_vertical"
-            android:shadowColor="#040202"
-            android:text="@string/chapitre"
-            android:textColor="#AE5959"
-            android:textSize="44sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/numeroChapitreVIA"
-            android:layout_width="200dp"
-            android:layout_height="62dp"
-            android:fontFamily="@font/aldrich"
-            android:gravity="center"
-            android:shadowColor="#040202"
-            android:text="1"
-            android:textColor="#AE5959"
-            android:textSize="44sp"
-            android:textStyle="bold" />
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

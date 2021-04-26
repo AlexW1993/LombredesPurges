@@ -17,10 +17,10 @@ public class VueSelectionAventure extends Fragment {
     /**
      * Declaration des Attributs
      */
-    Button btnDino;
-    Button btnVia;
-    Button btnKaqchikam;
-    NavController navController;
+    private Button btnDino;
+    private Button btnVia;
+    private Button btnKaqchikam;
+    private NavController navController;
 
     public VueSelectionAventure() {
         // Required empty public constructor
@@ -59,7 +59,7 @@ public class VueSelectionAventure extends Fragment {
                     @Override
                     public void onClick(View v) {
                         Bundle bundle = new Bundle();
-                        bundle.putString("race", "dino");
+                        bundle.putString("race", "Dino");
                         navController.navigate(R.id.creationPersonnage, bundle);
                     }
                 }
@@ -70,7 +70,7 @@ public class VueSelectionAventure extends Fragment {
                     @Override
                     public void onClick(View v) {
                         Bundle bundle = new Bundle();
-                        bundle.putString("race", "via");
+                        bundle.putString("race", "Via");
                         navController.navigate(R.id.creationPersonnage, bundle);
                     }
                 }
@@ -81,7 +81,7 @@ public class VueSelectionAventure extends Fragment {
                     @Override
                     public void onClick(View v) {
                         Bundle bundle = new Bundle();
-                        bundle.putString("race", "kaqchikam");
+                        bundle.putString("race", "Kachikam");
                         navController.navigate(R.id.creationPersonnage, bundle);
                     }
                 }

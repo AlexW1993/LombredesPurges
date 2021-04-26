@@ -61,7 +61,7 @@
         app:layout_constraintTop_toBottomOf="@+id/combattitre" />
 
     <ImageView
-        android:id="@+id/imageView11"
+        android:id="@+id/imageRaceCombat"
         android:layout_width="259dp"
         android:layout_height="252dp"
         android:layout_marginStart="16dp"
@@ -98,7 +98,7 @@
         android:layout_marginTop="8dp"
         android:gravity="center"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/imageView11"
+        app:layout_constraintBottom_toTopOf="@+id/imageRaceCombat"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/deroulementcombattexte">
@@ -335,7 +335,6 @@
                 android:gravity="center"
                 android:shadowColor="#000000"
                 android:shadowRadius="60"
-                android:text="@string/agilitepurge"
                 android:textColor="#DAC614"
                 android:textSize="30sp"
                 android:textStyle="bold" />
@@ -349,7 +348,6 @@
                 android:gravity="center"
                 android:shadowColor="#000000"
                 android:shadowRadius="60"
-                android:text="@string/forcepurge"
                 android:textColor="#DAC614"
                 android:textSize="30sp"
                 android:textStyle="bold" />
@@ -376,7 +374,6 @@
                 android:gravity="center"
                 android:shadowColor="#000000"
                 android:shadowRadius="60"
-                android:text="@string/endurancepurge"
                 android:textColor="#DAC614"
                 android:textSize="30sp"
                 android:textStyle="bold" />

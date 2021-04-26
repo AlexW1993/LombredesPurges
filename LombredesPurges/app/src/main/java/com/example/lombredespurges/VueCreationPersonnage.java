@@ -25,29 +25,31 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
     /**
      * Declaration des Attributs
      */
-    Button btnContinuer;
-    NavController navController;
-    EditText editName;
-    ImageView raceImage;
-    TextView raceNom;
-    TextView raceDescription;
+    private Button btnContinuer;
+    private NavController navController;
+    private EditText editName;
+    private ImageView raceImage;
+    private TextView raceNom;
+    private TextView raceDescription;
 
-    ImageButton btnForce;
-    ImageButton btnEndurence;
-    ImageButton btnAgilité;
-    ImageButton btnIntelligence;
+    private ImageButton btnForce;
+    private ImageButton btnEndurence;
+    private ImageButton btnAgilité;
+    private ImageButton btnIntelligence;
 
-    TextView txtForce;
-    TextView txtEndurence;
-    TextView txtAgilité;
-    TextView txtIntelligence;
+    private TextView txtForce;
+    private TextView txtEndurence;
+    private TextView txtAgilité;
+    private TextView txtIntelligence;
 
-    int force;
-    int endurence;
-    int agilité;
-    int intelligence;
+    private PrésentateurCreationPersonnage présentateurCreationPersonnage;
 
-    PrésentateurCreationPersonnage présentateurCreationPersonnage;
+    private int force;
+    private int endurence;
+    private int agilité;
+    private int intelligence;
+
+
 
     public VueCreationPersonnage() {
         // Required empty public constructor
@@ -62,9 +64,7 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-        présentateurCreationPersonnage = new PrésentateurCreationPersonnage(this);
     }
 
     @Override
@@ -78,19 +78,25 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        btnContinuer = view.findViewById(R.id.buttonPersonnage);
         navController = Navigation.findNavController(view);
+        présentateurCreationPersonnage = new PrésentateurCreationPersonnage(this);
+
+        btnContinuer = view.findViewById(R.id.buttonPersonnage);
+
         editName = view.findViewById(R.id.editName);
-        raceImage = view.findViewById(R.id.race);
-        raceNom = view.findViewById(R.id.race_texte);
+        raceImage = view.findViewById(R.id.imageRaceCreationPersonnage);
+        raceNom = view.findViewById(R.id.nomRace);
         raceDescription = view.findViewById(R.id.descriptionRace);
 
-        txtForce = view.findViewById(R.id.textView22);
-        txtEndurence= view.findViewById(R.id.textView24);
-        txtAgilité = view.findViewById(R.id.textView25);
-        txtIntelligence = view.findViewById(R.id.textView26);
+        présentateurCreationPersonnage.choisirRace(getArguments().getString("race"));
+
+        txtForce = view.findViewById(R.id.forceCreationPersonnage);
+        txtEndurence= view.findViewById(R.id.endurenceCreationPersonnage);
+        txtAgilité = view.findViewById(R.id.agilitéCreationPersonnage);
+        txtIntelligence = view.findViewById(R.id.intelligenceCreationPersonnage);
 
         btnForce = view.findViewById(R.id.imageView12);
+
         btnForce.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -130,7 +136,6 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
                     }
                 }
         );
-        changerRace();
         btnContinuer.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -144,11 +149,8 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
                             bundle.putString("nom", editName.getText().toString());
                             String nomRace = getArguments().getString("race");
                             bundle.putString("nomRace", nomRace);
-
-                            présentateurCreationPersonnage.informationPersonnage(editName.getText().toString(),force,endurence,agilité,intelligence);
-                            présentateurCreationPersonnage.chercherpersonnage(bundle);
-                            //bundle.putSerializable("Personnage",personnage);
-                            présentateurCreationPersonnage.choixChapitre(nomRace,bundle);
+                            présentateurCreationPersonnage.créationPersonnage(editName.getText().toString(),force,endurence,agilité,intelligence);
+                            navController.navigate(R.id.chapitre_dino);
                         }
                     }
                 }
@@ -156,45 +158,17 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
     }
 
     /**
-     * La méthode permet changer el type de race.
-     */
-    public void changerRace() {
-        String nomRace = getArguments().getString("race");
-        présentateurCreationPersonnage.choisirRace(nomRace);
-    }
-
-    /**
      * La méthode permet changer la vue avec les information de la race choisit.
      *
      * @param race, le race choisit.
      */
+
     @Override
     public void setRace(String race,int description, int codeImage) {
         raceNom.setText(race);
         raceDescription.setText(description);
         raceImage.setImageDrawable(getResources().getDrawable(codeImage));
     }
-
-    /**
-     * La méthode permet afficher un chapitre en utilisant le choix du personnage.
-     *
-     * @param (choix,bundle), le choix choisit.
-     */
-    @Override
-    public void afficherChapitre(int choix, Bundle bundle) {
-        navController.navigate(choix, bundle);
-    }
-
-    /**
-     * La méthode permet ajouter le personnage dans la vue.
-     *
-     * @param (unPersonnage,bundle), le personnage.
-     */
-    @Override
-    public void ajouterPersonnage(Personnage unPersonnage, Bundle bundle) {
-        bundle.putSerializable("Personnage",unPersonnage);
-    }
-
     /**
      * La méthode permet afficher le points de force dans le texte.
      *

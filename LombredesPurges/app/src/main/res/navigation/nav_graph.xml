@@ -48,12 +48,6 @@
         <action
             android:id="@+id/action_creationPersonnage_to_chapitre_dino"
             app:destination="@id/chapitre_dino" />
-        <action
-            android:id="@+id/action_creationPersonnage_to_chapitre_via"
-            app:destination="@id/chapitre_via" />
-        <action
-            android:id="@+id/action_creationPersonnage_to_chapitre_kachikam"
-            app:destination="@id/chapitre_kachikam" />
     </fragment>
     <fragment
         android:id="@+id/selectionAventure"
@@ -67,9 +61,9 @@
 
     <fragment
         android:id="@+id/chapitre_dino"
-        android:name="com.example.lombredespurges.VueChapitreDino"
+        android:name="com.example.lombredespurges.VueHistoire"
         android:label="chapitre_histoire"
-        tools:layout="@layout/chapitre_histoire_dino" >
+        tools:layout="@layout/chapitre_histoire" >
         <action
             android:id="@+id/action_chapitre_dino_to_pageTitre"
             app:destination="@id/pageTitre" />
@@ -88,35 +82,6 @@
             app:destination="@id/chapitre_dino" />
         <action
             android:id="@+id/action_combat_to_pageTitre"
-            app:destination="@id/pageTitre" />
-        <action
-            android:id="@+id/action_combat_to_chapitre_via"
-            app:destination="@id/chapitre_via" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/chapitre_via"
-        android:name="com.example.lombredespurges.VueChapitreVia"
-        android:label="chapitre_histoire_via"
-        tools:layout="@layout/chapitre_histoire_via" >
-        <action
-            android:id="@+id/action_chapitre_via_to_combat"
-            app:destination="@id/combat" />
-        <action
-            android:id="@+id/action_chapitre_via_to_pageTitre"
-            app:destination="@id/pageTitre" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/chapitre_kachikam"
-        android:name="com.example.lombredespurges.VueChapitreKachikam"
-        android:label="chapitre_histoire_kachikam"
-        tools:layout="@layout/chapitre_histoire_kachikam" >
-        <action
-            android:id="@+id/action_chapitre_kachikam_to_combat"
-            app:destination="@id/combat" />
-        <action
-            android:id="@+id/action_chapitre_kachikam_to_pageTitre"
             app:destination="@id/pageTitre" />
     </fragment>
 
