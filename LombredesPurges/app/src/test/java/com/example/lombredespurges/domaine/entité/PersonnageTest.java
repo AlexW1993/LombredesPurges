@@ -2,7 +2,7 @@ package com.example.lombredespurges.domaine.entité;
 
 import junit.framework.TestCase;
 
-public class PersonnageTest extends TestCase {
+public class  PersonnageTest extends TestCase {
 
     public void test_chercher_nom_personnage() {
         Personnage personnageTest = new Personnage("Link", 5, 5, 5, 5);
@@ -36,13 +36,75 @@ public class PersonnageTest extends TestCase {
         assertEquals(résultatAttendu, résultatObservé);
     }
 
-    public void testGetCoefAttaque() {
+    public void test_chercher_coefficient_attaque_personnage() {
+        Personnage personnageTest = new Personnage("Link", 5, 5, 5, 5);
+        boolean résultat = false;
+        int résultatCoefAvantCalcul = personnageTest.getCoefAttaque();
+        boolean résultatAttendu = true;
+        boolean résultatObservé;
+
+
+        personnageTest.calculerCoefAttaquePersonnage();
+
+        int résultatCoefAprèsCalcul = personnageTest.getCoefAttaque();
+
+        if(résultatCoefAvantCalcul < résultatCoefAprèsCalcul){
+            résultat = true;
+        }
+
+        résultatObservé = résultat;
+
+        assertNotNull(résultatObservé);
+        assertEquals(résultatAttendu, résultatObservé);
+
     }
 
-    public void testGetCoefDéfence() {
+    public void test_chercher_Coefficient_Défense_personnage() {
+        Personnage personnageTest = new Personnage("Link", 5, 5, 5, 5);
+        Personnage personnage2Test = new Personnage("Mario", 5, 5, 5, 5);
+        boolean résultat = false;
+        int résultatCoefAvantCalcul = personnage2Test.getCoefDéfence();
+        boolean résultatAttendu = true;
+        boolean résultatObservé;
+
+        personnageTest.calculerCoefAttaquePersonnage();
+        personnage2Test.calculerCoefDéfense(personnageTest.getCoefAttaque());
+
+        int résultatCoefAprèsCalcul = personnage2Test.getCoefDéfence();
+
+        if(résultatCoefAvantCalcul < résultatCoefAprèsCalcul){
+            résultat = true;
+        }
+
+        résultatObservé = résultat;
+
+        assertNotNull(résultatObservé);
+        assertEquals(résultatAttendu, résultatObservé);
     }
 
-    public void testGetDommages() {
+    public void test_chercher_dommage_personnage() {
+        Personnage personnageTest = new Personnage("Link", 5, 5, 5, 5);
+        Personnage personnage2Test = new Personnage("Mario", 5, 5, 5, 5);
+        boolean résultat = false;
+        int résultatCoefAvantCalcul = personnage2Test.getDommages();
+        boolean résultatAttendu = true;
+        boolean résultatObservé;
+
+        personnageTest.calculerCoefAttaquePersonnage();
+        personnage2Test.calculerCoefDéfense(personnageTest.getCoefAttaque());
+        personnage2Test.calculerEtRecevoirDommage(personnage2Test.get_force());
+
+        int résultatDommagesAprèsCalcul = personnage2Test.getDommages();
+
+        if(résultatCoefAvantCalcul < résultatDommagesAprèsCalcul){
+            résultat = true;
+        }
+
+        résultatObservé = résultat;
+
+        assertNotNull(résultatObservé);
+        assertEquals(résultatAttendu, résultatObservé);
+
     }
 
     public void test_calculer_coefficient_attaque_personnage() {

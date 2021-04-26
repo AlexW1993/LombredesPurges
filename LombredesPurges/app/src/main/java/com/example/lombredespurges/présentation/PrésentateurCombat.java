@@ -33,6 +33,9 @@ public class PrésentateurCombat implements IContratPrésentateurVueCombat.IPré
        _modèle.creationEnnemie();
     }
 
+    /**
+     * La méthode permet de chercher et afficher le nom du personnage.
+     */
     @Override
     public void getNomPersonnage(){
         String nom;
@@ -40,6 +43,9 @@ public class PrésentateurCombat implements IContratPrésentateurVueCombat.IPré
         //_vue.afficherNomPersonnage(nom);
     }
 
+    /**
+     * La méthode permet de chercher et afficher tous les attributs du personnage.
+     */
     @Override
     public void getAttributsPersonnage(){
         ArrayList<Integer> attributs = new ArrayList();
@@ -49,6 +55,9 @@ public class PrésentateurCombat implements IContratPrésentateurVueCombat.IPré
         _vue.afficherAttributsPersonnage(attributs);
     }
 
+    /**
+     * La méthode permet de chercher et afficher le nom de l'ennemi.
+     */
     @Override
     public void getNomEnnemie(){
         String nom;
@@ -56,6 +65,9 @@ public class PrésentateurCombat implements IContratPrésentateurVueCombat.IPré
         _vue.afficherNomEnnemie(nom);
     }
 
+    /**
+     * La méthode permet de chercher et afficher tous les attributs de l'ennemi.
+     */
     @Override
     public void getAttributsEnnemie(){
         ArrayList<Integer> attributs = new ArrayList();
@@ -65,6 +77,11 @@ public class PrésentateurCombat implements IContratPrésentateurVueCombat.IPré
         _vue.afficherAttributsEnnemie(attributs);
     }
 
+    /**
+     * La méthode permet faire une accion d'attaque en dependant si c'est l'ennemi ou si c'est le personnage.
+     *
+     * @param tourJoueur, (boolean) vrai si c'est le tour du personnage, faux si ce n'est pas le tur de personnage.
+     */
     @Override
     public void tourDAttaquer(boolean tourJoueur){
 
@@ -90,10 +107,6 @@ public class PrésentateurCombat implements IContratPrésentateurVueCombat.IPré
 
     /**
      * La méthode permet de comparer de l'endurance du personnage ou de l'ennemi à 0.
-     *
-     * @return (int) (1) si l'endurance du personnage est plus petite à 0,
-     *               (2) si l'endurance de l'ennemie est plus petite à 0,
-     *               (3) si l'endurance du personnage et l'ennemie sont  plus grand à 0,
      */
     @Override
     public void comparerEndurance(){
@@ -118,6 +131,11 @@ public class PrésentateurCombat implements IContratPrésentateurVueCombat.IPré
         _vue.afficherCoefAttaque(_modèle.get_jeu().get_personnage().getCoefAttaque(),_modèle.getEnnemie().getCoefAttaque(),_modèle.comparaisonCoefAttaque());
     }
 
+    /**
+     * La méthode permet faire une accion d'attaque en dependant si c'est l'ennemi qui auras des dommages ou si c'est le personnage.
+     *
+     * @param (accion,tourJoueur) .(int) l'action à realiser, (boolean) vrai si c'est le tour du personnage, faux si ce n'est pas le tur de personnage.
+     */
     @Override
     public void faireAccionAttaquer(int accion, boolean tourJoueur){
         int dommage = 0;
@@ -142,11 +160,19 @@ public class PrésentateurCombat implements IContratPrésentateurVueCombat.IPré
         }
     }
 
+    /**
+     * La méthode permet de chercher le personnage du jeu pour l'enoyer dans la prochaine vue.
+     */
     @Override
     public void chercherPersonage(){
        /* _vue.envoiePersonnageDansProchaineVue(_modèle.getPersonnage());*/
     }
 
+    /**
+     * La méthode permet changer la race.
+     *
+     * @param (race) .(String) la race a choisisr
+     */
     @Override
     public void changerRace() {
 

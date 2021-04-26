@@ -50,22 +50,23 @@ public class PrésentateurCreationPersonnage implements IContratPrésentateurVue
 
     }
 
+    /**
+     * La méthode permet d'avoir les information du personnage (nom,attributs) pour sa creation.
+     *
+     * @param (nom,force,endurance,agilité,intelligence), les information du personnage.
+     */
     @Override
     public void créationPersonnage(String nom, int force, int endurance, int agilité, int intelligence){
         _modèle.creationPersonnage(nom, force, endurance, agilité, intelligence);
     }
 
-    /**
-     * Accesseurs du personnage.
-     *
-     * @return (Personnage) le personnage.
-     *//*
-    @Override
-    public void chercherpersonnage(Bundle bundle) {
-        Personnage personnage = _modèle.getPersonnage();
-        _vue.ajouterPersonnage(personnage, bundle);
-    }*/
 
+
+    /**
+     * La méthode permet de calculer la valuer de l'attribut que est en parametre.
+     *
+     * @param attribut, (String) l'attribut a être calculer.
+     */
     @Override
     public void calculerAttribut(String attribut){
         int num = 0;
@@ -93,8 +94,6 @@ public class PrésentateurCreationPersonnage implements IContratPrésentateurVue
 
     /**
      * La méthode permet de retourner le chapitre en utilisant le choix de race.
-     *
-     * @return (int) le choix de chapitre.
      */
     @Override
     public void choixAventure(String nomRace, Bundle bundle){
