@@ -59,12 +59,12 @@ public class PrésentateurCreationPersonnage implements IContratPrésentateurVue
      * Accesseurs du personnage.
      *
      * @return (Personnage) le personnage.
-     */
+     *//*
     @Override
     public void chercherpersonnage(Bundle bundle) {
         Personnage personnage = _modèle.getPersonnage();
         _vue.ajouterPersonnage(personnage, bundle);
-    }
+    }*/
 
     @Override
     public void calculerAttribut(String attribut){
@@ -100,9 +100,9 @@ public class PrésentateurCreationPersonnage implements IContratPrésentateurVue
         if (nomRace.equals("dino")){
             choix = R.id.chapitre_dino;
         } else if (nomRace.equals("via")){
-            choix = R.id.chapitre_via;
+            //choix = R.id.chapitre_via;
         } else if (nomRace.equals("kaqchikam")) {
-            choix = R.id.chapitre_kachikam;
+            //choix = R.id.chapitre_kachikam;
         }
         _vue.afficherAventure(choix,bundle);
     }

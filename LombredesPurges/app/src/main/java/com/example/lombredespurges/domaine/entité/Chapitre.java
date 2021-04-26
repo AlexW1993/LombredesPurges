@@ -52,6 +52,10 @@ public class Chapitre {
         return _combat;
     }
 
+    public void set_combat(boolean _combat) {
+        this._combat = _combat;
+    }
+
     /**
      * Accesseurs du prochain chapitre
      *

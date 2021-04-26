@@ -274,7 +274,6 @@
                 android:gravity="center"
                 android:shadowColor="#000000"
                 android:shadowRadius="60"
-                android:text="@string/agilitepurge"
                 android:textColor="#DAC614"
                 android:textSize="30sp"
                 android:textStyle="bold" />
@@ -288,7 +287,6 @@
                 android:gravity="center"
                 android:shadowColor="#000000"
                 android:shadowRadius="60"
-                android:text="@string/forcepurge"
                 android:textColor="#DAC614"
                 android:textSize="30sp"
                 android:textStyle="bold" />
@@ -315,7 +313,6 @@
                 android:gravity="center"
                 android:shadowColor="#000000"
                 android:shadowRadius="60"
-                android:text="@string/endurancepurge"
                 android:textColor="#DAC614"
                 android:textSize="30sp"
                 android:textStyle="bold" />

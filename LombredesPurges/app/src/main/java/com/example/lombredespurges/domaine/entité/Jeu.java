@@ -31,9 +31,6 @@ public class Jeu {
         return _aventureChoisie;
     }
 
-    public void set_aventureChoisie(Aventure _aventureChoisie) {
-        this._aventureChoisie = _aventureChoisie;
-    }
 
     public void determinerAventureChoisie(String nomAventure){
         for( Aventure uneAventure : _listeAventure){

@@ -30,6 +30,8 @@ public class VueHistoire extends Fragment implements IContratPrésentateurVueHis
     private Personnage personnage;
     private Bundle bundle;
 
+    private Button[] buttons = new Button[3];
+
     private int étapeCourant;
     private String chapitreCourante;
 
@@ -78,27 +80,26 @@ public class VueHistoire extends Fragment implements IContratPrésentateurVueHis
         btnPageTitre = view.findViewById(R.id.buttonMenu);
         btnPageTitre.setVisibility(View.GONE);
 
-        btnChoix1 = view.findViewById(R.id.buttonChoix1Chapitre);
-        btnChoix2 = view.findViewById(R.id.buttonChoix2Chapitre);
-        btnChoix3 = view.findViewById(R.id.buttonChoix3Chapitre);
+        btnChoix1 = view.findViewById(R.id.buttonChoix1);
+        btnChoix2 = view.findViewById(R.id.buttonChoix2);
+        btnChoix3 = view.findViewById(R.id.buttonChoix3);
 
         personnage = (Personnage) getArguments().getSerializable("Personnage");
         bundle = new Bundle();
-        bundle.putSerializable("Personnage", personnage);
 
-        afficherAventure(nomRace);
+        //afficherAventure(nomRace);
 
         chapitreCourante = getArguments().getString("ChapitreCouranteAction");
         étapeCourant = detectionÉtape(getArguments());
 
 
-        gestionAffichageDesChapitres(getArguments().getInt("ChoixPasséeAction"));
+        //gestionAffichageDesChapitres(getArguments().getInt("ChoixPasséeAction"));
 
         btnChoix1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                présentateurHistoires.déterminerCombat(numéroChapitreCourant, finalitéCombat);
-                présentateurHistoires.gestionChapitres(numéroChapitreCourant);
+                /*présentateurHistoires.déterminerCombat(numéroChapitreCourant, finalitéCombat);
+                présentateurHistoires.gestionChapitres(numéroChapitreCourant);*/
             }
         });
 
@@ -106,16 +107,16 @@ public class VueHistoire extends Fragment implements IContratPrésentateurVueHis
         btnChoix2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                présentateurHistoires.déterminerCombat(numéroChapitreCourant, finalitéCombat);
-                présentateurHistoires.gestionChapitres(numéroChapitreCourant);
+                /*présentateurHistoires.déterminerCombat(numéroChapitreCourant, finalitéCombat);
+                présentateurHistoires.gestionChapitres(numéroChapitreCourant);*/
             }
         });
 
         btnChoix3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                présentateurHistoires.déterminerCombat(numéroChapitreCourant, finalitéCombat);
-                présentateurHistoires.gestionChapitres(numéroChapitreCourant);
+                /*présentateurHistoires.déterminerCombat(numéroChapitreCourant, finalitéCombat);
+                présentateurHistoires.gestionChapitres(numéroChapitreCourant);*/
             }
         });
 
@@ -140,7 +141,7 @@ public class VueHistoire extends Fragment implements IContratPrésentateurVueHis
     }
 
 
-    private void gestionÉtape1(){
+    /*private void gestionÉtape1(){
         présentateurHistoires.getNumeroChapitre(0);
         texteContenueChapitre.setText(R.string.chapitre0Dino);
         btnChoix1.setText(R.string.choix0_1);
@@ -245,49 +246,92 @@ public class VueHistoire extends Fragment implements IContratPrésentateurVueHis
         btnChoix3.setVisibility(View.GONE);
         btnPageTitre.setVisibility(View.VISIBLE);
 
-    }
+    }*/
 
 
-    @Override
-    public void afficherAventure(String nomAventure) {
-    }
 
 
-    @Override
-    public void afficherNumeroChapitre(int _numeroChapitre) {
-        txtNumeroChapitre.setText(String.valueOf(_numeroChapitre));
-    }
 
-    @Override
-    public void afficherTexteChapitre(int _texteChapitre) {
-        texteContenueChapitre.setText(String.valueOf(_texteChapitre));
-    }
 
-    @Override
-    public void afficherChoixChapitre(int _choix) {
-        btnChoix1.setText(présentateurHistoires.getChoixChapitre(0));
-        btnChoix2.setText(présentateurHistoires.getChoixChapitre(1));
-        btnChoix3.setText(présentateurHistoires.getChoixChapitre(2));
-    }
 
-    @Override
+    /*@Override
     public void afficherProchainChapitre(int _prochainChapitre) {
 
     }
-
-    @Override
+*/
+    /*@Override
     public void faireCombat(){
         bundle.putInt("ÉtapeVue", numéroChapitreCourant);
         bundle.putInt("ChoixPassée", 1);
         bundle.putString("ChapitreCourante",chapitreCourante);
         navController.navigate(R.id.combat, bundle);
-    }
+    }*/
 
-    @Override
+
     public boolean finalitéCombat() {
         boolean combatFinit = getArguments().getBoolean("CombatFinit");
         return combatFinit;
     }
 
+
+
+
+    ///////////////
+
+    @Override
+    public void afficherAventure(int numeroChapitre, int idContenueChapitre,int idChoix1,int idChoix2,int idChoix3) {
+        txtNumeroChapitre.setText(numeroChapitre);
+        texteContenueChapitre.setText(idContenueChapitre);
+        btnChoix1.setText(idChoix1);
+        btnChoix2.setText(idChoix2);
+        btnChoix3.setText(idChoix3);
+    }
+
+
+
+    public void afficherFinJeu(int numeroChapitre, int idContenueChapitre){
+
+
+        txtNumeroChapitre.setText(numeroChapitre);
+        texteContenueChapitre.setText(idContenueChapitre);
+
+
+        btnChoix1.setVisibility(View.GONE);
+        btnChoix2.setVisibility(View.GONE);
+        btnChoix3.setVisibility(View.GONE);
+
+        btnPageTitre.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void passerAuCombat(){
+        navController.navigate(R.id.combat);
+    }
+
+
+
+
+
+    /*
+    private TextView texteContenueChapitre;
+    private TextView txtNumeroChapitre;
+    private TextView texteChapitre;
+    private Button btnChoix1;
+    private Button btnChoix2;
+    private Button btnChoix3;
+    private Button btnPageTitre;
+    private NavController navController;
+    private Personnage personnage;
+    private Bundle bundle;
+
+    private int étapeCourant;
+    private String chapitreCourante;
+
+
+    private int numéroChapitreCourant;
+    private boolean finalitéCombat;
+
+    PrésentateurHistoires présentateurHistoires;
+     */
 
 }

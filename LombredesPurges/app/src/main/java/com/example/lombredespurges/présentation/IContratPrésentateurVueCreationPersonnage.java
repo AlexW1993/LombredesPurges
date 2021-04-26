@@ -9,7 +9,7 @@ public interface IContratPrésentateurVueCreationPersonnage {
     public interface IPrésentateurCreationPersonnage{
         public void choisirRace(String nomRace);
         public void informationPersonnage(String nom, int force, int endurance, int agilité, int intelligence);
-        public void chercherpersonnage(Bundle bundle);
+        //public void chercherpersonnage(Bundle bundle);
         public void calculerAttribut(String attribut);
         public void choixAventure(String nomRace, Bundle bundle);
     }

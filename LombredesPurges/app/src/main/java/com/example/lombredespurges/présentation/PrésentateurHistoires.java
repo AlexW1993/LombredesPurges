@@ -1,8 +1,11 @@
 package com.example.lombredespurges.présentation;
 
 import com.example.lombredespurges.domaine.entité.Aventure;
+import com.example.lombredespurges.domaine.entité.Chapitre;
 import com.example.lombredespurges.domaine.entité.Jeu;
 import com.example.lombredespurges.modele.Modèle;
+
+import java.util.ArrayList;
 
 public class PrésentateurHistoires implements IContratPrésentateurVueHistoires.IPrésentateurHistoires {
 
@@ -18,11 +21,38 @@ public class PrésentateurHistoires implements IContratPrésentateurVueHistoires
     }
 
     @Override
-    public void getAventure(String nomAventure) {
+    public void gestionChapitre(String nomAventure) {
         _jeu = _modèle.get_jeu();
-        _jeu.determinerAventureChoisie(nomAventure);
+        _jeu.determinerAventureChoisie(nomAventure); // on a l<aventure a jouer
+
+
         _aventure = _jeu.get_aventureChoisie();
-        _vue.afficherAventure(nomAventure);
+        Chapitre uneChapitre = _aventure.getChapitreCourante();
+        int numChapitre = uneChapitre.get_numéroChapitre();
+        int idContenueChapitre = uneChapitre.get_IdTexteChapitre();
+        ArrayList<Integer> listeIdChoix = uneChapitre.get_listeIdTexteChoix();
+
+        if(listeIdChoix.isEmpty()){
+            _vue.afficherFinJeu(numChapitre, idContenueChapitre);
+        }else{
+            int choix1 = listeIdChoix.get(0);
+            int choix2 = listeIdChoix.get(1);
+            int choix3 = listeIdChoix.get(3);
+
+            _vue.afficherAventure(numChapitre, idContenueChapitre, choix1, choix2, choix3);
+        }
+
+
+
+        //public void afficherAventure(String numeroChapitre, String contenueChapitre,String choix1,String choix2,String choix3);
+
+        /*public void afficherAventure(String numeroChapitre, String contenueChapitre,String choix1,String choix2,String choix3) {
+            txtNumeroChapitre.setText(numeroChapitre);
+            texteContenueChapitre.setText(contenueChapitre);
+            btnChoix1.setText(choix1);
+            btnChoix2.setText(choix2);
+            btnChoix3.setText(choix3);
+        }*/
     }
 /*
     @Override
@@ -36,14 +66,14 @@ public class PrésentateurHistoires implements IContratPrésentateurVueHistoires
     public void getNumeroChapitre(int positionListe) {
         int numéroChapitre;
         numéroChapitre = _aventure.get_listeChapitre().get(positionListe).get_numéroChapitre();
-        _vue.afficherNumeroChapitre(numéroChapitre);
+        //_vue.afficherNumeroChapitre(numéroChapitre);
     }
 
     @Override
     public void getTexteChapitre(int positionListe) {
         int texteChapitre;
         texteChapitre = _aventure.get_listeChapitre().get(positionListe).get_IdTexteChapitre();
-        _vue.afficherTexteChapitre(texteChapitre);
+        //_vue.afficherTexteChapitre(texteChapitre);
     }
 
     @Override
@@ -57,7 +87,7 @@ public class PrésentateurHistoires implements IContratPrésentateurVueHistoires
     public void getProchainChapitre(int positionListe) {
         int prochainChapitre;
         prochainChapitre = _aventure.get_listeChapitre().get(positionListe).get_prochainChapitre(positionListe);
-        _vue.afficherProchainChapitre(prochainChapitre);
+        //_vue.afficherProchainChapitre(prochainChapitre);
     }
 
     @Override
@@ -65,11 +95,16 @@ public class PrésentateurHistoires implements IContratPrésentateurVueHistoires
         boolean _combat;
         _combat = _aventure.get_listeChapitre().get(positionListe).get_combat();
         if( _combat && finalitéCombat == false){
-            _vue.faireCombat();
+            //_vue.faireCombat();
         }
     }
 
     @Override
+    public void gestionChapitres(int numéroChapitre) {
+
+    }
+
+    /*@Override
     public void gestionChapitres(int numéroChapitreCourant){
         for (int i = 0; i < 18; i++) {
             if(numéroChapitreCourant == i){
@@ -78,6 +113,6 @@ public class PrésentateurHistoires implements IContratPrésentateurVueHistoires
                 _vue.afficherChoixChapitre(i);
             }
         }
-    }
-    }
+    }*/
+
 }

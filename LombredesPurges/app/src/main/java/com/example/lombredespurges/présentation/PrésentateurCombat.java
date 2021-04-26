@@ -36,16 +36,16 @@ public class PrésentateurCombat implements IContratPrésentateurVueCombat.IPré
     @Override
     public void getNomPersonnage(){
         String nom;
-        nom = _modèle.getPersonnage().get_nom();
-        _vue.afficherNomPersonnage(nom);
+        //nom = _modèle.getPersonnage().get_nom();
+        //_vue.afficherNomPersonnage(nom);
     }
 
     @Override
     public void getAttributsPersonnage(){
         ArrayList<Integer> attributs = new ArrayList();
-        attributs.add(_modèle.getPersonnage().get_force());
+        /*attributs.add(_modèle.getPersonnage().get_force());
         attributs.add(_modèle.getPersonnage().get_agilité());
-        attributs.add(_modèle.getPersonnage().get_endurance());
+        attributs.add(_modèle.getPersonnage().get_endurance());*/
         _vue.afficherAttributsPersonnage(attributs);
     }
 
@@ -69,21 +69,21 @@ public class PrésentateurCombat implements IContratPrésentateurVueCombat.IPré
     public void tourDAttaquer(boolean tourJoueur){
 
         if (tourJoueur){
-            _modèle.getEnnemie().calculerCoefDéfense(_modèle.getPersonnage().getCoefAttaque());
-            _modèle.getEnnemie().calculerEtRecevoirDommage(_modèle.getPersonnage().get_force());
+            /*_modèle.getEnnemie().calculerCoefDéfense(_modèle.getPersonnage().getCoefAttaque());
+            _modèle.getEnnemie().calculerEtRecevoirDommage(_modèle.getPersonnage().get_force());*/
             if(_modèle.getEnnemie().get_endurance() <= 0){
                 _vue.gestionAccion(1);
             }else{
                 _vue.gestionAccion(2);
             }
         }else{
-            _modèle.getPersonnage().calculerCoefDéfense(_modèle.getEnnemie().getCoefAttaque());
-            _modèle.getPersonnage().calculerEtRecevoirDommage(_modèle.getEnnemie().get_force());
-            if(_modèle.getPersonnage().get_endurance() <= 0) {
+            /*_modèle.getPersonnage().calculerCoefDéfense(_modèle.getEnnemie().getCoefAttaque());
+            _modèle.getPersonnage().calculerEtRecevoirDommage(_modèle.getEnnemie().get_force());*/
+            /*if(_modèle.getPersonnage().get_endurance() <= 0) {
                 _vue.gestionAccion(3);
             }else{
                 _vue.gestionAccion(4);
-            }
+            }*/
         }
     }
 
@@ -96,13 +96,13 @@ public class PrésentateurCombat implements IContratPrésentateurVueCombat.IPré
      */
     @Override
     public void comparerEndurance(){
-        if(_modèle.getPersonnage().get_endurance() <= 0){
+        /*if(_modèle.getPersonnage().get_endurance() <= 0){
             _vue.resultatEndurance(1);
         }else if(_modèle.getEnnemie().get_endurance() <= 0){
             _vue.resultatEndurance(2);
         }else {
             _vue.resultatEndurance(0);
-        }
+        }*/
     }
 
     /**
@@ -111,14 +111,14 @@ public class PrésentateurCombat implements IContratPrésentateurVueCombat.IPré
      */
     @Override
     public void calculerCoefAttaque(){
-        _modèle.calculerCoefAttaque();
+       /* _modèle.calculerCoefAttaque();
         _modèle.comparaisonCoefAttaque();
-        _vue.afficherCoefAttaque(_modèle.getPersonnage().getCoefAttaque(),_modèle.getEnnemie().getCoefAttaque(),_modèle.comparaisonCoefAttaque());
+        _vue.afficherCoefAttaque(_modèle.getPersonnage().getCoefAttaque(),_modèle.getEnnemie().getCoefAttaque(),_modèle.comparaisonCoefAttaque());*/
     }
 
     @Override
     public void faireAccionAttaquer(int accion, boolean tourJoueur){
-        int dommage = 0;
+        /*int dommage = 0;
         if (tourJoueur){
             _vue.setTextDefencéEndurenceEnnemie(_modèle.getEnnemie().getCoefDéfence(),_modèle.getEnnemie().get_endurance());
             if(accion == 1){
@@ -137,12 +137,12 @@ public class PrésentateurCombat implements IContratPrésentateurVueCombat.IPré
                 dommage = _modèle.getPersonnage().getDommages();
                 _vue.faireAction4(dommage);
             }
-        }
+        }*/
     }
 
     @Override
     public void chercherPersonage(){
-        _vue.envoiePersonnageDansProchaineVue(_modèle.getPersonnage());
+       /* _vue.envoiePersonnageDansProchaineVue(_modèle.getPersonnage());*/
     }
 
     @Override

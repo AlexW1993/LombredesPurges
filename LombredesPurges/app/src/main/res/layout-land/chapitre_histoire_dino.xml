@@ -43,7 +43,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:id="@+id/buttonChoix1Chapitre"
+            android:id="@+id/buttonChoix1"
             style="@style/Widget.AppCompat.Button"
             android:layout_width="170dp"
             android:layout_height="70dp"
@@ -58,7 +58,7 @@
             app:strokeColor="#000000" />
 
         <Button
-            android:id="@+id/buttonChoix2Chapitre"
+            android:id="@+id/buttonChoix2"
             style="@style/Widget.AppCompat.Button"
             android:layout_width="170dp"
             android:layout_height="70dp"
@@ -73,7 +73,7 @@
             app:strokeColor="#000000" />
 
         <Button
-            android:id="@+id/buttonChoix3Chapitre"
+            android:id="@+id/buttonChoix3"
             style="@style/Widget.AppCompat.Button"
             android:layout_width="170dp"
             android:layout_height="70dp"

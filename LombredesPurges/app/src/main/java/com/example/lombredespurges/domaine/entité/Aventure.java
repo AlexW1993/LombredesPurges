@@ -8,6 +8,7 @@ public class Aventure {
      */
     private String _nomAventure;
     private ArrayList<Chapitre> _listeChapitre;
+    private Chapitre chapitreCourante;
 
 
     /**
@@ -16,6 +17,18 @@ public class Aventure {
     public Aventure(String _nomAventure, ArrayList<Chapitre> _listeChapitre) {
         this._nomAventure = _nomAventure;
         this._listeChapitre = _listeChapitre;
+        this.chapitreCourante = _listeChapitre.get(0);
+    }
+
+    public Chapitre getChapitreCourante(){
+        return chapitreCourante;
+    }
+
+    public void passerAuProchainChapitre(int choix){
+
+        int prochainChapitre = chapitreCourante.get_prochainChapitre(choix);
+
+        chapitreCourante = _listeChapitre.get(prochainChapitre);
     }
 
     /**
