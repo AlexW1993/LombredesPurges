@@ -142,11 +142,22 @@ public class VueCombat extends Fragment implements IContratPrésentateurVueComba
         );
     }
 
+
+    /**
+     * La méthode permet que le nom reçu en parametre est affiché.
+     *
+     * @param unNom, (String) le nom du personnage.
+     */
     @Override
     public void afficherNomPersonnage(String unNom) {
         nomPersonnage.setText(unNom.toUpperCase());
     }
 
+    /**
+     * La méthode permet que les attributs reçus en parametre sont affichés.
+     *
+     * @param attributs, les attribus du personnage.
+     */
     @Override
     public void afficherAttributsPersonnage(ArrayList<Integer> attributs) {
         forcePersonnage.setText(String.valueOf(attributs.get(0)));
@@ -154,11 +165,21 @@ public class VueCombat extends Fragment implements IContratPrésentateurVueComba
         endurancePersonnage.setText(String.valueOf(attributs.get(2)));
     }
 
+    /**
+     * La méthode permet que le nom reçu en parametre est affiché.
+     *
+     * @param unNom, (String) le nom de l'ennemi.
+     */
     @Override
     public void afficherNomEnnemie(String unNom) {
         nomEnnemi.setText(unNom.toUpperCase());
     }
 
+    /**
+     * La méthode permet que les attributs reçus en parametre sont affichés.
+     *
+     * @param attributs, les attribus de l'ennemi.
+     */
     @Override
     public void afficherAttributsEnnemie(ArrayList<Integer> attributs) {
         forceEnnemie.setText(String.valueOf(attributs.get(0)));
@@ -166,6 +187,13 @@ public class VueCombat extends Fragment implements IContratPrésentateurVueComba
         enduranceEnnemie.setText(String.valueOf(attributs.get(2)));
     }
 
+    /**
+     * La méthode permet que les coeficientes d'attaque de l'ennemi et du personnage qui sont en parametre sont affichés, aussi
+     * une parametre boolean pour savoir si c'est le tour du personnage ou pas.
+     *
+     * @param (coefAttaqueP, coestAttaqueE, resultatComparaison) les coeficientes d'attaque  du personnage et de l'ennemi aussi,
+     *                                                           la conffirmation du tout du personnage.
+     */
     @Override
     public void afficherCoefAttaque(int coefAttaqueP, int coefAttaqueE, boolean resultatComparaison) {
         coefAttaquePersonnage.setText(String.valueOf(coefAttaqueP));
@@ -173,23 +201,43 @@ public class VueCombat extends Fragment implements IContratPrésentateurVueComba
         tourJoueur = resultatComparaison;
     }
 
+    /**
+     * La méthode permet realiser une action dans le tour d'attauque.
+     *
+     * @param accion, l'action à faire.
+     */
     @Override
     public void gestionAccion(int accion) {
         présentateurCombat.faireAccionAttaquer(accion, tourJoueur);
     }
 
+    /**
+     * La méthode permet changer les textes qui affichetn le défence et endurance de l'ennemi.
+     *
+     * @param (defenceEnnemie,endurenceEnnemie), le defence et l'endurence de l'ennemi.
+     */
     @Override
     public void setTextDefencéEndurenceEnnemie(int defenceEnnemie, int endurenceEnnemie) {
         défenceEnnemie.setText(String.valueOf(defenceEnnemie));
         enduranceEnnemie.setText(String.valueOf(endurenceEnnemie));
     }
 
+    /**
+     * La méthode permet changer les textes qui affichetn le défence et endurance du personnage.
+     *
+     * @param (defencePersonnage,endurencePersonnage), le defence et l'endurence du personnage.
+     */
     @Override
     public void setTextDefencéEndurencePersonnage(int defencePersonnage, int endurencePersonnage) {
         défencePersonnage.setText(String.valueOf(defencePersonnage));
         endurancePersonnage.setText(String.valueOf(endurencePersonnage));
     }
 
+    /**
+     * La méthode permet faire l'action de tuer un ennemie.
+     *
+     * @param dommage, le dommage que l'ennemi a reçu.
+     */
     @Override
     public void faireAction1(int dommage) {
         btnContinuer.setVisibility(View.VISIBLE);
@@ -198,11 +246,21 @@ public class VueCombat extends Fragment implements IContratPrésentateurVueComba
         deroulementCombat.setText("Vous avez attaqué : " + dommage + " de dommage a été fait. L'ennemi est battu");
     }
 
+    /**
+     * La méthode permet faire l'action d'attaque un ennemie et qu'il recoit des dommages.
+     *
+     * @param dommage, le dommage que l'ennemi a reçu.
+     */
     @Override
     public void faireAction2(int dommage) {
         deroulementCombat.setText("Vous avez attaqué : " + dommage + " de dommage a été fait. Jouer le dé pour prochain tour");
     }
 
+    /**
+     * La méthode permet faire l'action de tuer le personnage.
+     *
+     * @param dommage, le dommage que le personnage a reçu.
+     */
     @Override
     public void faireAction3(int dommage) {
         btnContinuer.setVisibility(View.VISIBLE);
@@ -211,11 +269,22 @@ public class VueCombat extends Fragment implements IContratPrésentateurVueComba
         btnDé.setVisibility(View.GONE);
     }
 
+    /**
+     * La méthode permet faire l'action d'attaque au personnage et qu'il recoit des dommages.
+     *
+     * @param dommage, le dommage que le personnage a reçu.
+     */
     @Override
     public void faireAction4(int dommage) {
         deroulementCombat.setText("Vous êtes attaqué : " + dommage + " de dommage a été fait. Jouer le dé pour prochain tour");
     }
 
+    /**
+     * La méthode permet activer le bouton de Continuer ou de Page Titre en utilisant le resultat
+     * d'endurance entre le personnage et l'ennemi.
+     *
+     * @param resultat, le resultat de l'endurance.
+     */
     @Override
     public void resultatEndurance(int resultat) {
         if(resultatEndurance == 1){
@@ -227,6 +296,11 @@ public class VueCombat extends Fragment implements IContratPrésentateurVueComba
         }
     }
 
+    /**
+     * La méthode permet envoyer le personnage dans la prochaine vue de l'histoire.
+     *
+     * @param personnage, le personnage.
+     */
     @Override
     public void envoiePersonnageDansProchaineVue(Personnage personnage) {
         bundle = new Bundle();
@@ -248,6 +322,11 @@ public class VueCombat extends Fragment implements IContratPrésentateurVueComba
         }
     }
 
+    /**
+     * La méthode permet changer el type de race.
+     *
+     * @param race, le race choisit.
+     */
     @Override
     public void actionChangerRace(int race) {
         raceImage.setImageDrawable(getResources().getDrawable(race));
