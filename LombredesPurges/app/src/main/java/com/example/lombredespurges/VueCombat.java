@@ -114,7 +114,7 @@ public class VueCombat extends Fragment implements IContratPrésentateurVueComba
         deroulementCombat.setText("Jouer le Dé pour déterminer l'attaquant");
 
         raceImage  = view.findViewById(R.id.imageRaceCombat);
-        présentateurCombat.changerRace(getArguments().getString("race"));
+        présentateurCombat.changerRace();
 
         btnDé = view.findViewById(R.id.combatDé);
         btnDé.setOnClickListener(
@@ -133,8 +133,9 @@ public class VueCombat extends Fragment implements IContratPrésentateurVueComba
                     @Override
                     public void onClick(View v) {
                         if (btnContinuer.getText().equals("Continuer")){
-                            présentateurCombat.chercherPersonage();
+                            présentateurCombat.passerAuChapitreApresCombat();
                         } else if (btnContinuer.getText().equals("Page titre")){
+                            //présentateurCombat.passerPageTitre();
                             navController.navigate(R.id.pageTitre);
                         }
                     }
@@ -174,8 +175,8 @@ public class VueCombat extends Fragment implements IContratPrésentateurVueComba
     }
 
     @Override
-    public void gestionAccion(int accion) {
-        présentateurCombat.faireAccionAttaquer(accion, tourJoueur);
+    public void gestionAction(int action) {
+        présentateurCombat.faireAccionAttaquer(action, tourJoueur);
     }
 
     @Override
@@ -242,5 +243,15 @@ public class VueCombat extends Fragment implements IContratPrésentateurVueComba
     @Override
     public void actionChangerRace(int race) {
         raceImage.setImageDrawable(getResources().getDrawable(race));
+    }
+
+    @Override
+    public void passerAuChapitre() {
+        navController.navigate(R.id.chapitre_dino);
+    }
+
+    @Override
+    public void passerPageTitre() {
+        navController.navigate(R.id.pageTitre);
     }
 }

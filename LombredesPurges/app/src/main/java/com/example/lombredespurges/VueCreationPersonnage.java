@@ -156,6 +156,7 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
                             //présentateurCreationPersonnage.chercherpersonnage(bundle);
                             //bundle.putSerializable("Personnage",personnage);
                             //présentateurCreationPersonnage.choixAventure(nomRace,bundle);
+                            présentateurCreationPersonnage.créationPersonnage(editName.getText().toString(),force,endurence,agilité,intelligence);
                             navController.navigate(R.id.chapitre_dino);
                         }
                     }

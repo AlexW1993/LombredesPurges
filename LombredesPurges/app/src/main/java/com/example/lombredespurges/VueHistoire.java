@@ -299,7 +299,7 @@ public class VueHistoire extends Fragment implements IContratPrésentateurVueHis
     public void afficherFinJeu(int numeroChapitre, int idContenueChapitre){
 
 
-        txtNumeroChapitre.setText(numeroChapitre);
+        txtNumeroChapitre.setText(String.valueOf(numeroChapitre));
         texteContenueChapitre.setText(idContenueChapitre);
 
 
@@ -308,6 +308,7 @@ public class VueHistoire extends Fragment implements IContratPrésentateurVueHis
         btnChoix3.setVisibility(View.GONE);
 
         btnPageTitre.setVisibility(View.VISIBLE);
+
     }
 
     @Override

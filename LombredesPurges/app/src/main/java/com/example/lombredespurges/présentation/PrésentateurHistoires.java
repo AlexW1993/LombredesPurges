@@ -47,6 +47,7 @@ public class PrésentateurHistoires implements IContratPrésentateurVueHistoires
 
         if(listeIdChoix.isEmpty()){
             _vue.afficherFinJeu(numChapitre, idContenueChapitre);
+            _modèle.réanitialierJeu();
         }else{
             int choix1 = listeIdChoix.get(0);
             int choix2 = listeIdChoix.get(1);

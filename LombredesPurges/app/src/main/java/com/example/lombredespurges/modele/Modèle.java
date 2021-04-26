@@ -13,7 +13,6 @@ public class Modèle {
     private static Modèle modèle;
     private Jeu _jeu;
     private Ennemie _ennemie;
-    //private Personnage _personnage;
 
 
     private Modèle(){
@@ -25,6 +24,10 @@ public class Modèle {
             modèle = new Modèle();
         }
         return modèle;
+    }
+
+    public void réanitialierJeu(){
+        this._jeu = new Creation().CréationJeu();
     }
 
     public void creationPersonnage(String nom, int force, int endurance, int agilité, int intelligence){
