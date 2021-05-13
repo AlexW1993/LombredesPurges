@@ -1,7 +1,4 @@
 package com.example.lombredespurges.présentation;
-
-import com.example.lombredespurges.domaine.entité.Personnage;
-
 import java.util.ArrayList;
 
 public interface IContratPrésentateurVueCombat {

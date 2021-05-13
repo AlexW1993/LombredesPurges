@@ -1,9 +1,5 @@
 package com.example.lombredespurges.présentation;
 
-import android.os.Bundle;
-
-import com.example.lombredespurges.domaine.entité.Personnage;
-
 public interface IContratPrésentateurVueCreationPersonnage {
 
     public interface IPrésentateurCreationPersonnage{

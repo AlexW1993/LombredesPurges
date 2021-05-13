@@ -4,12 +4,18 @@ import java.util.ArrayList;
 
 public class Chapitre {
 
+    /**
+     * Declaration des Aventure
+     */
     int _numéroChapitre;
     ArrayList<Integer> _listeProchainChapitre;
     boolean _combat;
     private int _IdTexteChapitre;
     private ArrayList<Integer> _listeIdTexteChoix;
 
+    /**
+     * Constructeur d'une chapitre.
+     */
     public Chapitre(int numéroChapitre, int idTexteChapitre, ArrayList<Integer> listeIdTexteChoix, ArrayList<Integer> listeProchainChapitre, boolean combat){
         this._numéroChapitre = numéroChapitre;
         this._IdTexteChapitre = idTexteChapitre;
@@ -52,17 +58,23 @@ public class Chapitre {
         return _combat;
     }
 
+    /**
+     * Mutateur du combat
+     *
+     * @param _combat, vrai s'il y a un combat sinon faux
+     */
     public void set_combat(boolean _combat) {
         this._combat = _combat;
     }
 
     /**
-     * Accesseurs du prochain chapitre
+     * Méthode du prochain chapitre
+     *
+     * @param positionListe, (int) la positon du chapitre qui devrai être retrourner.
      *
      * @return (int) le numéro du prochain chapitre
      */
     public int get_prochainChapitre(int positionListe) {
         return _listeProchainChapitre.get(positionListe);
     }
-
 }
