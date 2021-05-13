@@ -20,15 +20,13 @@ public class Aventure {
         this.chapitreCourante = _listeChapitre.get(0);
     }
 
+    /**
+     * Accesseurs du chapitre courante
+     *
+     * @return (Chapitre) le chapitre Courante.
+     */
     public Chapitre getChapitreCourante(){
         return chapitreCourante;
-    }
-
-    public void passerAuProchainChapitre(int choix){
-
-        int prochainChapitre = chapitreCourante.get_prochainChapitre(choix);
-
-        chapitreCourante = _listeChapitre.get(prochainChapitre);
     }
 
     /**
@@ -41,13 +39,14 @@ public class Aventure {
     }
 
     /**
-     * Accesseurs de la liste des chapitres
+     * Méthode qui ajouete le prochaine chapitre dans le chapitreCourante.
      *
-     * @return (liste) la liste des chapitres
+     * @param choix, (int) la choix que le joueur à fait pour continuer l'aventure.
      */
-    public ArrayList<Chapitre> get_listeChapitre() {
-        return _listeChapitre;
+    public void passerAuProchainChapitre(int choix){
+
+        int prochainChapitre = chapitreCourante.get_prochainChapitre(choix);
+
+        chapitreCourante = _listeChapitre.get(prochainChapitre);
     }
-
-
 }

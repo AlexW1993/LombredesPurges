@@ -4,7 +4,6 @@ import com.example.lombredespurges.R;
 import com.example.lombredespurges.domaine.entité.Aventure;
 import com.example.lombredespurges.domaine.entité.Chapitre;
 import com.example.lombredespurges.domaine.entité.Ennemie;
-import com.example.lombredespurges.domaine.entité.Jeu;
 import com.example.lombredespurges.domaine.entité.Personnage;
 
 import java.util.ArrayList;
@@ -13,9 +12,21 @@ import java.util.Random;
 public class Creation {
 
     /**
+     * La méthode permet la creation d'un personnage.
+     *
+     * @param (nom,force,edurance,agilité,intelligence), le nom du personnage avec ses attributs.
+     *
+     * @return  (Personnage) le personnage créé.
+     */
+    public Personnage CreationPersonnage (String nom, int force, int endurance, int agilité, int intelligence){
+       Personnage personnage = new Personnage(nom, force, endurance, agilité, intelligence);
+       return personnage;
+    }
+
+    /**
      * La méthode permet la creation d'un ennemie.
      *
-     * @return  (Personnage) l'ennemi créé.
+     * @return  (Ennemi) l'ennemi créé.
      */
     public Ennemie CreationEnnemie (){
         Ennemie ennemie;
@@ -32,18 +43,24 @@ public class Creation {
         return  ennemie;
     }
 
-
-    public Jeu CréationJeu(){
+    /**
+     * La méthode permet la creation d'un liste d'aventure.
+     *
+     * @return  (listeAventures) la liste d'aventures.
+     */
+    public ArrayList<Aventure> CréationJeu(){
         ArrayList<Aventure> listeAventures = new ArrayList<Aventure>();
         listeAventures.add(CréationAventureDino());
         listeAventures.add(CréationAventureVia());
         listeAventures.add(CréationAventureKachikam());
-
-        Jeu unJeu = new Jeu(listeAventures);
-
-        return unJeu;
+        return listeAventures;
     }
 
+    /**
+     * La méthode permet la creation de l'aventure de Dino.
+     *
+     * @return  (dino) l'aventure de dino.
+     */
     private Aventure CréationAventureDino(){
         ArrayList<Chapitre> listeChapitres = new ArrayList<Chapitre>();
         listeChapitres.add(CréationHistoireDinoChapitre0());
@@ -71,6 +88,11 @@ public class Creation {
         return dino;
     }
 
+    /**
+     * La méthode permet la creation de l'aventure de Via.
+     *
+     * @return  (via) l'aventure de Via.
+     */
     private Aventure CréationAventureVia(){
         ArrayList<Chapitre> listeChapitres = new ArrayList<Chapitre>();
         listeChapitres.add(CréationHistoireViaChapitre0());
@@ -97,6 +119,11 @@ public class Creation {
         return via;
     }
 
+    /**
+     * La méthode permet la creation de l'aventure de Kachikam.
+     *
+     * @return  (kachikam) l'aventure de kachikam.
+     */
     private Aventure CréationAventureKachikam(){
         ArrayList<Chapitre> listeChapitres = new ArrayList<Chapitre>();
         listeChapitres.add(CréationHistoireKachikamChapitre0());
@@ -123,6 +150,11 @@ public class Creation {
         return Kachikam;
     }
 
+    /**
+     * La méthode permet la creation de la histoire  et la liste de choix du chapitre 0 de Dino
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireDinoChapitre0(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -134,12 +166,16 @@ public class Creation {
         listeProchain.add(2);
         listeProchain.add(3);
 
-
         chapitre = new Chapitre(0,R.string.chapitre0Dino,listeChoix,listeProchain,false);
 
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire  et la liste de choix du chapitre 1 de Dino
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireDinoChapitre1(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -156,6 +192,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire  et la liste de choix du chapitre 2 de Dino
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireDinoChapitre2(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -171,6 +212,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire  et la liste de choix du chapitre 3 de Dino
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireDinoChapitre3(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -186,6 +232,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire  et la liste de choix du chapitre 4 de Dino
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireDinoChapitre4(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -201,6 +252,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire  et la liste de choix du chapitre 5 de Dino
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireDinoChapitre5(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -216,6 +272,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire du chapitre 6 de Dino
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireDinoChapitre6(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -225,6 +286,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire du chapitre 7 de Dino
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireDinoChapitre7(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -233,6 +299,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire  et la liste de choix du chapitre 8 de Dino
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireDinoChapitre8(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -248,6 +319,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire  et la liste de choix du chapitre 9 de Dino
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireDinoChapitre9(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -263,6 +339,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire  et la liste de choix du chapitre 10 de Dino
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireDinoChapitre10(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -278,6 +359,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire  et la liste de choix du chapitre 11 de Dino
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireDinoChapitre11(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -294,6 +380,11 @@ public class Creation {
     }
 
 
+    /**
+     * La méthode permet la creation de la histoire du chapitre 12 de Dino
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireDinoChapitre12(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -302,6 +393,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire du chapitre 13 de Dino
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireDinoChapitre13(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -310,6 +406,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire du chapitre 14 de Dino
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireDinoChapitre14(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -318,6 +419,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire du chapitre 15 de Dino
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireDinoChapitre15(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -326,6 +432,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire du chapitre 16 de Dino
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireDinoChapitre16(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -334,6 +445,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire  du chapitre 17 de Dino
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireDinoChapitre17(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -342,6 +458,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire du chapitre 18 de Dino
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireDinoChapitre18(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -350,6 +471,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire  et la liste de choix du chapitre 0 de Via
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireViaChapitre0(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -366,6 +492,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire  et la liste de choix du chapitre 1 de Via
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireViaChapitre1(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -382,6 +513,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire  et la liste de choix du chapitre 2 de Via
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireViaChapitre2(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -397,6 +533,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire  et la liste de choix du chapitre 3 de Via
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireViaChapitre3(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -412,6 +553,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire  et la liste de choix du chapitre 4 de Via
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireViaChapitre4(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -427,6 +573,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire  et la liste de choix du chapitre 5 de Via
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireViaChapitre5(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -442,6 +593,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire du chapitre 6 de Via
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireViaChapitre6(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -451,6 +607,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire du chapitre 7 de Via
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireViaChapitre7(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -459,6 +620,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire  et la liste de choix du chapitre 8 de Via
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireViaChapitre8(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -474,6 +640,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire  et la liste de choix du chapitre 9 de Via
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireViaChapitre9(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -489,6 +660,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire  et la liste de choix du chapitre 10 de Via
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireViaChapitre10(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -504,6 +680,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire  et la liste de choix du chapitre 11 de Via
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireViaChapitre11(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -519,6 +700,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire du chapitre 12 de Via
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireViaChapitre12(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -527,6 +713,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire  du chapitre 13 de Via
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireViaChapitre13(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -535,6 +726,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire  du chapitre 14 de Via
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireViaChapitre14(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -543,6 +739,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire  du chapitre 15 de Via
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireViaChapitre15(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -551,6 +752,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire  du chapitre 16 de Via
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireViaChapitre16(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -559,6 +765,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire  du chapitre 17 de Via
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireViaChapitre17(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -567,6 +778,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire  et la liste de choix du chapitre 0 de Kachikam
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireKachikamChapitre0(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -583,6 +799,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire  et la liste de choix du chapitre 1 de Kachikam
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireKachikamChapitre1(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -599,6 +820,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire  et la liste de choix du chapitre 2 de Kachikam
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireKachikamChapitre2(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -614,6 +840,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire  et la liste de choix du chapitre 3 de Kachikam
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireKachikamChapitre3(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -629,6 +860,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire  et la liste de choix du chapitre 4 de Kachikam
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireKachikamChapitre4(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -644,6 +880,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire  et la liste de choix du chapitre 5 de Kachikam
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireKachikamChapitre5(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -659,6 +900,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire  du chapitre 6 de Kachikam
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireKachikamChapitre6(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -668,6 +914,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire  du chapitre 7 de Kachikam
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireKachikamChapitre7(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -676,6 +927,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire  et la liste de choix du chapitre 8 de Kachikam
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireKachikamChapitre8(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -691,6 +947,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire  et la liste de choix du chapitre 9 de Kachikam
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireKachikamChapitre9(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -706,6 +967,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire  et la liste de choix du chapitre 10 de Kachikam
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireKachikamChapitre10(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -721,6 +987,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire  et la liste de choix du chapitre 11 de Kachikam
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireKachikamChapitre11(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -736,7 +1007,11 @@ public class Creation {
         return chapitre;
     }
 
-
+    /**
+     * La méthode permet la creation de la histoire du chapitre 12 de Kachikam
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireKachikamChapitre12(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -745,6 +1020,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire du chapitre 13 de Kachikam
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireKachikamChapitre13(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -753,6 +1033,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire du chapitre 14 de Kachikam
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireKachikamChapitre14(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -761,6 +1046,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire du chapitre 15 de Kachikam
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireKachikamChapitre15(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -769,6 +1059,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire du chapitre 16 de Kachikam
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireKachikamChapitre16(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();
@@ -777,6 +1072,11 @@ public class Creation {
         return chapitre;
     }
 
+    /**
+     * La méthode permet la creation de la histoire du chapitre 17 de Kachikam
+     *
+     * @return  (chapitre) le chapitre qui a été créé.
+     */
     private Chapitre CréationHistoireKachikamChapitre17(){
         ArrayList<Integer> listeChoix = new ArrayList<Integer>();
         ArrayList<Integer> listeProchain = new ArrayList<Integer>();

@@ -1,8 +1,6 @@
 package com.example.lombredespurges.présentation;
 
-import android.os.Bundle;
 import com.example.lombredespurges.R;
-import com.example.lombredespurges.domaine.entité.Personnage;
 import com.example.lombredespurges.modele.Modèle;
 
 import java.util.Random;

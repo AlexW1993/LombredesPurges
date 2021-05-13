@@ -1,23 +1,31 @@
 package com.example.lombredespurges.présentation;
-
 import com.example.lombredespurges.R;
-import com.example.lombredespurges.domaine.entité.Aventure;
 import com.example.lombredespurges.domaine.entité.Chapitre;
-import com.example.lombredespurges.domaine.entité.Jeu;
 import com.example.lombredespurges.modele.Modèle;
-
 import java.util.ArrayList;
 
 public class PrésentateurHistoires implements IContratPrésentateurVueHistoires.IPrésentateurHistoires {
 
+    /**
+     * Declaration des Attributs
+     */
     private IContratPrésentateurVueHistoires.IVueHistoire _vue;
     private Modèle _modèle;
 
+    /**
+     * Constructeur du presentateur du creationPersonnage.
+     *
+     * @param vue, la vue Histoire.
+     */
     public PrésentateurHistoires(IContratPrésentateurVueHistoires.IVueHistoire vue) {
         this._vue = vue;
         _modèle = Modèle.getInstance();
     }
 
+    /**
+     * La méthode cherhcer les information pour le chapitre..
+     *
+     */
     @Override
     public void gestionChapitre(int choix) {
         if(choix != -1){
@@ -33,7 +41,7 @@ public class PrésentateurHistoires implements IContratPrésentateurVueHistoires
         int numChapitre = uneChapitre.get_numéroChapitre();
         int idContenueChapitre = uneChapitre.get_IdTexteChapitre();
         ArrayList<Integer> listeIdChoix = uneChapitre.get_listeIdTexteChoix();
-        String nomPersonnage = _modèle.get_jeu().get_personnage().get_nom();
+        String nomPersonnage = _modèle.getPersonnage().get_nom();
 
         if(listeIdChoix.isEmpty()){
             _vue.afficherFinJeu(nomPersonnage, idContenueChapitre);
@@ -46,16 +54,24 @@ public class PrésentateurHistoires implements IContratPrésentateurVueHistoires
         }
     }
 
+    /**
+     * La méthode permet de reinitalise le jeu. (réinitialiser la liste de chapitres et afficher la page de titre.)
+     *
+     */
     @Override
     public void réinitialierJeu() {
         _modèle.réanitialierJeu();
         _vue.passerPageTitre();
     }
 
+    /**
+     * La méthode permet afficher les information d'un race choisi.
+     *
+     */
     @Override
     public void changerRace() {
 
-        String race = _modèle.get_jeu().get_aventureChoisie().get_nomAventure();
+        String race = _modèle.getAventureChoisie().get_nomAventure();
         if (race.equals("Via")) {
             _vue.actionChangerRace(R.drawable.via);
         } else if (race.equals("Kachikam")) {
