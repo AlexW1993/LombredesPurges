@@ -1,10 +1,6 @@
 package com.example.lombredespurges;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,22 +8,27 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-public class VuePageTitre extends Fragment {
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+
+public class VueMenuAventures extends Fragment {
 
     /**
      * Declaration des Attributs
      */
-    private Button btnContinuer;
-    private Button btnRetourner;
+    private Button btnAventurePurges;
+    private Button btnAutresAventures;
     private NavController navController;
 
-    public VuePageTitre() {
+
+    public VueMenuAventures() {
         // Required empty public constructor
     }
 
-    public static VuePageTitre newInstance(String param1, String param2) {
-        VuePageTitre fragment = new VuePageTitre();
-        Bundle args = new Bundle();
+    public static VueMenuAventures newInstance(String param1, String param2) {
+        VueMenuAventures fragment = new VueMenuAventures();
         return fragment;
     }
 
@@ -40,31 +41,32 @@ public class VuePageTitre extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.page_titre, container, false);
+        return inflater.inflate(R.layout.menu_aventures, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        btnContinuer = view.findViewById(R.id.buttonTitre);
-        btnRetourner = view.findViewById(R.id.buttonTitre2);
+        btnAventurePurges = view.findViewById(R.id.buttonAventuresPurges);
+        btnAutresAventures = view.findViewById(R.id.buttonAutresAventures);
         navController = Navigation.findNavController(view);
 
-        btnContinuer.setOnClickListener(
+
+        btnAventurePurges.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        navController.navigate(R.id.lesPurges);
+                        navController.navigate(R.id.pageTitre);
                     }
                 }
         );
 
-        btnRetourner.setOnClickListener(
+        btnAutresAventures.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        navController.navigate(R.id.vueMenuAventures);
+                        navController.navigate(R.id.autresAventures);
                     }
                 }
         );

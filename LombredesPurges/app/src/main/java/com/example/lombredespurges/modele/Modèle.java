@@ -2,13 +2,19 @@
 
 package com.example.lombredespurges.modele;
 
+import android.content.Context;
+
+import com.example.lombredespurges.domaine.entité.AutreAventure;
 import com.example.lombredespurges.domaine.entité.Aventure;
 import com.example.lombredespurges.domaine.entité.Chapitre;
 import com.example.lombredespurges.domaine.entité.Ennemie;
 import com.example.lombredespurges.domaine.entité.Personnage;
 import com.example.lombredespurges.domaine.interacteur.Creation;
+import com.example.lombredespurges.domaine.interacteur.RécupérerAventure;
+import com.example.lombredespurges.domaine.interacteur.SourceDeDonnées;
 
 import java.util.ArrayList;
+
 
 public class Modèle {
 
@@ -20,7 +26,9 @@ public class Modèle {
     private Ennemie _ennemie;
     private ArrayList<Aventure> _listeAventure;
     private Aventure _aventureChoisie;
-
+    private SourceDeDonnées _source;
+    private AutreAventure[] _tabAutresAventures;
+    private Context _ctx;
     /**
      * Constructeur du Modèle.
      */
@@ -39,6 +47,7 @@ public class Modèle {
         }
         return modèle;
     }
+
 
     /**
      * La méthode permet de réinitialiser la liste d'histoire dans le jeu.
@@ -138,5 +147,16 @@ public class Modèle {
         }else{
             return false;
         }
+    }
+
+    public void set_source(SourceDeDonnées source){
+        _source = source;
+    }
+
+    public AutreAventure[] chercherAventures(){
+        if(_tabAutresAventures == null){
+            _tabAutresAventures = new RécupérerAventure(_source).récupérer();
+        }
+        return  _tabAutresAventures;
     }
 }
