@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1E2449"
+    tools:context=".VueAutresAventures" >
+
+    <Button
+        android:id="@+id/buttonRetourner"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="212dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="40dp"
+        android:fontFamily="@font/aldrich"
+        android:text="retourner"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:backgroundTint="#03A9F4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/titleAventure2"
+        app:layout_constraintStart_toStartOf="@+id/titleAventure2"
+        app:layout_constraintTop_toBottomOf="@+id/titleAventure2"
+        app:strokeColor="#000000" />
+
+    <TextView
+        android:id="@+id/titleAventure1"
+        android:layout_width="115dp"
+        android:layout_height="88dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/titleAventure2"
+        android:layout_width="115dp"
+        android:layout_height="104dp"
+        android:layout_marginTop="50dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/titleAventure1"
+        app:layout_constraintStart_toStartOf="@+id/titleAventure1"
+        app:layout_constraintTop_toBottomOf="@+id/titleAventure1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
