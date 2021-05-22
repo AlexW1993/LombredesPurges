@@ -12,35 +12,43 @@
         style="@style/Widget.AppCompat.Button"
         android:layout_width="212dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="36dp"
         android:fontFamily="@font/aldrich"
         android:text="retourner"
         android:textColor="#000000"
         android:textSize="24sp"
         app:backgroundTint="#03A9F4"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/titleAventure2"
-        app:layout_constraintStart_toStartOf="@+id/titleAventure2"
-        app:layout_constraintTop_toBottomOf="@+id/titleAventure2"
+        app:layout_constraintEnd_toEndOf="@+id/listeAventures"
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="@+id/listeAventures"
         app:strokeColor="#000000" />
 
-    <TextView
-        android:id="@+id/titleAventure1"
-        android:layout_width="115dp"
-        android:layout_height="88dp"
-        android:text="TextView"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listeAventures"
+        android:layout_width="396dp"
+        android:layout_height="423dp"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonRetourner"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/messageSansConnexion"
+        app:layout_constraintVertical_bias="0.504" />
 
     <TextView
-        android:id="@+id/titleAventure2"
-        android:layout_width="115dp"
-        android:layout_height="104dp"
-        android:layout_marginTop="50dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/titleAventure1"
-        app:layout_constraintStart_toStartOf="@+id/titleAventure1"
-        app:layout_constraintTop_toBottomOf="@+id/titleAventure1" />
+        android:id="@+id/messageSansConnexion"
+        android:layout_width="361dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="15dp"
+        android:background="#ffffff"
+        android:padding="10sp"
+        android:textColor="#1E2449"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.523"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
