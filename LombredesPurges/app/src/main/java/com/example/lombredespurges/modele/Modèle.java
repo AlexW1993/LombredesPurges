@@ -11,9 +11,10 @@ import com.example.lombredespurges.domaine.entité.Ennemie;
 import com.example.lombredespurges.domaine.entité.Personnage;
 import com.example.lombredespurges.domaine.interacteur.Creation;
 import com.example.lombredespurges.domaine.interacteur.RécupérerAventure;
+import com.example.lombredespurges.domaine.interacteur.SauvegarderAventure;
 import com.example.lombredespurges.domaine.interacteur.SourceDeDonnées;
-
 import java.util.ArrayList;
+
 
 
 public class Modèle {
@@ -27,8 +28,10 @@ public class Modèle {
     private ArrayList<Aventure> _listeAventure;
     private Aventure _aventureChoisie;
     private SourceDeDonnées _source;
-    private AutreAventure[] _tabAutresAventures;
+    private ArrayList<AutreAventure> _listeAutresAventuresServeur;
+    private ArrayList<AutreAventure> _listeAutresAventuresBD;
     private Context _ctx;
+
     /**
      * Constructeur du Modèle.
      */
@@ -153,10 +156,37 @@ public class Modèle {
         _source = source;
     }
 
-    public AutreAventure[] chercherAventures(){
-        if(_tabAutresAventures == null){
-            _tabAutresAventures = new RécupérerAventure(_source).récupérer();
+    public ArrayList<AutreAventure> chercherAventuresServeur(){
+        if(_listeAutresAventuresServeur == null){
+            _listeAutresAventuresServeur = new RécupérerAventure(_source).récupérerAventureServeur();
         }
-        return  _tabAutresAventures;
+        return  _listeAutresAventuresServeur;
     }
+
+    public ArrayList<AutreAventure> chercherAventuresBD(){
+        if(_listeAutresAventuresBD == null){
+            _listeAutresAventuresBD = new RécupérerAventure(_source).récupérerAventuresBD();
+        }
+        return  _listeAutresAventuresBD;
+    }
+
+    public void ajouterContexte(Context ctx){
+        _ctx = ctx;
+    }
+
+    public Context get_ctx(){
+        return _ctx;
+    }
+
+    public void sauvegarderAventure(String title){
+        AutreAventure aventure = new AutreAventure();
+        for (int i = 0; i < _listeAutresAventuresServeur.size() ; i++) {
+            if(_listeAutresAventuresServeur.get(i).getTitle() == title){
+                aventure.setTitle(_listeAutresAventuresServeur.get(i).getTitle());
+                aventure.setUrl(_listeAutresAventuresServeur.get(i).getUrl());
+            }
+        }
+        new SauvegarderAventure(_source).SauvegarderAventureBD(aventure);
+    }
+
 }

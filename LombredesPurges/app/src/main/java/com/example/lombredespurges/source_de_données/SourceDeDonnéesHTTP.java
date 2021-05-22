@@ -11,6 +11,8 @@ import com.android.volley.toolbox.Volley;
 import com.example.lombredespurges.domaine.entité.AutreAventure;
 import com.example.lombredespurges.domaine.interacteur.SourceDeDonnées;
 import com.google.gson.Gson;
+
+import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
 
@@ -27,12 +29,7 @@ public class SourceDeDonnéesHTTP implements SourceDeDonnées {
 
 
     @Override
-    public void enregistrer() {
-
-    }
-
-    @Override
-    public AutreAventure[] récupérer() {
+    public AutreAventure[] récupérerServeur() {
         RequestQueue queue = Volley.newRequestQueue(_ctx);
         RequestFuture<String> future = RequestFuture.newFuture();
         StringRequest request = new StringRequest(Request.Method.GET,_url,future,future);
@@ -49,5 +46,22 @@ public class SourceDeDonnéesHTTP implements SourceDeDonnées {
         }
         return aventures;
     }
+
+    @Override
+    public ArrayList<AutreAventure> chercherTousAventures() {
+        return null;
+    }
+
+    @Override
+    public void ajouterAventure(String title, String url) {
+
+    }
+
+    @Override
+    public void reset() {
+
+    }
+
+    public void nose(){}
 }
 
