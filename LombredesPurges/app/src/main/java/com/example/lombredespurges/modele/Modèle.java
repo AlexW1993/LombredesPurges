@@ -13,6 +13,8 @@ import com.example.lombredespurges.domaine.interacteur.Creation;
 import com.example.lombredespurges.domaine.interacteur.RécupérerAventure;
 import com.example.lombredespurges.domaine.interacteur.SauvegarderAventure;
 import com.example.lombredespurges.domaine.interacteur.SourceDeDonnées;
+import com.example.lombredespurges.source_de_données.BD.SourceDeDonnéesBDHelper;
+
 import java.util.ArrayList;
 
 
@@ -27,7 +29,8 @@ public class Modèle {
     private Ennemie _ennemie;
     private ArrayList<Aventure> _listeAventure;
     private Aventure _aventureChoisie;
-    private SourceDeDonnées _source;
+    private SourceDeDonnées _sourceHTTP;
+    private SourceDeDonnées _sourceBD;
     private ArrayList<AutreAventure> _listeAutresAventuresServeur;
     private ArrayList<AutreAventure> _listeAutresAventuresBD;
     private Context _ctx;
@@ -152,20 +155,24 @@ public class Modèle {
         }
     }
 
-    public void set_source(SourceDeDonnées source){
-        _source = source;
+    public void set_sourceHTTP(SourceDeDonnées source){
+        _sourceHTTP = source;
+    }
+
+    public void set_sourceBD(SourceDeDonnées source){
+        _sourceBD = source;
     }
 
     public ArrayList<AutreAventure> chercherAventuresServeur(){
         if(_listeAutresAventuresServeur == null){
-            _listeAutresAventuresServeur = new RécupérerAventure(_source).récupérerAventureServeur();
+            _listeAutresAventuresServeur = new RécupérerAventure(_sourceHTTP).récupérerAventureServeur();
         }
         return  _listeAutresAventuresServeur;
     }
 
     public ArrayList<AutreAventure> chercherAventuresBD(){
         if(_listeAutresAventuresBD == null){
-            _listeAutresAventuresBD = new RécupérerAventure(_source).récupérerAventuresBD();
+            _listeAutresAventuresBD = new RécupérerAventure(_sourceBD).récupérerAventuresBD();
         }
         return  _listeAutresAventuresBD;
     }
@@ -186,7 +193,7 @@ public class Modèle {
                 aventure.setUrl(_listeAutresAventuresServeur.get(i).getUrl());
             }
         }
-        new SauvegarderAventure(_source).SauvegarderAventureBD(aventure);
+        new SauvegarderAventure(_sourceBD).SauvegarderAventureBD(aventure);
     }
 
 }
