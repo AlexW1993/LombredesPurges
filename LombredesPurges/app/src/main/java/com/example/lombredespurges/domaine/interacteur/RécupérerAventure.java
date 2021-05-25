@@ -15,7 +15,7 @@ public class RécupérerAventure {
 
     public ArrayList<AutreAventure> récupérerAventureServeur(){
         ArrayList<AutreAventure> listeAventures = new ArrayList<>();
-        AutreAventure [] tab = _source.récupérerServeur();
+        AutreAventure [] tab = _source.récupérerListeServeur();
         for (int i = 0; i < tab.length ; i++) {
             listeAventures.add(tab[i]);
         }

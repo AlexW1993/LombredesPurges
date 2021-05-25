@@ -9,6 +9,7 @@ import com.android.volley.toolbox.RequestFuture;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.lombredespurges.domaine.entité.AutreAventure;
+import com.example.lombredespurges.domaine.entité.Chapitre;
 import com.example.lombredespurges.domaine.interacteur.SourceDeDonnées;
 import com.google.gson.Gson;
 
@@ -29,7 +30,7 @@ public class SourceDeDonnéesHTTP implements SourceDeDonnées {
 
 
     @Override
-    public AutreAventure[] récupérerServeur() {
+    public AutreAventure[] récupérerListeServeur() {
         RequestQueue queue = Volley.newRequestQueue(_ctx);
         RequestFuture<String> future = RequestFuture.newFuture();
         StringRequest request = new StringRequest(Request.Method.GET,_url,future,future);
@@ -47,21 +48,22 @@ public class SourceDeDonnéesHTTP implements SourceDeDonnées {
         return aventures;
     }
 
+
     @Override
     public ArrayList<AutreAventure> chercherTousAventures() {
+        //Méthode utiliser dans SourceDeDonnéesBDHelper
         return null;
     }
 
     @Override
     public void ajouterAventure(String title, String url) {
-
+        //Méthode utiliser dans SourceDeDonnéesBDHelper
     }
 
     @Override
     public void reset() {
-
+        //Méthode utiliser dans SourceDeDonnéesBDHelper
     }
 
-    public void nose(){}
 }
 

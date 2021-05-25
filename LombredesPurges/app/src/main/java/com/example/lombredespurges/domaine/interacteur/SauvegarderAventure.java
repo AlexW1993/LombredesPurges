@@ -11,6 +11,7 @@ public class SauvegarderAventure {
     }
 
     public void SauvegarderAventureBD(AutreAventure aventure){
+        //_source.reset();
         _source.ajouterAventure(aventure.getTitle(), aventure.getUrl());
     }
 }
