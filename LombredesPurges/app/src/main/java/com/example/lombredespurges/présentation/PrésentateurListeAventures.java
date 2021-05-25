@@ -29,7 +29,7 @@ public class PrésentateurListeAventures implements IContratPrésentateurVueList
                     listeTitlesServeur.add(listeServeur.get(i).getTitle());
                 }
             }
-            if(listeBD != null) {
+           if(listeBD != null) {
                 for (int i = 0; i < listeBD.size(); i++) {
                     listeTitlesBD.add(listeBD.get(i).getTitle());
                 }
@@ -42,7 +42,7 @@ public class PrésentateurListeAventures implements IContratPrésentateurVueList
     }
 
     @Override
-    public Context récupererContexte() {
+    public Context récupererContexte() { 
         return _modèle.get_ctx();
     }
 

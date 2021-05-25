@@ -88,6 +88,7 @@ public class VueAutresAventures extends Fragment implements IContratPrésentateu
 
     @Override
     public void afficherListe(ArrayList<String> listeServeur, ArrayList<String> listeBD) {
+        
         if (listeServeur == null && listeBD != null) {
             _message.setVisibility(View.VISIBLE);
             _message.setText("les nouvelles aventures ne peuvent être chargées");

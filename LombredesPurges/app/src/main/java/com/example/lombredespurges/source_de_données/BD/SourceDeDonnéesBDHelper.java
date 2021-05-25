@@ -76,7 +76,7 @@ public class SourceDeDonnéesBDHelper extends SQLiteOpenHelper implements Source
     }
 
     @Override
-    public AutreAventure[] récupérerServeur() {
+    public AutreAventure[] récupérerListeServeur() {
         return new AutreAventure[0];
     }
 
