@@ -49,38 +49,38 @@ public class MonRecyclerViewAdapter extends RecyclerView.Adapter<MonRecyclerView
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         String title = _dataServeur.get(position);
         Boolean confirmationImage = false;
+        holder.image.setVisibility(View.VISIBLE);
         if(_dataServeur != null){
             if(_dataBD != null){
                 for (int i = 0; i <_dataBD.size() ; i++) {
                     if (title.equals(_dataBD.get(i)) ){
-                        confirmationImage = true;
+                        holder.image.setVisibility(View.INVISIBLE);
                     }
                 }
-            }
-            if(confirmationImage == true){
-                holder.image.setVisibility(View.INVISIBLE);
-            } else {
-                holder.image.setVisibility(View.VISIBLE);
             }
             holder.aventure.setText(title);
             holder.boutonOk.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Boolean confirmationAventureDansBD = false;
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Boolean confirmationAventureDansBD = false;
 
-                    if(_dataBD != null){
-                        _présentateur.sauvegarderAventure(title);
-                    } else {
-                        for (int i = 0; i < _dataBD.size() ; i++) {
-                            if(title.equals(_dataBD.get(i))){
-                                confirmationAventureDansBD = true;
+                            if(_dataBD == null){
+                                _présentateur.sauvegarderAventure(title);
+                            } else {
+                                for (int i = 0; i < _dataBD.size() ; i++) {
+                                    if(title.equals(_dataBD.get(i))){
+                                        confirmationAventureDansBD = true;
+                                    }
+                                }
+                            }
+                            if(confirmationAventureDansBD == false){
+                                _présentateur.sauvegarderAventure(title);
                             }
                         }
-
-                        if(confirmationAventureDansBD == false){
-                            _présentateur.sauvegarderAventure(title);
-                        }
-                    }
+                    }).start();
                 }
             });
         }

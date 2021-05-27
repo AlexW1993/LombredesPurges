@@ -1,4 +1,4 @@
-package com.example.lombredespurges.domaine.entité;
+package com.example.lombredespurges.domaine.entité.aventuresTéléchargeables;
 
 public class AutreAventure {
 

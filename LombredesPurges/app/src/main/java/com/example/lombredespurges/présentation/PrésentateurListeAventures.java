@@ -2,7 +2,7 @@ package com.example.lombredespurges.présentation;
 import android.content.Context;
 
 import androidx.fragment.app.Fragment;
-import com.example.lombredespurges.domaine.entité.AutreAventure;
+import com.example.lombredespurges.domaine.entité.aventuresTéléchargeables.AutreAventure;
 import com.example.lombredespurges.modele.Modèle;
 
 import java.util.ArrayList;
@@ -22,7 +22,7 @@ public class PrésentateurListeAventures implements IContratPrésentateurVueList
         Thread fil_esclave = new Thread(()->{
             ArrayList<String> listeTitlesServeur = new ArrayList<String>();
             ArrayList<String> listeTitlesBD = new ArrayList<String>();
-            ArrayList<AutreAventure> listeServeur = _modèle.chercherAventuresServeur();
+            ArrayList<AutreAventure> listeServeur = _modèle.chercherListeAventuresServeur();
             ArrayList<AutreAventure> listeBD = _modèle.chercherAventuresBD();
             if(listeServeur != null) {
                 for (int i = 0; i < listeServeur.size(); i++) {
@@ -38,12 +38,11 @@ public class PrésentateurListeAventures implements IContratPrésentateurVueList
             ( (Fragment)_vue).getActivity().runOnUiThread(()->_vue.afficherListe(listeTitlesServeur, listeTitlesBD));
         });
         fil_esclave.start();
-
     }
 
     @Override
     public Context récupererContexte() { 
-        return _modèle.get_ctx();
+        return _modèle.get_contexte();
     }
 
     @Override

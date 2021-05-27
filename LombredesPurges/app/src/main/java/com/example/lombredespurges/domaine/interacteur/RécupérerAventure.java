@@ -1,7 +1,8 @@
 package com.example.lombredespurges.domaine.interacteur;
 
 
-import com.example.lombredespurges.domaine.entité.AutreAventure;
+import com.example.lombredespurges.domaine.entité.aventuresTéléchargeables.AutreAventure;
+import com.example.lombredespurges.domaine.entité.aventuresTéléchargeables.AventureTéléchargeable;
 
 import java.util.ArrayList;
 
@@ -13,7 +14,7 @@ public class RécupérerAventure {
         this._source = _source;
     }
 
-    public ArrayList<AutreAventure> récupérerAventureServeur(){
+    public ArrayList<AutreAventure> récupérerListeAventureServeur(){
         ArrayList<AutreAventure> listeAventures = new ArrayList<>();
         AutreAventure [] tab = _source.récupérerListeServeur();
         for (int i = 0; i < tab.length ; i++) {
@@ -22,7 +23,15 @@ public class RécupérerAventure {
         return listeAventures;
     }
 
+    public String récupérerAventureServeur(){
+        return _source.récupérerAventureServeur();
+    }
+
     public ArrayList<AutreAventure> récupérerAventuresBD(){
         return _source.chercherTousAventures();
+    }
+
+    public ArrayList<AventureTéléchargeable> récupérerAventuresTéléchargeablesBD(){
+        return _source.chercherAventuresJson();
     }
 }
