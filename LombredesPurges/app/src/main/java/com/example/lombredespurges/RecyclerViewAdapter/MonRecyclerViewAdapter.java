@@ -79,6 +79,7 @@ public class MonRecyclerViewAdapter extends RecyclerView.Adapter<MonRecyclerView
                             if(confirmationAventureDansBD == false){
                                 _présentateur.sauvegarderAventure(title);
                             }
+                            _présentateur.aventureÀJouer(title);
                         }
                     }).start();
                 }

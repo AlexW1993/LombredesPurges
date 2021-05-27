@@ -11,6 +11,7 @@ public interface IContratPrésentateurVueListeAventures {
         public void récupererListe();
         public Context récupererContexte();
         public void sauvegarderAventure(String title);
+        public void aventureÀJouer(String title);
 
     }
 

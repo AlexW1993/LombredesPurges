@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
         bdHelper = new SourceDeDonnéesBDHelper(this);
         modèle.set_sourceBD(bdHelper);
         setContentView(R.layout.activity_main);
-
     }
 
     @Override
