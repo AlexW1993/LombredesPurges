@@ -50,4 +50,9 @@ public class PrésentateurListeAventures implements IContratPrésentateurVueList
         _modèle.sauvegarderAventure(title);
     }
 
+    @Override
+    public void aventureÀJouer(String title) {
+        _modèle.aventureTéléchargeableÀJouer(title);
+    }
+
 }

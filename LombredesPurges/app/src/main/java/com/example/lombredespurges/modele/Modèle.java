@@ -33,7 +33,7 @@ public class Modèle {
     private ArrayList<AutreAventure> _listeAutresAventuresServeur;
     private ArrayList<AutreAventure> _listeAutresAventuresBD;
     private ArrayList<AventureTéléchargeable> _listeAventuresTéléchargeableBD;
-    private AventureTéléchargeable _aventureTéléchargeable;
+    private AventureTéléchargeable _aventureTéléchargeableChoisie;
     private Context _contexte;
 
     /**
@@ -198,6 +198,16 @@ public class Modèle {
         SourceDeDonnées source = new SourceDeDonnéesHTTP(get_contexte(),aventure.getUrl());
         String  aventureJson = new RécupérerAventure(source).récupérerAventureServeur();
         new SauvegarderAventure(_sourceBD).SauvegarderAventureBD(aventure, aventureJson);
+        _listeAutresAventuresBD = new RécupérerAventure(_sourceBD).récupérerAventuresBD();
+        _listeAventuresTéléchargeableBD = new RécupérerAventure(_sourceBD).récupérerAventuresTéléchargeablesBD();
+    }
+
+    public void aventureTéléchargeableÀJouer(String titleAventure){
+        for (int i = 0; i < _listeAventuresTéléchargeableBD.size() ; i++) {
+            if(_listeAventuresTéléchargeableBD.get(i).getTitle() == titleAventure){
+                _aventureTéléchargeableChoisie = _listeAventuresTéléchargeableBD.get(i);
+            }
+        }
     }
 
 }
