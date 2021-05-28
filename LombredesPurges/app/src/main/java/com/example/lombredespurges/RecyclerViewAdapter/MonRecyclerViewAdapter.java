@@ -53,7 +53,7 @@ public class MonRecyclerViewAdapter extends RecyclerView.Adapter<MonRecyclerView
         if(_dataServeur != null){
             if(_dataBD != null){
                 for (int i = 0; i <_dataBD.size() ; i++) {
-                    if (title.equals(_dataBD.get(i)) ){
+                    if (title.equals(_dataBD.get(i))){
                         holder.image.setVisibility(View.INVISIBLE);
                     }
                 }

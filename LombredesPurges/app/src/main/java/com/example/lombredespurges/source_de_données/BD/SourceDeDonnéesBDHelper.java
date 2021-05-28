@@ -62,7 +62,6 @@ public class SourceDeDonnéesBDHelper extends SQLiteOpenHelper implements Source
     public ArrayList<AutreAventure> chercherTousAventures(){
         SQLiteDatabase db = this.getReadableDatabase();
         ArrayList<AutreAventure> listeAventures  = new ArrayList<>();
-        AutreAventure aventure = new AutreAventure();
 
         String[] projection = {
                 BaseColumns._ID,
@@ -74,6 +73,7 @@ public class SourceDeDonnéesBDHelper extends SQLiteOpenHelper implements Source
 
         if (cursor != null){
             for(cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()){
+                AutreAventure aventure = new AutreAventure();
                 aventure.setTitle(cursor.getString(cursor.getColumnIndex(AventuresBDContrat.TableAventures.COLONNE_TITLE)));
                 aventure.setUrl(cursor.getString(cursor.getColumnIndex(AventuresBDContrat.TableAventures.COLONNE_URL)));
                 listeAventures.add(aventure);

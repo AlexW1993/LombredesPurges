@@ -204,7 +204,7 @@ public class Modèle {
 
     public void aventureTéléchargeableÀJouer(String titleAventure){
         for (int i = 0; i < _listeAventuresTéléchargeableBD.size() ; i++) {
-            if(_listeAventuresTéléchargeableBD.get(i).getTitle() == titleAventure){
+            if(_listeAventuresTéléchargeableBD.get(i).getTitle().equals(titleAventure)){
                 _aventureTéléchargeableChoisie = _listeAventuresTéléchargeableBD.get(i);
             }
         }
