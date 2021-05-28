@@ -1,6 +1,10 @@
 package com.example.lombredespurges.domaine.entité.aventuresTéléchargeables;
 
 public class Chapters {
+
+    /**
+     * Declaration des Aventure
+     */
     private int id;
     private String description;
     private int[] choices;

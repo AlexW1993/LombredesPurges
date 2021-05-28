@@ -2,6 +2,7 @@ package com.example.lombredespurges.présentation;
 
 import com.example.lombredespurges.domaine.entité.Ennemie;
 import com.example.lombredespurges.domaine.entité.Personnage;
+import com.example.lombredespurges.modele.Modèle;
 
 import junit.framework.TestCase;
 
