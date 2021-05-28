@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.NavController;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.lombredespurges.R;
@@ -41,16 +42,19 @@ public class MonRecyclerViewAdapter extends RecyclerView.Adapter<MonRecyclerView
     public int getItemCount() {
         if(_dataServeur != null){
             return _dataServeur.size();
+        } else if (_dataServeur == null){
+            return _dataBD.size();
+        } else{
+            return 0;
         }
-        return 0;
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        String title = _dataServeur.get(position);
-        Boolean confirmationImage = false;
         holder.image.setVisibility(View.VISIBLE);
+
         if(_dataServeur != null){
+            String title = _dataServeur.get(position);
             if(_dataBD != null){
                 for (int i = 0; i <_dataBD.size() ; i++) {
                     if (title.equals(_dataBD.get(i))){
@@ -80,6 +84,27 @@ public class MonRecyclerViewAdapter extends RecyclerView.Adapter<MonRecyclerView
                                 _présentateur.sauvegarderAventure(title);
                             }
                             _présentateur.aventureÀJouer(title);
+
+                        }
+                    }).start();
+                }
+            });
+        } else {
+            String title = _dataBD.get(position);
+            for (int i = 0; i <_dataBD.size() ; i++) {
+                if (title.equals(_dataBD.get(i))){
+                    holder.image.setVisibility(View.INVISIBLE);
+                }
+            }
+            holder.aventure.setText(title);
+            holder.boutonOk.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            _présentateur.aventureÀJouer(title);
+
                         }
                     }).start();
                 }
