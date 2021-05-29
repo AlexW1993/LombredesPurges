@@ -2,7 +2,6 @@ package com.example.lombredespurges.RecyclerViewAdapter;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,19 +15,18 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.lombredespurges.R;
-import com.example.lombredespurges.VueAutresAventures;
 import com.example.lombredespurges.présentation.PrésentateurListeAventures;
 
 import java.util.List;
 
-public class MonRecyclerViewAdapter extends RecyclerView.Adapter<MonRecyclerViewAdapter.ViewHolder> {
+public class RecyclerViewAdapterAventure extends RecyclerView.Adapter<RecyclerViewAdapterAventure.ViewHolder> {
     private List<String> _dataServeur;
     private List<String> _dataBD;
     private LayoutInflater _mInflater;
     private PrésentateurListeAventures _présentateur;
     private NavController navController;
 
-    public MonRecyclerViewAdapter(Context ctx, List<String> dataServeur, List<String> dataBD, PrésentateurListeAventures présentateur) {
+    public RecyclerViewAdapterAventure(Context ctx, List<String> dataServeur, List<String> dataBD, PrésentateurListeAventures présentateur) {
         this._dataServeur = dataServeur;
         this._dataBD = dataBD;
         this._mInflater = LayoutInflater.from(ctx);

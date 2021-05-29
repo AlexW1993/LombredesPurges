@@ -13,7 +13,9 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.lombredespurges.RecyclerViewAdapter.RecyclerViewAdapterAventure;
 import com.example.lombredespurges.présentation.IContratPrésentateurVueAventureTéléchargeable;
 import com.example.lombredespurges.présentation.PrésentateurAventureTéléchargeable;
 
@@ -21,11 +23,13 @@ public class VueAventureTéléchargeable extends Fragment implements IContratPr�
     private TextView texteContenueChapitre;
     private TextView txtNumeroChapitre;
     private TextView texteChapitre;
-    private Button btnChoix1;
-    private Button btnChoix2;
-    private Button btnChoix3;
     private Button btnPageTitre;
     private NavController navController;
+
+    private RecyclerViewAdapterAventure _adapter;
+    private RecyclerView listeButtons;
+
+
     private Bundle bundle;
     private ImageView imgRace;
 
@@ -66,46 +70,16 @@ public class VueAventureTéléchargeable extends Fragment implements IContratPr�
         texteChapitre = view.findViewById(R.id.texteChapitreAV);
         texteContenueChapitre = view.findViewById(R.id.contenueChapitreAV);
 
+        //listeButtons = view.findViewById(R.id.listeButtonsChoix);
+
         btnPageTitre = view.findViewById(R.id.buttonMenuAV);
         btnPageTitre.setVisibility(View.GONE);
 
-        btnChoix1 = view.findViewById(R.id.buttonChoix1AV);
-        btnChoix2 = view.findViewById(R.id.buttonChoix2AV);
-        btnChoix3 = view.findViewById(R.id.buttonChoix3AV);
 
 
         présentateurAventureTéléchargeable.gestionChapitre(-1);
 
         bundle = new Bundle();
-        btnChoix1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                présentateurAventureTéléchargeable.gestionChapitre(0);
-            }
-        });
-
-
-        btnChoix2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                présentateurAventureTéléchargeable.gestionChapitre(1);
-            }
-        });
-
-        btnChoix3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                présentateurAventureTéléchargeable.gestionChapitre(2);
-            }
-        });
-
-        btnPageTitre.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                présentateurAventureTéléchargeable.réinitialierJeu();
-            }
-        });
 
 
     }
@@ -114,9 +88,6 @@ public class VueAventureTéléchargeable extends Fragment implements IContratPr�
     public void afficherAventure(int numeroChapitre, String idContenueChapitre, String idChoix1, String idChoix2, String idChoix3) {
         txtNumeroChapitre.setText(String.valueOf(numeroChapitre));
         texteContenueChapitre.setText(idContenueChapitre);
-        btnChoix1.setText(idChoix1);
-        btnChoix2.setText(idChoix2);
-        btnChoix3.setText(idChoix3);
     }
 
     @Override
@@ -124,9 +95,8 @@ public class VueAventureTéléchargeable extends Fragment implements IContratPr�
         texteChapitre.setText(nomPersonnage);
         txtNumeroChapitre.setVisibility(View.GONE);
         texteContenueChapitre.setText(idContenueChapitre);
-        btnChoix1.setVisibility(View.GONE);
-        btnChoix2.setVisibility(View.GONE);
-        btnChoix3.setVisibility(View.GONE);
+
+        //tous les buttons gone
         btnPageTitre.setVisibility(View.VISIBLE);
     }
 

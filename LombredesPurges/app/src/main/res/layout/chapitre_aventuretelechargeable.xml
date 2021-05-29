@@ -8,60 +8,6 @@
     tools:context=".VueAventureTéléchargeable">
 
     <Button
-        android:id="@+id/buttonChoix1AV"
-        style="@style/Widget.AppCompat.Button"
-        android:layout_width="170dp"
-        android:layout_height="70dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginRight="60dp"
-        android:layout_marginBottom="4dp"
-        android:fontFamily="@font/aldrich"
-        android:tag="0"
-        android:text="Aller vers la ville."
-        android:textColor="#000000"
-        android:textSize="10sp"
-        app:backgroundTint="#03A9F4"
-        app:layout_constraintBottom_toTopOf="@+id/buttonChoix2AV"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:strokeColor="#000000" />
-
-    <Button
-        android:id="@+id/buttonChoix2AV"
-        style="@style/Widget.AppCompat.Button"
-        android:layout_width="170dp"
-        android:layout_height="70dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginRight="60dp"
-        android:layout_marginBottom="4dp"
-        android:fontFamily="@font/aldrich"
-        android:tag="1"
-        android:text="Prendre chemin forestier"
-        android:textColor="#000000"
-        android:textSize="10sp"
-        app:backgroundTint="#03A9F4"
-        app:layout_constraintBottom_toTopOf="@+id/buttonChoix3AV"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:strokeColor="#000000" />
-
-    <Button
-        android:id="@+id/buttonChoix3AV"
-        style="@style/Widget.AppCompat.Button"
-        android:layout_width="170dp"
-        android:layout_height="70dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginRight="60dp"
-        android:layout_marginBottom="4dp"
-        android:fontFamily="@font/aldrich"
-        android:tag="2"
-        android:text="Aller vers la vielle maison au loin."
-        android:textColor="#000000"
-        android:textSize="10sp"
-        app:backgroundTint="#03A9F4"
-        app:layout_constraintBottom_toTopOf="@+id/buttonMenuAV"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:strokeColor="#000000" />
-
-    <Button
         android:id="@+id/buttonMenuAV"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="150dp"
@@ -132,5 +78,14 @@
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/texteChapitreAV" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listeButtonsChoix"
+        android:layout_width="415dp"
+        android:layout_height="385dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageRaceChapitreAV"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageRaceChapitreAV" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

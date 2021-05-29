@@ -15,11 +15,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ListView;
 import android.widget.TextView;
 
 
-import com.example.lombredespurges.RecyclerViewAdapter.MonRecyclerViewAdapter;
+import com.example.lombredespurges.RecyclerViewAdapter.RecyclerViewAdapterAventure;
 import com.example.lombredespurges.présentation.IContratPrésentateurVueListeAventures;
 import com.example.lombredespurges.présentation.PrésentateurListeAventures;
 
@@ -34,7 +33,7 @@ public class VueAutresAventures extends Fragment implements IContratPrésentateu
     private NavController _navController;
     private PrésentateurListeAventures _présentateurListeAventures;
     private RecyclerView _listeAventures;
-    private MonRecyclerViewAdapter _adapter;
+    private RecyclerViewAdapterAventure _adapter;
     private TextView _message;
 
     public VueAutresAventures() {
@@ -93,14 +92,14 @@ public class VueAutresAventures extends Fragment implements IContratPrésentateu
             _message.setVisibility(View.VISIBLE);
             _message.setText("Les nouvelles aventures ne peuvent être chargées.");
             _listeAventures.setLayoutManager(new LinearLayoutManager(_présentateurListeAventures.récupererContexte()));
-            _adapter = new MonRecyclerViewAdapter(_présentateurListeAventures.récupererContexte(), null, listeBD, _présentateurListeAventures);
+            _adapter = new RecyclerViewAdapterAventure(_présentateurListeAventures.récupererContexte(), null, listeBD, _présentateurListeAventures);
             _listeAventures.setAdapter(_adapter);
         }else if (listeServeur == null && listeBD == null){
             _message.setVisibility(View.VISIBLE);
             _message.setText("Les nouvelles aventures ne peuvent être chargées.");
         } else {
             _listeAventures.setLayoutManager(new LinearLayoutManager(_présentateurListeAventures.récupererContexte()));
-            _adapter = new MonRecyclerViewAdapter(_présentateurListeAventures.récupererContexte(), listeServeur, listeBD,_présentateurListeAventures);
+            _adapter = new RecyclerViewAdapterAventure(_présentateurListeAventures.récupererContexte(), listeServeur, listeBD,_présentateurListeAventures);
             _listeAventures.setAdapter(_adapter);
         }
 
