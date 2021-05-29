@@ -10,6 +10,7 @@ import com.example.lombredespurges.domaine.entité.Chapitre;
 import com.example.lombredespurges.domaine.entité.Ennemie;
 import com.example.lombredespurges.domaine.entité.Personnage;
 import com.example.lombredespurges.domaine.entité.aventuresTéléchargeables.AventureTéléchargeable;
+import com.example.lombredespurges.domaine.entité.aventuresTéléchargeables.Chapters;
 import com.example.lombredespurges.domaine.interacteur.Creation;
 import com.example.lombredespurges.domaine.interacteur.RécupérerAventure;
 import com.example.lombredespurges.domaine.interacteur.SauvegarderAventure;
@@ -35,6 +36,7 @@ public class Modèle {
     private ArrayList<AventureTéléchargeable> _listeAventuresTéléchargeableBD;
     private AventureTéléchargeable _aventureTéléchargeableChoisie;
     private Context _contexte;
+    private boolean aCommence;
 
     /**
      * Constructeur du Modèle.
@@ -210,4 +212,54 @@ public class Modèle {
         }
     }
 
+    /**
+     * La méthode permet retourer savoir quell'est el chapitre courante.
+     *
+     * @return  (_aventureChoisie.getChapitreCourante()) le  chapitre Courante.
+     */
+    public Chapters déterminerChapitreCourantAventureTéléchargeable(){
+        //return  _aventureTéléchargeableChoisie.getChapitreCourant();
+        return  _aventureTéléchargeableChoisie.getChapters()[0];
+    }
+
+    /**
+     * La méthode permet d'appeler la methode pour passer au prochaine chapitre.
+     *
+     * @param (choix), le choix que le joueur a fait pour le chapitre suivant.
+     */
+    public void passerAuProchainChapitreAventureTéléchargeable(int choix){
+        _aventureTéléchargeableChoisie.passerAuProchainChapitre(choix,_listeAventuresTéléchargeableBD);
+    }
+
+    /**
+     * La méthode permet savoir l'aventure choisie pour le joueur.
+     *
+     * @param (nomAventure), l'aventure choisie.
+     */
+    public void determinerAventureChoisieAventureTéléchargeable(String nomAventure){
+        for( AventureTéléchargeable uneAventure : _listeAventuresTéléchargeableBD){
+            if(uneAventure.getTitle().trim().equals(nomAventure)){
+                this._aventureTéléchargeableChoisie = uneAventure;
+            }
+        }
+    }
+
+    /**
+     * Accesseurs de l'aventure Courante.
+     *
+     * @return l'aventure Courante.
+     */
+    public AventureTéléchargeable getAventureChoisieAventureTéléchergeable(){return this._aventureTéléchargeableChoisie;}
+
+
+    public Chapters commencement(){
+        Chapters unChapitre;
+        if(!aCommence) {
+            unChapitre =_aventureTéléchargeableChoisie.getChapters()[0];
+            aCommence = true;
+        }else{
+            unChapitre = déterminerChapitreCourantAventureTéléchargeable();
+        }
+        return unChapitre;
+    }
 }
