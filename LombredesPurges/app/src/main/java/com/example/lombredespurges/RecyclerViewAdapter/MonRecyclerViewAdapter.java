@@ -1,6 +1,8 @@
 package com.example.lombredespurges.RecyclerViewAdapter;
 
 import android.content.Context;
+import android.os.Bundle;
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,9 +12,11 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.lombredespurges.R;
+import com.example.lombredespurges.VueAutresAventures;
 import com.example.lombredespurges.présentation.PrésentateurListeAventures;
 
 import java.util.List;
@@ -22,6 +26,7 @@ public class MonRecyclerViewAdapter extends RecyclerView.Adapter<MonRecyclerView
     private List<String> _dataBD;
     private LayoutInflater _mInflater;
     private PrésentateurListeAventures _présentateur;
+    private NavController navController;
 
     public MonRecyclerViewAdapter(Context ctx, List<String> dataServeur, List<String> dataBD, PrésentateurListeAventures présentateur) {
         this._dataServeur = dataServeur;
@@ -84,9 +89,11 @@ public class MonRecyclerViewAdapter extends RecyclerView.Adapter<MonRecyclerView
                                 _présentateur.sauvegarderAventure(title);
                             }
                             _présentateur.aventureÀJouer(title);
-
                         }
                     }).start();
+                    Bundle bundle = new Bundle();
+                    bundle.putString("race", "");
+                    holder.itemView.setOnClickListener(Navigation.createNavigateOnClickListener(holder.aventureTele, bundle));
                 }
             });
         } else {
@@ -104,9 +111,11 @@ public class MonRecyclerViewAdapter extends RecyclerView.Adapter<MonRecyclerView
                         @Override
                         public void run() {
                             _présentateur.aventureÀJouer(title);
-
                         }
                     }).start();
+                    Bundle bundle = new Bundle();
+                    bundle.putString("race", "");
+                    holder.itemView.setOnClickListener(Navigation.createNavigateOnClickListener(holder.aventureTele, bundle));
                 }
             });
         }
@@ -116,12 +125,15 @@ public class MonRecyclerViewAdapter extends RecyclerView.Adapter<MonRecyclerView
         TextView aventure;
         ImageView image;
         Button boutonOk;
+        int aventureTele;
+
         public ViewHolder(@NonNull View itemView) {
 
             super(itemView);
             aventure = itemView.findViewById(R.id.texteTitleAventure );
             image = itemView.findViewById(R.id.imageEtoile);
             boutonOk = itemView.findViewById(R.id.buttonSelectionner);
+            aventureTele = R.id.creationPersonnage;
         }
     }
 }
