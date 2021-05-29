@@ -1,5 +1,7 @@
 package com.example.lombredespurges.domaine.entité.aventuresTéléchargeables;
 
+import java.util.ArrayList;
+
 public class Chapters {
 
     /**
@@ -11,6 +13,7 @@ public class Chapters {
     private String deadend;
     private String[] choices_description;
     private Combat combat;
+    private Boolean avoirCombat;
 
     public int getId() {
         return id;
@@ -56,7 +59,23 @@ public class Chapters {
         return combat;
     }
 
+    public Boolean get_Combat() {
+        return avoirCombat;
+    }
+
     public void setCombat(Combat combat) {
         this.combat = combat;
+    }
+
+    /**
+     * Méthode du prochain chapitre
+     *
+     * @param positionListe, (int) la positon du chapitre qui devrai être retrourner.
+     *
+     * @return (int) le numéro du prochain chapitre
+     */
+    public int get_prochainChapitre(int positionListe, ArrayList<Integer> _listeProchainChapitre) {
+
+        return _listeProchainChapitre.get(positionListe);
     }
 }
