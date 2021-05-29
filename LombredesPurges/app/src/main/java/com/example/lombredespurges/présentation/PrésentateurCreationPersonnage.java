@@ -42,6 +42,9 @@ public class PrésentateurCreationPersonnage implements IContratPrésentateurVue
         } else if (nomRace.equals("Dino")) {
             description = R.string.descriptionDino;
             codeImage = R.drawable.dinoh;
+        } else{
+            description = R.string.descriptionNull;
+            codeImage = R.drawable.dinoh;
         }
         _vue.setRace(nomRace,description,codeImage);
         _modèle.determinerAventureChoisie(nomRace);
