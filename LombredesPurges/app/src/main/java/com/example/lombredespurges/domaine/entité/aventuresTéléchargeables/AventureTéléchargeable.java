@@ -9,6 +9,7 @@ public class AventureTéléchargeable {
     private String title;
     private Chapters [] chapters;
     private Chapters chapitreCourante;
+    private int _numeroChapitreCourant;
     /**
      * Accesseurs du title de l'aventure
      *
@@ -50,8 +51,12 @@ public class AventureTéléchargeable {
      *
      * @return (Chapitre) le chapitre Courante.
      */
-    public Chapters getChapitreCourant(){
-        return chapitreCourante;
+    public int getNumeroChapitreCourant(){
+        return this._numeroChapitreCourant;
+    }
+
+    public void setNumeroChapitreCourant(int numeroChapitreCourant) {
+        this._numeroChapitreCourant = numeroChapitreCourant;
     }
 
     /**
@@ -59,10 +64,9 @@ public class AventureTéléchargeable {
      *
      * @param choix, (int) la choix que le joueur à fait pour continuer l'aventure.
      */
-    public void passerAuProchainChapitre(int choix, ArrayList<AventureTéléchargeable> _listeAventuresTéléchargeableBD){
+    public void passerAuProchainChapitre(int choix){
 
-        int prochainChapitre = chapitreCourante.getChoices()[choix];
-
-        chapitreCourante = _listeAventuresTéléchargeableBD.get(prochainChapitre).getChapitreCourant();
+        int prochainChapitre = this.chapitreCourante.getChoices()[choix];
+        setNumeroChapitreCourant(prochainChapitre);
     }
 }

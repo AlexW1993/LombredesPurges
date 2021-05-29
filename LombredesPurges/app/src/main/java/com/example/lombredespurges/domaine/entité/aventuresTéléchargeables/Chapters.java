@@ -14,6 +14,7 @@ public class Chapters {
     private String[] choices_description;
     private Combat combat;
     private Boolean avoirCombat;
+    private int nextChapter;
 
     public int getId() {
         return id;
@@ -33,6 +34,11 @@ public class Chapters {
 
     public int[] getChoices() {
         return choices;
+    }
+
+    public int getNextChapter(int[] tabChoices, int choice){
+        this.nextChapter = tabChoices[choice];
+        return this.nextChapter;
     }
 
     public void setChoices(int[] choices) {
@@ -65,17 +71,5 @@ public class Chapters {
 
     public void setCombat(Combat combat) {
         this.combat = combat;
-    }
-
-    /**
-     * Méthode du prochain chapitre
-     *
-     * @param positionListe, (int) la positon du chapitre qui devrai être retrourner.
-     *
-     * @return (int) le numéro du prochain chapitre
-     */
-    public int get_prochainChapitre(int positionListe, ArrayList<Integer> _listeProchainChapitre) {
-
-        return _listeProchainChapitre.get(positionListe);
     }
 }

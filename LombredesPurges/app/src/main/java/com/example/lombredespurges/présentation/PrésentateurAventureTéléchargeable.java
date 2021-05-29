@@ -27,14 +27,14 @@ public class PrésentateurAventureTéléchargeable implements IContratPrésentat
     @Override
     public void gestionChapitre(int choix) {
         if(choix != -1){
-            _modèle.passerAuProchainChapitre(choix);
+            _modèle.passerAuProchainChapitreAventureTéléchargeable(choix);
         }
 
         Chapters unChapitre = _modèle.commencement();
 
-        if(unChapitre.get_Combat()){
-            _vue.passerAuCombat();
-        }
+        //if(unChapitre.get_Combat()){
+          //  _vue.passerAuCombat();
+        //}
 
         int numChapitre = unChapitre.getId();
         String idContenueChapitre = unChapitre.getDescription();

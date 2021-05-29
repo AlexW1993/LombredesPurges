@@ -218,8 +218,9 @@ public class Modèle {
      * @return  (_aventureChoisie.getChapitreCourante()) le  chapitre Courante.
      */
     public Chapters déterminerChapitreCourantAventureTéléchargeable(){
-        //return  _aventureTéléchargeableChoisie.getChapitreCourant();
-        return  _aventureTéléchargeableChoisie.getChapters()[0];
+        int positionChapitre;
+        positionChapitre = _aventureTéléchargeableChoisie.getNumeroChapitreCourant();
+        return  _aventureTéléchargeableChoisie.getChapters()[positionChapitre];
     }
 
     /**
@@ -228,7 +229,7 @@ public class Modèle {
      * @param (choix), le choix que le joueur a fait pour le chapitre suivant.
      */
     public void passerAuProchainChapitreAventureTéléchargeable(int choix){
-        _aventureTéléchargeableChoisie.passerAuProchainChapitre(choix,_listeAventuresTéléchargeableBD);
+        _aventureTéléchargeableChoisie.passerAuProchainChapitre(choix);
     }
 
     /**
@@ -244,18 +245,13 @@ public class Modèle {
         }
     }
 
-    /**
-     * Accesseurs de l'aventure Courante.
-     *
-     * @return l'aventure Courante.
-     */
-    public AventureTéléchargeable getAventureChoisieAventureTéléchergeable(){return this._aventureTéléchargeableChoisie;}
-
-
     public Chapters commencement(){
         Chapters unChapitre;
+        int positionChapitre;
         if(!aCommence) {
-            unChapitre =_aventureTéléchargeableChoisie.getChapters()[0];
+            _aventureTéléchargeableChoisie.setNumeroChapitreCourant(0);
+            positionChapitre = _aventureTéléchargeableChoisie.getNumeroChapitreCourant();
+            unChapitre =_aventureTéléchargeableChoisie.getChapters()[positionChapitre];
             aCommence = true;
         }else{
             unChapitre = déterminerChapitreCourantAventureTéléchargeable();
