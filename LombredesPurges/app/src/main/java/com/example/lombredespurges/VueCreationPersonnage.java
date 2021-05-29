@@ -140,15 +140,18 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        Bundle bundle = new Bundle();
+                        bundle.putString("nom", editName.getText().toString());
+                        String nomRace = getArguments().getString("race");
+                        bundle.putString("nomRace", nomRace);
                         if(editName.getText().toString().trim().equals("") ||
-                        btnForce.getVisibility() == View.VISIBLE || btnEndurence.getVisibility() == View.VISIBLE||
-                        btnAgilité.getVisibility() == View.VISIBLE || btnIntelligence.getVisibility() == View.VISIBLE){
+                                btnForce.getVisibility() == View.VISIBLE || btnEndurence.getVisibility() == View.VISIBLE||
+                                btnAgilité.getVisibility() == View.VISIBLE || btnIntelligence.getVisibility() == View.VISIBLE){
                             return;
+                        }else if(nomRace.equals("")) {
+                            présentateurCreationPersonnage.créationPersonnage(editName.getText().toString(), force, endurence, agilité, intelligence);
+                            navController.navigate(R.id.chapitre_aventureTelechargeable);
                         }else{
-                            Bundle bundle = new Bundle();
-                            bundle.putString("nom", editName.getText().toString());
-                            String nomRace = getArguments().getString("race");
-                            bundle.putString("nomRace", nomRace);
                             présentateurCreationPersonnage.créationPersonnage(editName.getText().toString(),force,endurence,agilité,intelligence);
                             navController.navigate(R.id.chapitre_dino);
                         }

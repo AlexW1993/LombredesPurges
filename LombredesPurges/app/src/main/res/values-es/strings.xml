@@ -3,13 +3,10 @@
     <string name="app_name">La sombra de las Purgas</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="descriptionNull"></string>
     <string name="descriptionDino">Especies de dinosaurios con capacidad para hablar. Son muy rápidos y ágiles. Se adaptan fácilmente a diferentes climas sin ningún problema.</string>
     <string name="descriptionVia">Son androides con gran avance tecnológico. Su cuerpo es muy resistente, tienen una gran fuerza y ​​tienen muchos conocimientos tecnológicos.</string>
     <string name="descriptionKaqchikam">Es una raza de chamanes con gran fe en sus dioses y sus rituales. Capaz de ver profecías y con magia poderosa.</string>
-    <string name="agilitepurge">10</string>
-    <string name="forcepurge">10</string>
-    <string name="defencepurge">10</string>
-    <string name="endurancepurge">10</string>
     <string name="chapitre0Dino">¡Oh no! Tu aldea está siendo atacada por criaturas que nunca has visto. Durante el ataque, apenas escapas pero quieres respuestas. Decides salir a la carretera para descubrir quiénes son estos seres que están masacrando tu aldea y especialmente por qué. Al borde de tu aldea, hay tres caminos. </string>
     <string name="choix0_1">Toma el camino hacia el bar de los guerreros en la ciudad de De Mayela.</string>
     <string name="choix0_2">Toma el camino hacia el bosque del silencio.</string>

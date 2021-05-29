@@ -51,6 +51,9 @@
         <action
             android:id="@+id/action_creationPersonnage_to_chapitre_dino"
             app:destination="@id/chapitre_dino" />
+        <action
+            android:id="@+id/action_creationPersonnage_to_chapitre_aventureTelechargeable"
+            app:destination="@id/chapitre_aventureTelechargeable" />
     </fragment>
     <fragment
         android:id="@+id/selectionAventure"
@@ -103,6 +106,21 @@
         android:id="@+id/autresAventures"
         android:name="com.example.lombredespurges.VueAutresAventures"
         android:label="autres_aventures"
-        tools:layout="@layout/autres_aventures" />
-
+        tools:layout="@layout/autres_aventures" >
+        <action
+            android:id="@+id/action_autresAventures_to_creationPersonnage"
+            app:destination="@id/creationPersonnage" />
+    </fragment>
+    <fragment
+        android:id="@+id/chapitre_aventureTelechargeable"
+        android:name="com.example.lombredespurges.VueAventureTéléchargeable"
+        android:label="chapitre_aventuretelechargeable"
+        tools:layout="@layout/chapitre_aventuretelechargeable" >
+        <action
+            android:id="@+id/action_chapitre_dino_to_combat"
+            app:destination="@id/combat" />
+        <action
+            android:id="@+id/action_chapitre_aventureTelechargeable_to_vueMenuAventures"
+            app:destination="@id/vueMenuAventures" />
+    </fragment>
 </navigation>
