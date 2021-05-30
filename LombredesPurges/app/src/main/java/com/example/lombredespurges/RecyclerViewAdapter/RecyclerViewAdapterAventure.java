@@ -132,6 +132,7 @@ public class RecyclerViewAdapterAventure extends RecyclerView.Adapter<RecyclerVi
             image = itemView.findViewById(R.id.imageEtoile);
             boutonOk = itemView.findViewById(R.id.buttonSelectionner);
             aventureTele = R.id.creationPersonnage;
+
         }
     }
 }

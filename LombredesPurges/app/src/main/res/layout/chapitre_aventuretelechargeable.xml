@@ -81,8 +81,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listeButtonsChoix"
-        android:layout_width="415dp"
-        android:layout_height="385dp"
+        android:layout_width="414dp"
+        android:layout_height="274dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/imageRaceChapitreAV"
         app:layout_constraintStart_toStartOf="parent"

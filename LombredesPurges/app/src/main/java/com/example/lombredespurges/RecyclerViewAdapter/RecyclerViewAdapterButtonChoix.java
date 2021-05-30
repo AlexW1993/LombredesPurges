@@ -1,5 +1,6 @@
 package com.example.lombredespurges.RecyclerViewAdapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,8 +18,8 @@ public class RecyclerViewAdapterButtonChoix extends RecyclerView.Adapter<Recycle
     private int[] choix;
     private String[] descriptionChoix;
 
-    public RecyclerViewAdapterButtonChoix(LayoutInflater _inflater, PrésentateurAventureTéléchargeable _présentateur, int[] choix, String[] descriptionChoix) {
-        this._inflater = _inflater;
+    public RecyclerViewAdapterButtonChoix(Context context, PrésentateurAventureTéléchargeable _présentateur, int[] choix, String[] descriptionChoix) {
+        this._inflater = LayoutInflater.from(context);
         this._présentateur = _présentateur;
         this.choix = choix;
         this.descriptionChoix = descriptionChoix;
@@ -34,15 +35,22 @@ public class RecyclerViewAdapterButtonChoix extends RecyclerView.Adapter<Recycle
     @Override
     public void onBindViewHolder(@NonNull ViewHolderChapitre holder, int position) {
         holder.btnChoix.setText(descriptionChoix[position]);
+        holder.btnChoix.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                _présentateur.gestionChapitre(choix[position]);
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
-        if(choix == null){
+        if(descriptionChoix != null){
+            return descriptionChoix.length;
+        }else{
             return 0;
         }
-
-        return choix.length;
     }
 
     public class ViewHolderChapitre extends RecyclerView.ViewHolder{

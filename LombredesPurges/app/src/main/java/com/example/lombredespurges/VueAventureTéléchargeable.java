@@ -1,5 +1,6 @@
 package com.example.lombredespurges;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,9 +14,11 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.lombredespurges.RecyclerViewAdapter.RecyclerViewAdapterAventure;
+import com.example.lombredespurges.RecyclerViewAdapter.RecyclerViewAdapterButtonChoix;
 import com.example.lombredespurges.présentation.IContratPrésentateurVueAventureTéléchargeable;
 import com.example.lombredespurges.présentation.PrésentateurAventureTéléchargeable;
 
@@ -26,7 +29,7 @@ public class VueAventureTéléchargeable extends Fragment implements IContratPr�
     private Button btnPageTitre;
     private NavController navController;
 
-    private RecyclerViewAdapterAventure _adapter;
+    private RecyclerViewAdapterButtonChoix _adapter;
     private RecyclerView listeButtons;
 
 
@@ -70,7 +73,7 @@ public class VueAventureTéléchargeable extends Fragment implements IContratPr�
         texteChapitre = view.findViewById(R.id.texteChapitreAV);
         texteContenueChapitre = view.findViewById(R.id.contenueChapitreAV);
 
-        //listeButtons = view.findViewById(R.id.listeButtonsChoix);
+        listeButtons = view.findViewById(R.id.listeButtonsChoix);
 
         btnPageTitre = view.findViewById(R.id.buttonMenuAV);
         btnPageTitre.setVisibility(View.GONE);
@@ -85,9 +88,12 @@ public class VueAventureTéléchargeable extends Fragment implements IContratPr�
     }
 
     @Override
-    public void afficherAventure(int numeroChapitre, String idContenueChapitre, String idChoix1, String idChoix2, String idChoix3) {
+    public void afficherAventure(int numeroChapitre, String idContenueChapitre, int[] listeChoix, String[] choixDescription, Context context) {
         txtNumeroChapitre.setText(String.valueOf(numeroChapitre));
         texteContenueChapitre.setText(idContenueChapitre);
+        listeButtons.setLayoutManager(new LinearLayoutManager(context));
+        _adapter = new RecyclerViewAdapterButtonChoix(context,présentateurAventureTéléchargeable, listeChoix, choixDescription);
+        listeButtons.setAdapter(_adapter);
     }
 
     @Override

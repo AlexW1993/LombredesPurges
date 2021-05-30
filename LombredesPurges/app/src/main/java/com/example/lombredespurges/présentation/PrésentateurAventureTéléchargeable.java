@@ -38,18 +38,15 @@ public class PrésentateurAventureTéléchargeable implements IContratPrésentat
 
         int numChapitre = unChapitre.getId();
         String idContenueChapitre = unChapitre.getDescription();
-        String[] listeIdChoix = unChapitre.getChoices_description();
+        int[] listeChoix = unChapitre.getChoices();
+        String[] descriptionChoix = unChapitre.getChoices_description();
         String nomPersonnage = _modèle.getPersonnage().get_nom();
 
-        if(listeIdChoix.length == 0){
+        if(listeChoix.length == 0){
             _vue.afficherFinJeu(nomPersonnage, idContenueChapitre);
-        }else{
-            String choix1 = listeIdChoix[0];
-            String choix2 = listeIdChoix[1];
-            String choix3 = listeIdChoix[2];
-
-            _vue.afficherAventure(numChapitre, idContenueChapitre, choix1, choix2, choix3);
         }
+
+        _vue.afficherAventure(numChapitre, idContenueChapitre, listeChoix, descriptionChoix, _modèle.get_contexte());
     }
 
     /**

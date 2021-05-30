@@ -37,6 +37,8 @@ public class Modèle {
     private AventureTéléchargeable _aventureTéléchargeableChoisie;
     private Context _contexte;
     private boolean aCommence;
+    private Chapters chapitreCourante;
+    private int _numeroChapitreCourant;
 
     /**
      * Constructeur du Modèle.
@@ -219,7 +221,8 @@ public class Modèle {
      */
     public Chapters déterminerChapitreCourantAventureTéléchargeable(){
         int positionChapitre;
-        positionChapitre = _aventureTéléchargeableChoisie.getNumeroChapitreCourant();
+        //positionChapitre = _aventureTéléchargeableChoisie.getNumeroChapitreCourant();
+        positionChapitre = this.getNumeroChapitreCourant();
         return  _aventureTéléchargeableChoisie.getChapters()[positionChapitre];
     }
 
@@ -229,7 +232,8 @@ public class Modèle {
      * @param (choix), le choix que le joueur a fait pour le chapitre suivant.
      */
     public void passerAuProchainChapitreAventureTéléchargeable(int choix){
-        _aventureTéléchargeableChoisie.passerAuProchainChapitre(choix);
+        //_aventureTéléchargeableChoisie.passerAuProchainChapitre(choix);
+        this.passerAuProchainChapitreAventureTelecharge(choix);
     }
 
     /**
@@ -249,13 +253,38 @@ public class Modèle {
         Chapters unChapitre;
         int positionChapitre;
         if(!aCommence) {
-            _aventureTéléchargeableChoisie.setNumeroChapitreCourant(0);
-            positionChapitre = _aventureTéléchargeableChoisie.getNumeroChapitreCourant();
+            //_aventureTéléchargeableChoisie.setNumeroChapitreCourant(0);
+            this.setNumeroChapitreCourant(0);
+            //positionChapitre = _aventureTéléchargeableChoisie.getNumeroChapitreCourant();
+            positionChapitre = this.getNumeroChapitreCourant();
             unChapitre =_aventureTéléchargeableChoisie.getChapters()[positionChapitre];
             aCommence = true;
         }else{
             unChapitre = déterminerChapitreCourantAventureTéléchargeable();
         }
         return unChapitre;
+    }
+
+    /**
+     * Accesseurs du chapitre courante
+     *
+     * @return (Chapitre) le chapitre Courante.
+     */
+    public int getNumeroChapitreCourant(){
+        return this._numeroChapitreCourant;
+    }
+
+    public void setNumeroChapitreCourant(int numeroChapitreCourant) {
+        this._numeroChapitreCourant = numeroChapitreCourant;
+    }
+
+    /**
+     * Méthode qui ajouete le prochaine chapitre dans le chapitreCourante.
+     *
+     * @param choix, (int) la choix que le joueur à fait pour continuer l'aventure.
+     */
+    public void passerAuProchainChapitreAventureTelecharge(int choix) {
+        int prochainChapitre = this.chapitreCourante.getChoices()[choix];
+        this.setNumeroChapitreCourant(prochainChapitre);
     }
 }
