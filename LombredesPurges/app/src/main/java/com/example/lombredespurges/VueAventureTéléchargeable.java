@@ -88,19 +88,19 @@ public class VueAventureTéléchargeable extends Fragment implements IContratPr�
     }
 
     @Override
-    public void afficherAventure(int numeroChapitre, String idContenueChapitre, int[] listeChoix, String[] choixDescription, Context context) {
+    public void afficherAventure(int numeroChapitre, String contenueChapitre, int[] listeChoix, String[] choixDescription, Context context) {
         txtNumeroChapitre.setText(String.valueOf(numeroChapitre));
-        texteContenueChapitre.setText(idContenueChapitre);
+        texteContenueChapitre.setText(contenueChapitre);
         listeButtons.setLayoutManager(new LinearLayoutManager(context));
         _adapter = new RecyclerViewAdapterButtonChoix(context,présentateurAventureTéléchargeable, listeChoix, choixDescription);
         listeButtons.setAdapter(_adapter);
     }
 
     @Override
-    public void afficherFinJeu(String nomPersonnage, String idContenueChapitre) {
+    public void afficherFinJeu(String nomPersonnage, String contenueChapitre) {
         texteChapitre.setText(nomPersonnage);
         txtNumeroChapitre.setVisibility(View.GONE);
-        texteContenueChapitre.setText(idContenueChapitre);
+        texteContenueChapitre.setText(contenueChapitre);
 
         //tous les buttons gone
         btnPageTitre.setVisibility(View.VISIBLE);

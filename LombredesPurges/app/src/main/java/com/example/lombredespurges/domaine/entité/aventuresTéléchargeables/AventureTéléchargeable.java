@@ -8,6 +8,7 @@ public class AventureTéléchargeable {
      */
     private String title;
     private Chapters [] chapters;
+    private Chapters chapter;
     /**
      * Accesseurs du title de l'aventure
      *
@@ -33,6 +34,12 @@ public class AventureTéléchargeable {
      */
     public Chapters[] getChapters() {
         return chapters;
+    }
+
+    public int getIdChapter(int choix){
+        chapter = chapters[choix];
+        int chapterId = chapter.getId();
+        return chapterId;
     }
 
     /**

@@ -30,23 +30,24 @@ public class PrésentateurAventureTéléchargeable implements IContratPrésentat
             _modèle.passerAuProchainChapitreAventureTéléchargeable(choix);
         }
 
-        Chapters unChapitre = _modèle.commencement();
-
-        //if(unChapitre.get_Combat()){
-          //  _vue.passerAuCombat();
-        //}
+        Chapters unChapitre = _modèle.gestionChapitreCorant();
 
         int numChapitre = unChapitre.getId();
-        String idContenueChapitre = unChapitre.getDescription();
+        String contenueChapitre = unChapitre.getDescription();
+        String finChapitre = unChapitre.getDeadend();
         int[] listeChoix = unChapitre.getChoices();
         String[] descriptionChoix = unChapitre.getChoices_description();
         String nomPersonnage = _modèle.getPersonnage().get_nom();
 
-        if(listeChoix.length == 0){
-            _vue.afficherFinJeu(nomPersonnage, idContenueChapitre);
+        if(listeChoix == null){
+            if(unChapitre.getCombat() == null) {
+                _vue.afficherFinJeu(nomPersonnage, finChapitre);
+            }else{
+                //FAIRE COMBAT
+            }
         }
 
-        _vue.afficherAventure(numChapitre, idContenueChapitre, listeChoix, descriptionChoix, _modèle.get_contexte());
+        _vue.afficherAventure(numChapitre, contenueChapitre, listeChoix, descriptionChoix, _modèle.get_contexte());
     }
 
     /**
