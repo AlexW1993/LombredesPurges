@@ -87,6 +87,9 @@ public class VueAventureTéléchargeable extends Fragment implements IContratPr�
         });
     }
 
+    /**
+     * La méthode permet d'afficher le chapitre
+     */
     @Override
     public void afficherAventure(int numeroChapitre, String contenueChapitre, int[] listeChoix, String[] choixDescription, Context context) {
         txtNumeroChapitre.setText(String.valueOf(numeroChapitre));
@@ -95,7 +98,9 @@ public class VueAventureTéléchargeable extends Fragment implements IContratPr�
         _adapter = new RecyclerViewAdapterButtonChoix(context, présentateurAventureTéléchargeable, listeChoix, choixDescription);
         listeButtons.setAdapter(_adapter);
     }
-
+    /**
+     * La méthode permet d'afficher la fin d'une aventure
+     */
     @Override
     public void afficherFinJeu(String finJeuText, String contenueChapitre) {
         texteChapitre.setText(finJeuText.trim());
@@ -103,7 +108,9 @@ public class VueAventureTéléchargeable extends Fragment implements IContratPr�
         texteContenueChapitre.setText(contenueChapitre);
         listeButtons.setVisibility(View.INVISIBLE);
     }
-
+    /**
+     * La méthode permet de passer à un combat
+     */
     @Override
     public void passerAuCombat() {
         bundle = new Bundle();
@@ -111,7 +118,9 @@ public class VueAventureTéléchargeable extends Fragment implements IContratPr�
 
         navController.navigate(R.id.combat, bundle);
     }
-
+    /**
+     * La méthode permet de revenir à la page titre
+     */
     @Override
     public void passerPageTitre() {
         navController.navigate(R.id.vueMenuAventures);

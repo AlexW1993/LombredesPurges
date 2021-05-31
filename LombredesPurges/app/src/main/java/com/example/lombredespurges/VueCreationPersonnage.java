@@ -41,6 +41,7 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
     private TextView txtEndurence;
     private TextView txtAgilité;
     private TextView txtIntelligence;
+    private TextView txtRace;
 
     private PrésentateurCreationPersonnage présentateurCreationPersonnage;
 
@@ -93,8 +94,14 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
         txtEndurence = view.findViewById(R.id.endurenceCreationPersonnage);
         txtAgilité = view.findViewById(R.id.agilitéCreationPersonnage);
         txtIntelligence = view.findViewById(R.id.intelligenceCreationPersonnage);
+        txtRace = view.findViewById(R.id.race_texte2);
 
         btnForce = view.findViewById(R.id.imageView12);
+
+        if(raceNom.getText().equals("")){
+            txtRace.setVisibility(View.INVISIBLE);
+            raceImage.setVisibility(View.INVISIBLE);
+        }
 
         btnForce.setOnClickListener(
                 new View.OnClickListener() {

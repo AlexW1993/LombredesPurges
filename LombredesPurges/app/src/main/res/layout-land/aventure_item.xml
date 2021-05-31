@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/texteTitleAventure"
+        android:layout_width="358dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="15dp"
+        android:background="#ffffff"
+        android:padding="10sp"
+        android:text="TextView"
+        android:textColor="#1E2449"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.523"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageEtoile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonSelectionner"
+        app:layout_constraintEnd_toEndOf="@+id/texteTitleAventure"
+        app:layout_constraintStart_toEndOf="@+id/buttonSelectionner"
+        app:layout_constraintTop_toTopOf="@+id/buttonSelectionner"
+        app:layout_constraintVertical_bias="0.25"
+        app:srcCompat="@android:drawable/btn_star_big_on" />
+
+    <Button
+        android:id="@+id/buttonSelectionner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="220dp"
+        android:layout_marginLeft="220dp"
+        android:text="OK"
+        app:backgroundTint="#1E2449"
+        app:layout_constraintBottom_toBottomOf="@+id/texteTitleAventure"
+        app:layout_constraintStart_toStartOf="@+id/texteTitleAventure"
+        app:layout_constraintTop_toTopOf="@+id/texteTitleAventure" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

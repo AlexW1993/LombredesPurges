@@ -244,15 +244,23 @@ public class Modèle {
             }
         }
     }
-
+    /**
+     * Méthode qui permet de gérer vers quel chapitre se rendre
+     */
     public Chapters gestionChapitreCorant() {
         return _aventureTéléchargeableChoisie.gestionChapitreCorant();
     }
-
+    /**
+     * Méthode qui permet de passer au chapitre suivant
+     *
+     * @param choix, le numéro du choix selectionné
+     */
     public void passerAuProchainChapitreAventureTéléchargeable(int choix) {
         _aventureTéléchargeableChoisie.passerAuProchainChapitreAventureTéléchargeable(choix);
     }
-
+    /**
+     * Méthode qui de revenir au premier chapire
+     */
     public void reinitialiserAvantureTelechargeable() {
         _aventureTéléchargeableChoisie.reinitialiserAvantureTelechargeable();
     }
