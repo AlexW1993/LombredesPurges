@@ -23,19 +23,18 @@ public class PrésentateurAventureTéléchargeable implements IContratPrésentat
 
     /**
      * La méthode cherhcer les information pour le chapitre..
-     *
      */
     @Override
     public void gestionChapitre(int choix) {
-        if(choix != -1){
+        if (choix != -1) {
             _modèle.passerAuProchainChapitreAventureTéléchargeable(choix);
         }
 
         Chapters unChapitre = _modèle.gestionChapitreCorant();
 
-        if(unChapitre.getCombats() != null){
-            for(Combats unCombat : unChapitre.getCombats()){
-                if(!unCombat.isTerminé()){
+        if (unChapitre.getCombats() != null) {
+            for (Combats unCombat : unChapitre.getCombats()) {
+                if (!unCombat.isTerminé()) {
                     _vue.passerAuCombat();
                 }
             }
@@ -47,37 +46,22 @@ public class PrésentateurAventureTéléchargeable implements IContratPrésentat
         int[] listeChoix = unChapitre.getChoices();
         String[] descriptionChoix = unChapitre.getChoices_description();
         String nomPersonnage = _modèle.getPersonnage().get_nom();
-/*
-        if(listeChoix == null){
-            if(unChapitre.getCombats() == null) {
-                _vue.afficherFinJeu(nomPersonnage, finChapitre);
-            }else{
-                //FAIRE COMBAT
-            }
-        }*/
 
-        if(listeChoix == null){
+        if (listeChoix == null) {
             _vue.afficherFinJeu(finChapitre, contenueChapitre);
         }
 
-
-
-
-        if(unChapitre.getDeadend() == null){
+        if (unChapitre.getDeadend() == null) {
             _vue.afficherAventure(numChapitre, contenueChapitre, listeChoix, descriptionChoix, _modèle.get_contexte());
         }
-
     }
 
     /**
      * La méthode permet de reinitalise le jeu. (réinitialiser la liste de chapitres et afficher la page de titre.)
-     *
      */
     @Override
     public void réinitialierJeu() {
         _modèle.reinitialiserAvantureTelechargeable();
         _vue.passerPageTitre();
     }
-
-
 }

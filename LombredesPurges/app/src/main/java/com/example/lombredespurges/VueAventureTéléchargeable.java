@@ -76,12 +76,7 @@ public class VueAventureTéléchargeable extends Fragment implements IContratPr�
         listeButtons = view.findViewById(R.id.listeButtonsChoix);
 
         btnPageTitre = view.findViewById(R.id.buttonMenuAV);
-        btnPageTitre.setVisibility(View.GONE);
-
-
-
         présentateurAventureTéléchargeable.gestionChapitre(-1);
-
 
 
         btnPageTitre.setOnClickListener(new View.OnClickListener() {
@@ -90,8 +85,6 @@ public class VueAventureTéléchargeable extends Fragment implements IContratPr�
                 présentateurAventureTéléchargeable.réinitialierJeu();
             }
         });
-
-
     }
 
     @Override
@@ -99,7 +92,7 @@ public class VueAventureTéléchargeable extends Fragment implements IContratPr�
         txtNumeroChapitre.setText(String.valueOf(numeroChapitre));
         texteContenueChapitre.setText(contenueChapitre);
         listeButtons.setLayoutManager(new LinearLayoutManager(context));
-        _adapter = new RecyclerViewAdapterButtonChoix(context,présentateurAventureTéléchargeable, listeChoix, choixDescription);
+        _adapter = new RecyclerViewAdapterButtonChoix(context, présentateurAventureTéléchargeable, listeChoix, choixDescription);
         listeButtons.setAdapter(_adapter);
     }
 
@@ -109,13 +102,12 @@ public class VueAventureTéléchargeable extends Fragment implements IContratPr�
         txtNumeroChapitre.setVisibility(View.GONE);
         texteContenueChapitre.setText(contenueChapitre);
         listeButtons.setVisibility(View.INVISIBLE);
-        btnPageTitre.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void passerAuCombat() {
         bundle = new Bundle();
-        bundle.putString("aventure","telechargeable");
+        bundle.putString("aventure", "telechargeable");
 
         navController.navigate(R.id.combat, bundle);
     }

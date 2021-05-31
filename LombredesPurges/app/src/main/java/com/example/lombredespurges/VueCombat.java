@@ -33,7 +33,6 @@ public class VueCombat extends Fragment implements IContratPrésentateurVueComba
     private ImageButton btnDé;
 
     private boolean tourJoueur = false;
-    private int resultatEndurance;
 
     private TextView deroulementCombat;
 
@@ -51,7 +50,6 @@ public class VueCombat extends Fragment implements IContratPrésentateurVueComba
     private TextView défenceEnnemie;
     private TextView nomEnnemi;
     private ImageView raceImage;
-    private Bundle bundle;
     private PrésentateurCombat présentateurCombat;
 
 
@@ -109,7 +107,7 @@ public class VueCombat extends Fragment implements IContratPrésentateurVueComba
         deroulementCombat = view.findViewById(R.id.deroulementcombattexte);
         deroulementCombat.setText("Jouer le Dé pour déterminer l'attaquant");
 
-        raceImage  = view.findViewById(R.id.imageRaceCombat);
+        raceImage = view.findViewById(R.id.imageRaceCombat);
         //présentateurCombat.changerRace();
 
         btnDé = view.findViewById(R.id.combatDé);
@@ -127,15 +125,16 @@ public class VueCombat extends Fragment implements IContratPrésentateurVueComba
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if (btnContinuer.getText().equals("Continuer")){
+                        if (btnContinuer.getText().equals("Continuer")) {
                             présentateurCombat.passerAuChapitreApresCombat(getArguments().getString("aventure"));
-                        } else if (btnContinuer.getText().equals("Page titre")){
+                        } else if (btnContinuer.getText().equals("Page titre")) {
                             présentateurCombat.passerPageTitre();
                         }
                     }
                 }
         );
     }
+
     /**
      * La méthode permet que les attributs reçus en parametre sont affichés.
      *
@@ -175,8 +174,8 @@ public class VueCombat extends Fragment implements IContratPrésentateurVueComba
      * La méthode permet que les coeficientes d'attaque de l'ennemi et du personnage qui sont en parametre sont affichés, aussi
      * une parametre boolean pour savoir si c'est le tour du personnage ou pas.
      *
-     * @param (coefAttaqueP, coestAttaqueE, resultatComparaison) les coeficientes d'attaque  du personnage et de l'ennemi aussi,
-     *                                                           la conffirmation du tout du personnage.
+     * @param (coefAttaqueP,coestAttaqueE,resultatComparaison) les coeficientes d'attaque  du personnage et de l'ennemi aussi,
+     *                       la conffirmation du tout du personnage.
      */
     @Override
     public void afficherCoefAttaque(int coefAttaqueP, int coefAttaqueE, boolean resultatComparaison) {
@@ -262,6 +261,7 @@ public class VueCombat extends Fragment implements IContratPrésentateurVueComba
     public void faireAction4(int dommage) {
         deroulementCombat.setText("Vous êtes attaqué : " + dommage + " de dommage a été fait. Jouer le dé pour prochain tour");
     }
+
     /**
      * La méthode permet changer el type de race.
      *
@@ -275,7 +275,7 @@ public class VueCombat extends Fragment implements IContratPrésentateurVueComba
     @Override
     public void passerAuChapitre() {
         Bundle bundle = new Bundle();
-        bundle.putString("aventure","ancien");
+        bundle.putString("aventure", "ancien");
         navController.navigate(R.id.chapitre_dino, bundle);
 
     }
@@ -283,7 +283,7 @@ public class VueCombat extends Fragment implements IContratPrésentateurVueComba
     @Override
     public void passerAuChapitreTelechargeable() {
         Bundle bundle = new Bundle();
-        bundle.putString("aventure","telechargeable");
+        bundle.putString("aventure", "telechargeable");
         navController.navigate(R.id.chapitre_aventureTelechargeable, bundle);
     }
 

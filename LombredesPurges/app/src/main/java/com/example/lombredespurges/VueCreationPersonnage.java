@@ -50,7 +50,6 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
     private int intelligence;
 
 
-
     public VueCreationPersonnage() {
         // Required empty public constructor
     }
@@ -91,7 +90,7 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
         présentateurCreationPersonnage.choisirRace(getArguments().getString("race"));
 
         txtForce = view.findViewById(R.id.forceCreationPersonnage);
-        txtEndurence= view.findViewById(R.id.endurenceCreationPersonnage);
+        txtEndurence = view.findViewById(R.id.endurenceCreationPersonnage);
         txtAgilité = view.findViewById(R.id.agilitéCreationPersonnage);
         txtIntelligence = view.findViewById(R.id.intelligenceCreationPersonnage);
 
@@ -144,15 +143,15 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
                         bundle.putString("nom", editName.getText().toString());
                         String nomRace = getArguments().getString("race");
                         bundle.putString("nomRace", nomRace);
-                        if(editName.getText().toString().trim().equals("") ||
-                                btnForce.getVisibility() == View.VISIBLE || btnEndurence.getVisibility() == View.VISIBLE||
-                                btnAgilité.getVisibility() == View.VISIBLE || btnIntelligence.getVisibility() == View.VISIBLE){
+                        if (editName.getText().toString().trim().equals("") ||
+                                btnForce.getVisibility() == View.VISIBLE || btnEndurence.getVisibility() == View.VISIBLE ||
+                                btnAgilité.getVisibility() == View.VISIBLE || btnIntelligence.getVisibility() == View.VISIBLE) {
                             return;
-                        }else if(nomRace.equals("")) {
+                        } else if (nomRace.equals("")) {
                             présentateurCreationPersonnage.créationPersonnage(editName.getText().toString(), force, endurence, agilité, intelligence);
                             navController.navigate(R.id.chapitre_aventureTelechargeable);
-                        }else{
-                            présentateurCreationPersonnage.créationPersonnage(editName.getText().toString(),force,endurence,agilité,intelligence);
+                        } else {
+                            présentateurCreationPersonnage.créationPersonnage(editName.getText().toString(), force, endurence, agilité, intelligence);
                             navController.navigate(R.id.chapitre_dino);
                         }
                     }
@@ -167,11 +166,12 @@ public class VueCreationPersonnage extends Fragment implements IContratPrésenta
      */
 
     @Override
-    public void setRace(String race,int description, int codeImage) {
+    public void setRace(String race, int description, int codeImage) {
         raceNom.setText(race);
         raceDescription.setText(description);
         raceImage.setImageDrawable(getResources().getDrawable(codeImage));
     }
+
     /**
      * La méthode permet afficher le points de force dans le texte.
      *

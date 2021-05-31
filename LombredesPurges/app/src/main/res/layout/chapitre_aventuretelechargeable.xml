@@ -61,7 +61,7 @@
         android:shadowColor="#040202"
         android:text="@string/chapitre"
         android:textColor="#AE5959"
-        android:textSize="44sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/NumeroChapitre"
         app:layout_constraintStart_toStartOf="parent"
@@ -79,17 +79,18 @@
         android:shadowRadius="60"
         android:text="Vous arrivez dans la ville De Mayale. La seule place que vous pourriez trouver des informations est dans le bar de guerriers. Vous rentrez dans le bar et vous trouvez plusieurs Dinos venant d’autres régions. Avec désespoir vous leur demandez de l’aide mais hélas, ils ne savent rien de ces nouvelles créatures et puisque que cette région n’a pas été attaquée. Pendant que vous parlez, la ville se fait frapper par les envahisseurs. Certains Dinos dans le bar part au combat tandis qu'un dit connaitre un chemin secret pour s’échapper. Il n’inspire pas confiance mais vous n’êtes pas un combattant né non plus."
         android:textColor="#EFBFBF"
-        android:textSize="18sp"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/texteChapitreAV" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listeButtonsChoix"
         android:layout_width="414dp"
-        android:layout_height="274dp"
+        android:layout_height="300dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/imageRaceChapitreAV"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageRaceChapitreAV" />
+        app:layout_constraintTop_toTopOf="@+id/imageRaceChapitreAV"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

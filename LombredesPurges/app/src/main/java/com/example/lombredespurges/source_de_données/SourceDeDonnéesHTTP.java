@@ -32,7 +32,7 @@ public class SourceDeDonnéesHTTP implements SourceDeDonnées {
     public AutreAventure[] récupérerListeServeur() {
         RequestQueue queue = Volley.newRequestQueue(_ctx);
         RequestFuture<String> future = RequestFuture.newFuture();
-        StringRequest request = new StringRequest(Request.Method.GET,_url,future,future);
+        StringRequest request = new StringRequest(Request.Method.GET, _url, future, future);
         queue.add(request);
         try {
             String response = future.get();
@@ -50,7 +50,7 @@ public class SourceDeDonnéesHTTP implements SourceDeDonnées {
     public String récupérerAventureServeur() {
         RequestQueue queue = Volley.newRequestQueue(_ctx);
         RequestFuture<String> future = RequestFuture.newFuture();
-        StringRequest request = new StringRequest(Request.Method.GET,_url,future,future);
+        StringRequest request = new StringRequest(Request.Method.GET, _url, future, future);
         queue.add(request);
         try {
             String response = future.get();

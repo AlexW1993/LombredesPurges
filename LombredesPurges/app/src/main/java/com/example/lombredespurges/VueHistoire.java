@@ -76,11 +76,10 @@ public class VueHistoire extends Fragment implements IContratPrésentateurVueHis
         btnChoix2 = view.findViewById(R.id.buttonChoix2);
         btnChoix3 = view.findViewById(R.id.buttonChoix3);
 
-
         présentateurHistoires.gestionChapitre(-1);
 
         bundle = new Bundle();
-        bundle.putString("aventure","ancien");
+        bundle.putString("aventure", "ancien");
         btnChoix1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -115,7 +114,7 @@ public class VueHistoire extends Fragment implements IContratPrésentateurVueHis
     }
 
     @Override
-    public void afficherAventure(int numeroChapitre, int idContenueChapitre,int idChoix1,int idChoix2,int idChoix3) {
+    public void afficherAventure(int numeroChapitre, int idContenueChapitre, int idChoix1, int idChoix2, int idChoix3) {
         txtNumeroChapitre.setText(String.valueOf(numeroChapitre));
         texteContenueChapitre.setText(idContenueChapitre);
         btnChoix1.setText(idChoix1);
@@ -123,7 +122,7 @@ public class VueHistoire extends Fragment implements IContratPrésentateurVueHis
         btnChoix3.setText(idChoix3);
     }
 
-    public void afficherFinJeu(String nomPersonnage, int idContenueChapitre){
+    public void afficherFinJeu(String nomPersonnage, int idContenueChapitre) {
         texteChapitre.setText(nomPersonnage);
         txtNumeroChapitre.setVisibility(View.GONE);
         texteContenueChapitre.setText(idContenueChapitre);
@@ -134,8 +133,8 @@ public class VueHistoire extends Fragment implements IContratPrésentateurVueHis
     }
 
     @Override
-    public void passerAuCombat(){
-        navController.navigate(R.id.combat,bundle);
+    public void passerAuCombat() {
+        navController.navigate(R.id.combat, bundle);
     }
 
     @Override

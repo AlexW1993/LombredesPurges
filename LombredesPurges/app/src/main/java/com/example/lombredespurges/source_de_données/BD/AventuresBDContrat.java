@@ -4,7 +4,10 @@ import android.provider.BaseColumns;
 
 public final class AventuresBDContrat {
 
-    private AventuresBDContrat(){};
+    private AventuresBDContrat() {
+    }
+
+    ;
 
     public static final String DATABASE_NAME = "AutresAventures.bd";
     public static final int DATABASE_VERSION = 3;
@@ -22,13 +25,13 @@ public final class AventuresBDContrat {
     }
 
     public static final String SQL_CREATE_TABLE_AVENTURE =
-            "CREATE TABLE "+ TableAventures.NOM_TABLE + " (" +
+            "CREATE TABLE " + TableAventures.NOM_TABLE + " (" +
                     TableAventures._ID + " INTEGER PRIMARY KEY," +
                     TableAventures.COLONNE_TITLE + " TEXT," +
                     TableAventures.COLONNE_URL + " TEXT )";
 
     public static final String SQL_CREATE_TABLE_AVENTURE_JSON =
-            "CREATE TABLE "+ TableAventuresJson.NOM_TABLE + " (" +
+            "CREATE TABLE " + TableAventuresJson.NOM_TABLE + " (" +
                     TableAventuresJson._ID + " INTEGER PRIMARY KEY," +
                     TableAventuresJson.COLONNE_TITLE + " TEXT," +
                     TableAventuresJson.COLONNE_JSON + " TEXT )";

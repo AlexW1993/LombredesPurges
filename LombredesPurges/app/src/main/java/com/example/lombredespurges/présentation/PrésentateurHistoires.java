@@ -1,7 +1,9 @@
 package com.example.lombredespurges.présentation;
+
 import com.example.lombredespurges.R;
 import com.example.lombredespurges.domaine.entité.Chapitre;
 import com.example.lombredespurges.modele.Modèle;
+
 import java.util.ArrayList;
 
 public class PrésentateurHistoires implements IContratPrésentateurVueHistoires.IPrésentateurHistoires {
@@ -24,17 +26,16 @@ public class PrésentateurHistoires implements IContratPrésentateurVueHistoires
 
     /**
      * La méthode cherhcer les information pour le chapitre..
-     *
      */
     @Override
     public void gestionChapitre(int choix) {
-        if(choix != -1){
+        if (choix != -1) {
             _modèle.passerAuProchainChapitre(choix);
         }
 
         Chapitre uneChapitre = _modèle.déterminerChapitreCourant();
 
-        if(uneChapitre.get_combat()){
+        if (uneChapitre.get_combat()) {
             _vue.passerAuCombat();
         }
 
@@ -43,9 +44,9 @@ public class PrésentateurHistoires implements IContratPrésentateurVueHistoires
         ArrayList<Integer> listeIdChoix = uneChapitre.get_listeIdTexteChoix();
         String nomPersonnage = _modèle.getPersonnage().get_nom();
 
-        if(listeIdChoix.isEmpty()){
+        if (listeIdChoix.isEmpty()) {
             _vue.afficherFinJeu(nomPersonnage, idContenueChapitre);
-        }else{
+        } else {
             int choix1 = listeIdChoix.get(0);
             int choix2 = listeIdChoix.get(1);
             int choix3 = listeIdChoix.get(2);
@@ -56,7 +57,6 @@ public class PrésentateurHistoires implements IContratPrésentateurVueHistoires
 
     /**
      * La méthode permet de reinitalise le jeu. (réinitialiser la liste de chapitres et afficher la page de titre.)
-     *
      */
     @Override
     public void réinitialierJeu() {
@@ -66,7 +66,6 @@ public class PrésentateurHistoires implements IContratPrésentateurVueHistoires
 
     /**
      * La méthode permet afficher les information d'un race choisi.
-     *
      */
     @Override
     public void changerRace() {

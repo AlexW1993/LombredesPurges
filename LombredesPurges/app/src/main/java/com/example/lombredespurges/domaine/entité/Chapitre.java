@@ -16,7 +16,7 @@ public class Chapitre {
     /**
      * Constructeur d'une chapitre.
      */
-    public Chapitre(int numéroChapitre, int idTexteChapitre, ArrayList<Integer> listeIdTexteChoix, ArrayList<Integer> listeProchainChapitre, boolean combat){
+    public Chapitre(int numéroChapitre, int idTexteChapitre, ArrayList<Integer> listeIdTexteChoix, ArrayList<Integer> listeProchainChapitre, boolean combat) {
         this._numéroChapitre = numéroChapitre;
         this._IdTexteChapitre = idTexteChapitre;
         this._listeIdTexteChoix = listeIdTexteChoix;
@@ -32,6 +32,7 @@ public class Chapitre {
     public int get_numéroChapitre() {
         return _numéroChapitre;
     }
+
     /**
      * Accesseurs du texte de Chapitre
      *
@@ -40,6 +41,7 @@ public class Chapitre {
     public int get_IdTexteChapitre() {
         return _IdTexteChapitre;
     }
+
     /**
      * Accesseurs de la liste de choix
      *
@@ -71,7 +73,6 @@ public class Chapitre {
      * Méthode du prochain chapitre
      *
      * @param positionListe, (int) la positon du chapitre qui devrai être retrourner.
-     *
      * @return (int) le numéro du prochain chapitre
      */
     public int get_prochainChapitre(int positionListe) {

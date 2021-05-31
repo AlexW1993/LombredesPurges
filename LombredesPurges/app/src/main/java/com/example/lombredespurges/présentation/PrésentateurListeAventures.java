@@ -1,13 +1,15 @@
 package com.example.lombredespurges.présentation;
+
 import android.content.Context;
 
 import androidx.fragment.app.Fragment;
+
 import com.example.lombredespurges.domaine.entité.aventuresTéléchargeables.AutreAventure;
 import com.example.lombredespurges.modele.Modèle;
 
 import java.util.ArrayList;
 
-public class PrésentateurListeAventures implements IContratPrésentateurVueListeAventures.IPrésentateurListeAventures{
+public class PrésentateurListeAventures implements IContratPrésentateurVueListeAventures.IPrésentateurListeAventures {
 
     private IContratPrésentateurVueListeAventures.IVueListeAventures _vue;
     private Modèle _modèle;
@@ -19,29 +21,29 @@ public class PrésentateurListeAventures implements IContratPrésentateurVueList
 
     @Override
     public void récupererListe() {
-        Thread fil_esclave = new Thread(()->{
+        Thread fil_esclave = new Thread(() -> {
             ArrayList<String> listeTitlesServeur = new ArrayList<String>();
             ArrayList<String> listeTitlesBD = new ArrayList<String>();
             ArrayList<AutreAventure> listeServeur = _modèle.chercherListeAventuresServeur();
             ArrayList<AutreAventure> listeBD = _modèle.chercherAventuresBD();
-            if(listeServeur != null) {
+            if (listeServeur != null) {
                 for (int i = 0; i < listeServeur.size(); i++) {
                     listeTitlesServeur.add(listeServeur.get(i).getTitle());
                 }
             }
-           if(listeBD != null) {
+            if (listeBD != null) {
                 for (int i = 0; i < listeBD.size(); i++) {
                     listeTitlesBD.add(listeBD.get(i).getTitle());
                 }
             }
 
-            ( (Fragment)_vue).getActivity().runOnUiThread(()->_vue.afficherListe(listeTitlesServeur, listeTitlesBD));
+            ((Fragment) _vue).getActivity().runOnUiThread(() -> _vue.afficherListe(listeTitlesServeur, listeTitlesBD));
         });
         fil_esclave.start();
     }
 
     @Override
-    public Context récupererContexte() { 
+    public Context récupererContexte() {
         return _modèle.get_contexte();
     }
 

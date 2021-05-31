@@ -15,7 +15,6 @@ public class Chapters {
     private String deadend;
     private String[] choices_description;
     private Combats[] combats;
-    private int nextChapter;
 
     public int getId() {
         return id;
@@ -37,15 +36,6 @@ public class Chapters {
         return choices;
     }
 
-    public int getNextChapter(int[] tabChoices, int choice){
-        this.nextChapter = tabChoices[choice];
-        return this.nextChapter;
-    }
-
-    public void setChoices(int[] choices) {
-        this.choices = choices;
-    }
-
     public String getDeadend() {
         return this.deadend;
     }
@@ -58,15 +48,8 @@ public class Chapters {
         return choices_description;
     }
 
-    public void setChoices_description(String[] choices_description) {
-        this.choices_description = choices_description;
-    }
-
     public Combats[] getCombats() {
         return combats;
     }
 
-    public void setCombats(Combats[] combats) {
-        this.combats = combats;
-    }
 }

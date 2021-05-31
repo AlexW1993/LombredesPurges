@@ -36,32 +36,32 @@ public class SourceDeDonnéesBDHelper extends SQLiteOpenHelper implements Source
     }
 
     @Override
-    public void ajouterAventure(String title, String url){
+    public void ajouterAventure(String title, String url) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(AventuresBDContrat.TableAventures.COLONNE_TITLE,title);
-        values.put(AventuresBDContrat.TableAventures.COLONNE_URL,url);
+        values.put(AventuresBDContrat.TableAventures.COLONNE_TITLE, title);
+        values.put(AventuresBDContrat.TableAventures.COLONNE_URL, url);
 
-        db.insert(AventuresBDContrat.TableAventures.NOM_TABLE,null, values);
+        db.insert(AventuresBDContrat.TableAventures.NOM_TABLE, null, values);
     }
 
 
     @Override
-        public void ajoterAventureJson(String title, String json) {
+    public void ajoterAventureJson(String title, String json) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(AventuresBDContrat.TableAventuresJson.COLONNE_TITLE,title);
-        values.put(AventuresBDContrat.TableAventuresJson.COLONNE_JSON,json);
+        values.put(AventuresBDContrat.TableAventuresJson.COLONNE_TITLE, title);
+        values.put(AventuresBDContrat.TableAventuresJson.COLONNE_JSON, json);
 
-        db.insert(AventuresBDContrat.TableAventuresJson.NOM_TABLE,null, values);
+        db.insert(AventuresBDContrat.TableAventuresJson.NOM_TABLE, null, values);
     }
 
     @Override
-    public ArrayList<AutreAventure> chercherTousAventures(){
+    public ArrayList<AutreAventure> chercherTousAventures() {
         SQLiteDatabase db = this.getReadableDatabase();
-        ArrayList<AutreAventure> listeAventures  = new ArrayList<>();
+        ArrayList<AutreAventure> listeAventures = new ArrayList<>();
 
         String[] projection = {
                 BaseColumns._ID,
@@ -69,10 +69,10 @@ public class SourceDeDonnéesBDHelper extends SQLiteOpenHelper implements Source
                 AventuresBDContrat.TableAventures.COLONNE_URL
         };
 
-        Cursor cursor = db.query(AventuresBDContrat.TableAventures.NOM_TABLE,projection,null,null,null,null,null);
+        Cursor cursor = db.query(AventuresBDContrat.TableAventures.NOM_TABLE, projection, null, null, null, null, null);
 
-        if (cursor != null){
-            for(cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()){
+        if (cursor != null) {
+            for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
                 AutreAventure aventure = new AutreAventure();
                 aventure.setTitle(cursor.getString(cursor.getColumnIndex(AventuresBDContrat.TableAventures.COLONNE_TITLE)));
                 aventure.setUrl(cursor.getString(cursor.getColumnIndex(AventuresBDContrat.TableAventures.COLONNE_URL)));
@@ -88,8 +88,8 @@ public class SourceDeDonnéesBDHelper extends SQLiteOpenHelper implements Source
     public ArrayList<AventureTéléchargeable> chercherAventuresJson() {
         Gson gson = new Gson();
         SQLiteDatabase db = this.getReadableDatabase();
-        ArrayList<AventureTéléchargeable> listeAventures  = new ArrayList<>();
-        AventureTéléchargeable aventure  = new AventureTéléchargeable();
+        ArrayList<AventureTéléchargeable> listeAventures = new ArrayList<>();
+        AventureTéléchargeable aventure = new AventureTéléchargeable();
 
         String[] projection = {
                 BaseColumns._ID,
@@ -97,11 +97,11 @@ public class SourceDeDonnéesBDHelper extends SQLiteOpenHelper implements Source
                 AventuresBDContrat.TableAventuresJson.COLONNE_JSON
         };
 
-        Cursor cursor = db.query(AventuresBDContrat.TableAventuresJson.NOM_TABLE,projection,null,null,null,null,null);
-        if (cursor != null){
-            for(cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()){
+        Cursor cursor = db.query(AventuresBDContrat.TableAventuresJson.NOM_TABLE, projection, null, null, null, null, null);
+        if (cursor != null) {
+            for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
                 String json = cursor.getString(cursor.getColumnIndex(AventuresBDContrat.TableAventuresJson.COLONNE_JSON));
-                aventure = gson.fromJson(json,AventureTéléchargeable.class);
+                aventure = gson.fromJson(json, AventureTéléchargeable.class);
                 listeAventures.add(aventure);
             }
             return listeAventures;
@@ -111,10 +111,10 @@ public class SourceDeDonnéesBDHelper extends SQLiteOpenHelper implements Source
     }
 
     @Override
-    public void reset(){
+    public void reset() {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(AventuresBDContrat.TableAventures.NOM_TABLE,null,null);
-        db.delete(AventuresBDContrat.TableAventuresJson.NOM_TABLE,null,null);
+        db.delete(AventuresBDContrat.TableAventures.NOM_TABLE, null, null);
+        db.delete(AventuresBDContrat.TableAventuresJson.NOM_TABLE, null, null);
     }
 
     @Override

@@ -15,5 +15,4 @@ public class SauvegarderAventure {
         _source.ajouterAventure(aventure.getTitle(), aventure.getUrl());
         _source.ajoterAventureJson(aventure.getTitle(),aventureJson);
     }
-
 }

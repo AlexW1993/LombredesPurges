@@ -27,23 +27,23 @@ public class Ennemie {
         this._intelligence = intelligence;
     }
 
-    public Ennemie(){
+    public Ennemie() {
 
     }
 
-    public void setForce(int force){
+    public void setForce(int force) {
         this._force = force;
     }
 
-    public void setNom(String nom){
+    public void setNom(String nom) {
         this._nom = nom;
     }
 
-    public void setEndurance(int endurance){
+    public void setEndurance(int endurance) {
         this._endurance = endurance;
     }
 
-    public void setCoefAttaque(int coefAttaque){
+    public void setCoefAttaque(int coefAttaque) {
         this.coefAttaque = coefAttaque;
     }
 
@@ -114,7 +114,7 @@ public class Ennemie {
      * La méthode permet de calculer la coeficience d'attaque
      * total d'un ennemie.
      */
-    public void calculerCoefAttaqueEnnemi(){
+    public void calculerCoefAttaqueEnnemi() {
         int dé = new Random().nextInt((6 - 1) + 1) + 1;
         coefAttaque = _agilité + dé;
     }
@@ -125,7 +125,7 @@ public class Ennemie {
      *
      * @param coefAttaqueAttaquant, la coeficience d'attaque du personnage.
      */
-    public void calculerCoefDéfense(int coefAttaqueAttaquant){
+    public void calculerCoefDéfense(int coefAttaqueAttaquant) {
         coefDéfence = coefAttaqueAttaquant - coefAttaque;
     }
 
@@ -134,7 +134,7 @@ public class Ennemie {
      *
      * @param forceAttaquant, la force d'attaque du personnage.
      */
-    public void calculerEtRecevoirDommage(int forceAttaquant){
+    public void calculerEtRecevoirDommage(int forceAttaquant) {
         dommages = coefDéfence * forceAttaquant;
         _endurance -= dommages;
     }

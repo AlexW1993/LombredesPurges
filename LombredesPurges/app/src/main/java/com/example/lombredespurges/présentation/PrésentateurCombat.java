@@ -7,7 +7,7 @@ import com.example.lombredespurges.modele.Modèle;
 import java.util.ArrayList;
 
 
-public class PrésentateurCombat implements IContratPrésentateurVueCombat.IPrésentateurCombat{
+public class PrésentateurCombat implements IContratPrésentateurVueCombat.IPrésentateurCombat {
 
     /**
      * Declaration des Attributs
@@ -30,13 +30,13 @@ public class PrésentateurCombat implements IContratPrésentateurVueCombat.IPré
      * La méthode permet de creer une ennemie avec tous ses attibuts.
      */
     @Override
-    public void creationEnnemie(String typeAventure){
+    public void creationEnnemie(String typeAventure) {
 
-        if(typeAventure.equals("ancien")) {
+        if (typeAventure.equals("ancien")) {
             _modèle.creationEnnemie();
         }
 
-        if(typeAventure.equals("telechargeable")){
+        if (typeAventure.equals("telechargeable")) {
             _modèle.creationEnnemieAventureTelecharge();
         }
     }
@@ -46,7 +46,7 @@ public class PrésentateurCombat implements IContratPrésentateurVueCombat.IPré
      * La méthode permet de chercher et afficher le nom du personnage.
      */
     @Override
-    public void getNomPersonnage(){
+    public void getNomPersonnage() {
         String nom;
     }
 
@@ -54,20 +54,20 @@ public class PrésentateurCombat implements IContratPrésentateurVueCombat.IPré
      * La méthode permet de chercher et afficher tous les attributs du personnage.
      */
     @Override
-    public void getAttributsPersonnage(){
+    public void getAttributsPersonnage() {
         ArrayList<Integer> attributs = new ArrayList();
         attributs.add(_modèle.getPersonnage().get_force());
         attributs.add(_modèle.getPersonnage().get_agilité());
         attributs.add(_modèle.getPersonnage().get_endurance());
         String nom = _modèle.getPersonnage().get_nom();
-        _vue.afficherAttributsPersonnage(attributs,nom);
+        _vue.afficherAttributsPersonnage(attributs, nom);
     }
 
     /**
      * La méthode permet de chercher et afficher le nom de l'ennemi.
      */
     @Override
-    public void getNomEnnemie(){
+    public void getNomEnnemie() {
         String nom = _modèle.getEnnemie().get_nom();
         _vue.afficherNomEnnemie(nom);
     }
@@ -76,7 +76,7 @@ public class PrésentateurCombat implements IContratPrésentateurVueCombat.IPré
      * La méthode permet de chercher et afficher tous les attributs de l'ennemi.
      */
     @Override
-    public void getAttributsEnnemie(){
+    public void getAttributsEnnemie() {
         ArrayList<Integer> attributs = new ArrayList();
         attributs.add(_modèle.getEnnemie().get_force());
         attributs.add(_modèle.getEnnemie().get_agilité());
@@ -90,23 +90,23 @@ public class PrésentateurCombat implements IContratPrésentateurVueCombat.IPré
      * @param tourJoueur, (boolean) vrai si c'est le tour du personnage, faux si ce n'est pas le tur de personnage.
      */
     @Override
-    public void tourDAttaquer(boolean tourJoueur){
+    public void tourDAttaquer(boolean tourJoueur) {
 
-        if (tourJoueur){
+        if (tourJoueur) {
             _modèle.getEnnemie().calculerCoefDéfense(_modèle.getPersonnage().getCoefAttaque());
             _modèle.getEnnemie().calculerEtRecevoirDommage(_modèle.getPersonnage().get_force());
-            if(_modèle.getEnnemie().get_endurance() <= 0){
+            if (_modèle.getEnnemie().get_endurance() <= 0) {
                 _vue.gestionAction(1);
-            }else{
+            } else {
                 _vue.gestionAction(2);
             }
-        }else{
+        } else {
             _modèle.getPersonnage().calculerCoefDéfense(_modèle.getEnnemie().getCoefAttaque());
             _modèle.getPersonnage().calculerEtRecevoirDommage(_modèle.getEnnemie().get_force());
-            if(_modèle.getPersonnage().get_endurance() <= 0) {
+            if (_modèle.getPersonnage().get_endurance() <= 0) {
                 _vue.gestionAction(3);
 
-            }else{
+            } else {
                 _vue.gestionAction(4);
             }
         }
@@ -117,11 +117,11 @@ public class PrésentateurCombat implements IContratPrésentateurVueCombat.IPré
      * et de l'ennemie.
      */
     @Override
-    public void calculerCoefAttaque(){
+    public void calculerCoefAttaque() {
         _modèle.calculerCoefAttaque();
         _modèle.comparaisonCoefAttaque();
 
-        _vue.afficherCoefAttaque(_modèle.getPersonnage().getCoefAttaque(),_modèle.getEnnemie().getCoefAttaque(),_modèle.comparaisonCoefAttaque());
+        _vue.afficherCoefAttaque(_modèle.getPersonnage().getCoefAttaque(), _modèle.getEnnemie().getCoefAttaque(), _modèle.comparaisonCoefAttaque());
     }
 
     /**
@@ -130,23 +130,23 @@ public class PrésentateurCombat implements IContratPrésentateurVueCombat.IPré
      * @param (accion,tourJoueur) .(int) l'action à realiser, (boolean) vrai si c'est le tour du personnage, faux si ce n'est pas le tur de personnage.
      */
     @Override
-    public void faireAccionAttaquer(int accion, boolean tourJoueur){
+    public void faireAccionAttaquer(int accion, boolean tourJoueur) {
         int dommage = 0;
-        if (tourJoueur){
-            _vue.setTextDefencéEndurenceEnnemie(_modèle.getEnnemie().getCoefDéfence(),_modèle.getEnnemie().get_endurance());
-            if(accion == 1){
+        if (tourJoueur) {
+            _vue.setTextDefencéEndurenceEnnemie(_modèle.getEnnemie().getCoefDéfence(), _modèle.getEnnemie().get_endurance());
+            if (accion == 1) {
                 dommage = _modèle.getEnnemie().getDommages();
                 _vue.faireAction1(dommage);
-            }else if (accion == 2){
+            } else if (accion == 2) {
                 dommage = _modèle.getEnnemie().getDommages();
                 _vue.faireAction2(dommage);
             }
-        }else{
-            _vue.setTextDefencéEndurencePersonnage(_modèle.getPersonnage().getCoefDéfence(),_modèle.getPersonnage().get_endurance());
-            if(accion == 3) {
+        } else {
+            _vue.setTextDefencéEndurencePersonnage(_modèle.getPersonnage().getCoefDéfence(), _modèle.getPersonnage().get_endurance());
+            if (accion == 3) {
                 dommage = _modèle.getPersonnage().getDommages();
                 _vue.faireAction3(dommage);
-            }else if (accion == 4){
+            } else if (accion == 4) {
                 dommage = _modèle.getPersonnage().getDommages();
                 _vue.faireAction4(dommage);
             }
@@ -155,7 +155,6 @@ public class PrésentateurCombat implements IContratPrésentateurVueCombat.IPré
 
     /**
      * La méthode permet changer la race.
-     *
      */
     @Override
     public void changerRace() {
@@ -172,19 +171,18 @@ public class PrésentateurCombat implements IContratPrésentateurVueCombat.IPré
 
     /**
      * La méthode permet d'afficher le chapitre que suivre après le combate.
-     *
      */
     @Override
     public void passerAuChapitreApresCombat(String typeAventure) {
-        if(typeAventure.equals("ancien")) {
+        if (typeAventure.equals("ancien")) {
             _modèle.getAventureChoisie().getChapitreCourante().set_combat(false);
             _vue.passerAuChapitre();
         }
 
-        if(typeAventure.equals("telechargeable")){
+        if (typeAventure.equals("telechargeable")) {
             Combats[] combats = _modèle.getChapitreCourant().getCombats();
-            for(int i=0;i<combats.length;i++){
-                if(combats[i].getEnemy().equals(_modèle.getEnnemie().get_nom())){
+            for (int i = 0; i < combats.length; i++) {
+                if (combats[i].getEnemy().equals(_modèle.getEnnemie().get_nom())) {
                     _modèle.setCombat(i);
                     _vue.passerAuChapitreTelechargeable();
                 }
@@ -194,7 +192,6 @@ public class PrésentateurCombat implements IContratPrésentateurVueCombat.IPré
 
     /**
      * La méthode permet reinitiliser le jeu et retourber dans la page de titre.
-     *
      */
     @Override
     public void passerPageTitre() {

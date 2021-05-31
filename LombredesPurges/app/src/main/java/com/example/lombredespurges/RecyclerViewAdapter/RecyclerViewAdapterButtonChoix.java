@@ -28,14 +28,14 @@ public class RecyclerViewAdapterButtonChoix extends RecyclerView.Adapter<Recycle
     @NonNull
     @Override
     public ViewHolderChapitre onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = _inflater.inflate(R.layout.button_choix,parent,false);
+        View view = _inflater.inflate(R.layout.button_choix, parent, false);
         return new ViewHolderChapitre(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolderChapitre holder, int position) {
         holder.btnChoix.setText(descriptionChoix[position]);
-        holder.btnChoix.setOnClickListener(new View.OnClickListener(){
+        holder.btnChoix.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -46,15 +46,16 @@ public class RecyclerViewAdapterButtonChoix extends RecyclerView.Adapter<Recycle
 
     @Override
     public int getItemCount() {
-        if(descriptionChoix != null){
+        if (descriptionChoix != null) {
             return descriptionChoix.length;
-        }else{
+        } else {
             return 0;
         }
     }
 
-    public class ViewHolderChapitre extends RecyclerView.ViewHolder{
+    public class ViewHolderChapitre extends RecyclerView.ViewHolder {
         Button btnChoix;
+
         public ViewHolderChapitre(@NonNull View itemView) {
             super(itemView);
             btnChoix = itemView.findViewById(R.id.buttonChoix);

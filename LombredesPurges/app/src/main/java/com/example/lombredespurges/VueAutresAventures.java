@@ -94,12 +94,12 @@ public class VueAutresAventures extends Fragment implements IContratPrésentateu
             _listeAventures.setLayoutManager(new LinearLayoutManager(_présentateurListeAventures.récupererContexte()));
             _adapter = new RecyclerViewAdapterAventure(_présentateurListeAventures.récupererContexte(), null, listeBD, _présentateurListeAventures);
             _listeAventures.setAdapter(_adapter);
-        }else if (listeServeur == null && listeBD == null){
+        } else if (listeServeur == null && listeBD == null) {
             _message.setVisibility(View.VISIBLE);
             _message.setText("Les nouvelles aventures ne peuvent être chargées.");
         } else {
             _listeAventures.setLayoutManager(new LinearLayoutManager(_présentateurListeAventures.récupererContexte()));
-            _adapter = new RecyclerViewAdapterAventure(_présentateurListeAventures.récupererContexte(), listeServeur, listeBD,_présentateurListeAventures);
+            _adapter = new RecyclerViewAdapterAventure(_présentateurListeAventures.récupererContexte(), listeServeur, listeBD, _présentateurListeAventures);
             _listeAventures.setAdapter(_adapter);
         }
 
