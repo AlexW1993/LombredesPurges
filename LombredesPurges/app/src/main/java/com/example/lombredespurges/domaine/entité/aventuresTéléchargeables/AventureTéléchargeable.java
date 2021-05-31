@@ -1,7 +1,5 @@
 package com.example.lombredespurges.domaine.entité.aventuresTéléchargeables;
 
-import java.util.ArrayList;
-
 public class AventureTéléchargeable {
     /**
      * Declaration des Aventure
@@ -19,29 +17,19 @@ public class AventureTéléchargeable {
     public String getTitle() {
         return title;
     }
-
     /**
-     * Mutateur de title
+     * Accesseurs du chapitres courant de l'aventure
      *
-     * @param title, le title de l'aventure
+     * @return (Chapters) le chapitre courant de l'aventure.
      */
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    /**
-     * Accesseurs du tableau de chapitres de l'aventure
-     *
-     * @return (Chapters[]) le tableau de chapitres de l'aventure.
-     */
-    public Chapters[] getChapters() {
-        return chapters;
-    }
-
     public Chapters getChapterCourant() {
         return chapterCourant;
     }
-
+    /**
+     * Mutateur du chapitres courant de l'aventure
+     *
+     * @param chapterCourant, le nouveau chapitre courant de l'aventure.
+     */
     public void setChapterCourant(Chapters chapterCourant) {
         this.chapterCourant = chapterCourant;
     }
@@ -55,6 +43,11 @@ public class AventureTéléchargeable {
         this.chapters = chapters;
     }
 
+    /**
+     * Méthode qui permet de passer au chapitre suivant
+     *
+     * @param choix, le numéro du choix selectionné
+     */
     public void passerAuProchainChapitreAventureTéléchargeable(int choix) {
         for (int i = 0; i < chapters.length; i++) {
             if (choix == chapters[i].getId()) {
@@ -64,6 +57,9 @@ public class AventureTéléchargeable {
         }
     }
 
+    /**
+     * Méthode qui permet de revenir au premier chapire
+     */
     public void reinitialiserAvantureTelechargeable() {
         chapterCourant = chapters[0];
         for (Chapters unChapitre : chapters) {
@@ -75,6 +71,9 @@ public class AventureTéléchargeable {
         }
     }
 
+    /**
+     * Méthode qui permet de gérer vers quel chapitre se rendre
+     */
     public Chapters gestionChapitreCorant() {
         if (!aCommence) {
             this.chapterCourant = chapters[0];

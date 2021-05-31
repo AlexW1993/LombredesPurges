@@ -15,6 +15,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 
@@ -35,6 +37,7 @@ public class VueAutresAventures extends Fragment implements IContratPrésentateu
     private RecyclerView _listeAventures;
     private RecyclerViewAdapterAventure _adapter;
     private TextView _message;
+    private ProgressBar spinner;
 
     public VueAutresAventures() {
         // Required empty public constructor
@@ -69,22 +72,26 @@ public class VueAutresAventures extends Fragment implements IContratPrésentateu
         _listeAventures = view.findViewById(R.id.listeAventures);
         _message = view.findViewById(R.id.messageSansConnexion);
         _message.setVisibility(View.INVISIBLE);
-
+        spinner = (ProgressBar)view.findViewById(R.id.progressBar1);
+        spinner.setVisibility(View.INVISIBLE);
         _présentateurListeAventures = new PrésentateurListeAventures(this);
-
         _présentateurListeAventures.récupererListe();
+
 
         _btnRetourner.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        spinner.setVisibility(View.VISIBLE);
                         _navController.navigate(R.id.vueMenuAventures);
                     }
                 }
         );
     }
 
-
+    /**
+     * La méthode permet d'afficher la liste des aventures
+     */
     @Override
     public void afficherListe(ArrayList<String> listeServeur, ArrayList<String> listeBD) {
 

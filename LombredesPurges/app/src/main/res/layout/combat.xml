@@ -309,7 +309,7 @@
                 android:shadowRadius="60"
                 android:text="Coef. Attaque"
                 android:textColor="#DAC614"
-                android:textSize="18sp"
+                android:textSize="14sp"
                 android:textStyle="bold" />
 
             <TextView

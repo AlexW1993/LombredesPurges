@@ -42,7 +42,6 @@ public class VueCombat extends Fragment implements IContratPrésentateurVueComba
     private TextView endurancePersonnage;
     private TextView défencePersonnage;
     private TextView nomPersonnage;
-
     private TextView coefAttaqueEnnemi;
     private TextView forceEnnemie;
     private TextView agilitéEnnemie;
@@ -94,7 +93,6 @@ public class VueCombat extends Fragment implements IContratPrésentateurVueComba
         présentateurCombat.getAttributsPersonnage();
         défencePersonnage = view.findViewById(R.id.defenceheros);
         coefAttaquePersonnage = view.findViewById(R.id.coefAttaquePersonnage);
-
         nomEnnemi = view.findViewById(R.id.nomEnnemi);
         présentateurCombat.getNomEnnemie();
         forceEnnemie = view.findViewById(R.id.forcepurge);
