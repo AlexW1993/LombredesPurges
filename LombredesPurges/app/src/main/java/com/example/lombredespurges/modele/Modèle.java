@@ -259,4 +259,8 @@ public class Modèle {
         }
         setChapitreCourant(this.prochainChapitre);
     }
+
+    public void reinitialiserAvantureTelechargeable(){
+        this.chapitreCourante =_aventureTéléchargeableChoisie.getChapters()[0];
+    }
 }

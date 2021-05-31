@@ -56,7 +56,7 @@ public class PrésentateurAventureTéléchargeable implements IContratPrésentat
      */
     @Override
     public void réinitialierJeu() {
-        _modèle.réanitialierJeu();
+        _modèle.reinitialiserAvantureTelechargeable();
         _vue.passerPageTitre();
     }
 

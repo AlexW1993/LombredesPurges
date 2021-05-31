@@ -84,6 +84,13 @@ public class VueAventureTéléchargeable extends Fragment implements IContratPr�
 
         bundle = new Bundle();
 
+        btnPageTitre.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                présentateurAventureTéléchargeable.réinitialierJeu();
+            }
+        });
+
 
     }
 

@@ -91,7 +91,8 @@ public class RecyclerViewAdapterAventure extends RecyclerView.Adapter<RecyclerVi
                     }).start();
                     Bundle bundle = new Bundle();
                     bundle.putString("race", "");
-                    holder.itemView.setOnClickListener(Navigation.createNavigateOnClickListener(holder.aventureTele, bundle));
+                    Navigation.findNavController(v).navigate(holder.aventureTele,bundle);
+                    //holder.itemView.setOnClickListener(Navigation.createNavigateOnClickListener(holder.aventureTele, bundle));
                 }
             });
         } else {
