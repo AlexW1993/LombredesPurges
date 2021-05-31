@@ -19,7 +19,7 @@ public class PrésentateurCreationPersonnage implements IContratPrésentateurVue
      *
      * @param vue, la vue CreationPersonnage.
      */
-    public PrésentateurCreationPersonnage(IContratPrésentateurVueCreationPersonnage.IVueCreationPersonnage vue){
+    public PrésentateurCreationPersonnage(IContratPrésentateurVueCreationPersonnage.IVueCreationPersonnage vue) {
         this._vue = vue;
         _modèle = Modèle.getInstance();
 
@@ -27,26 +27,25 @@ public class PrésentateurCreationPersonnage implements IContratPrésentateurVue
 
     /**
      * La méthode permet de analiser le choix du race.
-     *
      */
     @Override
-    public void choisirRace(String nomRace){
+    public void choisirRace(String nomRace) {
         int description = 0;
         int codeImage = 0;
         if (nomRace.equals("Via")) {
             description = R.string.descriptionVia;
             codeImage = R.drawable.via;
         } else if (nomRace.equals("Kachikam")) {
-            description = R.string.descriptionKaqchikam ;
+            description = R.string.descriptionKaqchikam;
             codeImage = R.drawable.kaqchikam;
         } else if (nomRace.equals("Dino")) {
             description = R.string.descriptionDino;
             codeImage = R.drawable.dinoh;
-        } else{
+        } else {
             description = R.string.descriptionNull;
             codeImage = R.drawable.dinoh;
         }
-        _vue.setRace(nomRace,description,codeImage);
+        _vue.setRace(nomRace, description, codeImage);
         _modèle.determinerAventureChoisie(nomRace);
 
     }
@@ -57,7 +56,7 @@ public class PrésentateurCreationPersonnage implements IContratPrésentateurVue
      * @param (nom,force,endurance,agilité,intelligence), les information du personnage.
      */
     @Override
-    public void créationPersonnage(String nom, int force, int endurance, int agilité, int intelligence){
+    public void créationPersonnage(String nom, int force, int endurance, int agilité, int intelligence) {
         _modèle.creationPersonnage(nom, force, endurance, agilité, intelligence);
     }
 
@@ -67,26 +66,26 @@ public class PrésentateurCreationPersonnage implements IContratPrésentateurVue
      * @param attribut, (String) l'attribut a être calculer.
      */
     @Override
-    public void calculerAttribut(String attribut){
+    public void calculerAttribut(String attribut) {
         int num = 0;
         int total = 0;
 
-        if (attribut.equals("force")){
+        if (attribut.equals("force")) {
             num = new Random().nextInt((6 - 1) + 1) + 1;
-            total =  10 + num;
+            total = 10 + num;
             _vue.ajouterForcePersonnage(total);
 
-        } else if (attribut.equals("endurance") == true){
-            num =  new Random().nextInt((10 - 1) + 1) + 1;
+        } else if (attribut.equals("endurance") == true) {
+            num = new Random().nextInt((10 - 1) + 1) + 1;
             total = 20 + (3 * num);
             _vue.ajouterEndurancePersonnage(total);
-        } else if (attribut.equals("agilité") == true){
+        } else if (attribut.equals("agilité") == true) {
             num = new Random().nextInt((6 - 1) + 1) + 1;
-            total =  10 + num;
+            total = 10 + num;
             _vue.ajouterAgilitéPersonnage(total);
-        } else if (attribut.equals("intelligence") == true){
+        } else if (attribut.equals("intelligence") == true) {
             num = new Random().nextInt((6 - 1) + 1) + 1;
-            total =  5 + num;
+            total = 5 + num;
             _vue.ajouterIntelligencePersonnage(total);
         }
     }

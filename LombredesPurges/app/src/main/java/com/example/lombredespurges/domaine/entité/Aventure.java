@@ -25,8 +25,9 @@ public class Aventure {
      *
      * @return (Chapitre) le chapitre Courante.
      */
-    public Chapitre getChapitreCourante(){
+    public Chapitre getChapitreCourante() {
         return chapitreCourante;
+
     }
 
     /**
@@ -43,7 +44,7 @@ public class Aventure {
      *
      * @param choix, (int) la choix que le joueur à fait pour continuer l'aventure.
      */
-    public void passerAuProchainChapitre(int choix){
+    public void passerAuProchainChapitre(int choix) {
 
         int prochainChapitre = chapitreCourante.get_prochainChapitre(choix);
 

@@ -95,7 +95,7 @@ public class Personnage implements Serializable {
      * La méthode permet de calculer la coeficience d'attaque
      * total du personnage.
      */
-    public void calculerCoefAttaquePersonnage(){
+    public void calculerCoefAttaquePersonnage() {
         int dé = new Random().nextInt((6 - 1) + 1) + 1;
         coefAttaque = _agilité + dé;
     }
@@ -106,7 +106,7 @@ public class Personnage implements Serializable {
      *
      * @param coefAttaqueAttaquant, la coeficience d'attaque de l'ennemi.
      */
-    public void calculerCoefDéfense(int coefAttaqueAttaquant){
+    public void calculerCoefDéfense(int coefAttaqueAttaquant) {
         coefDéfence = coefAttaqueAttaquant - coefAttaque;
     }
 
@@ -115,7 +115,7 @@ public class Personnage implements Serializable {
      *
      * @param forceAttaquant, la force d'attaque de l'ennemi.
      */
-    public void calculerEtRecevoirDommage(int forceAttaquant){
+    public void calculerEtRecevoirDommage(int forceAttaquant) {
         dommages = coefDéfence * forceAttaquant;
         _endurance -= dommages;
     }

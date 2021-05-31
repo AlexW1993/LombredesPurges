@@ -15,8 +15,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Modèle modèle =Modèle.getInstance();
-        modèle.set_sourceHTTP( new SourceDeDonnéesHTTP( this, "https://hugocodestar.github.io/site/adventurelist.json"));
+        Modèle modèle = Modèle.getInstance();
+        modèle.set_sourceHTTP(new SourceDeDonnéesHTTP(this, "https://hugocodestar.github.io/site/adventurelist.json"));
         modèle.set_contexte(this);
         bdHelper = new SourceDeDonnéesBDHelper(this);
         modèle.set_sourceBD(bdHelper);

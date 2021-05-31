@@ -38,41 +38,30 @@ public class Modèle {
     private ArrayList<AventureTéléchargeable> _listeAventuresTéléchargeableBD;
     private AventureTéléchargeable _aventureTéléchargeableChoisie;
     private Context _contexte;
-    private boolean aCommence;
-    private Chapters chapitreCourante;
-    private Chapters prochainChapitre = null;
 
     /**
      * Constructeur du Modèle.
      */
-    private Modèle(){
+    private Modèle() {
         this._listeAventure = new Creation().CréationJeu();
     }
 
     /**
      * La méthode permet la creation d'un modèle ou s'il existe, il va l'ajouter dans une variable.
      *
-     * @return  (Modèle) le modèle de l'application.
+     * @return (Modèle) le modèle de l'application.
      */
-    public static Modèle getInstance(){
-        if (modèle == null){
+    public static Modèle getInstance() {
+        if (modèle == null) {
             modèle = new Modèle();
         }
-        return modèle;
-    }
-
-    public Modèle getInstance(int idChapitreCourant){
-        if (modèle == null){
-            modèle = new Modèle();
-        }
-        this._numeroChapitreCourant =idChapitreCourant;
         return modèle;
     }
 
     /**
      * La méthode permet de réinitialiser la liste d'histoire dans le jeu.
      */
-    public void réanitialierJeu(){
+    public void réanitialierJeu() {
 
         this._listeAventure = new Creation().CréationJeu();
     }
@@ -82,17 +71,22 @@ public class Modèle {
      *
      * @param (nom,force,endurance,agilité,intelligence), le nom et les attributs du personnage.
      */
-    public void creationPersonnage(String nom, int force, int endurance, int agilité, int intelligence){
+    public void creationPersonnage(String nom, int force, int endurance, int agilité, int intelligence) {
         _personnage = new Creation().CreationPersonnage(nom, force, endurance, agilité, intelligence);
     }
 
     /**
      * La méthode permet retourer savoir quell'est el chapitre courante.
      *
-     * @return  (_aventureChoisie.getChapitreCourante()) le  chapitre Courante.
+     * @return (_aventureChoisie.getChapitreCourante ()) le  chapitre Courante.
      */
-    public Chapitre déterminerChapitreCourant(){
+    public Chapitre déterminerChapitreCourant() {
+
         return _aventureChoisie.getChapitreCourante();
+    }
+
+    public Chapters getChapitreCourant() {
+        return _aventureTéléchargeableChoisie.getChapterCourant();
     }
 
     /**
@@ -100,7 +94,7 @@ public class Modèle {
      *
      * @param (choix), le choix que le joueur a fait pour le chapitre suivant.
      */
-    public void passerAuProchainChapitre(int choix){
+    public void passerAuProchainChapitre(int choix) {
         _aventureChoisie.passerAuProchainChapitre(choix);
     }
 
@@ -109,9 +103,9 @@ public class Modèle {
      *
      * @param (nomAventure), l'aventure choisie.
      */
-    public void determinerAventureChoisie(String nomAventure){
-        for( Aventure uneAventure : _listeAventure){
-            if(uneAventure.get_nomAventure().trim().equals(nomAventure)){
+    public void determinerAventureChoisie(String nomAventure) {
+        for (Aventure uneAventure : _listeAventure) {
+            if (uneAventure.get_nomAventure().trim().equals(nomAventure)) {
                 _aventureChoisie = uneAventure;
             }
         }
@@ -120,15 +114,15 @@ public class Modèle {
     /**
      * La méthode permet d'appeler la methode pour la creation d'un ennemie.
      */
-    public void creationEnnemie( ){
+    public void creationEnnemie() {
         _ennemie = new Creation().CreationEnnemie();
     }
 
-    public void creationEnnemieAventureTelecharge(){
+    public void creationEnnemieAventureTelecharge() {
         _ennemie = new Ennemie();
-        Combats[] combats = chapitreCourante.getCombats();
-        for (Combats combat : combats){
-            if(!combat.isTerminé()){
+        Combats[] combats = _aventureTéléchargeableChoisie.getChapterCourant().getCombats();
+        for (Combats combat : combats) {
+            if (!combat.isTerminé()) {
                 _ennemie.setNom(combat.getEnemy());
                 _ennemie.setCoefAttaque(combat.getCombatskill());
                 _ennemie.setEndurance(combat.getEndurance());
@@ -136,7 +130,6 @@ public class Modèle {
                 break;
             }
         }
-
     }
 
     /**
@@ -144,12 +137,12 @@ public class Modèle {
      *
      * @return l'ennemi.
      */
-    public Ennemie getEnnemie(){
+    public Ennemie getEnnemie() {
         return _ennemie;
     }
 
-    public void setCombat(int positionCombat){
-        chapitreCourante.getCombats()[positionCombat].setTerminé(true);
+    public void setCombat(int positionCombat) {
+        _aventureTéléchargeableChoisie.getChapterCourant().getCombats()[positionCombat].setTerminé(true);
     }
 
     /**
@@ -157,134 +150,110 @@ public class Modèle {
      *
      * @return le personnage.
      */
-    public Personnage getPersonnage(){return _personnage;}
+    public Personnage getPersonnage() {
+        return _personnage;
+    }
 
     /**
      * Accesseurs de l'aventure Courante.
      *
      * @return l'aventure Courante.
      */
-    public Aventure getAventureChoisie(){return _aventureChoisie;}
+    public Aventure getAventureChoisie() {
+        return _aventureChoisie;
+    }
 
-    public AventureTéléchargeable getAventureTéléchargeableChoisie(){
+    public AventureTéléchargeable getAventureTéléchargeableChoisie() {
         return this._aventureTéléchargeableChoisie;
     }
 
     /**
      * La méthode permet d'appeler les methodes pour calculer la coeficience d'attaquer du personnage et de l'ennemie
      */
-    public void calculerCoefAttaque(){
+    public void calculerCoefAttaque() {
         _ennemie.calculerCoefAttaqueEnnemi();
         _personnage.calculerCoefAttaquePersonnage();
     }
 
     /**
      * La méthode permet de comparer le coeficience d'attaquer du personnage avec
-    * la coeficience d'attaque de l'ennemie.
-    *
-    * @return (boolean) (true) si le coeficience d'attaque du personnage est plus grand
-    * ou égale, (false) si le coeficience d'attaque de l'ennemie est plus grand.
-    */
-    public boolean comparaisonCoefAttaque(){
-        if(_personnage.getCoefAttaque() >= _ennemie.getCoefAttaque()){
+     * la coeficience d'attaque de l'ennemie.
+     *
+     * @return (boolean) (true) si le coeficience d'attaque du personnage est plus grand
+     * ou égale, (false) si le coeficience d'attaque de l'ennemie est plus grand.
+     */
+    public boolean comparaisonCoefAttaque() {
+        if (_personnage.getCoefAttaque() >= _ennemie.getCoefAttaque()) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
 
-    public Context get_contexte(){
+    public Context get_contexte() {
         return _contexte;
     }
 
-    public void set_contexte(Context ctx){
+    public void set_contexte(Context ctx) {
         _contexte = ctx;
     }
 
-    public void set_sourceHTTP(SourceDeDonnées source){
+    public void set_sourceHTTP(SourceDeDonnées source) {
         _sourceHTTP = source;
     }
 
-    public void set_sourceBD(SourceDeDonnées source){
+    public void set_sourceBD(SourceDeDonnées source) {
         _sourceBD = source;
     }
 
-    public ArrayList<AutreAventure> chercherListeAventuresServeur(){
-        if(_listeAutresAventuresServeur == null){
+    public ArrayList<AutreAventure> chercherListeAventuresServeur() {
+        if (_listeAutresAventuresServeur == null) {
             _listeAutresAventuresServeur = new RécupérerAventure(_sourceHTTP).récupérerListeAventureServeur();
         }
-        return  _listeAutresAventuresServeur;
+        return _listeAutresAventuresServeur;
     }
 
-    public ArrayList<AutreAventure> chercherAventuresBD(){
-        if(_listeAutresAventuresBD == null ){
+    public ArrayList<AutreAventure> chercherAventuresBD() {
+        if (_listeAutresAventuresBD == null) {
             _listeAutresAventuresBD = new RécupérerAventure(_sourceBD).récupérerAventuresBD();
             _listeAventuresTéléchargeableBD = new RécupérerAventure(_sourceBD).récupérerAventuresTéléchargeablesBD();
         }
-        return  _listeAutresAventuresBD;
+        return _listeAutresAventuresBD;
     }
 
-    public void sauvegarderAventure(String title){
+    public void sauvegarderAventure(String title) {
         AutreAventure aventure = new AutreAventure();
 
-        for (int i = 0; i < _listeAutresAventuresServeur.size() ; i++) {
-            if(_listeAutresAventuresServeur.get(i).getTitle().equals(title)){
+        for (int i = 0; i < _listeAutresAventuresServeur.size(); i++) {
+            if (_listeAutresAventuresServeur.get(i).getTitle().equals(title)) {
                 aventure.setTitle(_listeAutresAventuresServeur.get(i).getTitle());
                 aventure.setUrl(_listeAutresAventuresServeur.get(i).getUrl());
             }
         }
-        SourceDeDonnées source = new SourceDeDonnéesHTTP(get_contexte(),aventure.getUrl());
-        String  aventureJson = new RécupérerAventure(source).récupérerAventureServeur();
+        SourceDeDonnées source = new SourceDeDonnéesHTTP(get_contexte(), aventure.getUrl());
+        String aventureJson = new RécupérerAventure(source).récupérerAventureServeur();
         new SauvegarderAventure(_sourceBD).SauvegarderAventureBD(aventure, aventureJson);
         _listeAutresAventuresBD = new RécupérerAventure(_sourceBD).récupérerAventuresBD();
         _listeAventuresTéléchargeableBD = new RécupérerAventure(_sourceBD).récupérerAventuresTéléchargeablesBD();
     }
 
-    public void aventureTéléchargeableÀJouer(String titleAventure){
-        for (int i = 0; i < _listeAventuresTéléchargeableBD.size() ; i++) {
-            if(_listeAventuresTéléchargeableBD.get(i).getTitle().equals(titleAventure)){
+    public void aventureTéléchargeableÀJouer(String titleAventure) {
+        for (int i = 0; i < _listeAventuresTéléchargeableBD.size(); i++) {
+            if (_listeAventuresTéléchargeableBD.get(i).getTitle().equals(titleAventure)) {
                 _aventureTéléchargeableChoisie = _listeAventuresTéléchargeableBD.get(i);
             }
         }
     }
 
-    public Chapters gestionChapitreCorant(){
-        if(!aCommence) {
-            this.chapitreCourante =_aventureTéléchargeableChoisie.getChapters()[0];
-            aCommence = true;
-        }
-
-        return this.chapitreCourante;
+    public Chapters gestionChapitreCorant() {
+        return _aventureTéléchargeableChoisie.gestionChapitreCorant();
     }
 
-    /**
-     * Accesseurs du chapitre courante
-     *
-     * @return (Chapitre) le chapitre Courante.
-     */
-    public Chapters getChapitreCourant(){
-        return this.chapitreCourante;
-    }
-
-    public void setChapitreCourant(Chapters prochainChapitre) {
-        this.chapitreCourante = prochainChapitre;
-    }
-
-    /**
-     * Méthode qui ajouete le prochaine chapitre dans le chapitreCourante.
-     *
-     * @param choix, (int) la choix que le joueur à fait pour continuer l'aventure.
-     */
     public void passerAuProchainChapitreAventureTéléchargeable(int choix) {
-        for (int i = 0; i < _aventureTéléchargeableChoisie.getChapters().length; i++) {
-            if(choix == _aventureTéléchargeableChoisie.getChapters()[i].getId()){
-                this.prochainChapitre = _aventureTéléchargeableChoisie.getChapters()[i];
-            }
-        }
-        setChapitreCourant(this.prochainChapitre);
+        _aventureTéléchargeableChoisie.passerAuProchainChapitreAventureTéléchargeable(choix);
     }
 
-    public void reinitialiserAvantureTelechargeable(){
-        this.chapitreCourante =_aventureTéléchargeableChoisie.getChapters()[0];
+    public void reinitialiserAvantureTelechargeable() {
+        _aventureTéléchargeableChoisie.reinitialiserAvantureTelechargeable();
     }
 }

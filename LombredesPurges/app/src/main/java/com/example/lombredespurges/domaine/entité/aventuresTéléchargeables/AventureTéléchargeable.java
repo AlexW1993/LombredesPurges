@@ -7,8 +7,10 @@ public class AventureTéléchargeable {
      * Declaration des Aventure
      */
     private String title;
-    private Chapters [] chapters;
+    private Chapters[] chapters;
     private Chapters chapterCourant;
+    private boolean aCommence;
+
     /**
      * Accesseurs du title de l'aventure
      *
@@ -36,12 +38,6 @@ public class AventureTéléchargeable {
         return chapters;
     }
 
-    /*public int getIdChapter(int choix){
-        chapter = chapters[choix];
-        int chapterId = chapter.getId();
-        return chapterId;
-    }*/
-
     public Chapters getChapterCourant() {
         return chapterCourant;
     }
@@ -53,12 +49,37 @@ public class AventureTéléchargeable {
     /**
      * Mutateur de title
      *
-     * @param chapters, le tableua avec les chapitres d'une aventure.
+     * @param chapters, le tableau avec les chapitres d'une aventure.
      */
-    public void setChapters(Chapters [] chapters) {
+    public void setChapters(Chapters[] chapters) {
         this.chapters = chapters;
     }
 
+    public void passerAuProchainChapitreAventureTéléchargeable(int choix) {
+        for (int i = 0; i < chapters.length; i++) {
+            if (choix == chapters[i].getId()) {
+                Chapters prochainChapitre = chapters[i];
+                setChapterCourant(prochainChapitre);
+            }
+        }
+    }
 
+    public void reinitialiserAvantureTelechargeable() {
+        chapterCourant = chapters[0];
+        for (Chapters unChapitre : chapters) {
+            if (unChapitre.getCombats() != null) {
+                for (Combats unCombat : unChapitre.getCombats()) {
+                    unCombat.setTerminé(false);
+                }
+            }
+        }
+    }
+
+    public Chapters gestionChapitreCorant() {
+        if (!aCommence) {
+            this.chapterCourant = chapters[0];
+            aCommence = true;
+        }
+        return this.chapterCourant;
+    }
 }
-

@@ -27,10 +27,6 @@ public class Combats {
         return combatskill;
     }
 
-    public void setCombatskill(int combatskill) {
-        this.combatskill = combatskill;
-    }
-
     public int getEndurance() {
         return endurance;
     }

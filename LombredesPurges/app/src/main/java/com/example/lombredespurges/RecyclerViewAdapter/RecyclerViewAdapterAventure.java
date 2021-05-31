@@ -37,17 +37,17 @@ public class RecyclerViewAdapterAventure extends RecyclerView.Adapter<RecyclerVi
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = _mInflater.inflate(R.layout.aventure_item,parent,false);
+        View view = _mInflater.inflate(R.layout.aventure_item, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public int getItemCount() {
-        if(_dataServeur != null){
+        if (_dataServeur != null) {
             return _dataServeur.size();
-        } else if (_dataServeur == null){
+        } else if (_dataServeur == null) {
             return _dataBD.size();
-        } else{
+        } else {
             return 0;
         }
     }
@@ -56,11 +56,11 @@ public class RecyclerViewAdapterAventure extends RecyclerView.Adapter<RecyclerVi
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.image.setVisibility(View.VISIBLE);
 
-        if(_dataServeur != null){
+        if (_dataServeur != null) {
             String title = _dataServeur.get(position);
-            if(_dataBD != null){
-                for (int i = 0; i <_dataBD.size() ; i++) {
-                    if (title.equals(_dataBD.get(i))){
+            if (_dataBD != null) {
+                for (int i = 0; i < _dataBD.size(); i++) {
+                    if (title.equals(_dataBD.get(i))) {
                         holder.image.setVisibility(View.INVISIBLE);
                     }
                 }
@@ -74,16 +74,16 @@ public class RecyclerViewAdapterAventure extends RecyclerView.Adapter<RecyclerVi
                         public void run() {
                             Boolean confirmationAventureDansBD = false;
 
-                            if(_dataBD == null){
+                            if (_dataBD == null) {
                                 _présentateur.sauvegarderAventure(title);
                             } else {
-                                for (int i = 0; i < _dataBD.size() ; i++) {
-                                    if(title.equals(_dataBD.get(i))){
+                                for (int i = 0; i < _dataBD.size(); i++) {
+                                    if (title.equals(_dataBD.get(i))) {
                                         confirmationAventureDansBD = true;
                                     }
                                 }
                             }
-                            if(confirmationAventureDansBD == false){
+                            if (confirmationAventureDansBD == false) {
                                 _présentateur.sauvegarderAventure(title);
                             }
                             _présentateur.aventureÀJouer(title);
@@ -91,15 +91,14 @@ public class RecyclerViewAdapterAventure extends RecyclerView.Adapter<RecyclerVi
                     }).start();
                     Bundle bundle = new Bundle();
                     bundle.putString("race", "");
-                    bundle.putString("aventure","telechargeable");
-                    Navigation.findNavController(v).navigate(R.id.creationPersonnage,bundle);
-                    //holder.itemView.setOnClickListener(Navigation.createNavigateOnClickListener(holder.aventureTele, bundle));
+                    bundle.putString("aventure", "telechargeable");
+                    Navigation.findNavController(v).navigate(R.id.creationPersonnage, bundle);
                 }
             });
         } else {
             String title = _dataBD.get(position);
-            for (int i = 0; i <_dataBD.size() ; i++) {
-                if (title.equals(_dataBD.get(i))){
+            for (int i = 0; i < _dataBD.size(); i++) {
+                if (title.equals(_dataBD.get(i))) {
                     holder.image.setVisibility(View.INVISIBLE);
                 }
             }
@@ -115,26 +114,24 @@ public class RecyclerViewAdapterAventure extends RecyclerView.Adapter<RecyclerVi
                     }).start();
                     Bundle bundle = new Bundle();
                     bundle.putString("race", "");
-                    bundle.putString("aventure","telechargeable");
-                    Navigation.findNavController(v).navigate(R.id.creationPersonnage,bundle);
+                    bundle.putString("aventure", "telechargeable");
+                    Navigation.findNavController(v).navigate(R.id.creationPersonnage, bundle);
                 }
             });
         }
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
         TextView aventure;
         ImageView image;
         Button boutonOk;
-        //int aventureTele;
 
         public ViewHolder(@NonNull View itemView) {
 
             super(itemView);
-            aventure = itemView.findViewById(R.id.texteTitleAventure );
+            aventure = itemView.findViewById(R.id.texteTitleAventure);
             image = itemView.findViewById(R.id.imageEtoile);
             boutonOk = itemView.findViewById(R.id.buttonSelectionner);
-            //aventureTele = R.id.creationPersonnage;
 
         }
     }
