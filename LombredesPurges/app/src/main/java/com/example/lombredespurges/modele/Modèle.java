@@ -11,6 +11,7 @@ import com.example.lombredespurges.domaine.entité.Ennemie;
 import com.example.lombredespurges.domaine.entité.Personnage;
 import com.example.lombredespurges.domaine.entité.aventuresTéléchargeables.AventureTéléchargeable;
 import com.example.lombredespurges.domaine.entité.aventuresTéléchargeables.Chapters;
+import com.example.lombredespurges.domaine.entité.aventuresTéléchargeables.Combats;
 import com.example.lombredespurges.domaine.interacteur.Creation;
 import com.example.lombredespurges.domaine.interacteur.RécupérerAventure;
 import com.example.lombredespurges.domaine.interacteur.SauvegarderAventure;
@@ -120,23 +121,23 @@ public class Modèle {
      * La méthode permet d'appeler la methode pour la creation d'un ennemie.
      */
     public void creationEnnemie( ){
-        if(_aventureChoisie != null){
-            _ennemie = new Creation().CreationEnnemie();
-        }else if(_aventureTéléchargeableChoisie != null){
-            System.out.println("PP");
+        _ennemie = new Creation().CreationEnnemie();
+    }
+
+    public void creationEnnemieAventureTelecharge(){
+        _ennemie = new Ennemie();
+        Combats[] combats = chapitreCourante.getCombats();
+        for (Combats combat : combats){
+            if(!combat.isTerminé()){
+                _ennemie.setNom(combat.getEnemy());
+                _ennemie.setCoefAttaque(combat.getCombatskill());
+                _ennemie.setEndurance(combat.getEndurance());
+                _ennemie.setForce(combat.getForce());
+                break;
+            }
         }
 
     }
-
-    /*public void creationEnnemieAvanturesTelechargees(){
-            _ennemie = new Ennemie();
-            _ennemie.setNom();
-            _ennemie.setCoefAttaque();
-            _ennemie.setEndurance();
-            _ennemie.setForce();
-            chapitreCourante.getCombats()
-
-    }*/
 
     /**
      * Accesseurs de l'ennemie.
@@ -145,6 +146,10 @@ public class Modèle {
      */
     public Ennemie getEnnemie(){
         return _ennemie;
+    }
+
+    public void setCombat(int positionCombat){
+        chapitreCourante.getCombats()[positionCombat].setTerminé(true);
     }
 
     /**
@@ -160,6 +165,10 @@ public class Modèle {
      * @return l'aventure Courante.
      */
     public Aventure getAventureChoisie(){return _aventureChoisie;}
+
+    public AventureTéléchargeable getAventureTéléchargeableChoisie(){
+        return this._aventureTéléchargeableChoisie;
+    }
 
     /**
      * La méthode permet d'appeler les methodes pour calculer la coeficience d'attaquer du personnage et de l'ennemie

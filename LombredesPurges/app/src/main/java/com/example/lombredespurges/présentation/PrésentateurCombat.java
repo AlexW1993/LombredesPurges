@@ -1,6 +1,7 @@
 package com.example.lombredespurges.présentation;
 
 import com.example.lombredespurges.R;
+import com.example.lombredespurges.domaine.entité.aventuresTéléchargeables.Combats;
 import com.example.lombredespurges.modele.Modèle;
 
 import java.util.ArrayList;
@@ -29,9 +30,17 @@ public class PrésentateurCombat implements IContratPrésentateurVueCombat.IPré
      * La méthode permet de creer une ennemie avec tous ses attibuts.
      */
     @Override
-    public void creationEnnemie(){
-        _modèle.creationEnnemie();
+    public void creationEnnemie(String typeAventure){
+
+        if(typeAventure.equals("ancien")) {
+            _modèle.creationEnnemie();
+        }
+
+        if(typeAventure.equals("telechargeable")){
+            _modèle.creationEnnemieAventureTelecharge();
+        }
     }
+
 
     /**
      * La méthode permet de chercher et afficher le nom du personnage.
@@ -50,7 +59,8 @@ public class PrésentateurCombat implements IContratPrésentateurVueCombat.IPré
         attributs.add(_modèle.getPersonnage().get_force());
         attributs.add(_modèle.getPersonnage().get_agilité());
         attributs.add(_modèle.getPersonnage().get_endurance());
-        _vue.afficherAttributsPersonnage(attributs);
+        String nom = _modèle.getPersonnage().get_nom();
+        _vue.afficherAttributsPersonnage(attributs,nom);
     }
 
     /**
@@ -165,9 +175,21 @@ public class PrésentateurCombat implements IContratPrésentateurVueCombat.IPré
      *
      */
     @Override
-    public void passerAuChapitreApresCombat() {
-        _modèle.getAventureChoisie().getChapitreCourante().set_combat(false);
-        _vue.passerAuChapitre();
+    public void passerAuChapitreApresCombat(String typeAventure) {
+        if(typeAventure.equals("ancien")) {
+            _modèle.getAventureChoisie().getChapitreCourante().set_combat(false);
+            _vue.passerAuChapitre();
+        }
+
+        if(typeAventure.equals("telechargeable")){
+            Combats[] combats = _modèle.getChapitreCourant().getCombats();
+            for(int i=0;i<combats.length;i++){
+                if(combats[i].getEnemy().equals(_modèle.getEnnemie().get_nom())){
+                    _modèle.setCombat(i);
+                    _vue.passerAuChapitreTelechargeable();
+                }
+            }
+        }
     }
 
     /**

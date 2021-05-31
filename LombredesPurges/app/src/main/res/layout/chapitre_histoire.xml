@@ -101,11 +101,12 @@
         android:textSize="44sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/texteChapitre"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/texteChapitre"
-        android:layout_width="220dp"
+        android:layout_width="wrap_content"
         android:layout_height="62dp"
         android:fontFamily="@font/aldrich"
         android:gravity="right|center_vertical"
@@ -115,6 +116,7 @@
         android:textSize="44sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/NumeroChapitre"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView

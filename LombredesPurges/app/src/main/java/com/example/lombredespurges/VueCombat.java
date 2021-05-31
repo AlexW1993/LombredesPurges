@@ -83,7 +83,7 @@ public class VueCombat extends Fragment implements IContratPrésentateurVueComba
         super.onViewCreated(view, savedInstanceState);
 
         présentateurCombat = new PrésentateurCombat(this);
-        présentateurCombat.creationEnnemie();
+        présentateurCombat.creationEnnemie(getArguments().getString("aventure"));
         btnContinuer = view.findViewById(R.id.btnContinuer);
         navController = Navigation.findNavController(view);
         btnContinuer.setVisibility(View.GONE);
@@ -128,7 +128,7 @@ public class VueCombat extends Fragment implements IContratPrésentateurVueComba
                     @Override
                     public void onClick(View v) {
                         if (btnContinuer.getText().equals("Continuer")){
-                            présentateurCombat.passerAuChapitreApresCombat();
+                            présentateurCombat.passerAuChapitreApresCombat(getArguments().getString("aventure"));
                         } else if (btnContinuer.getText().equals("Page titre")){
                             présentateurCombat.passerPageTitre();
                         }
@@ -142,7 +142,8 @@ public class VueCombat extends Fragment implements IContratPrésentateurVueComba
      * @param attributs, les attribus du personnage.
      */
     @Override
-    public void afficherAttributsPersonnage(ArrayList<Integer> attributs) {
+    public void afficherAttributsPersonnage(ArrayList<Integer> attributs, String nom) {
+        nomPersonnage.setText(nom);
         forcePersonnage.setText(String.valueOf(attributs.get(0)));
         agilitéPersonnage.setText(String.valueOf(attributs.get(1)));
         endurancePersonnage.setText(String.valueOf(attributs.get(2)));
@@ -273,7 +274,17 @@ public class VueCombat extends Fragment implements IContratPrésentateurVueComba
 
     @Override
     public void passerAuChapitre() {
-        navController.navigate(R.id.chapitre_dino);
+        Bundle bundle = new Bundle();
+        bundle.putString("aventure","ancien");
+        navController.navigate(R.id.chapitre_dino, bundle);
+
+    }
+
+    @Override
+    public void passerAuChapitreTelechargeable() {
+        Bundle bundle = new Bundle();
+        bundle.putString("aventure","telechargeable");
+        navController.navigate(R.id.chapitre_aventureTelechargeable, bundle);
     }
 
     @Override

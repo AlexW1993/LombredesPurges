@@ -82,7 +82,7 @@ public class VueAventureTéléchargeable extends Fragment implements IContratPr�
 
         présentateurAventureTéléchargeable.gestionChapitre(-1);
 
-        bundle = new Bundle();
+
 
         btnPageTitre.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -114,7 +114,10 @@ public class VueAventureTéléchargeable extends Fragment implements IContratPr�
 
     @Override
     public void passerAuCombat() {
-        navController.navigate(R.id.combat);
+        bundle = new Bundle();
+        bundle.putString("aventure","telechargeable");
+
+        navController.navigate(R.id.combat, bundle);
     }
 
     @Override

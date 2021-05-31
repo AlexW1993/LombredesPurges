@@ -8,7 +8,7 @@ public class AventureTéléchargeable {
      */
     private String title;
     private Chapters [] chapters;
-    private Chapters chapter;
+    private Chapters chapterCourant;
     /**
      * Accesseurs du title de l'aventure
      *
@@ -36,10 +36,18 @@ public class AventureTéléchargeable {
         return chapters;
     }
 
-    public int getIdChapter(int choix){
+    /*public int getIdChapter(int choix){
         chapter = chapters[choix];
         int chapterId = chapter.getId();
         return chapterId;
+    }*/
+
+    public Chapters getChapterCourant() {
+        return chapterCourant;
+    }
+
+    public void setChapterCourant(Chapters chapterCourant) {
+        this.chapterCourant = chapterCourant;
     }
 
     /**

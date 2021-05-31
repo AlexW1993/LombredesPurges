@@ -91,7 +91,8 @@ public class RecyclerViewAdapterAventure extends RecyclerView.Adapter<RecyclerVi
                     }).start();
                     Bundle bundle = new Bundle();
                     bundle.putString("race", "");
-                    Navigation.findNavController(v).navigate(holder.aventureTele,bundle);
+                    bundle.putString("aventure","telechargeable");
+                    Navigation.findNavController(v).navigate(R.id.creationPersonnage,bundle);
                     //holder.itemView.setOnClickListener(Navigation.createNavigateOnClickListener(holder.aventureTele, bundle));
                 }
             });
@@ -114,7 +115,8 @@ public class RecyclerViewAdapterAventure extends RecyclerView.Adapter<RecyclerVi
                     }).start();
                     Bundle bundle = new Bundle();
                     bundle.putString("race", "");
-                    holder.itemView.setOnClickListener(Navigation.createNavigateOnClickListener(holder.aventureTele, bundle));
+                    bundle.putString("aventure","telechargeable");
+                    Navigation.findNavController(v).navigate(R.id.creationPersonnage,bundle);
                 }
             });
         }
@@ -124,7 +126,7 @@ public class RecyclerViewAdapterAventure extends RecyclerView.Adapter<RecyclerVi
         TextView aventure;
         ImageView image;
         Button boutonOk;
-        int aventureTele;
+        //int aventureTele;
 
         public ViewHolder(@NonNull View itemView) {
 
@@ -132,7 +134,7 @@ public class RecyclerViewAdapterAventure extends RecyclerView.Adapter<RecyclerVi
             aventure = itemView.findViewById(R.id.texteTitleAventure );
             image = itemView.findViewById(R.id.imageEtoile);
             boutonOk = itemView.findViewById(R.id.buttonSelectionner);
-            aventureTele = R.id.creationPersonnage;
+            //aventureTele = R.id.creationPersonnage;
 
         }
     }

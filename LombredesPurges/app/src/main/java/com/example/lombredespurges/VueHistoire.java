@@ -63,7 +63,7 @@ public class VueHistoire extends Fragment implements IContratPrésentateurVueHis
 
         présentateurHistoires = new PrésentateurHistoires(this);
         imgRace = view.findViewById(R.id.imageRaceChapitre);
-        présentateurHistoires.changerRace();
+        //présentateurHistoires.changerRace();
 
         txtNumeroChapitre = view.findViewById(R.id.NumeroChapitre);
         texteChapitre = view.findViewById(R.id.texteChapitre);
@@ -80,6 +80,7 @@ public class VueHistoire extends Fragment implements IContratPrésentateurVueHis
         présentateurHistoires.gestionChapitre(-1);
 
         bundle = new Bundle();
+        bundle.putString("aventure","ancien");
         btnChoix1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -134,7 +135,7 @@ public class VueHistoire extends Fragment implements IContratPrésentateurVueHis
 
     @Override
     public void passerAuCombat(){
-        navController.navigate(R.id.combat);
+        navController.navigate(R.id.combat,bundle);
     }
 
     @Override
