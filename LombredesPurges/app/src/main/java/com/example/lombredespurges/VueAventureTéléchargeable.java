@@ -104,12 +104,11 @@ public class VueAventureTéléchargeable extends Fragment implements IContratPr�
     }
 
     @Override
-    public void afficherFinJeu(String nomPersonnage, String contenueChapitre) {
-        texteChapitre.setText(nomPersonnage);
+    public void afficherFinJeu(String finJeuText, String contenueChapitre) {
+        texteChapitre.setText(finJeuText.trim());
         txtNumeroChapitre.setVisibility(View.GONE);
         texteContenueChapitre.setText(contenueChapitre);
-
-        //tous les buttons gone
+        listeButtons.setVisibility(View.INVISIBLE);
         btnPageTitre.setVisibility(View.VISIBLE);
     }
 

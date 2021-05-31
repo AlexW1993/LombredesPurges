@@ -27,6 +27,26 @@ public class Ennemie {
         this._intelligence = intelligence;
     }
 
+    public Ennemie(){
+
+    }
+
+    public void setForce(int force){
+        this._force = force;
+    }
+
+    public void setNom(String nom){
+        this._nom = nom;
+    }
+
+    public void setEndurance(int endurance){
+        this._endurance = endurance;
+    }
+
+    public void setCoefAttaque(int coefAttaque){
+        this.coefAttaque = coefAttaque;
+    }
+
     /**
      * Accesseurs du nom du ennemie.
      *

@@ -1,5 +1,7 @@
 package com.example.lombredespurges.domaine.entité.aventuresTéléchargeables;
 
+import com.example.lombredespurges.domaine.entité.Ennemie;
+
 import java.util.ArrayList;
 
 public class Chapters {
@@ -12,8 +14,7 @@ public class Chapters {
     private int[] choices;
     private String deadend;
     private String[] choices_description;
-    private Combat combat;
-    private Boolean avoirCombat;
+    private Combats[] combats;
     private int nextChapter;
 
     public int getId() {
@@ -46,7 +47,7 @@ public class Chapters {
     }
 
     public String getDeadend() {
-        return deadend;
+        return this.deadend;
     }
 
     public void setDeadend(String deadend) {
@@ -61,15 +62,11 @@ public class Chapters {
         this.choices_description = choices_description;
     }
 
-    public Combat getCombat() {
-        return combat;
+    public Combats[] getCombats() {
+        return combats;
     }
 
-    public Boolean get_Combat() {
-        return avoirCombat;
-    }
-
-    public void setCombat(Combat combat) {
-        this.combat = combat;
+    public void setCombats(Combats[] combats) {
+        this.combats = combats;
     }
 }

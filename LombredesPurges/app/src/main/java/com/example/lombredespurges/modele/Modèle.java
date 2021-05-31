@@ -72,6 +72,7 @@ public class Modèle {
      * La méthode permet de réinitialiser la liste d'histoire dans le jeu.
      */
     public void réanitialierJeu(){
+
         this._listeAventure = new Creation().CréationJeu();
     }
 
@@ -119,8 +120,23 @@ public class Modèle {
      * La méthode permet d'appeler la methode pour la creation d'un ennemie.
      */
     public void creationEnnemie( ){
-        _ennemie = new Creation().CreationEnnemie();
+        if(_aventureChoisie != null){
+            _ennemie = new Creation().CreationEnnemie();
+        }else if(_aventureTéléchargeableChoisie != null){
+            System.out.println("PP");
+        }
+
     }
+
+    /*public void creationEnnemieAvanturesTelechargees(){
+            _ennemie = new Ennemie();
+            _ennemie.setNom();
+            _ennemie.setCoefAttaque();
+            _ennemie.setEndurance();
+            _ennemie.setForce();
+            chapitreCourante.getCombats()
+
+    }*/
 
     /**
      * Accesseurs de l'ennemie.
@@ -227,9 +243,8 @@ public class Modèle {
         if(!aCommence) {
             this.chapitreCourante =_aventureTéléchargeableChoisie.getChapters()[0];
             aCommence = true;
-        }else{
-            this.getChapitreCourant();;
         }
+
         return this.chapitreCourante;
     }
 

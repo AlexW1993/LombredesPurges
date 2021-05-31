@@ -1,10 +1,11 @@
 package com.example.lombredespurges.domaine.entité.aventuresTéléchargeables;
 
-public class Combat {
+public class Combats {
     private String enemy;
     private int force;
     private int combatskill;
     private int endurance;
+    private boolean terminé = false;
 
     public String getEnemy() {
         return enemy;
@@ -36,5 +37,13 @@ public class Combat {
 
     public void setEndurance(int endurance) {
         this.endurance = endurance;
+    }
+
+    public boolean isTerminé() {
+        return terminé;
+    }
+
+    public void setTerminé(boolean terminé) {
+        this.terminé = terminé;
     }
 }

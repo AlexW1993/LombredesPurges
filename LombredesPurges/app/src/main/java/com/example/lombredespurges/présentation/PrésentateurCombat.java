@@ -30,7 +30,7 @@ public class PrésentateurCombat implements IContratPrésentateurVueCombat.IPré
      */
     @Override
     public void creationEnnemie(){
-       _modèle.creationEnnemie();
+        _modèle.creationEnnemie();
     }
 
     /**
@@ -58,8 +58,7 @@ public class PrésentateurCombat implements IContratPrésentateurVueCombat.IPré
      */
     @Override
     public void getNomEnnemie(){
-        String nom;
-        nom = _modèle.getEnnemie().get_nom();
+        String nom = _modèle.getEnnemie().get_nom();
         _vue.afficherNomEnnemie(nom);
     }
 

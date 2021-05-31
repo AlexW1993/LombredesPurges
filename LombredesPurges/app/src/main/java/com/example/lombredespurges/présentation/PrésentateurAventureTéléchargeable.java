@@ -1,6 +1,7 @@
 package com.example.lombredespurges.présentation;
 
 import com.example.lombredespurges.domaine.entité.aventuresTéléchargeables.Chapters;
+import com.example.lombredespurges.domaine.entité.aventuresTéléchargeables.Combats;
 import com.example.lombredespurges.modele.Modèle;
 
 public class PrésentateurAventureTéléchargeable implements IContratPrésentateurVueAventureTéléchargeable.IPrésentateurAventureTéléchargeable {
@@ -32,22 +33,40 @@ public class PrésentateurAventureTéléchargeable implements IContratPrésentat
 
         Chapters unChapitre = _modèle.gestionChapitreCorant();
 
+        if(unChapitre.getCombats() != null){
+            for(Combats unCombat : unChapitre.getCombats()){
+                if(!unCombat.isTerminé()){
+                    _vue.passerAuCombat();
+                }
+            }
+        }
+
         int numChapitre = unChapitre.getId();
         String contenueChapitre = unChapitre.getDescription();
         String finChapitre = unChapitre.getDeadend();
         int[] listeChoix = unChapitre.getChoices();
         String[] descriptionChoix = unChapitre.getChoices_description();
         String nomPersonnage = _modèle.getPersonnage().get_nom();
-
+/*
         if(listeChoix == null){
-            if(unChapitre.getCombat() == null) {
+            if(unChapitre.getCombats() == null) {
                 _vue.afficherFinJeu(nomPersonnage, finChapitre);
             }else{
                 //FAIRE COMBAT
             }
+        }*/
+
+        if(listeChoix == null){
+            _vue.afficherFinJeu(finChapitre, contenueChapitre);
         }
 
-        _vue.afficherAventure(numChapitre, contenueChapitre, listeChoix, descriptionChoix, _modèle.get_contexte());
+
+
+
+        if(unChapitre.getDeadend() == null){
+            _vue.afficherAventure(numChapitre, contenueChapitre, listeChoix, descriptionChoix, _modèle.get_contexte());
+        }
+
     }
 
     /**
