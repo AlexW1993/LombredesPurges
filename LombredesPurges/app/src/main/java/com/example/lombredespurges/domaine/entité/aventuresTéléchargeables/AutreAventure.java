@@ -3,7 +3,7 @@ package com.example.lombredespurges.domaine.entité.aventuresTéléchargeables;
 public class AutreAventure {
 
     /**
-     * Declaration des Aventure
+     * Declaration des Attributs
      */
     private String title;
     private String url;

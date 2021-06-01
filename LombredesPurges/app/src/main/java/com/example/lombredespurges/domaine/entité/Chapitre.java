@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Chapitre {
 
     /**
-     * Declaration des Aventure
+     * Declaration des Attributs
      */
     int _numéroChapitre;
     ArrayList<Integer> _listeProchainChapitre;

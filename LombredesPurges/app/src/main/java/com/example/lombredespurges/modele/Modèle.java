@@ -190,22 +190,47 @@ public class Modèle {
         }
     }
 
+    /**
+     * Accesseurs du contexte.
+     *
+     * @return le contexte.
+     */
     public Context get_contexte() {
         return _contexte;
     }
 
+    /**
+     * Mutateur du contexte
+     *
+     * @param ctx, le nouveau contexte
+     */
     public void set_contexte(Context ctx) {
         _contexte = ctx;
     }
 
+    /**
+     * Mutateur de la sourceHTTP
+     *
+     * @param source, le nouvelle source
+     */
     public void set_sourceHTTP(SourceDeDonnées source) {
         _sourceHTTP = source;
     }
 
+    /**
+     * Mutateur de la sourceBD
+     *
+     * @param source, le nouvelle source
+     */
     public void set_sourceBD(SourceDeDonnées source) {
         _sourceBD = source;
     }
 
+    /**
+     * La méthode permet de cherhcer la liste de referece des aventures qui sont sauevgarder das une serveur
+     *
+     * @return (ArrayList < AutreAventure >) La liste de reference des aventures
+     */
     public ArrayList<AutreAventure> chercherListeAventuresServeur() {
         if (_listeAutresAventuresServeur == null) {
             _listeAutresAventuresServeur = new RécupérerAventure(_sourceHTTP).récupérerListeAventureServeur();
@@ -213,6 +238,11 @@ public class Modèle {
         return _listeAutresAventuresServeur;
     }
 
+    /**
+     * La méthode permet de cherhcer la liste de referece des aventures qui sont sauevgarder dans la BD
+     *
+     * @return (ArrayList < AutreAventure >) La liste de reference des aventures
+     */
     public ArrayList<AutreAventure> chercherAventuresBD() {
         if (_listeAutresAventuresBD == null) {
             _listeAutresAventuresBD = new RécupérerAventure(_sourceBD).récupérerAventuresBD();
@@ -221,6 +251,11 @@ public class Modèle {
         return _listeAutresAventuresBD;
     }
 
+    /**
+     * La méthode permet de sauvegarder l'aventure dans la BD
+     *
+     * @param title, le title de l'aventure à sauvegarder
+     */
     public void sauvegarderAventure(String title) {
         AutreAventure aventure = new AutreAventure();
 
@@ -237,6 +272,12 @@ public class Modèle {
         _listeAventuresTéléchargeableBD = new RécupérerAventure(_sourceBD).récupérerAventuresTéléchargeablesBD();
     }
 
+    /**
+     * La méthode permet de chosir et garder dans l'attribut _aventureTéléchargeableChoisie l'aventure que
+     * le joueur a choisit.
+     *
+     * @param titleAventure, le title de l'aventure que le joueur a choisit pour jouer.
+     */
     public void aventureTéléchargeableÀJouer(String titleAventure) {
         for (int i = 0; i < _listeAventuresTéléchargeableBD.size(); i++) {
             if (_listeAventuresTéléchargeableBD.get(i).getTitle().equals(titleAventure)) {
@@ -244,12 +285,14 @@ public class Modèle {
             }
         }
     }
+
     /**
      * Méthode qui permet de gérer vers quel chapitre se rendre
      */
     public Chapters gestionChapitreCorant() {
         return _aventureTéléchargeableChoisie.gestionChapitreCorant();
     }
+
     /**
      * Méthode qui permet de passer au chapitre suivant
      *
@@ -258,6 +301,7 @@ public class Modèle {
     public void passerAuProchainChapitreAventureTéléchargeable(int choix) {
         _aventureTéléchargeableChoisie.passerAuProchainChapitreAventureTéléchargeable(choix);
     }
+
     /**
      * Méthode qui de revenir au premier chapire
      */

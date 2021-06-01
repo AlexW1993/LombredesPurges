@@ -24,7 +24,6 @@ public class RecyclerViewAdapterAventure extends RecyclerView.Adapter<RecyclerVi
     private List<String> _dataBD;
     private LayoutInflater _mInflater;
     private PrésentateurListeAventures _présentateur;
-    private NavController navController;
 
     public RecyclerViewAdapterAventure(Context ctx, List<String> dataServeur, List<String> dataBD, PrésentateurListeAventures présentateur) {
         this._dataServeur = dataServeur;

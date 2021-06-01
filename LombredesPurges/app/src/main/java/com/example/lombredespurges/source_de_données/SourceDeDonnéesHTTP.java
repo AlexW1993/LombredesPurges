@@ -19,15 +19,26 @@ import java.util.concurrent.ExecutionException;
 
 public class SourceDeDonnéesHTTP implements SourceDeDonnées {
 
+    /**
+     * Declaration des Attributs
+     */
     private Context _ctx;
     private String _url;
     private Gson gson = new Gson();
 
+    /**
+     * Constructeur de SourceDeDonnéesHTTP.
+     */
     public SourceDeDonnéesHTTP(Context ctx, String urlSource) {
         _ctx = ctx;
         _url = urlSource;
     }
 
+    /**
+     * La méthode permet récupérer une tableua des aventures qui ont été sauvegarder dans une serveur.
+     *
+     * @return (AutreAventure[]) le tableau des aventures.
+     */
     @Override
     public AutreAventure[] récupérerListeServeur() {
         RequestQueue queue = Volley.newRequestQueue(_ctx);
@@ -46,6 +57,11 @@ public class SourceDeDonnéesHTTP implements SourceDeDonnées {
         return null;
     }
 
+    /**
+     * La méthode permet récupérer une chaine Json de une aventure qui a été sauvegarder dans une serveur.
+     *
+     * @return (String) la chaine Json de une aventure.
+     */
     @Override
     public String récupérerAventureServeur() {
         RequestQueue queue = Volley.newRequestQueue(_ctx);

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Aventure {
     /**
-     * Declaration des Aventure
+     * Declaration des Attributs
      */
     private String _nomAventure;
     private ArrayList<Chapitre> _listeChapitre;

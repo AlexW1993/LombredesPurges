@@ -1,11 +1,16 @@
 package com.example.lombredespurges.domaine.entité.aventuresTéléchargeables;
 
 public class Combats {
+
+    /**
+     * Declaration des Attributs
+     */
     private String enemy;
     private int force;
     private int combatskill;
     private int endurance;
     private boolean terminé = false;
+
     /**
      * Accesseurs de l'ennemi
      *
@@ -14,6 +19,7 @@ public class Combats {
     public String getEnemy() {
         return enemy;
     }
+
     /**
      * Accesseurs de la force de l'ennemi
      *
@@ -22,6 +28,7 @@ public class Combats {
     public int getForce() {
         return force;
     }
+
     /**
      * Mutateur de la force de l'ennemi
      *
@@ -34,6 +41,7 @@ public class Combats {
     public int getCombatskill() {
         return combatskill;
     }
+
     /**
      * Accesseurs de l'endurance' de l'ennemi
      *
@@ -42,6 +50,7 @@ public class Combats {
     public int getEndurance() {
         return endurance;
     }
+
     /**
      * Mutateur de l'endurance de l'ennemi
      *

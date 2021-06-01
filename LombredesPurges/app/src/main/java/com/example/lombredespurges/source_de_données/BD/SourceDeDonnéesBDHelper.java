@@ -17,17 +17,27 @@ import java.util.ArrayList;
 
 public class SourceDeDonnéesBDHelper extends SQLiteOpenHelper implements SourceDeDonnées {
 
-
+    /**
+     * Constructeur de SourceDeDonnéesHTTP.
+     */
     public SourceDeDonnéesBDHelper(Context context) {
         super(context, AventuresBDContrat.DATABASE_NAME, null, AventuresBDContrat.DATABASE_VERSION);
     }
 
+    /**
+     * La méthode permet la creation de la BD.
+     */
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(AventuresBDContrat.SQL_CREATE_TABLE_AVENTURE);
         db.execSQL(AventuresBDContrat.SQL_CREATE_TABLE_AVENTURE_JSON);
     }
 
+    /**
+     * La méthode permet mettre à jour la BD.
+     *
+     * @param (db,oldVersion,newVersion), le BD, la vieux version de la BD et la nouvelle version.
+     */
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL(AventuresBDContrat.SQL_DELETE_TABLE_AVENTURE);
@@ -35,6 +45,11 @@ public class SourceDeDonnéesBDHelper extends SQLiteOpenHelper implements Source
         onCreate(db);
     }
 
+    /**
+     * La méthode permet sauvegarder une reference d'aventure dans la BD
+     *
+     * @param (title,url), le nom et l'url de l'aventure.
+     */
     @Override
     public void ajouterAventure(String title, String url) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -46,7 +61,11 @@ public class SourceDeDonnéesBDHelper extends SQLiteOpenHelper implements Source
         db.insert(AventuresBDContrat.TableAventures.NOM_TABLE, null, values);
     }
 
-
+    /**
+     * La méthode permet sauvegarder une aventure dans la BD
+     *
+     * @param (title,json), le nom et la chaine Json de une aventure.
+     */
     @Override
     public void ajoterAventureJson(String title, String json) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -58,6 +77,11 @@ public class SourceDeDonnéesBDHelper extends SQLiteOpenHelper implements Source
         db.insert(AventuresBDContrat.TableAventuresJson.NOM_TABLE, null, values);
     }
 
+    /**
+     * La méthode permet cherhcer les reference des aventures dans la BD.
+     *
+     * @return (ArrayList < AutreAventure >) La liste de reference des aventures.
+     */
     @Override
     public ArrayList<AutreAventure> chercherTousAventures() {
         SQLiteDatabase db = this.getReadableDatabase();
@@ -84,6 +108,11 @@ public class SourceDeDonnéesBDHelper extends SQLiteOpenHelper implements Source
         }
     }
 
+    /**
+     * La méthode permet cherhcer les  aventures dans la BD.
+     *
+     * @return (ArrayList < AventureTéléchargeable >) La liste des aventures.
+     */
     @Override
     public ArrayList<AventureTéléchargeable> chercherAventuresJson() {
         Gson gson = new Gson();
@@ -110,6 +139,9 @@ public class SourceDeDonnéesBDHelper extends SQLiteOpenHelper implements Source
         }
     }
 
+    /**
+     * La méthode permet reinicier les tableaux de la BD
+     */
     @Override
     public void reset() {
         SQLiteDatabase db = this.getWritableDatabase();

@@ -1,13 +1,9 @@
 package com.example.lombredespurges.domaine.entité.aventuresTéléchargeables;
 
-import com.example.lombredespurges.domaine.entité.Ennemie;
-
-import java.util.ArrayList;
-
 public class Chapters {
 
     /**
-     * Declaration des Aventure
+     * Declaration des Attributs
      */
     private int id;
     private String description;
@@ -15,6 +11,7 @@ public class Chapters {
     private String deadend;
     private String[] choices_description;
     private Combats[] combats;
+
     /**
      * Accesseurs du id de l'aventure
      *
@@ -23,6 +20,7 @@ public class Chapters {
     public int getId() {
         return id;
     }
+
     /**
      * Mutateur du id
      *
@@ -31,6 +29,7 @@ public class Chapters {
     public void setId(int id) {
         this.id = id;
     }
+
     /**
      * Accesseurs du contenu du chapitre
      *
@@ -39,6 +38,7 @@ public class Chapters {
     public String getDescription() {
         return description;
     }
+
     /**
      * Accesseurs de la liste des choix
      *
@@ -47,6 +47,7 @@ public class Chapters {
     public int[] getChoices() {
         return choices;
     }
+
     /**
      * Accesseurs du contenu de la fin
      *
@@ -55,6 +56,7 @@ public class Chapters {
     public String getDeadend() {
         return this.deadend;
     }
+
     /**
      * Accesseurs de la liste du contenu des choix
      *
@@ -63,6 +65,7 @@ public class Chapters {
     public String[] getChoices_description() {
         return choices_description;
     }
+
     /**
      * Accesseurs de la liste des combats
      *

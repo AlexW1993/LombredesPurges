@@ -1,8 +1,9 @@
 package com.example.lombredespurges.domaine.entité.aventuresTéléchargeables;
 
 public class AventureTéléchargeable {
+
     /**
-     * Declaration des Aventure
+     * Declaration des Attributs
      */
     private String title;
     private Chapters[] chapters;
@@ -17,6 +18,7 @@ public class AventureTéléchargeable {
     public String getTitle() {
         return title;
     }
+
     /**
      * Accesseurs du chapitres courant de l'aventure
      *
@@ -25,6 +27,7 @@ public class AventureTéléchargeable {
     public Chapters getChapterCourant() {
         return chapterCourant;
     }
+
     /**
      * Mutateur du chapitres courant de l'aventure
      *
