@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Admin/Desktop/Cegep/2021 session hiver/Applications Native 2/TPS/TP3/app-dont-vous-etes-le-heros/LombredesPurges/app/src/main/res/layout-land/selection_aventure.xml" value="0.31040564373897706" />
+        <entry key="..\:/Users/Admin/Desktop/Cegep/2021 session hiver/Applications Native 2/TPS/TP3/app-dont-vous-etes-le-heros/LombredesPurges/app/src/main/res/layout/activity_main.xml" value="0.3342391304347826" />
+        <entry key="..\:/Users/Admin/Desktop/Cegep/2021 session hiver/Applications Native 2/TPS/TP3/app-dont-vous-etes-le-heros/LombredesPurges/app/src/main/res/layout/autres_aventures.xml" value="0.264" />
+        <entry key="..\:/Users/Admin/Desktop/Cegep/2021 session hiver/Applications Native 2/TPS/TP3/app-dont-vous-etes-le-heros/LombredesPurges/app/src/main/res/layout/aventure_item.xml" value="0.22644927536231885" />
+        <entry key="..\:/Users/Admin/Desktop/Cegep/2021 session hiver/Applications Native 2/TPS/TP3/app-dont-vous-etes-le-heros/LombredesPurges/app/src/main/res/layout/button_choix.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Admin/Desktop/Cegep/2021 session hiver/Applications Native 2/TPS/TP3/app-dont-vous-etes-le-heros/LombredesPurges/app/src/main/res/layout/les_purges.xml" value="0.20652173913043478" />
+        <entry key="..\:/Users/Admin/Desktop/Cegep/2021 session hiver/Applications Native 2/TPS/TP3/app-dont-vous-etes-le-heros/LombredesPurges/app/src/main/res/layout/menu_aventures.xml" value="0.19655797101449277" />
+        <entry key="..\:/Users/Admin/Desktop/Cegep/2021 session hiver/Applications Native 2/TPS/TP3/app-dont-vous-etes-le-heros/LombredesPurges/app/src/main/res/layout/selection_aventure.xml" value="0.36666666666666664" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
